@@ -1,0 +1,89 @@
+---
+layout: default
+---
+
+  {% if page.banner-image %}
+    {% assign banner-pic = site.data.virtual-photography[page.slug][page.banner-image] %}
+  {% else %}
+    {% assign banner-pic = site.data.virtual-photography[page.slug][page.card-image] %}
+  {% endif %}
+
+  {% assign ar = banner-pic.aspect-ratio | plus: 0 %}
+
+  <style>
+      .image-gallery {overflow: auto; margin-left: -1%!important;}
+      .image-gallery a {float: left; display: block; margin: 0 0 1% 1%; width: 19%; text-align: center; text-decoration: none!important;}
+      .image-gallery a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+      .image-gallery a img {width: 100%; display: block;}
+
+      .banner {
+        background-image: url('{{ banner-pic.image1080-link }}');
+        background-size: cover;
+        background-position: right 0px bottom {{page.banner-offset}}%;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+
+      }
+
+      .banner-text {
+        text-align: center;
+        color: white;
+      }
+
+      @media (max-width: 767px) {
+        .banner {
+          height: 200px;
+        }
+      }
+   </style>
+  
+  <div class="banner">
+    <div class="banner-text">
+      <h1><strong>{{ page.title }}</strong></h1>
+      <p><span class="date"><time datetime="{{ page.date | date_to_xmlschema }}"><strong>{{ page.date | date_to_string}}</strong></time><strong>{% if page.developer %} | {{page.developer}} {% endif %}</strong></span> </p>
+    </div>
+  </div>
+  
+  {% assign c = "c-page-heading" %}
+    <!-- Page heading from page-heading.jekyll.html-->
+    {% if page.description %}
+    <div class="container">
+      <div class="{{c}}">
+          <p class="{{c}}__description">{{ page.description }}</p>
+      </div>
+    </div>
+    {% endif %}
+    <!-- Finish page heading-->
+  
+    
+    <div class="pig-wrapper">
+        <div id="pig"></div>
+    </div>
+    <script type="text/javascript" src="../js/pig.js"></script>
+    <script type="text/javascript">
+      var imageData = [
+      {% for image in site.data.virtual-photography[page.slug] %}
+          {"thumbnail":"{{ image.thumbnail-link }}", "image1080":"{{ image.image1080-link }}", "imageFull":"{{ image.imageFull-link }}", "aspectRatio":{{ image.aspect-ratio }}},
+      {% endfor %}
+      ];
+      var pig = new Pig(imageData, {
+      urlForSize: function(imageUrls, sizewidth) {
+        if (sizewidth <= 1080){
+          return imageUrls.thumbnail;
+        }
+        else if(sizewidth <= 1920){
+          return imageUrls.image1080;
+        }
+        return imageUrls.imageFull;
+      },
+      addAnchorTag: true,
+      anchorTargetDir: "",
+      anchorClass: "swipebox"
+      }).enable();
+      ;( function( $ ) {
+      $( '.swipebox' ).swipebox();
+      } )( jQuery );
+    </script>
