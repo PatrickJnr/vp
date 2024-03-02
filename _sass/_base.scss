@@ -19,22 +19,27 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   line-height: 1.25;
   text-rendering: optimizeLegibility;
+  color: white;
 }
 
 h1 {
   font-size: 2rem;
+  color: white;
 }
 h2 {
   margin-top: 1rem;
   font-size: 1.5rem;
+  color: white;
 }
 h3 {
   margin-top: 1.5rem;
   font-size: 1.25rem;
+  color: white;
 }
 h4, h5, h6 {
   margin-top: 1rem;
   font-size: 1rem;
+  color: white;
 }
 
 /* Body */
@@ -44,6 +49,7 @@ body {
 }
 
 p {
+  color: white;
   display: block;
   margin-top: 1em;
   margin-bottom: 1em;

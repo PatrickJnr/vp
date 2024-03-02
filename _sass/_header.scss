@@ -30,7 +30,7 @@
 }
 .menu-list {
   line-height: $header-thickness;
-  float: right;
+  float: right;	
 }
 .menu-link {
   padding: 5px 10px;
@@ -77,7 +77,7 @@
     z-index: 1;
   }
   .dropdown-content a {
-    color: black;
+    color: fff;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
