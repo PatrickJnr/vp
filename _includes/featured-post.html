@@ -1,7 +1,6 @@
 <article>
   <a href="{{ site.github.url }}{{ post.url }}">
-    <div class="featured-post" {% if post.image %}style="background-image:url({{ site.github.url }}/assets/img/{{ post.image }})"{% endif %}>
-      <img loading="lazy" src="{{ site.data.virtual-photography[post.slug][post.card-image].image1080-link }}" alt="{{ include.album.title }}" style="object-position: 0 {{post.card-offset}}%;">
+    <div class="featured-post" style="background-image:url({{ site.data.virtual-photography[post.slug][post.card-image].image1080-link }}); background-position: right 0px bottom {{post.card-offset}}%;">
       <h2><span>{{ post.title }}</span></h2>
     </div>
   </a>
