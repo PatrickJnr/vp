@@ -5,7 +5,6 @@ title: Assassins Creed Mirage
 description:
 developer: Ubisoft
 card-image: 10
-banner-image: 1
+banner-image: 2
 banner-offset: 95
-image: mirage.jpeg
 ---
