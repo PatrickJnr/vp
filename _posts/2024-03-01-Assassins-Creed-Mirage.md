@@ -7,5 +7,5 @@ developer: Ubisoft
 card-image: 10
 banner-image: 1
 banner-offset: 95
-image: u3dKDYF.jpeg
+image: mirage.jpeg
 ---
