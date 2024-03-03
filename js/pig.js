@@ -317,7 +317,7 @@
        */
       getMinAspectRatio: function(lastWindowWidth) {
         // Narrow windows get an image after the other without grid, so the images can be seen better on phones.
-        if (window.innerWidth / window.innerHeight  <= 0.5){
+        if (window.innerWidth / window.innerHeight  <= 0.1){
           return 0.1;
         }
         
@@ -329,7 +329,7 @@
         } else if (lastWindowWidth <= 1920) {
           return 2;
         }
-        return 2.5;
+        return 7;
       },
       
       //We are not using this for now, and instead handle the size directly on the given urlForSize

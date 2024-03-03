@@ -1,9 +1,9 @@
 ---
 ---
 
-$base-font-family: 'Roboto', sans-serif;
-$body-font-family: 'Roboto', sans-serif;
-$code-font-family: "Source Code Pro", monospace;
+$base-font-family: 'Exo 2', sans-serif;
+$body-font-family: 'Exo 2', sans-serif;
+$code-font-family: "Exo 2", sans-serif;
 
 $brand-color: #fff;
 
@@ -14,8 +14,11 @@ $phone-width: 480px;
 $header-thickness: 56px;
 
 $icon-transition-time: 0.1s;
+$flickr-color: #0063dc;
+$steam-color: #90ba3c;
 $envelope-color: #f39c12;
 $twitter-color: #00aced;
+$x-twitter-color: #00aced;
 $instagram-color: #375989;
 $github-color: #343434;
 $linkedin-color: #0073a4;
@@ -25,5 +28,6 @@ $pinterest-color: #bd081c;
 $medium-color: #00AB6C;
 $codepen-color: black;
 $rss-color: #ff6600;
+
 
 @import "-sections-dir";

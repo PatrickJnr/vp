@@ -19,6 +19,11 @@
   @include social-media-icon($twitter-color, $icon-transition-time);
 }
 
+.fa-square-twitter {
+  padding: 5px;
+  @include social-media-icon($twitter-color, $icon-transition-time);
+}
+
 .fa-instagram {
   padding: 5px;
   @include social-media-icon($instagram-color, $icon-transition-time);
@@ -59,7 +64,17 @@
   @include social-media-icon($codepen-color, $icon-transition-time);
 }
 
-.fa-rss-square {
+.fa-square-rss {
   padding: 5px;
   @include social-media-icon($rss-color, $icon-transition-time);
+}
+
+.fa-flickr {
+  padding: 5px;
+  @include social-media-icon($flickr-color, $icon-transition-time);
+}
+
+.fa-steam {
+  padding: 5px;
+  @include social-media-icon($steam-color, $icon-transition-time);
 }
