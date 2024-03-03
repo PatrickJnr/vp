@@ -323,13 +323,13 @@
         
         //Desktop
         if (lastWindowWidth <= 640) {
-          return 1;
+          return 3;
         } else if (lastWindowWidth <= 1280) {
-          return 1.5;
+          return 6;
         } else if (lastWindowWidth <= 1920) {
-          return 2;
+          return 9;
         }
-        return 7;
+        return 12;
       },
       
       //We are not using this for now, and instead handle the size directly on the given urlForSize
