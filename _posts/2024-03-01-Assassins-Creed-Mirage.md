@@ -6,5 +6,5 @@ description:
 developer: Ubisoft
 card-image: 1
 banner-image: 1
-banner-offset: 50
+banner-offset: 75
 ---
