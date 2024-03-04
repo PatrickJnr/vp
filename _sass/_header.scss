@@ -3,7 +3,6 @@
   width: $container-width;
   position: fixed;
   background-color: #0e0e10;
-  box-shadow: 0 5px 6px -6px #bbb;
   z-index: 100;
 }
 @media (max-width: $container-width) {
@@ -12,7 +11,6 @@
     width: 95vw;
     position: fixed;
     background-color: #0e0e10;
-    box-shadow: 0 5px 6px -6px #bbb;
     z-index: 100;
   }
 }
@@ -73,7 +71,6 @@
     position: absolute;
     background-color: #0e0e10;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
   .dropdown-content a {
