@@ -4,7 +4,7 @@ title: Home
 ---
 
 <div class="post-grid">
-  {% for post in paginator.posts %}
+  {% for post in site.posts %}
     {% if site.data.virtual-photography[post.slug] and site.data.virtual-photography[post.slug][post.card-image] %}
       <article class="grid-item">
         <a href="{{ site.github.url }}{{ post.url }}">
@@ -16,6 +16,3 @@ title: Home
     {% endif %}
   {% endfor %}
 </div>
-
-<!-- Pagination links -->
-

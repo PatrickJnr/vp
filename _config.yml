@@ -1,19 +1,30 @@
 # Site Build Settings
 
 # jekyll-paginate configuration
-paginate:            10
+
 
 # Build settings
-markdown:            kramdown
-highlighter:         rouge
-permalink:           /:title
-plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
-
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+plugins:
+  #- jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jemoji
+  - jekyll-mentions
+  
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
-title:		           "PatrickJr's Virtual Photography"
-description:	       ""
-author:              "PatrickJr."
+title: "PatrickJr's Virtual Photography"
+author: "PatrickJr."
+description: 📷
+repository: PatrickJnr/vp
+github: PatrickJnr/vp
 
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
-#feed:
-#  path: rss-feed.xml
+# feed:
+#   path: rss-feed.xml
+
+jekyll-mentions:
+  base_url: https://twitter.com

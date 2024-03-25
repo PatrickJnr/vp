@@ -83,6 +83,7 @@
     var css = (
       '#' + containerId + ' {' +
       '  position: relative;' +
+	  '  overflow: hidden;' + /** Added line as a temporary workaround for gallery alignment */
       '}' +
       '.' + classPrefix + '-figure {' +
       '  background-color: #0e0e10;' +
@@ -100,10 +101,10 @@
       '  opacity: 0;' +
       '  transition: ' + (transitionSpeed / 1000) + 's ease opacity;' +
       '  -webkit-transition: ' + (transitionSpeed / 1000) + 's ease opacity;' +
-      '  transition: transform .7s ease;' +
+      '  transition: transform .5s ease;' +
       '}' +
       '.' + classPrefix + '-figure img:hover {' +
-      '  transform: scale(1.01);' +
+      '  transform: scale(1.02);' +
       '}' +
       '.' + classPrefix + '-figure img.' + classPrefix + '-thumbnail {' +
       '  -webkit-filter: blur(30px);' +
@@ -317,19 +318,19 @@
        */
       getMinAspectRatio: function(lastWindowWidth) {
         // Narrow windows get an image after the other without grid, so the images can be seen better on phones.
-        if (window.innerWidth / window.innerHeight  <= 0.1){
-          return 0.1;
+        if (window.innerWidth / window.innerHeight  <= 0.5){
+          return 1;
         }
         
         //Desktop
         if (lastWindowWidth <= 640) {
-          return 2;
+          return 1;
         } else if (lastWindowWidth <= 1280) {
-          return 4;
+          return 2;
         } else if (lastWindowWidth <= 1920) {
-          return 6;
+          return 3;
         }
-        return 8;
+        return 5;
       },
       
       //We are not using this for now, and instead handle the size directly on the given urlForSize

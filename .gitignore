@@ -5,3 +5,4 @@ Gemfile.lock
 .DS_Store
 .jekyll-cache
 *.gem
+run.bat
