@@ -1,13 +1,14 @@
 /* Grid Layout */
 .post-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  width: auto;
+  grid-template-columns: repeat(auto-fill, minmax(200px, auto));
   gap: 20px;
   padding: 20px;
 }
 
 .featured-post {
-  height: 400px;
+  height: 300px;
   margin: 0 10px 20px;
   background-position: center;
   background-repeat: no-repeat;
@@ -27,6 +28,7 @@
   margin: 0;
   padding: 10px;
   position: absolute;
+  font-size: 18px;
   font-family: "Exo 2", sans-serif;
 }
 .featured-post h2 span {
