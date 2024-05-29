@@ -51,7 +51,7 @@ layout: default
 <div class="banner">
   <div class="banner-text">
     <h1><strong>{{ page.title }}</strong></h1>
-    <p><span class="date"><time datetime="{{ page.date | date_to_xmlschema }}"><strong>{{ page.date | date_to_string}}</strong></time><strong>{% if page.developer %} | {{page.developer}} {% endif %}</strong></span> </p>
+    <p><span class="date"><time datetime="{{ page.date | date_to_xmlschema }}"><strong>{{ page.date | date_to_string }}</strong></time><strong>{% if page.developer %} | {{page.developer}} {% endif %}</strong></span> </p>
   </div>
 </div>
 
@@ -71,38 +71,64 @@ layout: default
     <div id="pig"></div>
 </div>
 
-<!-- Include ColorThief library from node_modules -->
-<script src="{{ site.baseurl }}/node_modules/color-thief/dist/color-thief.min.js"></script>
+<!-- Include Vibrant.js from a CDN -->
+<script src="https://cdn.jsdelivr.net/npm/node-vibrant/dist/vibrant.min.js"></script>
 
 <!-- Include Pig Gallery script -->
 <script type="text/javascript" src="../js/pig.js"></script>
+<br>
 
 <!-- Script for setting dynamic background color -->
+
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
     // Get the URL of the banner image specified in the front matter
-    const bannerImageUrl = '{{ site.baseurl }}{{ banner-pic.image1080-link }}';
+    const bannerImageUrl = '{{ banner-pic.image1080-link }}';
 
     // Create an image element and set its source to the banner image URL
     const image = new Image();
+    image.crossOrigin = 'Anonymous';
     image.src = bannerImageUrl;
 
-    // Create a ColorThief instance
-    const colorThief = new ColorThief();
-
-    // Once the image is loaded
+    // Ensure the image is loaded before processing it with Vibrant.js
     image.onload = function() {
-      // Get the dominant color from the image
-      const dominantColor = colorThief.getColor(image);
+      // Create a Vibrant instance and get the palette
+      Vibrant.from(image).getPalette()
+        .then(palette => {
+          // Get the dominant color
+          let dominantColor = palette.Muted.rgb;
 
-      // Set the background color of the #background element
-      const backgroundDiv = document.getElementById('background');
-      backgroundDiv.style.backgroundColor = `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
-      // Ensure the script's background color takes precedence over CSS
-      backgroundDiv.style.setProperty('background-color', `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`, 'important');
+          // Adjust each RGB component to make the color slightly darker
+          const darkeningFactor = 20; // Adjust this value to control the darkness
+          dominantColor = [
+            Math.max(0, dominantColor[0] - darkeningFactor),
+            Math.max(0, dominantColor[1] - darkeningFactor),
+            Math.max(0, dominantColor[2] - darkeningFactor)
+          ];
+
+          // Set CSS variables for gradient colors
+          document.documentElement.style.setProperty('--gradient-color', `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`);
+
+          // Apply Gaussian blur to the background gradient using CSS
+          const backgroundDiv = document.getElementById('background');
+          backgroundDiv.style.background = `radial-gradient(circle, var(--gradient-color) 0%, rgba(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]}, 0.95) 10%, rgba(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]}, 0.85) 20%, rgba(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]}, 0) 100%)`;
+
+        
+        })
+        .catch(err => {
+          console.error('Failed to get dominant color:', err);
+        });
+    };
+
+    // Handle the image loading error
+    image.onerror = function() {
+      console.error('Failed to load the banner image.');
     };
   });
 </script>
+
+
+
 
 <!-- Include Pig Gallery script -->
 <script type="text/javascript" src="../js/pig.js"></script>
