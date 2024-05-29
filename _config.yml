@@ -15,6 +15,9 @@ plugins:
   - jemoji
   - jekyll-mentions
   
+include:
+  - node_modules
+  
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title: "PatrickJr's Virtual Photography"
 author: "PatrickJr."

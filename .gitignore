@@ -6,3 +6,4 @@ Gemfile.lock
 .jekyll-cache
 *.gem
 run.bat
+node_modules/.bin/

@@ -4,11 +4,12 @@ title: Home
 ---
 
 <div class="post-grid">
-  {% for post in site.posts %}
+  {% assign sorted_posts = site.posts | sort: 'title' %}
+  {% for post in sorted_posts %}
     {% if site.data.virtual-photography[post.slug] and site.data.virtual-photography[post.slug][post.card-image] %}
       <article class="grid-item">
         <a href="{{ site.github.url }}{{ post.url }}">
-          <div class="featured-post" style="background-image:url({{ site.data.virtual-photography[post.slug][post.card-image].thumbnail-link }}); background-position: right 0px bottom {{post.card-offset}}%;">
+          <div class="featured-post" style="background-image:url({{ site.data.virtual-photography[post.slug][post.card-image].thumbnail-link-600 }}); background-position: right 0px bottom {{post.card-offset}}%;">
             <h2><span>{{ post.title }}</span></h2>
           </div>
         </a>

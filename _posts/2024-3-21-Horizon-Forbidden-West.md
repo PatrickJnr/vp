@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 21 Mar, 2024
+date: 21 Mar 2024
 title: Horizon Forbidden West
 description: 
 developer: Guerrilla Games

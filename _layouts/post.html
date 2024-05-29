@@ -2,86 +2,131 @@
 layout: default
 ---
 
-  {% if page.banner-image %}
-    {% assign banner-pic = site.data.virtual-photography[page.slug][page.banner-image] %}
-  {% else %}
-    {% assign banner-pic = site.data.virtual-photography[page.slug][page.card-image] %}
-  {% endif %}
+{% if page.banner-image %}
+  {% assign banner-pic = site.data.virtual-photography[page.slug][page.banner-image] %}
+{% else %}
+  {% assign banner-pic = site.data.virtual-photography[page.slug][page.card-image] %}
+{% endif %}
 
-  {% assign ar = banner-pic.aspect-ratio | plus: 0 %}
+{% assign ar = banner-pic.aspect-ratio | plus: 0 %}
 
-  <style>
-      
+<style>
+    .banner {
+      background-image: url('{{ banner-pic.image1080-link }}');
+      background-size: cover;
+      background-position: right 0px bottom {{page.banner-offset}}%;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
 
+    .banner-text {
+      text-align: center;
+      color: white;
+    }
+
+    @media (max-width: 767px) {
       .banner {
-        background-image: url('{{ banner-pic.image1080-link }}');
-        background-size: cover;
-        background-position: right 0px bottom {{page.banner-offset}}%;
-        height: 300px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 10px;
-
+        height: 200px;
       }
-
-      .banner-text {
-        text-align: center;
-        color: white;
-      }
-
-      @media (max-width: 767px) {
-        .banner {
-          height: 200px;
-        }
-      }
-	  
-   </style>
+    }
   
-  <div class="banner">
-    <div class="banner-text">
-      <h1><strong>{{ page.title }}</strong></h1>
-      <p><span class="date"><time datetime="{{ page.date | date_to_xmlschema }}"><strong>{{ page.date | date_to_string}}</strong></time><strong>{% if page.developer %} | {{page.developer}} {% endif %}</strong></span> </p>
-    </div>
+    /* Additional style for dynamic background color */
+    #background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+</style>
+
+<!-- Background element -->
+<div id="background"></div>
+
+<!-- Banner -->
+<div class="banner">
+  <div class="banner-text">
+    <h1><strong>{{ page.title }}</strong></h1>
+    <p><span class="date"><time datetime="{{ page.date | date_to_xmlschema }}"><strong>{{ page.date | date_to_string}}</strong></time><strong>{% if page.developer %} | {{page.developer}} {% endif %}</strong></span> </p>
   </div>
-  
-  {% assign c = "c-page-heading" %}
-    <!-- Page heading from page-heading.jekyll.html-->
-    {% if page.description %}
-    <div class="container">
-      <div class="{{c}}">
-          <p class="{{c}}__description">{{ page.description }}</p>
-      </div>
-    </div>
-    {% endif %}
-    <!-- Finish page heading-->
-  
-    
-    <div class="pig-wrapper">
-        <div id="pig"></div>
-    </div>
-    <script type="text/javascript" src="../js/pig.js"></script>
-    <script type="text/javascript">
-      var imageData = [
-      {% for image in site.data.virtual-photography[page.slug] %}
-          {"thumbnail":"{{ image.thumbnail-link }}", "image1080":"{{ image.image1080-link }}", "imageFull":"{{ image.imageFull-link }}", "aspectRatio":{{ image.aspect-ratio }}},
-      {% endfor %}
-      ];
-      var pig = new Pig(imageData, {
-      urlForSize: function(imageUrls, sizewidth) {
-        if (sizewidth <= 1080){
-          return imageUrls.thumbnail;
-        }
-        else if(sizewidth <= 1920){
-          return imageUrls.image1080;
-        }
-        return imageUrls.imageFull;
-      },
-	  addAnchorTag: true,
-      anchorTargetDir: "",
-      anchorClass: "swipebox"
-      }).enable();
-      ;( function( $ ) {
-      $( '.swipebox' ).swipebox();
-      } )( jQuery );
-    </script>
+</div>
+
+{% assign c = "c-page-heading" %}
+<!-- Page heading from page-heading.jekyll.html-->
+{% if page.description %}
+<div class="container">
+  <div class="{{c}}">
+      <p class="{{c}}__description">{{ page.description }}</p>
+  </div>
+</div>
+{% endif %}
+<!-- Finish page heading-->
+
+<!-- Pig Gallery -->
+<div class="pig-wrapper">
+    <div id="pig"></div>
+</div>
+
+<!-- Include ColorThief library from node_modules -->
+<script src="{{ site.baseurl }}/node_modules/color-thief/dist/color-thief.min.js"></script>
+
+<!-- Include Pig Gallery script -->
+<script type="text/javascript" src="../js/pig.js"></script>
+
+<!-- Script for setting dynamic background color -->
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the URL of the banner image specified in the front matter
+    const bannerImageUrl = '{{ site.baseurl }}{{ banner-pic.image1080-link }}';
+
+    // Create an image element and set its source to the banner image URL
+    const image = new Image();
+    image.src = bannerImageUrl;
+
+    // Create a ColorThief instance
+    const colorThief = new ColorThief();
+
+    // Once the image is loaded
+    image.onload = function() {
+      // Get the dominant color from the image
+      const dominantColor = colorThief.getColor(image);
+
+      // Set the background color of the #background element
+      const backgroundDiv = document.getElementById('background');
+      backgroundDiv.style.backgroundColor = `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
+      // Ensure the script's background color takes precedence over CSS
+      backgroundDiv.style.setProperty('background-color', `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`, 'important');
+    };
+  });
+</script>
+
+<!-- Include Pig Gallery script -->
+<script type="text/javascript" src="../js/pig.js"></script>
+<script type="text/javascript">
+  var imageData = [
+    {% for image in site.data.virtual-photography[page.slug] %}
+        {"thumbnail":"{{ image.thumbnail-link }}", "image1080":"{{ image.image1080-link }}", "imageFull":"{{ image.imageFull-link }}", "aspectRatio":{{ image.aspect-ratio }}},
+    {% endfor %}
+  ];
+  var pig = new Pig(imageData, {
+    urlForSize: function(imageUrls, sizewidth) {
+      if (sizewidth <= 1080){
+        return imageUrls.thumbnail;
+      }
+      else if(sizewidth <= 1920){
+        return imageUrls.image1080;
+      }
+      return imageUrls.imageFull;
+    },
+    addAnchorTag: true,
+    anchorTargetDir: "",
+    anchorClass: "swipebox"
+  }).enable();
+  ;( function( $ ) {
+    $( '.swipebox' ).swipebox();
+  } )( jQuery );
+</script>
