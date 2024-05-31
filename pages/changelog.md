@@ -6,6 +6,9 @@ permalink: /changelog
 **May 31, 2024**
 - Fixed Mobile Layout not displaying images.
 - Added two new shots for Fallout 4.
+- Updated Swipebox CSS from new CDN.
+- Updated jQuery version and source URL.
+- Updated Swipebox JavaScript source path.
 
 **May 29, 2024**
 - Reuploaded Fallout 4/Division 2.
