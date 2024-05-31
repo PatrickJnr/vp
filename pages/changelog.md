@@ -9,6 +9,7 @@ permalink: /changelog
 - Updated Swipebox CSS from new CDN.
 - Updated jQuery version and source URL.
 - Updated Swipebox JavaScript source path.
+- Added /changelog to the nav bar instead of the icon.
 
 **May 29, 2024**
 - Reuploaded Fallout 4/Division 2.
