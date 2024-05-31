@@ -1,10 +1,10 @@
-@mixin social-media-icon($color, $transition){
+@mixin social-media-icon($color, $transition) {
   -webkit-transition: $transition;
   -o-transition: $transition;
   -ms-transition: $transition;
   -moz-transition: $transition;
   transition: $transition;
-  &:hover{
+  &:hover {
     color: $color;
   }
 }
@@ -77,4 +77,9 @@
 .fa-steam {
   padding: 5px;
   @include social-media-icon($steam-color, $icon-transition-time);
+}
+
+.fa-clock-rotate-left {
+  padding: 5px;
+  @include social-media-icon($clock-rotate-left-color, $icon-transition-time);
 }

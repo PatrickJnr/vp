@@ -28,6 +28,13 @@ $pinterest-color: #bd081c;
 $medium-color: #00AB6C;
 $codepen-color: black;
 $rss-color: #ff6600;
-
+$clock: #fff;
+$clock-rotate-left-color: #fff;
+ul li, ol li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+  unicode-bidi: isolate;
+  color: #fff;
+}
 
 @import "-sections-dir";
