@@ -135,7 +135,7 @@ layout: default
 <script type="text/javascript">
   var imageData = [
     {% for image in site.data.virtual-photography[page.slug] %}
-        {"thumbnail":"{{ image.thumbnail-link }}", "image1080":"{{ image.image1080-link }}", "imageFull":"{{ image.imageFull-link }}", "aspectRatio":{{ image.aspect-ratio }}},
+        {"thumbnail":"{{ image.thumbnail-link-600 }}", "image1080":"{{ image.image1080-link }}", "imageFull":"{{ image.imageFull-link }}", "aspectRatio":{{ image.aspect-ratio }}},
     {% endfor %}
   ];
   var pig = new Pig(imageData, {
