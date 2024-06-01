@@ -2,38 +2,33 @@
 layout: default
 ---
 
-{% if page.banner-image %}
-  {% assign banner-pic = site.data.virtual-photography[page.slug][page.banner-image] %}
-{% else %}
-  {% assign banner-pic = site.data.virtual-photography[page.slug][page.card-image] %}
-{% endif %}
-
-{% assign ar = banner-pic.aspect-ratio | plus: 0 %}
+{% assign banner_pic = page.banner-image | default: page.card-image %}
+{% assign banner_data = site.data.virtual-photography[page.slug][banner_pic] %}
+{% assign ar = banner_data.aspect-ratio | plus: 0 %}
 
 <style>
     .banner {
-      background-image: url('{{ banner-pic.image1080-link }}');
-      background-size: cover;
-      background-position: right 0px bottom {{page.banner-offset}}%;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 10px;
+        background-image: url('{{ banner_data.image1080-link }}');
+        background-size: cover;
+        background-position: right 0px bottom {{ page.banner-offset | default: 0 }}%;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
     }
 
     .banner-text {
-      text-align: center;
-      color: white;
+        text-align: center;
+        color: white;
     }
 
     @media (max-width: 767px) {
-      .banner {
-        height: 200px;
-      }
+        .banner {
+            height: 200px;
+        }
     }
-  
-    /* Additional style for dynamic background color */
+
     #background {
         position: fixed;
         top: 0;
@@ -49,20 +44,18 @@ layout: default
 
 <!-- Banner -->
 <div class="banner">
-  <div class="banner-text">
-    <h1><strong>{{ page.title }}</strong></h1>
-    <p><span class="date"><time datetime="{{ page.date | date_to_xmlschema }}"><strong>{{ page.date | date_to_string }}</strong></time><strong>{% if page.developer %} | {{page.developer}} {% endif %}</strong></span> </p>
-  </div>
+    <div class="banner-text">
+        <h1><strong>{{ page.title }}</strong></h1>
+        <p><span class="date"><time datetime="{{ page.date | date_to_xmlschema }}"><strong>{{ page.date | date_to_string }}</strong></time><strong>{% if page.developer %} | {{ page.developer }} {% endif %}</strong></span></p>
+    </div>
 </div>
 
-{% assign c = "c-page-heading" %}
-<!-- Page heading from page-heading.jekyll.html-->
 {% if page.description %}
-<div class="container">
-  <div class="{{c}}">
-      <p class="{{c}}__description">{{ page.description }}</p>
-  </div>
-</div>
+    <div class="container">
+        <div class="c-page-heading">
+            <p class="c-page-heading__description">{{ page.description }}</p>
+        </div>
+    </div>
 {% endif %}
 <!-- Finish page heading-->
 
@@ -76,83 +69,55 @@ layout: default
 
 <!-- Include Pig Gallery script -->
 <script type="text/javascript" src="../js/pig.js"></script>
-<br>
 
 <!-- Script for setting dynamic background color -->
-
 <script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function() {
-    // Get the URL of the banner image specified in the front matter
-    const bannerImageUrl = '{{ banner-pic.image1080-link }}';
-
-    // Create an image element and set its source to the banner image URL
-    const image = new Image();
-    image.crossOrigin = 'Anonymous';
-    image.src = bannerImageUrl;
-
-    // Ensure the image is loaded before processing it with Vibrant.js
-    image.onload = function() {
-      // Create a Vibrant instance and get the palette
-      Vibrant.from(image).getPalette()
-        .then(palette => {
-          // Get the dominant color
-          let dominantColor = palette.Muted.rgb;
-
-          // Adjust each RGB component to make the color slightly darker
-          const darkeningFactor = 20; // Adjust this value to control the darkness
-          dominantColor = [
-            Math.max(0, dominantColor[0] - darkeningFactor),
-            Math.max(0, dominantColor[1] - darkeningFactor),
-            Math.max(0, dominantColor[2] - darkeningFactor)
-          ];
-
-          // Set CSS variables for gradient colors
-          document.documentElement.style.setProperty('--gradient-color', `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`);
-
-          // Apply Gaussian blur to the background gradient using CSS
-          const backgroundDiv = document.getElementById('background');
-          backgroundDiv.style.background = `radial-gradient(circle, var(--gradient-color) 0%, rgba(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]}, 0.95) 10%, rgba(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]}, 0.85) 20%, rgba(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]}, 0) 100%)`;
-
-        
-        })
-        .catch(err => {
-          console.error('Failed to get dominant color:', err);
-        });
-    };
-
-    // Handle the image loading error
-    image.onerror = function() {
-      console.error('Failed to load the banner image.');
-    };
-  });
+    document.addEventListener('DOMContentLoaded', function() {
+        const bannerImageUrl = '{{ banner_data.image1080-link }}';
+        const image = new Image();
+        image.crossOrigin = 'Anonymous';
+        image.src = bannerImageUrl;
+        image.onload = function() {
+            Vibrant.from(image).getPalette()
+                .then(palette => {
+                    let dominantColor = palette.Muted.rgb.map(value => Math.max(0, value - 20));
+                    document.documentElement.style.setProperty('--gradient-color', `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`);
+                    const backgroundDiv = document.getElementById('background');
+                    backgroundDiv.style.background = `radial-gradient(circle, var(--gradient-color) 0%, rgba(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]}, 0.95) 10%, rgba(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]}, 0.85) 20%, rgba(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]}, 0) 100%)`;
+                })
+                .catch(err => {
+                    console.error('Failed to get dominant color:', err);
+                });
+        };
+        image.onerror = function() {
+            console.error('Failed to load the banner image.');
+        };
+    });
 </script>
-
-
-
-
-<!-- Include Pig Gallery script -->
-<script type="text/javascript" src="../js/pig.js"></script>
+<br>
+<!-- Pig Gallery initialization -->
 <script type="text/javascript">
-  var imageData = [
-    {% for image in site.data.virtual-photography[page.slug] %}
-        {"thumbnail":"{{ image.thumbnail-link-600 }}", "image1080":"{{ image.image1080-link }}", "imageFull":"{{ image.imageFull-link }}", "aspectRatio":{{ image.aspect-ratio }}},
-    {% endfor %}
-  ];
-  var pig = new Pig(imageData, {
-    urlForSize: function(imageUrls, sizewidth) {
-      if (sizewidth <= 1080){
-        return imageUrls.thumbnail;
-      }
-      else if(sizewidth <= 1920){
-        return imageUrls.image1080;
-      }
-      return imageUrls.imageFull;
-    },
-    addAnchorTag: true,
-    anchorTargetDir: "",
-    anchorClass: "swipebox"
-  }).enable();
-  ;( function( $ ) {
-    $( '.swipebox' ).swipebox();
-  } )( jQuery );
+    var imageData = [
+        {% assign images = site.data.virtual-photography[page.slug] | reverse %}
+        {% for image in images %}
+            {"thumbnail":"{{ image.thumbnail-link-600 }}", "image1080":"{{ image.image1080-link }}", "imageFull":"{{ image.imageFull-link }}", "aspectRatio":{{ image.aspect-ratio }}},
+        {% endfor %}
+    ];
+    var pig = new Pig(imageData, {
+        urlForSize: function(imageUrls, sizewidth) {
+            if (sizewidth <= 1080){
+                return imageUrls.thumbnail;
+            }
+            else if(sizewidth <= 1920){
+                return imageUrls.image1080;
+            }
+            return imageUrls.imageFull;
+        },
+        addAnchorTag: true,
+        anchorTargetDir: "",
+        anchorClass: "swipebox"
+    }).enable();
+    ;( function( $ ) {
+        $( '.swipebox' ).swipebox();
+    } )( jQuery );
 </script>

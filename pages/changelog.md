@@ -3,7 +3,18 @@ layout: page
 title: Changelog
 permalink: /changelog
 ---
-
+### June 1, 2024
+- **Layout Refinement**:
+  - Adjusted banner-image handling for improved flexibility.
+  - Minor CSS refinements in the `.banner` class.
+  - Introduced `darkeningFactor` for better control over background color darkness.
+  - Reversed Image Sorting in the gallery, so new images show at the top.
+- **Script Optimization**:
+  - Moved Pig Gallery initialization script to the end of the file for better organization.
+  - Optimized Pig Gallery script for clarity and efficiency.
+- **Code Cleanup**:
+  - Removed duplicate inclusion of `pig.js`.
+  - Enhanced script comments for better understanding.
 
 ### May 31, 2024
 - **Fixed Mobile Layout**:
