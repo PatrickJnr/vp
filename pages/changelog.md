@@ -4,6 +4,12 @@ title: Changelog
 permalink: /changelog
 ---
 
+## June 18, 2024
+
+**New Content:**
+
+* **Starfield Fans:** Added 5 images for your viewing pleasure!
+
 ## June 1, 2024
 
 **New Features:**
