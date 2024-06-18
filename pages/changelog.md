@@ -6,15 +6,19 @@ permalink: /changelog
 
 ## June 18, 2024
 
+**Updates:**
+
+* **Description:** Removed unused descriptions in gallery pages.
+
 **New Content:**
 
-* **Starfield Fans:** Added 5 images for your viewing pleasure!
+* **Starfield Fans:** Added 5 new images for your viewing pleasure!
 
 ## June 1, 2024
 
 **New Features:**
 
-* **Banner Customization:** Improved handling of banner images, allowing for more control over their appearance.
+* **Banner Customization:** Improved handling of banner images, providing more control over their appearance.
 * **Dark Mode Control:** Introduced `darkeningFactor` for finer control over background color darkness in dark mode.
 * **Fresh on Top:** New images now appear at the top of the gallery for easier discovery.
 
@@ -28,82 +32,83 @@ permalink: /changelog
 
 **Bug Fixes:**
 
-* **Mobile Image Woes:** Images now display correctly on mobile devices, fixing a frustrating issue.
+* **Mobile Image Display:** Images now display correctly on mobile devices, resolving a previous issue.
 
 **New Content:**
 
-* **Fallout 4 Fanatics Rejoice!:** Two new screenshots added to the Fallout 4 gallery for your viewing pleasure.
+* **Fallout 4:** Added two new screenshots to the Fallout 4 gallery for your viewing pleasure.
 
 **Updates:**
 
-* **Swipebox Revamp:** Swipebox CSS updated from a new CDN for better performance.
+* **Swipebox Revamp:** Updated Swipebox CSS from a new CDN for better performance.
 * **jQuery Refresh:** Updated jQuery version and source URL for continued compatibility.
-* **Swipebox on the Move:** Updated Swipebox JavaScript source path.
-* **Changelog Spruce Up:**  Gave the Changelog page a refresh to make it more visually appealing.
-* **Navigation Boost:** Added `/changelog` directly to the navigation bar for easier access.
+* **Swipebox Relocation:** Updated Swipebox JavaScript source path.
+* **Changelog Update:** Refreshed the Changelog page for improved visual appeal.
+* **Navigation Enhancement:** Added `/changelog` directly to the navigation bar for easier access.
 
 ## May 29, 2024
 
 **Content Refresh:**
 
-* **Fallout 4 & The Division 2:** Reuploaded Fallout 4/Division 2 content to ensure everything is tip-top.
+* **Fallout 4 & The Division 2:** Reuploaded content to ensure everything is in top condition.
 * **Vibrant Arrival:** Added Vibrant.js for potential future enhancements.
-* **New Images Added:** Feast your eyes on "Ghost of Tsushima" and "Little Kitty, Big City" images.
+* **New Images Added:** Enjoy new images from "Ghost of Tsushima" and "Little Kitty, Big City."
 * **Gallery Reorganization:** Gallery items are now sorted alphabetically for easier browsing.
 
 ## March 29, 2024
 
 **Layout Adjustments:**
 
-* Updated header.html.
-* Hamburger Menu (4 Row) removed.
+* Updated `header.html`.
+* Removed 4-row Hamburger Menu.
+
 ## March 25, 2024
 
 **Website Improvements:**
 
-* Favicon issue resolved.
-* Favicon.ico updated.
-* Footer.html updated.
-* Website enhancements: Rounded corners, hover effects, layout adjustments, game galleries.
-* 404.md updated.
+* Resolved favicon issue.
+* Updated `favicon.ico`.
+* Updated `footer.html`.
+* Website enhancements: Rounded corners, hover effects, layout adjustments, and game galleries.
+* Updated `404.md`.
 
 ## March 24, 2024
 
 **404 Page Update:**
 
-* Updated 404.md.
+* Updated `404.md`.
 
 ## March 7, 2024
 
 **Settings Update:**
 
-* Updated google-analytics.html.
-* Updated settings.yml.
+* Updated `google-analytics.html`.
+* Updated `settings.yml`.
 
 **Homepage Enhancements:**
 
-* Grid layout implemented.
-* Custom 404 page added.
-* RDR2 and Control images updated.
+* Implemented grid layout.
+* Added custom 404 page.
+* Updated RDR2 and Control images.
 
 ## March 3-4, 2024
 
 **Styling Updates:**
 
-* Various updates to _header.scss, pig.js, main.scss.
+* Various updates to `_header.scss`, `pig.js`, `main.scss`.
 * Division 2 updates: Layout adjustments, font updates, dynamic gallery size adjustment.
 
 ## March 2, 2024
 
 **Styling Fixes:**
 
-* Banner-offset adjusted.
-* Thumbnail display issue fixed.
+* Adjusted banner offset.
+* Fixed thumbnail display issue.
 
 **Content Updates:**
 
-* README.md updates.
+* Updated `README.md`.
 * Post and asset changes.
-* Updated featured-post.html, Fallout-4.json, Gemfile.
+* Updated `featured-post.html`, `Fallout-4.json`, `Gemfile`.
 
-**For detailed information, visit the [repository commit history](https://github.com/PatrickJnr/vp/commits/main/).**
+For detailed information, visit the [repository commit history](https://github.com/PatrickJnr/vp/commits/main).
