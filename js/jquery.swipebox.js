@@ -1,6 +1,6 @@
 /*! Swipebox v1.5.2 | Constantin Saguin csag.co | MIT License | github.com/brutaldesign/swipebox */
 
-;( function ( window, document, $, undefined ) {
+( function ( window, document, $, undefined ) {
 
 	$.swipebox = function( elem, options ) {
 
