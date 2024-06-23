@@ -856,7 +856,7 @@
           anchor.appendChild(this.fullImage);
           this.getElement().appendChild(anchor);
 
-          ;( function( $ ) {
+          ( function( $ ) {
             $( '.swipebox' ).swipebox();
           } )( jQuery );
         } else {
