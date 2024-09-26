@@ -4,6 +4,22 @@ title: Changelog
 permalink: /changelog
 ---
 
+## September 26, 2024
+
+**Updates:**
+* **Banner Design:** Updated the banner height for different screen sizes to enhance responsiveness.
+* **Text Shadow:** Applied a text shadow to improve the visibility of text over the banner image.
+* **Dynamic Background Transition:** Added smooth transitions for background color and positioning.
+
+**New Features:**
+* **Loading Spinner:** Introduced a loading spinner for better user feedback while the banner image loads.
+* **Lazy Loading:** Enabled lazy loading for the banner image to improve performance.
+* **Hover Effects:** Added subtle zoom and shadow effects on gallery images for a more interactive experience.
+
+**Fixes:**
+* **Fallback Background Color:** Implemented a fallback dark background color in case Vibrant.js fails to retrieve the dominant color from the banner image.
+
+
 ## July 21, 2024
 
 **Updates:**

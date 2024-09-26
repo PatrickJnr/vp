@@ -16,16 +16,30 @@ layout: default
         align-items: center;
         justify-content: center;
         margin-bottom: 10px;
+        transition: background-position 0.5s ease-in-out, height 0.3s ease;
     }
 
     .banner-text {
         text-align: center;
         color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
 
     @media (max-width: 767px) {
         .banner {
             height: 200px;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+        .banner {
+            height: 250px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .banner {
+            height: 400px;
         }
     }
 
@@ -36,11 +50,46 @@ layout: default
         width: 100%;
         height: 100%;
         z-index: -1;
+        background-color: #1c1c1e; /* Fallback dark color */
+        transition: background 0.5s ease-in-out;
+    }
+
+    /* Spinner styling */
+    .spinner {
+        border: 6px solid rgba(255, 255, 255, 0.3);
+        border-top: 6px solid #fff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -20px;
+        margin-left: -20px;
+        z-index: 1000;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .pig-wrapper img {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .pig-wrapper img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
 </style>
 
 <!-- Background element -->
 <div id="background"></div>
+
+<!-- Loading Spinner -->
+<div id="spinner" class="spinner"></div>
 
 <!-- Banner -->
 <div class="banner">
@@ -77,7 +126,9 @@ layout: default
         const image = new Image();
         image.crossOrigin = 'Anonymous';
         image.src = bannerImageUrl;
+        image.loading = 'lazy'; // Use lazy loading for performance
         image.onload = function() {
+            document.getElementById('spinner').style.display = 'none'; // Hide spinner once image is loaded
             Vibrant.from(image).getPalette()
                 .then(palette => {
                     let dominantColor = palette.Muted.rgb.map(value => Math.max(0, value - 20));
@@ -103,12 +154,12 @@ layout: default
             {"thumbnail":"{{ image.thumbnail-link-600 }}", "image1080":"{{ image.image1080-link }}", "imageFull":"{{ image.imageFull-link }}", "aspectRatio":{{ image.aspect-ratio }}},
         {% endfor %}
     ];
+
     var pig = new Pig(imageData, {
         urlForSize: function(imageUrls, sizewidth) {
-            if (sizewidth <= 1080){
+            if (sizewidth <= 1080) {
                 return imageUrls.thumbnail;
-            }
-            else if(sizewidth <= 1920){
+            } else if (sizewidth <= 1920) {
                 return imageUrls.image1080;
             }
             return imageUrls.imageFull;
@@ -117,7 +168,8 @@ layout: default
         anchorTargetDir: "",
         anchorClass: "swipebox"
     }).enable();
-    ;( function( $ ) {
+
+    ( function( $ ) {
         $( '.swipebox' ).swipebox();
     } )( jQuery );
 </script>
