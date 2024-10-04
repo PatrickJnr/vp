@@ -4,6 +4,12 @@ title: Changelog
 permalink: /changelog
 ---
 
+## October 4, 2024
+
+**New Content:**
+* **Star Wars Outlaws:** Added new screenshots.
+* **Starfield:** Added two new shots to the Starfield gallery.
+
 ## September 26, 2024
 
 **Updates:**
