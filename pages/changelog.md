@@ -4,6 +4,11 @@ title: Changelog
 permalink: /changelog
 ---
 
+## October 19, 2024
+
+**Updates:**
+* **Control:** Added two new images to the Control gallery.
+
 ## October 4, 2024
 
 **New Content:**

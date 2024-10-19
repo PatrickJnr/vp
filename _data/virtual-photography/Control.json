@@ -12,5 +12,19 @@
         "thumbnail-link-600": "https://i.imgur.com/t93x6Yy.jpeg",
         "image1080-link": "https://i.imgur.com/0PNzfs8.jpeg",
         "aspect-ratio": "2.3703703703703702"
+    },
+    {
+        "file_name": "Brutalism.png",
+        "imageFull-link": "https://i.imgur.com/mTBNGJw.png",
+        "thumbnail-link-600": "https://i.imgur.com/Kd5wd6V.jpeg",
+        "image1080-link": "https://i.imgur.com/aKCYW0E.jpeg",
+        "aspect-ratio": "1.7777777777777777"
+    },
+    {
+        "file_name": "CentreRoom.png",
+        "imageFull-link": "https://i.imgur.com/6rc16VQ.png",
+        "thumbnail-link-600": "https://i.imgur.com/6oUXJ4S.jpeg",
+        "image1080-link": "https://i.imgur.com/WBVhSu8.jpeg",
+        "aspect-ratio": "2.388888888888889"
     }
 ]
