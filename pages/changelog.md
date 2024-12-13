@@ -4,130 +4,135 @@ title: Changelog
 permalink: /changelog
 ---
 
+## December 13, 2024
+
+### New Content
+- **Infinity Nikki:** Added a gallery with two new screenshots.
+- **Star Wars Outlaws:** Added a new screenshot.
+
+### Updates
+- Updated the changelog page.
+
+---
+
 ## October 19, 2024
 
-**Updates:**
-* **Control:** Added two new images to the Control gallery.
+### Updates
+- **Control:** Added two new images to the gallery.
+
+---
 
 ## October 4, 2024
 
-**New Content:**
-* **Star Wars Outlaws:** Added new screenshots.
-* **Starfield:** Added two new shots to the Starfield gallery.
+### New Content
+- **Star Wars Outlaws:** Added new screenshots.
+- **Starfield:** Added two new shots to the gallery.
+
+---
 
 ## September 26, 2024
 
-**Updates:**
-* **Banner Design:** Updated the banner height for different screen sizes to enhance responsiveness.
-* **Text Shadow:** Applied a text shadow to improve the visibility of text over the banner image.
-* **Dynamic Background Transition:** Added smooth transitions for background color and positioning.
+### Website Enhancements
 
-**New Features:**
-* **Loading Spinner:** Introduced a loading spinner for better user feedback while the banner image loads.
-* **Lazy Loading:** Enabled lazy loading for the banner image to improve performance.
-* **Hover Effects:** Added subtle zoom and shadow effects on gallery images for a more interactive experience.
+#### New Features
+- **Performance Improvements:**
+  - Introduced a loading spinner for better user feedback.
+  - Enabled lazy loading for banner images.
+  - Added subtle hover effects on gallery images.
 
-**Fixes:**
-* **Fallback Background Color:** Implemented a fallback dark background color in case Vibrant.js fails to retrieve the dominant color from the banner image.
+- **Styling Improvements:**
+  - Updated banner height for responsive design.
+  - Applied text shadow for improved text visibility.
+  - Added smooth background transitions.
 
+#### Fixes
+- Implemented fallback dark background color in case Vibrant.js color retrieval fails.
+
+---
 
 ## July 21, 2024
 
-**Updates:**
-* **Cyberpunk 2077:** Added two new images to the Cyberpunk 2077 gallery.
+### Updates
+- **Cyberpunk 2077:** Added two new images to the gallery.
+- **Once Human:** Added two new images.
 
-**New Content:**
-* **Once Human:** Added two images to the Once Human gallery.
+---
 
 ## June 18, 2024
 
-**Updates:**
-* **Description:** Removed unused descriptions from gallery pages.
+### Updates
+- Removed unused descriptions from gallery pages.
+- **Starfield Fans:** Added five new images.
 
-**New Content:**
-* **Starfield Fans:** Added five new images for viewing pleasure.
+---
 
 ## June 1, 2024
 
-**New Features:**
-* **Banner Customization:** Improved control over banner image appearance.
-* **Dark Mode Control:** Introduced `darkeningFactor` for better background color management in dark mode.
-* **Fresh on Top:** New images now appear at the top of the gallery for easier discovery.
+### New Features
+- **Banner Customization:**
+  - Improved banner image appearance controls.
+  - Introduced `darkeningFactor` for managing dark mode backgrounds.
+  - New images now appear at the top of galleries.
 
-**Optimizations:**
-* **Script Organization:** Moved Pig Gallery initialization script to the end of the file for better organization.
-* **Pig Gallery Boost:** Optimized the Pig Gallery script for better clarity, efficiency, and performance.
-* **Code Clean Up:** Removed duplicate `pig.js` inclusions and added comments for better code understanding.
+### Optimizations
+- Reorganized and optimized gallery initialization scripts.
+- Cleaned up code and removed duplicate inclusions.
+
+---
 
 ## May 31, 2024
 
-**Bug Fixes:**
-* **Mobile Image Display:** Fixed issue causing images not to display correctly on mobile devices.
+### Updates
+- Updated Swipebox and jQuery resources.
+- Enhanced Changelog page.
+- Added `/changelog` link to the navigation bar.
 
-**New Content:**
-* **Fallout 4:** Added two new screenshots to the Fallout 4 gallery.
+### Bug Fixes
+- Fixed mobile image display issues.
+- **Fallout 4:** Added two new screenshots.
 
-**Updates:**
-* **Swipebox Revamp:** Updated Swipebox CSS from a new CDN for better performance.
-* **jQuery Refresh:** Updated jQuery version and source URL for continued compatibility.
-* **Swipebox Relocation:** Updated Swipebox JavaScript source path.
-* **Changelog Update:** Enhanced the Changelog page for improved visual appeal.
-* **Navigation Enhancement:** Added `/changelog` to the navigation bar for easier access.
+---
 
 ## May 29, 2024
 
-**Content Refresh:**
-* **Fallout 4 & The Division 2:** Reuploaded content to ensure optimal condition.
-* **Vibrant Arrival:** Added Vibrant.js for future enhancements.
-* **New Images Added:** Added new images from "Ghost of Tsushima" and "Little Kitty, Big City."
-* **Gallery Reorganization:** Sorted gallery items alphabetically for easier browsing.
+### Content Refresh
+- **Gallery Improvements:**
+  - Added Vibrant.js for future enhancements.
+  - Re-uploaded Fallout 4 & The Division 2 content.
+  - Added new images from *Ghost of Tsushima* and *Little Kitty, Big City*.
+  - Alphabetized gallery items.
 
-## March 29, 2024
+---
 
-**Layout Adjustments:**
-* Updated `header.html`.
-* Removed four-row Hamburger Menu.
+## March Updates
 
-## March 25, 2024
+### March 29, 2024
+- Updated `header.html`.
+- Removed the four-row Hamburger Menu.
 
-**Website Improvements:**
-* Resolved favicon issue.
-* Updated `favicon.ico`.
-* Updated `footer.html`.
-* Enhanced website: rounded corners, hover effects, layout adjustments, and game galleries.
-* Updated `404.md`.
+### March 25, 2024
+- Resolved favicon issue.
+- Updated `favicon.ico` and `footer.html`.
+- Enhanced website design with rounded corners and hover effects.
 
-## March 24, 2024
+### March 7, 2024
+- Implemented homepage grid layout.
+- Added custom 404 page.
+- Updated RDR2 and Control images.
+- Updated Google Analytics and site settings.
 
-**404 Page Update:**
-* Updated `404.md`.
+---
 
-## March 7, 2024
+## Earlier Updates
 
-**Settings Update:**
-* Updated `google-analytics.html`.
-* Updated `settings.yml`.
+### March 3-4, 2024
+- Styling updates for `_header.scss`, `pig.js`, and `main.scss`.
+- Updated layout and fonts for *The Division 2*.
 
-**Homepage Enhancements:**
-* Implemented grid layout.
-* Added custom 404 page.
-* Updated RDR2 and Control images.
+### March 2, 2024
+- Fixed banner offset and thumbnail display.
+- Updated `README.md` and various configuration files.
 
-## March 3-4, 2024
+---
 
-**Styling Updates:**
-* Various updates to `_header.scss`, `pig.js`, `main.scss`.
-* Division 2 updates: layout adjustments, font updates, dynamic gallery size adjustment.
-
-## March 2, 2024
-
-**Styling Fixes:**
-* Adjusted banner offset.
-* Fixed thumbnail display issue.
-
-**Content Updates:**
-* Updated `README.md`.
-* Post and asset changes.
-* Updated `featured-post.html`, `Fallout-4.json`, `Gemfile`.
-
-For detailed information, visit the [repository commit history](https://github.com/PatrickJnr/vp/commits/main).
+*For more detailed information, please visit the [repository commit history](https://github.com/PatrickJnr/vp/commits/main).*
