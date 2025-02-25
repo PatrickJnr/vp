@@ -4,6 +4,30 @@ title: Changelog
 permalink: /changelog
 ---
 
+## February 25, 2025
+
+### New Content
+- **Assassin's Creed Valhalla:** Added a gallery with six new images.
+
+### Website Maintenance and Modernization
+- **Resolved Jekyll Build Issues:**  Fixed a series of configuration and dependency problems that were preventing the site from building and serving correctly.  This involved:
+    - Correcting the Jekyll version in the `Gemfile`.
+    - Adding required gems (`ostruct`, `wdm`) to the `Gemfile`.
+    - Removing the incompatible `jekyll-cache` plugin (and updating `_config.yml` accordingly).
+    - Ensuring the `jekyll` gem was explicitly listed as a dependency.
+    - Correcting a syntax error (missing `end`) in the `Gemfile`.
+- **Modernized Sass:**  Updated the Sass stylesheets to use the modern `@use` and `@forward` rules, replacing the deprecated `@import` rule. This involved:
+    - Moving Sass partials (`.scss` files) to the correct `assets/css` directory.
+    - Updating `@import` statements to `@use` or `@forward` as appropriate.
+    - Defining Sass variables within the partials where they are used, ensuring correct scoping.
+    - Removing unnecessary front matter from `main.scss`.
+    - Correcting file paths and names.
+
+### Updates
+- Updated the scroll bar to seamlessly integrate with the website’s design.
+
+---
+
 ## December 13, 2024
 
 ### New Content
@@ -39,7 +63,6 @@ permalink: /changelog
   - Introduced a loading spinner for better user feedback.
   - Enabled lazy loading for banner images.
   - Added subtle hover effects on gallery images.
-
 - **Styling Improvements:**
   - Updated banner height for responsive design.
   - Applied text shadow for improved text visibility.
@@ -104,18 +127,26 @@ permalink: /changelog
 
 ---
 
-## March Updates
+## March 29, 2024
 
-### March 29, 2024
+### Updates
 - Updated `header.html`.
 - Removed the four-row Hamburger Menu.
 
-### March 25, 2024
+---
+
+## March 25, 2024
+
+### Updates
 - Resolved favicon issue.
 - Updated `favicon.ico` and `footer.html`.
 - Enhanced website design with rounded corners and hover effects.
 
-### March 7, 2024
+---
+
+## March 7, 2024
+
+### Updates
 - Implemented homepage grid layout.
 - Added custom 404 page.
 - Updated RDR2 and Control images.
@@ -123,13 +154,17 @@ permalink: /changelog
 
 ---
 
-## Earlier Updates
+## March 3-4, 2024
 
-### March 3-4, 2024
+### Updates
 - Styling updates for `_header.scss`, `pig.js`, and `main.scss`.
 - Updated layout and fonts for *The Division 2*.
 
-### March 2, 2024
+---
+
+## March 2, 2024
+
+### Updates
 - Fixed banner offset and thumbnail display.
 - Updated `README.md` and various configuration files.
 

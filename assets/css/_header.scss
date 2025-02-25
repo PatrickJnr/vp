@@ -1,3 +1,6 @@
+$container-width: 1100px;
+$header-thickness: 56px;
+
 .site-header {
   min-height: 56px;
   width: $container-width;
@@ -5,6 +8,7 @@
   background-color: #0e0e10;
   z-index: 100;
 }
+
 @media (max-width: $container-width) {
   .site-header {
     min-height: 56px;
@@ -14,9 +18,11 @@
     z-index: 100;
   }
 }
+
 .site-header a {
   text-decoration: none;
 }
+
 .site-title {
   font-size: 26px;
   font-weight: 400;
@@ -26,10 +32,12 @@
   padding-left: 10px;
   float: left;
 }
+
 .menu-list {
   line-height: $header-thickness;
-  float: right;	
+  float: right;
 }
+
 .menu-link {
   padding: 5px 10px;
 }
@@ -46,6 +54,7 @@
     display: none;
   }
 }
+
 @media (max-width: $container-width) {
   .menu-list {
     display: none;

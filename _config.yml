@@ -1,33 +1,46 @@
-# Site Build Settings
-
-# jekyll-paginate configuration
-
-
-# Build settings
 markdown: kramdown
 highlighter: rouge
-permalink: /:title/
+permalink: '/:title/'
 plugins:
-# - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-seo-tag
   - jemoji
   - jekyll-mentions
-  
+  # - jekyll-cache  <-- REMOVED jekyll-cache from the plugins list
+
+# Removed the entire jekyll-cache configuration section:
+# jekyll-cache:
+#   enabled: true
+
 include:
-  - node_modules
-  
-# Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
-title: "PatrickJr's Virtual Photography"
-author: "PatrickJr."
-description: 📷
+  - node_modules  # You probably need this for your Parcel/Webpack setup
+title: PatrickJr's Virtual Photography
+author:
+  name: PatrickJr.
+  email: admin@grimtech.co.uk
+  url: 'https://vp.grimtech.co.uk'
+description: "📷 Virtual photography"
 repository: PatrickJnr/vp
-github: PatrickJnr/vp
-
-# RSS 2.0 can be used instead of Atom by uncommenting following two lines
-# feed:
-#   path: rss-feed.xml
-
+github: 'https://github.com/PatrickJnr/vp'
+feed:
+  path: rss-feed.xml
+sitemap:
+  url: 'https://vp.grimtech.co.uk' #this is redundant
+jekyll-seo-tag:
+  title: PatrickJr's Virtual Photography
+  description: Explore PatrickJr's virtual photography world and creative captures.
+  image: /assets/images/LilFella.png
 jekyll-mentions:
-  base_url: https://twitter.com
+  base_url: 'https://twitter.com'
+favicon: /assets/img/favicon.ico
+
+# Removed caching and cache_dir. Jekyll 4+ handles this automatically.
+# caching: true
+# cache_dir: _cache
+
+google_analytics: G-XXPKD9SFHL
+header:
+  title: PatrickJr's Virtual Photography
+  tagline: Capturing the digital world through lenses.
+  image: /assets/images/header.jpg

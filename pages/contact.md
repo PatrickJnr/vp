@@ -3,10 +3,12 @@ layout: page
 title: Contact
 permalink: /contact
 ---
-For any inquiries or information, reach out to me through social media.
 
-## Social Media
+## Get in Touch!
 
-Stay updated with me:
+Have questions or just want to say hello? I’d love to connect! For inquiries or more information, feel free to reach out via social media.
 
+## Connect on Social Media
+
+Stay updated on my latest adventures:
 - [Twitter](https://twitter.com/_PatrickJnr)

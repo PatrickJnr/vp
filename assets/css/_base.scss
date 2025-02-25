@@ -1,6 +1,5 @@
-/*
-  Reset some basic elements
-*/
+$base-font-family: 'Exo 2', sans-serif;
+$body-font-family: 'Exo 2', sans-serif;
 
 body, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
@@ -9,59 +8,46 @@ dl, dd, ol, ul, figure {
   padding: 0;
 }
 
-/*
-  Basic styling
-*/
-
-/* Headings */
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
   font-weight: bold;
   line-height: 1.25;
   text-rendering: optimizeLegibility;
-  color: white;
+  color: #eff1f5;
 }
 
 h1 {
   font-size: 2rem;
-  color: white;
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5),  
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
 h2 {
   margin-top: 1rem;
   font-size: 1.5rem;
-  color: white;
 }
 h3 {
   margin-top: 1.5rem;
   font-size: 1.25rem;
-  color: white;
 }
 h4, h5, h6 {
   margin-top: 1rem;
   font-size: 1rem;
-  color: white;
 }
 
-/* Body */
 body {
   font-family: $base-font-family;
-  background-color: #0e0e10; /* Dark background color similar to Twitch */
+  background-color: #0e0e10;
 }
 
 p {
-  color: white;
+  color: #eff1f5;
   display: block;
   margin-top: 1em;
   margin-bottom: 1em;
-  margin-left: 0;
-  margin-right: 0;
   line-height: 1.65;
   font-family: $body-font-family;
- text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5), 
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
 }
 
-/* Lists */
 ul, ol, dl {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -72,7 +58,6 @@ ul, ol, dl {
 ol li {
   margin-top: 1rem;
   margin-bottom: 1rem;
-  margin-left: 1.5rem;
 }
 
 li {
@@ -86,30 +71,19 @@ dd {
   margin-bottom: .5rem;
 }
 
-/*
-  Links
-*/
-
 a {
-  color: $brand-color;
+  color: #fff;
   text-decoration: none;
 }
-
-/*
-  Blockquote
-*/
 
 blockquote {
   margin: 10px 20px;
   padding: 0px 15px;
-  border-left: 0.25em solid #ccc;
-  color: #999;
+  border-left: 0.25em solid #bf9ae8;
+  color: #4c4f69;
   line-height: 1.5;
 }
 
-/**
- * Tables
- */
 table {
   border-collapse: collapse;
   margin-bottom: 30px;
@@ -117,7 +91,7 @@ table {
 }
 
 table, th, td {
-  border: 1px solid black;
+  border: 1px solid #4c4f69;
 }
 th, td {
   padding: 15px;
@@ -128,4 +102,29 @@ th, td {
   max-width: auto;
   width: 100%;
   height: auto;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #1a1a21;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4c4f69;
+  border-radius: 10px;
+  border: 2px solid #1a1a21;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #bf9ae8;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #1a1a21;
+}
+
+html {
+  scrollbar-width: auto;
+  scrollbar-color: #4c4f69 #1a1a21;
+  scrollbar-gutter: auto;
 }

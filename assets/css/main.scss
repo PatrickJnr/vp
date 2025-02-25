@@ -1,5 +1,6 @@
 ---
 ---
+@use "_sections-dir";
 
 $base-font-family: 'Exo 2', sans-serif;
 $body-font-family: 'Exo 2', sans-serif;
@@ -30,11 +31,10 @@ $codepen-color: black;
 $rss-color: #ff6600;
 $clock: #fff;
 $clock-rotate-left-color: #fff;
+
 ul li, ol li {
   display: list-item;
   text-align: -webkit-match-parent;
   unicode-bidi: isolate;
   color: #fff;
 }
-
-@import "-sections-dir";
