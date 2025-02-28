@@ -15,4 +15,10 @@ The site is built using [Jekyll](https://jekyllrb.com/), a static site generator
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### Code
+
+The code for this website is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+### Screenshots
+
+All screenshots in this portfolio are copyright PatrickJr and are licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/). This means you are free to share and use the screenshots for non-commercial purposes, as long as you give appropriate credit.
