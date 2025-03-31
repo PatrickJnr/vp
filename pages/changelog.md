@@ -4,6 +4,11 @@ title: Changelog
 permalink: /changelog
 ---
 
+## March 20, 2025
+
+### New Content
+- **Assassin's Creed Shadows:** Added a gallery with five new images.
+
 ## February 25, 2025
 
 ### New Content
