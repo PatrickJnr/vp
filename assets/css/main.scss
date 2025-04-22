@@ -1,75 +1,31 @@
 ---
 ---
-@use "_sections-dir";
 
-// Typography
-$base-font-family: 'Exo 2', sans-serif;
-$body-font-family: 'Exo 2', sans-serif;
-$code-font-family: "Exo 2", sans-serif;
-$base-font-size: 16px;
-$small-font-size: 0.875rem;
-$base-line-height: 1.7;
+// Abstracts
+@use "sass:color";
+@use "sass:math";
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
 
-// Colors
-$brand-color: #fff;
-$background-color: #0e0e10;
-$background-alt: #1a1a21;
-$text-color: #eff1f5;
-$text-muted: #9a9a9a;
-$border-color: #4c4f69;
-$accent-color: #bf9ae8;
-$code-color: #8bc34a;
-$link-color: #fff;
-$error-color: #ef4444;
-$success-color: #10b981;
+// Base
+@use "base" as *;
+@use "code" as *;
+@use "default" as *;
 
 // Layout
-$container-width: 1100px;
-$tablet-width: 600px;
-$phone-width: 480px;
-$header-thickness: 56px;
-$grid-gap: 20px;
-$border-radius: 10px;
-$box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+@use "header" as *;
+@use "footer" as *;
+@use "home" as *;
+@use "post" as *;
+@use "page" as *;
+@use "social-icons" as *;
 
-// Transitions
-$base-transition: 0.3s ease-in-out;
-$icon-transition-time: 0.1s;
-
-// Social Colors
-$flickr-color: #0063dc;
-$steam-color: #90ba3c;
-$envelope-color: #f39c12;
-$twitter-color: #00aced;
-$x-twitter-color: #00aced;
-$instagram-color: #375989;
-$github-color: #343434;
-$linkedin-color: #0073a4;
-$facebook-color: #3d5b99;
-$google-color: #e64a41;
-$pinterest-color: #bd081c;
-$medium-color: #00AB6C;
-$codepen-color: black;
-$rss-color: #ff6600;
-$clock: #fff;
-$clock-rotate-left-color: #fff;
-
-// Gradients
-$gradient-primary: linear-gradient(135deg, $accent-color 0%, rgba($accent-color, 0.8) 100%);
-$gradient-overlay: linear-gradient(to top, 
-  rgba($background-color, 0.9) 0%,
-  rgba($background-color, 0.7) 40%,
-  transparent 100%
-);
-
-// Z-index
-$z-header: 100;
-$z-dropdown: 90;
-$z-overlay: 80;
-
+// Custom list styles
 ul li, ol li {
   display: list-item;
   text-align: -webkit-match-parent;
   unicode-bidi: isolate;
   color: $text-color;
+  line-height: 1.8;
+  margin-bottom: 0.75rem;
 }

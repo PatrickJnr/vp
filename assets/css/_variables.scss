@@ -1,0 +1,81 @@
+@use "sass:color";
+
+// Typography
+$base-font-family: 'Exo 2', sans-serif;
+$body-font-family: 'Exo 2', sans-serif;
+$code-font-family: "Exo 2", sans-serif;
+$base-font-size: 16px;
+$small-font-size: 0.875rem;
+$base-line-height: 1.7;
+
+// Colors
+$brand-color: #fff;
+$background-color: #0a0a0f;
+$background-alt: #13131a;
+$text-color: #f8f9fc;
+$text-muted: #9ca3af;
+$border-color: rgba(255, 255, 255, 0.1);
+$accent-color: #bf9ae8;
+$code-color: #8bc34a;
+$link-color: #fff;
+$error-color: #ef4444;
+$success-color: #10b981;
+
+// Derived Colors
+$accent-color-dark: color.adjust($accent-color, $lightness: -10%);
+$accent-color-light: color.adjust($accent-color, $lightness: 10%);
+
+// Layout
+$container-width: 1100px;
+$tablet-width: 600px;
+$phone-width: 480px;
+$header-thickness: 56px;
+$grid-gap: 20px;
+$border-radius: 10px;
+$box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+$box-shadow-hover: 0 12px 48px rgba(0, 0, 0, 0.3);
+
+// Transitions
+$base-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$icon-transition-time: 0.2s;
+
+// Social Colors
+$flickr-color: #0063dc;
+$steam-color: #90ba3c;
+$envelope-color: #f39c12;
+$twitter-color: #00aced;
+$x-twitter-color: #00aced;
+$instagram-color: #e4405f;
+$github-color: #333;
+$linkedin-color: #0077b5;
+$facebook-color: #1877f2;
+$google-color: #ea4335;
+$pinterest-color: #bd081c;
+$medium-color: #00AB6C;
+$codepen-color: #000;
+$rss-color: #ff6600;
+$clock: #fff;
+$clock-rotate-left-color: #fff;
+
+// Z-index
+$z-header: 100;
+$z-dropdown: 90;
+$z-overlay: 80;
+
+// Misc
+$blur-strength: 12px;
+$glass-bg: rgba($background-alt, 0.7);
+
+// Gradients
+$gradient-primary: linear-gradient(135deg, $accent-color 0%, $accent-color-dark 100%);
+$gradient-overlay: linear-gradient(to top, 
+  rgba($background-color, 0.95) 0%,
+  rgba($background-color, 0.8) 40%,
+  rgba($background-color, 0.1) 100%
+);
+$gradient-text: linear-gradient(135deg, $accent-color 0%, $accent-color-light 100%);
+$gradient-glow: radial-gradient(circle at top right, 
+  rgba($accent-color, 0.15),
+  rgba($accent-color, 0.05) 30%,
+  transparent 70%
+); 

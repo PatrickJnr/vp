@@ -1,52 +1,66 @@
+@use "sass:math";
+@use "variables" as *;
+
 /* Grid Layout */
 .post-grid {
   display: grid;
   width: auto;
-  grid-template-columns: repeat(auto-fill, minmax(200px, auto));
-  gap: 20px;
-  padding: 20px;
-  animation: fadeIn 0.6s ease-out;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 25px;
+  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .featured-post {
-  height: 300px;
-  margin: 0 10px 20px;
+  height: 350px;
+  margin: 0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  font-family: "Exo 2", sans-serif;
-  border-radius: 10px;
+  font-family: $base-font-family;
+  border-radius: $border-radius;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
+  box-shadow: $box-shadow;
+  transition: $base-transition;
+  isolation: isolate;
   
   &::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to top, 
-      rgba(14, 14, 16, 0.9) 0%,
-      rgba(14, 14, 16, 0.7) 40%,
-      transparent 100%
-    );
+    inset: 0;
+    background: $gradient-overlay;
     opacity: 0.8;
-    transition: opacity 0.3s ease-in-out;
+    transition: $base-transition;
+    z-index: 1;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: $gradient-glow;
+    opacity: 0;
+    transition: $base-transition;
+    z-index: 2;
   }
   
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: $box-shadow-hover;
     
     &::before {
       opacity: 0.9;
     }
     
+    &::after {
+      opacity: 0.5;
+    }
+    
     h2 span {
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba($background-color, 0.95);
+      backdrop-filter: blur($blur-strength);
+      -webkit-backdrop-filter: blur($blur-strength);
     }
   }
 }
@@ -54,29 +68,29 @@
 .featured-post h2 {
   bottom: 0;
   margin: 0;
-  padding: 10px;
+  padding: 20px;
   position: absolute;
-  font-size: 18px;
-  font-family: "Exo 2", sans-serif;
   width: 100%;
   box-sizing: border-box;
+  z-index: 3;
 }
 
 .featured-post h2 span {
   display: inline-block;
-  color: white;
-  font: bold 24px/45px "Exo 2", Sans-Serif;
-  letter-spacing: -1px;
-  padding: 10px;
-  font-family: "Exo 2", sans-serif;
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(30px);
-  transition: background 0.3s ease;
+  color: $text-color;
+  font: 600 22px/1.4 $base-font-family;
+  letter-spacing: -0.02em;
+  padding: 12px 20px;
+  border-radius: $border-radius;
+  background: rgba($background-color, 0.85);
+  backdrop-filter: blur(calc($blur-strength / 2));
+  -webkit-backdrop-filter: blur(calc($blur-strength / 2));
+  box-shadow: $box-shadow;
+  transition: $base-transition;
 }
 
 .featured-post span a {
-  color: white;
+  color: $text-color;
   text-decoration: none;
   position: relative;
   
@@ -87,10 +101,10 @@
     height: 2px;
     bottom: -2px;
     left: 0;
-    background: #bf9ae8;
+    background: $accent-color;
     transform: scaleX(0);
     transform-origin: right;
-    transition: transform 0.3s ease;
+    transition: $base-transition;
   }
   
   &:hover::after {
@@ -100,7 +114,7 @@
 }
 
 .featured-post h1 {
-  margin: 10px;
+  margin: 15px;
 }
 
 /*
@@ -109,35 +123,45 @@
 
 .pagination {
   text-align: center;
-  padding: 20px 0;
+  padding: 30px 0;
   user-select: none;
 }
+
 .pagination a {
   text-decoration: none;
 }
+
 .pagination-button {
-  color: #999;
-  border: 1px solid #e0e0e0;
+  color: $text-muted;
+  border: 1px solid $border-color;
   padding: 15px 45px;
   margin: 10px 5px;
   display: inline-block;
   font-size: 16px;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-  background: transparent;
+  font-weight: 500;
+  border-radius: $border-radius;
+  transition: $base-transition;
+  background: $glass-bg;
+  backdrop-filter: blur($blur-strength);
+  -webkit-backdrop-filter: blur($blur-strength);
   
   &:hover {
-    background-color: #e0e0e0;
+    background: rgba($accent-color, 0.1);
+    color: $accent-color;
+    border-color: rgba($accent-color, 0.2);
     transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: $box-shadow;
   }
 }
+
 .pagination-active {
-  color: black;
-  background-color: #e0e0e0;
+  background: $gradient-primary;
+  color: $text-color;
+  border: none;
   
   &:hover {
+    background: $gradient-primary;
+    color: $text-color;
     cursor: default;
     transform: none;
     box-shadow: none;
@@ -147,10 +171,10 @@
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(20px) scale(0.98);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
