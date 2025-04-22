@@ -14,9 +14,10 @@ menu:
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
-- {icon: 'github', name: 'GitHub', link: 'https://github.com/grimtech'}
-- {icon: 'twitter', name: 'Twitter', link: 'https://twitter.com/grimtech'}
-- {icon: 'instagram', name: 'Instagram', link: 'https://instagram.com/grimtech'}
+- {icon: 'twitter', name: 'Twitter', link: 'https://x.com/_patrickjnr'}
+- {icon: 'flickr', name: 'Flickr', link: 'https://www.flickr.com/photos/patrickjrcaulton/'}
+- {icon: 'steam', name: 'Steam', link: 'https://steamcommunity.com/id/patrickjr'}
+- {icon: 'github', name: 'GitHub', link: 'https://github.com/PatrickJnr/vp/'}
 #- {icon: 'clock-rotate-left', link:  '/changelog'}
 #- {icon: 'tumblr', link:   'https://svnzakivp.tumblr.com/'}
 #- {icon: 'square-rss', link: 'feed.xml'}

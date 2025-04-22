@@ -2,28 +2,33 @@
   <div class="footer-content">
     <div class="social-links">
       {% for social in site.data.settings.social %}
-        <a href="{{ social.link }}" target="_blank" rel="noopener" aria-label="{{ social.name }}" class="social-link">
-          <i class="fab fa-{{ social.icon }}"></i>
-          <span>{{ social.name }}</span>
+        <a href="{{ social.link }}" target="_blank" rel="noopener" aria-label="{{ social.name }}" class="social-link" data-tooltip="{{ social.name }}">
+          <div class="social-link-content">
+            <i class="fab fa-{{ social.icon }}"></i>
+            <span>{{ social.name }}</span>
+          </div>
         </a>
       {% endfor %}
     </div>
+    <div class="footer-divider"></div>
     <div class="footer-description">
-      <p>{{ site.title }} © {{ 'now' | date: "%Y" }}</p>
-      <p>Made with <i class="fas fa-heart"></i> by <a href="https://github.com/grimtech" target="_blank" rel="noopener">Grimtech</a></p>
+      <p class="copyright">{{ site.title }} © {{ 'now' | date: "%Y" }}</p>
+      <p class="credit">Made with <i class="fas fa-heart"></i> by PatrickJr</p>
     </div>
   </div>
+  <div class="footer-grain"></div>
 </footer>
 
 <style>
 .footer {
   position: relative;
   padding: 3rem 0;
-  margin-top: 6rem;
+  margin: 6rem 10px 10px 10px;
   background: var(--glass-bg, rgba(19, 19, 26, 0.7));
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  border-radius: 16px;
   overflow: hidden;
 }
 
@@ -39,6 +44,54 @@
   );
   opacity: 0.5;
   pointer-events: none;
+  border-radius: 16px;
+}
+
+.footer-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E");
+  mask-image: radial-gradient(circle at center, black, transparent);
+  -webkit-mask-image: radial-gradient(circle at center, black, transparent);
+}
+
+.footer-glow,
+.footer-shimmer {
+  display: none;
+}
+
+.footer-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(191, 154, 232, 0.1),
+    transparent 25vmin
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.footer-shimmer {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.1),
+    transparent 15vmin
+  );
+  opacity: 0;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.footer:hover .footer-glow,
+.footer:hover .footer-shimmer {
+  opacity: 1;
 }
 
 .footer-content {
@@ -50,18 +103,30 @@
   z-index: 1;
 }
 
+.footer-divider {
+  width: 80%;
+  max-width: 400px;
+  height: 1px;
+  margin: 2rem auto;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--border-color, rgba(255, 255, 255, 0.1)) 20%,
+    var(--border-color, rgba(255, 255, 255, 0.1)) 80%,
+    transparent
+  );
+}
+
 .social-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 2rem;
 }
 
 .social-link {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   padding: 0.75rem 1.25rem;
   color: var(--text-color, #f8f9fc);
   text-decoration: none;
@@ -70,56 +135,138 @@
   border-radius: 12px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: 500;
+  position: relative;
+  overflow: hidden;
 }
 
-.social-link:hover {
-  color: var(--accent-color, #bf9ae8);
-  background: rgba(191, 154, 232, 0.1);
-  border-color: rgba(191, 154, 232, 0.2);
-  transform: translateY(-2px);
+.social-link-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hover-card {
+  --card-highlight: rgba(191, 154, 232, 0.1);
+  --card-angle: 0deg;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--card-angle),
+    transparent 0%,
+    var(--card-highlight) 10%,
+    transparent 20%
+  );
+  -webkit-mask: linear-gradient(#000, #000) content-box,
+                linear-gradient(#000, #000);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-2px) translateZ(0);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(191, 154, 232, 0.1);
+}
+
+.hover-card:hover::before {
+  opacity: 1;
+  animation: rotate-gradient 3s linear infinite;
+}
+
+.hover-card-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(191, 154, 232, 0.15),
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hover-card:hover .hover-card-glow {
+  opacity: 1;
 }
 
 .social-link i {
   font-size: 1.1em;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover i {
+  transform: scale(1.1) translateZ(10px);
+}
+
+.social-link span {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover span {
+  transform: translateZ(5px);
 }
 
 .footer-description {
   color: var(--text-color-secondary, rgba(248, 249, 252, 0.7));
   font-size: 0.9rem;
   line-height: 1.6;
+  transform-style: preserve-3d;
 }
 
 .footer-description p {
   margin: 0.5rem 0;
+  transition: all 0.3s ease;
+  transform: translateZ(0);
 }
 
-.footer-description a {
+.footer-description p:hover {
   color: var(--text-color, #f8f9fc);
-  text-decoration: none;
-  transition: color 0.3s ease;
+  transform: translateZ(5px);
 }
 
-.footer-description a:hover {
-  color: var(--accent-color, #bf9ae8);
+.footer-description .copyright {
+  font-weight: 500;
 }
 
 .footer-description .fa-heart {
   color: var(--accent-color, #bf9ae8);
   font-size: 0.9em;
   margin: 0 0.2rem;
+  display: inline-block;
   animation: pulse 1.5s infinite;
+  transform-origin: center;
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
+  0% { transform: scale(1) translateZ(0); }
+  50% { transform: scale(1.2) translateZ(10px); }
+  100% { transform: scale(1) translateZ(0); }
+}
+
+@keyframes rotate-gradient {
+  0% { --card-angle: 0deg; }
+  100% { --card-angle: 360deg; }
 }
 
 @media (max-width: 640px) {
   .footer {
+    margin: 4rem 10px 10px 10px;
     padding: 2rem 0;
-    margin-top: 4rem;
   }
 
   .social-links {
@@ -130,5 +277,70 @@
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
   }
+
+  .footer-divider {
+    width: 90%;
+    margin: 1.5rem auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer::after {
+    animation: none;
+  }
+  
+  .hover-card::before {
+    animation: none;
+  }
+
+  .social-link {
+    transition: none;
+  }
+
+  .fa-heart {
+    animation: none;
+  }
 }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const footer = document.querySelector('.footer');
+  const cards = document.querySelectorAll('.hover-card');
+  let isHovering = false;
+  
+  const updateMousePosition = (e) => {
+    if (!isHovering) return;
+    
+    const rect = footer.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    
+    footer.style.setProperty('--mouse-x', `${x}%`);
+    footer.style.setProperty('--mouse-y', `${y}%`);
+  };
+
+  const updateCardGlow = (e, card) => {
+    const rect = card.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    
+    card.style.setProperty('--mouse-x', `${x}%`);
+    card.style.setProperty('--mouse-y', `${y}%`);
+  };
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => updateCardGlow(e, card));
+  });
+
+  footer.addEventListener('mouseenter', () => {
+    isHovering = true;
+  });
+
+  footer.addEventListener('mouseleave', () => {
+    isHovering = false;
+  });
+
+  footer.addEventListener('mousemove', updateMousePosition);
+});
+</script>

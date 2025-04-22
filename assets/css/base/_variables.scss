@@ -1,0 +1,27 @@
+:root {
+  // Colors
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --accent-color: #007bff;
+  
+  // Layout
+  --header-height: 60px;
+  
+  // Transitions
+  --transition-duration: 0.3s;
+  --transition-timing: ease;
+  
+  // Shadows
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  // Z-indices
+  --z-header: 1000;
+  --z-dropdown: 1001;
+  
+  @media (prefers-color-scheme: dark) {
+    --background-color: #1a1a1a;
+    --text-color: #ffffff;
+    --accent-color: #3b82f6;
+  }
+} 
