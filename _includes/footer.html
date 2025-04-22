@@ -1,8 +1,134 @@
 <footer class="footer">
-  {% for item in site.data.settings.social %}
-    <a href="{{ item.link }}" class="menu-link" target="_blank"><i class="fa fa-{{ item.icon }}" aria-hidden="true"></i></a>
-  {% endfor %}
-  <div class="footer-description"><a href="{{ site.github.url }}/">{{ site.title }} made with<sub>:heart:</sub>.</a></div>
-  
-  
+  <div class="footer-content">
+    <div class="social-links">
+      {% for social in site.data.settings.social %}
+        <a href="{{ social.link }}" target="_blank" rel="noopener" aria-label="{{ social.name }}" class="social-link">
+          <i class="fab fa-{{ social.icon }}"></i>
+          <span>{{ social.name }}</span>
+        </a>
+      {% endfor %}
+    </div>
+    <div class="footer-description">
+      <p>{{ site.title }} © {{ 'now' | date: "%Y" }}</p>
+      <p>Made with <i class="fas fa-heart"></i> by <a href="https://github.com/grimtech" target="_blank" rel="noopener">Grimtech</a></p>
+    </div>
+  </div>
 </footer>
+
+<style>
+.footer {
+  position: relative;
+  padding: 3rem 0;
+  margin-top: 6rem;
+  background: var(--glass-bg, rgba(19, 19, 26, 0.7));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at bottom right,
+    rgba(191, 154, 232, 0.15),
+    rgba(191, 154, 232, 0.05) 30%,
+    transparent 70%
+  );
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.footer-content {
+  max-width: var(--container-width, 1200px);
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  color: var(--text-color, #f8f9fc);
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+}
+
+.social-link:hover {
+  color: var(--accent-color, #bf9ae8);
+  background: rgba(191, 154, 232, 0.1);
+  border-color: rgba(191, 154, 232, 0.2);
+  transform: translateY(-2px);
+}
+
+.social-link i {
+  font-size: 1.1em;
+}
+
+.footer-description {
+  color: var(--text-color-secondary, rgba(248, 249, 252, 0.7));
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-description p {
+  margin: 0.5rem 0;
+}
+
+.footer-description a {
+  color: var(--text-color, #f8f9fc);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-description a:hover {
+  color: var(--accent-color, #bf9ae8);
+}
+
+.footer-description .fa-heart {
+  color: var(--accent-color, #bf9ae8);
+  font-size: 0.9em;
+  margin: 0 0.2rem;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 2rem 0;
+    margin-top: 4rem;
+  }
+
+  .social-links {
+    gap: 0.75rem;
+  }
+
+  .social-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+</style>

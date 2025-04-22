@@ -7,38 +7,85 @@ $base-font-family: 'Exo 2', sans-serif;
   width: 600px;
   display: block;
   margin: 10px auto;
-  animation: fadeIn 0.6s ease-out;
+  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .post-date {
   display: block;
   margin-bottom: 1rem;
-  color: #9a9a9a;
-  font-size: 0.8rem;
+  color: #9ca3af;
+  font-size: 0.9rem;
   font-style: italic;
+  letter-spacing: 0.02em;
   
   &::before {
     content: '📅 ';
     margin-right: 5px;
+    opacity: 0.8;
   }
 }
 
 .featured-image {
   margin: 2rem 0;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  position: relative;
+  background: rgba(10, 10, 15, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+      rgba(10, 10, 15, 0.2) 0%,
+      rgba(10, 10, 15, 0.3) 50%,
+      rgba(10, 10, 15, 0.8) 100%
+    );
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, 
+      rgba(191, 154, 232, 0.3),
+      rgba(191, 154, 232, 0.1) 30%,
+      transparent 70%
+    );
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+    pointer-events: none;
+  }
   
   img {
-    align: middle;
-    margin: 0;
     display: block;
     max-width: 600px;
     width: 100%;
     height: auto;
-    transition: transform 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+    position: relative;
+    z-index: 0;
+  }
+  
+  &:hover {
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
     
-    &:hover {
+    &::before {
+      opacity: 1;
+    }
+    
+    &::after {
+      opacity: 1;
+    }
+    
+    img {
       transform: scale(1.02);
     }
   }
@@ -51,9 +98,6 @@ $base-font-family: 'Exo 2', sans-serif;
     margin: 10px auto;
   }
   .featured-image img {
-    align: middle;
-    margin: 5px auto 25px;
-    display: block;
     max-width: 60vw;
   }
 }
@@ -65,9 +109,6 @@ $base-font-family: 'Exo 2', sans-serif;
     margin: 10px auto;
   }
   .featured-image img {
-    align: middle;
-    margin: 5px auto 25px;
-    display: block;
     max-width: 95vw;
   }
 }
@@ -77,27 +118,37 @@ $base-font-family: 'Exo 2', sans-serif;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   margin: 2rem 0;
+  background: rgba(19, 19, 26, 0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   
   h3 {
     margin: 0 0 1rem;
     font-size: 1.2rem;
-    color: #9a9a9a;
+    color: #9ca3af;
+    text-align: center;
+    letter-spacing: 0.02em;
   }
 }
 
 .sharing-icons {
   display: flex;
   gap: 15px;
+  justify-content: center;
   
   a {
-    padding: 10px;
+    padding: 12px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #f8f9fc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     
     &:hover {
-      transform: translateY(-3px);
-      background: rgba(191, 154, 232, 0.2);
+      transform: translateY(-3px) scale(1.1);
+      background: linear-gradient(135deg, #bf9ae8 0%, rgba(191, 154, 232, 0.8) 100%);
+      box-shadow: 0 8px 24px rgba(191, 154, 232, 0.3);
     }
   }
 }
@@ -113,6 +164,9 @@ $base-font-family: 'Exo 2', sans-serif;
     margin-bottom: 1.5rem;
     position: relative;
     display: inline-block;
+    color: #f8f9fc;
+    font-size: 1.8rem;
+    letter-spacing: -0.01em;
     
     &::after {
       content: '';
@@ -140,33 +194,34 @@ $base-font-family: 'Exo 2', sans-serif;
   width: 100%;
   height: 200px;
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   
   &::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: linear-gradient(to top, 
-      rgba(14, 14, 16, 0.9) 0%,
-      rgba(14, 14, 16, 0.7) 40%,
+      rgba(10, 10, 15, 0.95) 0%,
+      rgba(10, 10, 15, 0.7) 40%,
       transparent 100%
     );
     opacity: 0.8;
-    transition: opacity 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1;
   }
   
   &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+    
     &::before {
       opacity: 0.9;
     }
     
     img {
-      transform: scale(1.05);
+      transform: translate(-50%, -50%) scale(1.05);
     }
   }
 }
@@ -178,7 +233,7 @@ $base-font-family: 'Exo 2', sans-serif;
   height: auto;
   width: 100%;
   transform: translate(-50%, -50%);
-  transition: transform 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .related-title {
@@ -186,16 +241,17 @@ $base-font-family: 'Exo 2', sans-serif;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 1rem;
-  color: white;
+  padding: 1.25rem;
+  color: #f8f9fc;
   z-index: 2;
   font-family: $base-font-family;
   font-size: 1.1rem;
   line-height: 1.4;
   
   a {
-    color: white;
+    color: #f8f9fc;
     text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     
     &:hover {
       color: #bf9ae8;
@@ -206,10 +262,30 @@ $base-font-family: 'Exo 2', sans-serif;
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(20px) scale(0.98);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+.post-title {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  color: #f8f9fc;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  display: inline-block;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #bf9ae8, transparent);
+    border-radius: 3px;
   }
 }

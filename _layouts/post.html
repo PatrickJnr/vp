@@ -7,7 +7,21 @@ layout: default
 {% assign ar = banner_data.aspect-ratio | plus: 0 %}
 
 <style>
+    #background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        background-color: #1c1c1e;
+        transition: background 0.5s ease-in-out;
+        pointer-events: none;
+    }
+
     .banner {
+        position: relative;
+        z-index: 1;
         background-image: url('{{ banner_data.image1080-link }}');
         background-size: cover;
         background-position: right 0px bottom {{ page.banner-offset | default: 0 }}%;
@@ -17,17 +31,66 @@ layout: default
         justify-content: center;
         margin-bottom: 10px;
         transition: background-position 0.5s ease-in-out, height 0.3s ease;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .banner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.3) 50%,
+            rgba(0, 0, 0, 0.4) 100%
+        );
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        z-index: 1;
+        pointer-events: none;
     }
 
     .banner-text {
         text-align: center;
         color: white;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        padding: 2rem;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 15px;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 2;
+        max-width: 80%;
+        pointer-events: auto;
+    }
+
+    .banner-text h1 {
+        font-size: 2.5em;
+        margin-bottom: 0.5rem;
+        color: white;
+        font-weight: 600;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .banner-text .date {
+        font-size: 1.1em;
+        opacity: 0.95;
+        color: rgba(255, 255, 255, 0.9);
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
     }
 
     @media (max-width: 767px) {
         .banner {
             height: 200px;
+        }
+        .banner-text {
+            padding: 1rem;
+        }
+        .banner-text h1 {
+            font-size: 1.8em;
         }
     }
 
@@ -41,17 +104,6 @@ layout: default
         .banner {
             height: 400px;
         }
-    }
-
-    #background {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background-color: #1c1c1e; /* Fallback dark color */
-        transition: background 0.5s ease-in-out;
     }
 
     /* Spinner styling */

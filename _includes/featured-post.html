@@ -1,7 +1,106 @@
-<article>
-  <a href="{{ site.github.url }}{{ post.url }}">
+<article class="featured-post-container">
+  <a href="{{ site.github.url }}{{ post.url }}" class="featured-post-link">
     <div class="featured-post" style="background-image:url({{ site.data.virtual-photography[post.slug][post.card-image].thumbnail-link-600 }}); background-position: right 0px bottom {{post.card-offset}}%;">
-      <h2><span>{{ post.title }}</span></h2>
+      <div class="featured-post-content">
+        <h2><span>{{ post.title }}</span></h2>
+      </div>
     </div>
   </a>
 </article>
+
+<style>
+.featured-post-container {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.featured-post-container:hover {
+  transform: translateY(-4px);
+}
+
+.featured-post {
+  position: relative;
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.featured-post::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(19, 19, 26, 0.3),
+    rgba(19, 19, 26, 0.6)
+  );
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.featured-post:hover::before {
+  opacity: 1;
+}
+
+.featured-post-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(
+    to top,
+    rgba(19, 19, 26, 0.9),
+    rgba(19, 19, 26, 0.7) 50%,
+    transparent
+  );
+}
+
+.featured-post-content h2 {
+  margin: 0;
+  color: #f8f9fc;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.featured-post-content h2 span {
+  position: relative;
+  display: inline-block;
+}
+
+.featured-post-content h2 span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #bf9ae8;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.featured-post:hover .featured-post-content h2 span::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .featured-post {
+    height: 200px;
+  }
+  
+  .featured-post-content {
+    padding: 1rem;
+  }
+  
+  .featured-post-content h2 {
+    font-size: 1.2rem;
+  }
+}
+</style>

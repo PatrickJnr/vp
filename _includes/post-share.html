@@ -1,7 +1,90 @@
 <div class="post-share">
-  <div class="post-date">{{ site.data.settings.sharing_button_prompt }}</div>
+  <div class="share-prompt">{{ site.data.settings.sharing_button_prompt }}</div>
   <div class="sharing-icons">
-    <a href="https://twitter.com/intent/tweet?text={{ page.title }}&amp;url={{ site.github.url }}{{ page.url }}" target="_blank"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.github.url }}{{ page.url }}&amp;title={{ page.title }}" target="_blank"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://twitter.com/intent/tweet?text={{ page.title }}&amp;url={{ site.github.url }}{{ page.url }}" target="_blank" class="share-button twitter">
+      <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+      <span>Twitter</span>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.github.url }}{{ page.url }}&amp;title={{ page.title }}" target="_blank" class="share-button facebook">
+      <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+      <span>Facebook</span>
+    </a>
   </div>
 </div>
+
+<style>
+.post-share {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(19, 19, 26, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.share-prompt {
+  margin-bottom: 1rem;
+  color: rgba(248, 249, 252, 0.7);
+  font-size: 0.9rem;
+}
+
+.sharing-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.share-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: #f8f9fc;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.share-button:hover {
+  transform: translateY(-2px);
+  background: rgba(191, 154, 232, 0.2);
+}
+
+.share-button i {
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.share-button span {
+  font-size: 0.9rem;
+}
+
+.twitter:hover {
+  color: #1DA1F2;
+}
+
+.facebook:hover {
+  color: #4267B2;
+}
+
+@media (max-width: 768px) {
+  .post-share {
+    padding: 1rem;
+  }
+  
+  .share-button {
+    padding: 0.5rem;
+  }
+  
+  .share-button span {
+    display: none;
+  }
+  
+  .share-button i {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+}
+</style>

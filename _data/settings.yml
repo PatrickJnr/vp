@@ -7,15 +7,16 @@ disqus:
 google-ID: 'G-XXPKD9SFHL'
 
 menu:
-- {name: 'About',              url: 'about'}
-- {name: 'Contact',            url: 'contact'}
+- {name: 'Home', url: '', icon: 'home'}
+- {name: 'About', url: 'about', icon: 'info-circle'}
+- {name: 'Contact', url: 'contact', icon: 'envelope'}
 - {name: 'Changelog',            url: 'changelog'}
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
-- {icon: 'brands fa-twitter', link:    'https://twitter.com/_patrickjnr'}
-- {icon: 'brands fa-flickr', link:   'https://www.flickr.com/photos/patrickjrcaulton/'}
-- {icon: 'brands fa-steam', link:  'http://steamcommunity.com/id/patrickjr'}
+- {icon: 'github', name: 'GitHub', link: 'https://github.com/grimtech'}
+- {icon: 'twitter', name: 'Twitter', link: 'https://twitter.com/grimtech'}
+- {icon: 'instagram', name: 'Instagram', link: 'https://instagram.com/grimtech'}
 #- {icon: 'clock-rotate-left', link:  '/changelog'}
 #- {icon: 'tumblr', link:   'https://svnzakivp.tumblr.com/'}
 #- {icon: 'square-rss', link: 'feed.xml'}

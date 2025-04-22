@@ -9,33 +9,51 @@ $small-font-size: 0.875rem;
 $base-line-height: 1.7;
 
 // Colors
-$brand-color: #fff;
-$background-color: #0a0a0f;
-$background-alt: #13131a;
+$primary-color: #bf9ae8;
+$primary-color-light: rgba(191, 154, 232, 0.15);
+$primary-color-dark: rgba(191, 154, 232, 0.8);
+$background-color: rgba(19, 19, 26, 0.7);
+$background-color-dark: #1c1c1e;
 $text-color: #f8f9fc;
-$text-muted: #9ca3af;
+$text-color-muted: rgba(248, 249, 252, 0.7);
 $border-color: rgba(255, 255, 255, 0.1);
 $accent-color: #bf9ae8;
 $accent-color-dark: color.adjust($accent-color, $lightness: -10%);
 $accent-color-light: color.adjust($accent-color, $lightness: 10%);
 $code-color: #8bc34a;
-$link-color: $brand-color;
+$link-color: $primary-color;
 $error-color: #ef4444;
 $success-color: #10b981;
 
 // Layout
 $container-width: 1100px;
-$tablet-width: 600px;
-$phone-width: 480px;
-$header-thickness: 56px;
-$grid-gap: 20px;
-$border-radius: 10px;
-$box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-$box-shadow-hover: 0 12px 48px rgba(0, 0, 0, 0.3);
+$header-height: 56px;
+$content-spacing: 2rem;
+
+// Breakpoints
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1100px;
+
+// Shadows
+$shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 20px rgba(0, 0, 0, 0.2);
+$shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+// Blur effects
+$blur-sm: blur(8px);
+$blur-md: blur(12px);
+$blur-lg: blur(16px);
+
+// Border radius
+$border-radius-sm: 8px;
+$border-radius-md: 12px;
+$border-radius-lg: 16px;
 
 // Transitions
-$base-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-$icon-transition-time: 0.2s;
+$transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
 // Social Colors
 $social-colors: (
@@ -66,7 +84,7 @@ $z-layers: (
 
 // Misc
 $blur-strength: 12px;
-$glass-bg: rgba($background-alt, 0.7);
+$glass-bg: rgba($background-color, 0.7);
 
 // Gradients
 $gradient-primary: linear-gradient(135deg, $accent-color 0%, $accent-color-dark 100%);
