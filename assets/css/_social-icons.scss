@@ -22,9 +22,43 @@ $clock-rotate-left-color: #fff;
   -ms-transition: $transition;
   -moz-transition: $transition;
   transition: $transition;
+  position: relative;
+  
   &:hover {
     color: $color;
+    transform: translateY(-3px);
+    
+    &::after {
+      transform: scale(1);
+      opacity: 0;
+    }
   }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: $color;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.2;
+    z-index: -1;
+    transition: all 0.3s ease;
+  }
+}
+
+[class^="fa-"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
 }
 
 .fa-envelope {
@@ -100,4 +134,22 @@ $clock-rotate-left-color: #fff;
 .fa-clock-rotate-left {
   padding: 5px;
   @include social-media-icon($clock-rotate-left-color, $icon-transition-time);
+}
+
+// Animation for social icons
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// Apply animation to icons on hover
+[class^="fa-"]:hover {
+  animation: pulse 1s infinite;
 }

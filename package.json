@@ -1,0 +1,15 @@
+{
+  "name": "vp",
+  "version": "1.0.0",
+  "description": "Virtual Photography Portfolio",
+  "scripts": {
+    "lint:css": "stylelint \"**/*.{css,scss}\"",
+    "lint:js": "eslint \"**/*.js\"",
+    "lint": "npm run lint:css && npm run lint:js"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard": "^36.0.0"
+  }
+} 

@@ -8,12 +8,35 @@ $container-width: 1100px;
   min-height: 56px;
   line-height: 45px;
   width: $container-width;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
 }
 
 .footer a {
   color: $brand-color;
   padding: 0px 10px;
   text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: #bf9ae8;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 }
 
 @media (max-width: $container-width) {
@@ -31,5 +54,43 @@ $container-width: 1100px;
   display: block;
   margin-bottom: 1rem;
   color: #9a9a9a;
-  font-size:0.8rem;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  
+  a {
+    color: #bf9ae8;
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  
+  a {
+    color: $brand-color;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-3px);
+      background: rgba(191, 154, 232, 0.2);
+    }
+    
+    &::after {
+      display: none;
+    }
+  }
 }

@@ -13,6 +13,14 @@ plugins:
 # jekyll-cache:
 #   enabled: true
 
+# SASS/SCSS Configuration
+sass:
+  style: compressed
+  sourcemap: never
+  load_paths:
+    - _sass
+    - assets/css
+
 include:
   - node_modules  # You probably need this for your Parcel/Webpack setup
 title: PatrickJr's Virtual Photography
@@ -44,3 +52,8 @@ header:
   title: PatrickJr's Virtual Photography
   tagline: Capturing the digital world through lenses.
   image: /assets/images/header.jpg
+
+# Social Media Usernames
+github_username: grimtech
+twitter_username: grimtech
+instagram_username: grimtech_vp

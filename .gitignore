@@ -7,3 +7,5 @@ Gemfile.lock
 *.gem
 run.bat
 node_modules/.bin/
+!.stylelintrc.json
+!.eslintrc.json

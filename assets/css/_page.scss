@@ -2,5 +2,57 @@
   max-width: 600px;
   display: block;
   margin: 10px auto;
-  padding: 0px 10px 10px;
+  padding: 20px;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+  
+  h1 {
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #bf9ae8 0%, rgba(191, 154, 232, 0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .page-description {
+    color: #9a9a9a;
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+.page-section {
+  margin-bottom: 40px;
+  
+  h2 {
+    margin-bottom: 20px;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: #bf9ae8;
+      border-radius: 3px;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
