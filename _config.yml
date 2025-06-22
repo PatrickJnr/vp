@@ -7,8 +7,7 @@ plugins:
   - jekyll-seo-tag
   - jemoji
   - jekyll-mentions
-  # - jekyll-cache  <-- REMOVED jekyll-cache from the plugins list
-
+  
 # Removed the entire jekyll-cache configuration section:
 # jekyll-cache:
 #   enabled: true
@@ -54,6 +53,6 @@ header:
   image: /assets/images/header.jpg
 
 # Social Media Usernames
-github_username: grimtech
-twitter_username: grimtech
-instagram_username: grimtech_vp
+github_username: PatrickJnr
+twitter_username: _PatrickJnr
+instagram_username: patrick.jr

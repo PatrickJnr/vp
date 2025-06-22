@@ -9,7 +9,15 @@
     </div>
     <div class="footer-divider"></div>
     <div class="footer-description">
-      <p class="copyright">{{ site.title }} © {{ 'now' | date: "%Y" }}</p>
+      <p class="copyright">
+        {{ site.title }} ©
+        {% assign current_year = 'now' | date: "%Y" %}
+        {% if current_year == "2025" %}
+          2007–{{ current_year }}
+        {% else %}
+          {{ current_year }}
+        {% endif %}
+      </p>
       <p class="credit">Made with <i class="fas fa-heart"></i> by PatrickJr</p>
     </div>
   </div>
@@ -250,3 +258,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   footer.addEventListener('mousemove', updateMousePosition);
 });
+</script>
