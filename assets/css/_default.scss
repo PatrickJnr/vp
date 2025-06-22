@@ -63,6 +63,22 @@ $header-thickness: 56px;
   }
 }
 
+// Match .content-wrapper h1::after style for .container h1::after
+.container h1 {
+  position: relative;
+  display: inline-block;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #bf9ae8, transparent);
+    border-radius: 3px;
+  }
+}
+
 @media (max-width: $container-width) {
   .container {
     width: 95vw;

@@ -29,3 +29,18 @@ ul li, ol li {
   line-height: 1.8;
   margin-bottom: 0.75rem;
 }
+
+hr {
+  border: none;
+  height: 2px;
+  margin: 2.5rem 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-color, #bf9ae8) 20%,
+    var(--accent-color, #bf9ae8) 80%,
+    transparent
+  );
+  border-radius: 2px;
+  opacity: 0.7;
+}
