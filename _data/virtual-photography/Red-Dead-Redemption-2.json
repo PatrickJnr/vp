@@ -72,6 +72,8 @@
     {
         "file_name": "light_49146700836_o.jpg",
         "imageFull-link": "https://i.imgur.com/ZN3utkg.jpeg",
+        "thumbnail-link-600": "https://i.imgur.com/ZN3utkg.jpeg",
+        "image1080-link": "https://i.imgur.com/ZN3utkg.jpeg",
         "aspect-ratio": "1.7777777777777777"
     },
     {
@@ -129,5 +131,12 @@
         "thumbnail-link-600": "https://i.imgur.com/E0VoeKf.jpeg",
         "image1080-link": "https://i.imgur.com/iNz0QOo.jpeg",
         "aspect-ratio": "1.7777777777777777"
+    },
+    {
+        "file_name": "RDR2 2025-06-22 15-13-24_599.png",
+        "imageFull-link": "https://i.imgur.com/8cxnHSj.png",
+        "thumbnail-link-600": "https://i.imgur.com/LHvLkCD.jpeg",
+        "image1080-link": "https://i.imgur.com/rD6RFIv.jpeg",
+        "aspect-ratio": "2.388888888888889"
     }
 ]

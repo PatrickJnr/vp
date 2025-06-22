@@ -4,6 +4,16 @@ title: Changelog
 permalink: /changelog
 ---
 
+## June 22, 2025
+
+### New Content
+- **Red Dead Redemption:** Added 1 New image.
+
+## April 22, 2025
+
+### Website Maintenance and Modernization
+Massively overhauled the website
+
 ## March 20, 2025
 
 ### New Content
