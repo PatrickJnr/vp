@@ -82,7 +82,7 @@
         var css = (
             '#' + containerId + ' {' +
             '  position: relative;' +
-            '  overflow: hidden;' + // temporary workaround for gallery alignment
+            '  overflow: hidden;' +
             '}' +
             '.' + classPrefix + '-figure {' +
             '  background-color: #0e0e10;' +
@@ -91,6 +91,14 @@
             '  position: absolute;' +
             '  top: 0;' +
             '  margin: 0;' +
+            '  border-radius: 16px;' +
+            '  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.13), 0 0.5px 2px 0 rgba(0,0,0,0.07);' +
+            '  transition: box-shadow 0.3s cubic-bezier(.4,2,.6,1), transform 0.3s cubic-bezier(.4,2,.6,1);' +
+            '}' +
+            '.' + classPrefix + '-figure:hover {' +
+            '  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.22), 0 2px 8px 0 rgba(0,0,0,0.13);' +
+            '  transform: translateY(-4px) scale(1.025);' +
+            '  z-index: 2;' +
             '}' +
             '.' + classPrefix + '-figure img {' +
             '  left: 0;' +
@@ -98,11 +106,18 @@
             '  top: 0;' +
             '  height: 100%;' +
             '  opacity: 0;' +
-            '  transition: opacity ' + (transitionSpeed / 1000) + 's ease, transform .5s ease;' +
-            '  -webkit-transition: opacity ' + (transitionSpeed / 1000) + 's ease, transform .5s ease;' +
+            '  transition: opacity ' + (transitionSpeed / 1000) + 's ease, transform .5s cubic-bezier(.4,2,.6,1), filter 0.3s;' +
+            '  -webkit-transition: opacity ' + (transitionSpeed / 1000) + 's ease, transform .5s cubic-bezier(.4,2,.6,1), filter 0.3s;' +
+            '  border-radius: 14px;' +
+            '  background: #18181b;' +
+            '  object-fit: cover;' +
+            '  box-shadow: none;' +
             '}' +
             '.' + classPrefix + '-figure img:hover {' +
-            '  transform: scale(1.02);' +
+            '  filter: brightness(1.08) saturate(1.15);' +
+            '  transform: scale(1.035);' +
+            '  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.22), 0 2px 8px 0 rgba(0,0,0,0.13);' +
+            '  z-index: 3;' +
             '}' +
             '.' + classPrefix + '-figure img.' + classPrefix + '-thumbnail {' +
             '  -webkit-filter: blur(30px);' +
@@ -229,7 +244,7 @@
              * Default: 8
              * Description: Size in pixels of the gap between images in the grid.
              */
-            spaceBetweenImages: 8,
+            spaceBetweenImages: 16, // was 8, now 16 for more modern spacing
 
             /**
              * Type: Number

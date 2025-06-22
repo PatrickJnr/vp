@@ -13,6 +13,16 @@ permalink: /changelog
 #### Technical Improvements
 - Updated social media icons and links
 - Improved site navigation with better iconography
+- **Gallery Performance:**  
+  Optimized gallery initialization and image loading for faster display
+- **Loading Spinner:**  
+  Added a loading spinner for better user feedback while images load
+- **Banner Background:**  
+  Improved dynamic background color extraction using Vibrant.js, with better fallback for dark mode
+- **Responsive Design:**  
+  Tweaked banner and gallery styles for improved appearance on all devices
+- **Minor Fixes:**  
+  Addressed small bugs and improved code structure for maintainability
 
 ---
 
