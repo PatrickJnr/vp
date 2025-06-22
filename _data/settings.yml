@@ -10,18 +10,24 @@ menu:
 - {name: 'Home', url: '', icon: 'home'}
 - {name: 'About', url: 'about', icon: 'info-circle'}
 - {name: 'Contact', url: 'contact', icon: 'envelope'}
-- {name: 'Changelog',            url: 'changelog'}
+- {name: 'Changelog', url: 'changelog', icon: 'history'}
 
-# Available social icons are powered by Font Awesome, so you can use any icon that they offer
+# Social Media Links
+# Icons are from Font Awesome (https://fontawesome.com/icons)
+# Format: {icon: 'icon-name', name: 'Accessible Name', link: 'https://...'}
 social:
-- {icon: 'twitter', name: 'Twitter', link: 'https://x.com/_patrickjnr'}
-- {icon: 'flickr', name: 'Flickr', link: 'https://www.flickr.com/photos/patrickjrcaulton/'}
-- {icon: 'steam', name: 'Steam', link: 'https://steamcommunity.com/id/patrickjr'}
-- {icon: 'github', name: 'GitHub', link: 'https://github.com/PatrickJnr/vp/'}
-#- {icon: 'clock-rotate-left', link:  '/changelog'}
-#- {icon: 'tumblr', link:   'https://svnzakivp.tumblr.com/'}
-#- {icon: 'square-rss', link: 'feed.xml'}
-#- {icon: 'square-rss', link: 'rss-feed.xml'}
+  # Primary social networks
+  - {icon: 'x-twitter',  name: 'Twitter',  link: 'https://x.com/_patrickjnr'}
+  - {icon: 'github',    name: 'GitHub',   link: 'https://github.com/PatrickJnr/vp/'}
+  - {icon: 'flickr',    name: 'Flickr',   link: 'https://www.flickr.com/photos/patrickjrcaulton/'}
+  - {icon: 'steam',     name: 'Steam',    link: 'https://steamcommunity.com/id/patrickjr'}
+  
+  # Inactive/archived accounts (commented out but kept for reference)
+  # - {icon: 'tumblr',   name: 'Tumblr',   link: 'https://svnzakivp.tumblr.com/'}
+  
+  # RSS/Feed options (uncomment and configure as needed)
+  # - {icon: 'rss',      name: 'RSS Feed', link: '/feed.xml'}
+  # - {icon: 'rss',      name: 'JSON Feed',link: '/feed.json'}
 
 # Customize site text
 pagination:

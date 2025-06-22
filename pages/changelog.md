@@ -6,31 +6,50 @@ permalink: /changelog
 
 ## June 22, 2025
 
-### New Content
-- **Red Dead Redemption:** Added 1 New image.
+#### Content Updates
+- **Red Dead Redemption**
+  - Added 1 new image to the gallery
 
-## April 22, 2025
+#### Technical Improvements
+- Updated social media icons and links
+- Improved site navigation with better iconography
 
-### Website Maintenance and Modernization
-Massively overhauled the website
+---
 
-## March 20, 2025
+### April 22, 2025
 
-### New Content
-- **Assassin's Creed Shadows:** Added a gallery with five new images.
+#### Major Updates
+- **Complete Website Overhaul**
+  - Redesigned UI/UX for better navigation
+  - Improved mobile responsiveness
+  - Updated color scheme and typography
 
-## February 25, 2025
+---
 
-### New Content
-- **Assassin's Creed Valhalla:** Added a gallery with six new images.
+### March 20, 2025
 
-### Website Maintenance and Modernization
-- **Resolved Jekyll Build Issues:**  Fixed a series of configuration and dependency problems that were preventing the site from building and serving correctly.  This involved:
-    - Correcting the Jekyll version in the `Gemfile`.
-    - Adding required gems (`ostruct`, `wdm`) to the `Gemfile`.
-    - Removing the incompatible `jekyll-cache` plugin (and updating `_config.yml` accordingly).
-    - Ensuring the `jekyll` gem was explicitly listed as a dependency.
-    - Correcting a syntax error (missing `end`) in the `Gemfile`.
+#### New Content
+- **Assassin's Creed Shadows**
+  - Added gallery with 5 high-quality images
+  - Included detailed captions and metadata
+
+---
+
+### February 25, 2025
+
+#### New Content
+- **Assassin's Creed Valhalla**
+  - Added gallery with 6 new images
+  - Implemented responsive image loading
+
+#### Technical Improvements
+- **Build System**
+  - Resolved Jekyll build issues
+  - Updated dependencies in `Gemfile`:
+    - Fixed Jekyll version compatibility
+    - Added required gems: `ostruct`, `wdm`
+    - Removed incompatible `jekyll-cache` plugin
+  - Updated `_config.yml` for better performance
 - **Modernized Sass:**  Updated the Sass stylesheets to use the modern `@use` and `@forward` rules, replacing the deprecated `@import` rule. This involved:
     - Moving Sass partials (`.scss` files) to the correct `assets/css` directory.
     - Updating `@import` statements to `@use` or `@forward` as appropriate.
