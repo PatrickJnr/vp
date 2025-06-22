@@ -70,7 +70,7 @@
 
 .footer-shimmer {
   background: radial-gradient(
-    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    circle at var(--mouse-x, 50%) var (--mouse-y, 50%),
     rgba(255, 255, 255, 0.08),
     transparent 15vmin
   );
@@ -213,27 +213,6 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const footer = document.querySelector('.footer');
-  if (!footer) return;
-  let isHovering = false;
-
-  const updateMousePosition = (e) => {
-    if (!isHovering) return;
-    const rect = footer.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    footer.style.setProperty('--mouse-x', `${x}%`);
-    footer.style.setProperty('--mouse-y', `${y}%`);
-  };
-
-  footer.addEventListener('mouseenter', () => { isHovering = true; });
-  footer.addEventListener('mouseleave', () => { isHovering = false; });
-  footer.addEventListener('mousemove', updateMousePosition);
-});
-
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const footer = document.querySelector('.footer');
   const cards = document.querySelectorAll('.hover-card');
   let isHovering = false;
   
@@ -271,4 +250,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
   footer.addEventListener('mousemove', updateMousePosition);
 });
-</script>
