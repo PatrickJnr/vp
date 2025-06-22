@@ -1,12 +1,9 @@
 <footer class="footer">
   <div class="footer-content">
-    <div class="social-links">
+    <div class="footer-social">
       {% for social in site.data.settings.social %}
-        <a href="{{ social.link }}" target="_blank" rel="noopener" aria-label="{{ social.name }}" class="social-link" data-tooltip="{{ social.name }}">
-          <div class="social-link-content">
-            <i class="fab fa-{{ social.icon }}"></i>
-            <span>{{ social.name }}</span>
-          </div>
+        <a href="{{ social.link }}" target="_blank" rel="noopener" aria-label="{{ social.name }}" class="footer-social-link" data-tooltip="{{ social.name }}">
+          <i class="fab fa-{{ social.icon }}"></i>
         </a>
       {% endfor %}
     </div>
@@ -17,6 +14,8 @@
     </div>
   </div>
   <div class="footer-grain"></div>
+  <div class="footer-glow"></div>
+  <div class="footer-shimmer"></div>
 </footer>
 
 <style>
@@ -34,6 +33,7 @@
   margin-left: auto;
   margin-right: auto;
   display: block;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
 }
 
 .footer::before {
@@ -50,47 +50,31 @@
   pointer-events: none;
   border-radius: 16px;
 }
-
-.footer-grain {
-  position: absolute;
-  inset: 0;
-  opacity: 0.4;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E");
-  mask-image: radial-gradient(circle at center, black, transparent);
-  -webkit-mask-image: radial-gradient(circle at center, black, transparent);
-}
-
 .footer-glow,
 .footer-shimmer {
-  display: none;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
 }
 
 .footer-glow {
-  position: absolute;
-  inset: 0;
   background: radial-gradient(
     circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(191, 154, 232, 0.1),
+    rgba(191, 154, 232, 0.13),
     transparent 25vmin
   );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
 }
 
 .footer-shimmer {
-  position: absolute;
-  inset: 0;
   background: radial-gradient(
     circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.08),
     transparent 15vmin
   );
-  opacity: 0;
   mix-blend-mode: overlay;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
 }
 
 .footer:hover .footer-glow,
@@ -121,126 +105,59 @@
   );
 }
 
-.social-links {
+.footer-social {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
-}
-
-.social-link {
-  display: flex;
-  align-items: center;
-  padding: 0.75rem 1.25rem;
-  color: var(--text-color, #f8f9fc);
-  text-decoration: none;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
-  border-radius: 12px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  font-weight: 500;
-  position: relative;
-  overflow: hidden;
-}
-
-.social-link-content {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  gap: 20px;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
   position: relative;
   z-index: 1;
 }
 
-.hover-card {
-  --card-highlight: rgba(191, 154, 232, 0.1);
-  --card-angle: 0deg;
-  transform-style: preserve-3d;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.footer-social-link {
+  color: #ffffff;
+  font-size: 1.5rem;
+  padding: 12px;
+  border-radius: 50%;
+  background: rgba(19, 19, 26, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   overflow: hidden;
 }
 
-.hover-card::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  background: conic-gradient(
-    from var(--card-angle),
-    transparent 0%,
-    var(--card-highlight) 10%,
-    transparent 20%
-  );
-  -webkit-mask: linear-gradient(#000, #000) content-box,
-                linear-gradient(#000, #000);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+.footer-social-link:hover {
+  transform: translateY(-5px) scale(1.08);
+  background: linear-gradient(135deg, #bf9ae8 0%, rgba(191, 154, 232, 0.8) 100%);
+  color: #f8f9fc;
+  box-shadow: 0 8px 24px rgba(191, 154, 232, 0.18);
 }
 
-.hover-card:hover {
-  transform: translateY(-2px) translateZ(0);
-  box-shadow: 
-    0 4px 12px rgba(0, 0, 0, 0.1),
-    0 0 0 1px rgba(191, 154, 232, 0.1);
+.footer-social-link i {
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 
-.hover-card:hover::before {
-  opacity: 1;
-  animation: rotate-gradient 3s linear infinite;
-}
-
-.hover-card-glow {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(191, 154, 232, 0.15),
-    transparent 100%
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.hover-card:hover .hover-card-glow {
-  opacity: 1;
-}
-
-.social-link i {
-  font-size: 1.1em;
-  transition: transform 0.3s ease;
-}
-
-.social-link:hover i {
-  transform: scale(1.1) translateZ(10px);
-}
-
-.social-link span {
-  position: relative;
-  transition: transform 0.3s ease;
-}
-
-.social-link:hover span {
-  transform: translateZ(5px);
+.footer-social-link:hover i {
+  transform: scale(1.15) rotate(-6deg);
 }
 
 .footer-description {
   color: var(--text-color-secondary, rgba(248, 249, 252, 0.7));
   font-size: 0.9rem;
   line-height: 1.6;
-  transform-style: preserve-3d;
+  margin-top: 1.5rem;
 }
 
 .footer-description p {
   margin: 0.5rem 0;
   transition: all 0.3s ease;
-  transform: translateZ(0);
-}
-
-.footer-description p:hover {
-  color: var(--text-color, #f8f9fc);
-  transform: translateZ(5px);
 }
 
 .footer-description .copyright {
@@ -262,11 +179,6 @@
   100% { transform: scale(1) translateZ(0); }
 }
 
-@keyframes rotate-gradient {
-  0% { --card-angle: 0deg; }
-  100% { --card-angle: 360deg; }
-}
-
 @media (max-width: 640px) {
   .footer {
     margin: 4rem 10px 10px 10px;
@@ -275,16 +187,13 @@
     margin-left: auto;
     margin-right: auto;
   }
-
-  .social-links {
-    gap: 0.75rem;
+  .footer-social {
+    gap: 12px;
   }
-
-  .social-link {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+  .footer-social-link {
+    font-size: 1.1rem;
+    padding: 8px;
   }
-
   .footer-divider {
     width: 90%;
     margin: 1.5rem auto;
@@ -292,23 +201,35 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .footer::after {
-    animation: none;
-  }
-  
-  .hover-card::before {
-    animation: none;
-  }
-
-  .social-link {
-    transition: none;
-  }
-
+  .footer-glow,
+  .footer-shimmer,
   .fa-heart {
     animation: none;
+    transition: none;
   }
 }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const footer = document.querySelector('.footer');
+  if (!footer) return;
+  let isHovering = false;
+
+  const updateMousePosition = (e) => {
+    if (!isHovering) return;
+    const rect = footer.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    footer.style.setProperty('--mouse-x', `${x}%`);
+    footer.style.setProperty('--mouse-y', `${y}%`);
+  };
+
+  footer.addEventListener('mouseenter', () => { isHovering = true; });
+  footer.addEventListener('mouseleave', () => { isHovering = false; });
+  footer.addEventListener('mousemove', updateMousePosition);
+});
+
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
