@@ -4,6 +4,30 @@ title: Changelog
 permalink: /changelog
 ---
 
+## June 26, 2025
+
+#### Content Updates
+- **Enhanced Game Posts**
+  - Updated front matter for all game posts with comprehensive metadata
+  - Added platforms, genres, and themes information
+  - Included photo mode details and trivia sections
+  - Maintained backward compatibility with existing image references
+
+#### Technical Improvements
+- **Color Palette System**
+  - Increased color palette display from 8 to 10 colors
+  - Implemented light-to-dark color sorting for better visual appeal
+  - Added click-to-copy functionality for color codes
+  - Optimized color extraction to target 30 unique colors
+
+- **UI/UX Enhancements**
+  - Redesigned game metadata section with a clean grid layout
+  - Added Trivia section with 2 interesting facts per game
+  - Improved color loading feedback with updated messages
+  - Enhanced responsive design for all screen sizes
+
+---
+
 ## June 22, 2025
 
 #### Content Updates

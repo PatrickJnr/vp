@@ -6,31 +6,50 @@ layout: default
 {% assign banner_data = site.data.virtual-photography[page.slug][banner_pic] %}
 {% assign ar = banner_data.aspect-ratio | plus: 0 %}
 
+{% assign game_slug = page.title | slugify %}
+{% assign game_images = site.data.virtual-photography[game_slug] %}
+{% assign banner_index = page.banner_image | default: 0 %}
+{% assign card_index = page.card_image | default: 0 %}
+{% assign banner_image = game_images[banner_index] %}
+{% assign card_image = game_images[card_index] %}
+
 <style>
-    #background {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -2;
-        background-color: #1c1c1e;
-        transition: background 0.5s ease-in-out;
-        pointer-events: none;
-    }
+:root {
+    --primary-color: transparent; /* Will be overridden by gradient */
+    --primary-gradient: linear-gradient(135deg, #bf9ae8 0%, rgb(217.3225806452, 195.5403225806, 241.4596774194) 100%);
+    --secondary-color: #d9c3f1;
+    --dark-bg: #0a0a1a;
+    --darker-bg: #1e1e2f;
+    --text-color: #e0e0e0;
+}
+
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-color: var(--dark-bg);
+    transition: background 0.5s ease-in-out;
+    pointer-events: none;
+}
 
     .banner {
         position: relative;
         z-index: 1;
-        background-image: url('{{ banner_data.image1080-link }}');
+        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('{{ banner_data.image1080-link }}');
         background-size: cover;
-        background-position: right 0px bottom {{ page.banner-offset | default: 0 }}%;
-        height: 300px;
+        background-position: right 0px bottom {{ page.banner_offset | default: 50 }}%;
+        min-height: 400px;
         display: flex;
         align-items: center;
+        padding: 2rem;
+        color: white;
         justify-content: center;
         margin-bottom: 10px;
         transition: background-position 0.5s ease-in-out, height 0.3s ease;
+        backdrop-filter: none;
         overflow: hidden;
         pointer-events: none;
         border-radius: 22px;
@@ -55,90 +74,227 @@ layout: default
         border-radius: 22px;
     }
 
-    .banner-text {
-        text-align: center;
-        color: white;
+    .banner-content {
+        max-width: 1200px;
+        margin: 0 auto;
         padding: 2rem;
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 15px;
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        z-index: 2;
-        max-width: 80%;
-        pointer-events: auto;
+        text-align: center;
+        width: 100%;
+		z-index: 2;
     }
-
-    .banner-text h1 {
-        font-size: 2.5em;
-        margin-bottom: 0.5rem;
-        color: white;
-        font-weight: 600;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    
+.banner h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #bf9ae8 0%, rgb(217.3225806452, 195.5403225806, 241.4596774194) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-top: 0;
+    line-height: 1.2;
+}
+    
+    .developer, .release-date {
+        font-size: 1.2rem;
+        margin: 0.5rem 0;
+        color: var(--secondary-color);
     }
-
-    .banner-text .date {
-        font-size: 1.1em;
-        opacity: 0.95;
-        color: rgba(255, 255, 255, 0.9);
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    
+    .rating {
+        margin: 1rem 0;
+        color: #ffd700;
+        font-size: 1.5rem;
     }
-
-    @media (max-width: 767px) {
-        .banner {
-            height: 200px;
-            border-radius: 10px;
-        }
-        .banner::before {
-            border-radius: 10px;
-        }
-        .banner-text {
-            padding: 1rem;
-        }
-        .banner-text h1 {
-            font-size: 1.8em;
-        }
+    
+    .rating-value {
+        margin-left: 0.5rem;
+        font-size: 1.2rem;
+        color: var(--text-color);
     }
+    
+    .game-metadata {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    background: rgba(10, 10, 26, 0.7);
+    border-radius: 12px;
+}
+    
+    .meta-section {
+    background: rgba(30, 30, 47, 0.5);
+    border-radius: 8px;
+    padding: 1.25rem;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
 
-    @media (min-width: 768px) and (max-width: 1199px) {
-        .banner {
-            height: 250px;
-            border-radius: 18px;
-        }
-        .banner::before {
-            border-radius: 18px;
-        }
+    .meta-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-color: rgba(191, 154, 232, 0.3);
+}
+
+    .meta-section h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+    .platforms,
+.genres,
+.themes,
+.photo-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+    
+    .platform-tag,
+.genre-tag,
+.theme-tag,
+.feature-tag {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: var(--text-color);
+    transition: all 0.2s ease;
+    margin: 0.15rem 0;
+    line-height: 1.3;
+}
+
+    .platform-tag:hover,
+.genre-tag:hover,
+.theme-tag:hover,
+.feature-tag:hover {
+    background: var(--primary-gradient);
+    transform: translateY(-1px);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(191, 154, 232, 0.3);
+}
+    
+    .color-palette {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
     }
-
-    @media (min-width: 1200px) {
-        .banner {
-            height: 400px;
-            border-radius: 22px;
-        }
-        .banner::before {
-            border-radius: 22px;
-        }
-    }
-
-    /* Spinner styling */
-    .spinner {
-        border: 6px solid rgba(255, 255, 255, 0.3);
-        border-top: 6px solid #fff;
-        border-radius: 50%;
+    
+    .color-swatch {
         width: 40px;
         height: 40px;
-        animation: spin 1s linear infinite;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        margin-top: -20px;
-        margin-left: -20px;
-        z-index: 1000;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        display: inline-block;
+        margin: 0 5px 5px 0;
+        position: relative;
+        overflow: hidden;
     }
+    
+    .trivia-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
 
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+.trivia-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.trivia-item:last-child {
+    border-bottom: none;
+}
+
+.trivia-icon {
+    color: var(--secondary-color);
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.trivia-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.color-swatch::after {
+    content: '📋';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+        font-size: 0;
+        opacity: 0;
+        transition: all 0.2s ease;
+        pointer-events: none;
+    }
+    
+    .color-swatch:hover::after {
+        transform: translate(-50%, -50%) scale(1);
+        font-size: 14px;
+        opacity: 1;
+    }
+    
+    .color-swatch:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        z-index: 2;
+    }
+    
+    .color-loading {
+        color: var(--text-color);
+        opacity: 0.8;
+        font-style: italic;
+    }
+    
+    .related-games {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+    }
+    
+    .related-games a {
+        color: var(--secondary-color);
+        text-decoration: none;
+    }
+    
+    .related-games a:hover {
+        text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+        .banner {
+            min-height: 300px;
+        }
+        
+        .banner h1 {
+            font-size: 2rem;
+        }
+        
+        .game-metadata {
+            grid-template-columns: 1fr;
+            padding: 0 1rem;
+        }
     }
 
     .pig-wrapper {
@@ -242,6 +398,44 @@ layout: default
         }
     }
 
+    .meta-section {
+        margin-bottom: 1.5rem;
+    }
+    
+    .social-links .social-icons {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+        gap: 10px;
+        margin-top: 12px;
+    }
+    
+    .social-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        transition: all 0.3s ease;
+        font-size: 18px;
+        text-decoration: none;
+    }
+    
+    .social-icon:hover {
+        background: var(--primary-gradient);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    .social-icon i {
+        transition: transform 0.2s ease;
+    }
+    
+    .social-icon:hover i {
+        transform: scale(1.2);
+    }
 </style>
 
 <!-- Background element -->
@@ -252,10 +446,97 @@ layout: default
 
 <!-- Banner -->
 <div class="banner">
-    <div class="banner-text">
-        <h1><strong>{{ page.title }}</strong></h1>
-        <p><span class="date"><time datetime="{{ page.date | date_to_xmlschema }}"><strong>{{ page.date | date_to_string }}</strong></time><strong>{% if page.developer %} | {{ page.developer }} {% endif %}</strong></span></p>
+    <div class="banner-content">
+        <h1>{{ page.title }}</h1>
+        {% if page.developer %}<div class="developer">{{ page.developer }}</div>{% endif %}
+        {% if page.release_date %}<div class="release-date">Released: {{ page.release_date | date: "%B %Y" }}</div>{% endif %}
+        {% if page.rating %}
+        <div class="rating">
+            {% assign rating = page.rating | times: 1.0 %}
+            {% for i in (1..5) %}
+                {% if rating >= i %}
+                    ★
+                {% else %}
+                    ☆
+                {% endif %}
+            {% endfor %}
+            <span class="rating-value">{{ rating | round: 1 }}</span>
+        </div>
+        {% endif %}
     </div>
+</div>
+
+<div class="game-metadata">
+    {% if page.platforms %}
+    <div class="meta-section">
+        <h3>Platforms</h3>
+        <div class="platforms">
+            {% for platform in page.platforms %}
+                <span class="platform-tag">{{ platform }}</span>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    
+    {% if page.genres %}
+    <div class="meta-section">
+        <h3>Genres</h3>
+        <div class="genres">
+            {% for genre in page.genres %}
+                <span class="genre-tag">{{ genre }}</span>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    
+    {% if page.themes %}
+    <div class="meta-section">
+        <h3>Themes</h3>
+        <div class="themes">
+            {% for theme in page.themes %}
+                <span class="theme-tag">{{ theme }}</span>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    
+    {% if page.photo_mode and page.photo_mode_features %}
+    <div class="meta-section">
+        <h3>Photo Mode Features</h3>
+        <div class="photo-features">
+            {% for feature in page.photo_mode_features %}
+                <span class="feature-tag">{{ feature }}</span>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    
+    <div class="meta-section">
+        <h3>Color Palette</h3>
+        <div class="color-palette" id="dynamic-colors">
+            {% if page.colors %}
+                {% for color in page.colors %}
+                    <div class="color-swatch" style="background-color: {{ color }};" title="{{ color }}" onclick="navigator.clipboard.writeText('{{ color }}')"></div>
+                {% endfor %}
+            {% else %}
+                <div class="color-loading">Loading colors from images...</div>
+            {% endif %}
+        </div>
+    </div>
+    
+    {% if page.trivia %}
+    <div class="meta-section">
+        <h3>Did You Know?</h3>
+        <div class="trivia-list">
+            {% for fact in page.trivia %}
+            <div class="trivia-item">
+                <span class="trivia-icon">💡</span>
+                <p>{{ fact }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
 </div>
 
 {% if page.description %}
@@ -328,7 +609,466 @@ layout: default
         anchorClass: "swipebox"
     }).enable();
 
-    ( function( $ ) {
-        $( '.swipebox' ).swipebox();
-    } )( jQuery );
+( function( $ ) {
+    $( '.swipebox' ).swipebox();
+    
+    // Enhanced color palette configuration
+    const CONFIG = {
+        TARGET_COLORS: 15,
+        MAX_IMAGES: 100,
+        COLOR_DIFFERENCE_THRESHOLD: 35,
+        EXTRACT_DELAY: 300,
+        ANIMATION_DURATION: 150
+    };
+    
+    // Function to calculate color brightness (0-255)
+    function getBrightness(hexColor) {
+        const r = parseInt(hexColor.substr(1, 2), 16);
+        const g = parseInt(hexColor.substr(3, 2), 16);
+        const b = parseInt(hexColor.substr(5, 2), 16);
+        return Math.round((r * 299 + g * 587 + b * 114) / 1000);
+    }
+    
+    // Function to convert hex to HSL for better color sorting
+    function hexToHsl(hex) {
+        const r = parseInt(hex.substr(1, 2), 16) / 255;
+        const g = parseInt(hex.substr(3, 2), 16) / 255;
+        const b = parseInt(hex.substr(5, 2), 16) / 255;
+        
+        const max = Math.max(r, g, b);
+        const min = Math.min(r, g, b);
+        let h, s, l = (max + min) / 2;
+        
+        if (max === min) {
+            h = s = 0; // achromatic
+        } else {
+            const d = max - min;
+            s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+            switch (max) {
+                case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                case g: h = (b - r) / d + 2; break;
+                case b: h = (r - g) / d + 4; break;
+            }
+            h /= 6;
+        }
+        
+        return { h: h * 360, s: s * 100, l: l * 100 };
+    }
+    
+    // Enhanced gradient sorting with better color flow
+    function sortColorsNaturalGradient(colors) {
+        if (colors.length <= 1) return colors;
+        
+        // Pre-sort by hue to get a better starting point
+        const hueSorted = colors.sort((a, b) => {
+            const hslA = hexToHsl(a.hex);
+            const hslB = hexToHsl(b.hex);
+            return hslA.h - hslB.h;
+        });
+        
+        const sorted = [hueSorted[0]];
+        const remaining = hueSorted.slice(1);
+        
+        while (remaining.length > 0) {
+            const lastColor = sorted[sorted.length - 1];
+            const lastHsl = hexToHsl(lastColor.hex);
+            
+            let closestIndex = 0;
+            let minDistance = Infinity;
+            
+            remaining.forEach((color, index) => {
+                const hsl = hexToHsl(color.hex);
+                
+                // Better distance calculation
+                const hueDiff = Math.min(Math.abs(hsl.h - lastHsl.h), 360 - Math.abs(hsl.h - lastHsl.h));
+                const satDiff = Math.abs(hsl.s - lastHsl.s);
+                const lightDiff = Math.abs(hsl.l - lastHsl.l);
+                
+                // Improved weighting for smoother gradients
+                const distance = (hueDiff * 1.5) + (satDiff * 0.3) + (lightDiff * 0.8);
+                
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestIndex = index;
+                }
+            });
+            
+            sorted.push(remaining[closestIndex]);
+            remaining.splice(closestIndex, 1);
+        }
+        
+        return sorted;
+    }
+    
+    // Convert hex to RGB for better color difference calculation
+    const hexToRgb = (hex) => {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? {
+            r: parseInt(result[1], 16),
+            g: parseInt(result[2], 16),
+            b: parseInt(result[3], 16)
+        } : null;
+    };
+    
+    // Enhanced color uniqueness check with perceptual color difference
+    const isColorUnique = (newColor, existingColors, threshold = CONFIG.COLOR_DIFFERENCE_THRESHOLD) => {
+        if (existingColors.length === 0) return true;
+        
+        const newRgb = hexToRgb(newColor);
+        if (!newRgb) return false;
+        
+        return existingColors.every(existingColor => {
+            const existingRgb = hexToRgb(existingColor.hex);
+            if (!existingRgb) return true;
+            
+            // Use Delta E (perceptual color difference) approximation
+            const rmean = (newRgb.r + existingRgb.r) / 2;
+            const deltaR = newRgb.r - existingRgb.r;
+            const deltaG = newRgb.g - existingRgb.g;
+            const deltaB = newRgb.b - existingRgb.b;
+            
+            const weightR = 2 + rmean / 256;
+            const weightG = 4;
+            const weightB = 2 + (255 - rmean) / 256;
+            
+            const deltaE = Math.sqrt(weightR * deltaR * deltaR + weightG * deltaG * deltaG + weightB * deltaB * deltaB);
+            
+            return deltaE > threshold;
+        });
+    };
+    
+    // Enhanced color swatch with better UX
+    const addColorSwatch = (colorObj, index) => {
+        const colorPalette = document.getElementById('dynamic-colors');
+        if (!colorPalette) return;
+        
+        const swatch = document.createElement('div');
+        swatch.className = 'color-swatch';
+        swatch.style.backgroundColor = colorObj.hex;
+        swatch.style.opacity = '0';
+        swatch.style.transform = 'scale(0.8)';
+        
+        // Enhanced tooltip with more info
+        const brightness = getBrightness(colorObj.hex);
+        const hsl = hexToHsl(colorObj.hex);
+        const lightness = brightness > 128 ? 'Light' : 'Dark';
+        
+        swatch.title = `${colorObj.hex} • ${lightness} • H:${Math.round(hsl.h)}° S:${Math.round(hsl.s)}% L:${Math.round(hsl.l)}% • Click to copy`;
+        swatch.dataset.color = colorObj.hex;
+        swatch.dataset.index = index;
+        
+        // Enhanced click handler with visual feedback
+        swatch.onclick = async (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            try {
+                await navigator.clipboard.writeText(colorObj.hex);
+                
+                // Enhanced visual feedback
+                const originalBg = swatch.style.backgroundColor;
+                const originalTransform = swatch.style.transform;
+                
+                swatch.style.transform = 'scale(1.2)';
+                swatch.style.boxShadow = '0 0 20px rgba(255, 255, 255, 0.8)';
+                
+                setTimeout(() => {
+                    swatch.style.transform = originalTransform;
+                    swatch.style.boxShadow = '';
+                }, 200);
+                
+                // Show copied message
+                showCopyFeedback(swatch, colorObj.hex);
+                
+            } catch (err) {
+                console.warn('Failed to copy color:', err);
+                // Fallback for older browsers
+                fallbackCopyToClipboard(colorObj.hex);
+            }
+        };
+        
+        // Add hover effects
+        swatch.addEventListener('mouseenter', () => {
+            swatch.style.transform = 'scale(1.1)';
+            swatch.style.zIndex = '10';
+        });
+        
+        swatch.addEventListener('mouseleave', () => {
+            swatch.style.transform = 'scale(1)';
+            swatch.style.zIndex = '1';
+        });
+        
+        colorPalette.appendChild(swatch);
+        
+        // Animate in with staggered delay
+        setTimeout(() => {
+            swatch.style.transition = `all ${CONFIG.ANIMATION_DURATION}ms cubic-bezier(0.34, 1.56, 0.64, 1)`;
+            swatch.style.opacity = '1';
+            swatch.style.transform = 'scale(1)';
+        }, index * 50);
+    };
+    
+    // Show copy feedback
+    const showCopyFeedback = (element, color) => {
+        const feedback = document.createElement('div');
+        feedback.textContent = 'Copied!';
+        feedback.style.cssText = `
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        `;
+        
+        element.style.position = 'relative';
+        element.appendChild(feedback);
+        
+        setTimeout(() => feedback.style.opacity = '1', 10);
+        setTimeout(() => {
+            feedback.style.opacity = '0';
+            setTimeout(() => feedback.remove(), 200);
+        }, 1000);
+    };
+    
+    // Fallback copy method
+    const fallbackCopyToClipboard = (text) => {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        textArea.style.top = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        
+        try {
+            document.execCommand('copy');
+            console.log('Fallback copy successful');
+        } catch (err) {
+            console.error('Fallback copy failed:', err);
+        }
+        
+        document.body.removeChild(textArea);
+    };
+    
+    // Enhanced loading indicator
+    const updateLoadingMessage = (message, progress = null) => {
+        const loadingElement = document.querySelector('.color-loading');
+        if (loadingElement) {
+            let displayMessage = message;
+            if (progress) {
+                displayMessage += ` (${progress.current}/${progress.total})`;
+            }
+            loadingElement.textContent = displayMessage;
+        }
+    };
+    
+    // Main color extraction function with improvements
+    function extractColors() {
+        const colorPalette = document.getElementById('dynamic-colors');
+        if (!colorPalette) return;
+        
+        const loadingElement = colorPalette.querySelector('.color-loading');
+        
+        // Enhanced gallery detection
+        const waitForPigGallery = () => {
+            return new Promise((resolve) => {
+                let attempts = 0;
+                const maxAttempts = 50;
+                
+                const checkInterval = setInterval(() => {
+                    const pigImages = document.querySelectorAll('#pig img');
+                    const pigFigures = document.querySelectorAll('#pig figure');
+                    attempts++;
+                    
+                    if (pigImages.length > 0 && pigFigures.length > 0) {
+                        // Wait for images to actually load
+                        const loadedImages = Array.from(pigImages).filter(img => img.complete && img.naturalWidth > 0);
+                        
+                        if (loadedImages.length > 0 || attempts >= maxAttempts) {
+                            clearInterval(checkInterval);
+                            setTimeout(() => resolve(pigImages), 500);
+                        }
+                    } else if (attempts >= maxAttempts) {
+                        clearInterval(checkInterval);
+                        resolve(document.querySelectorAll('#pig img'));
+                    }
+                }, 200);
+            });
+        };
+        
+        // Enhanced color processing with better error handling
+        const processColors = async (images) => {
+            if (images.length === 0) {
+                updateLoadingMessage('No images available for color extraction');
+                return;
+            }
+            
+            updateLoadingMessage('Analyzing images for colors...');
+            
+            const MAX_IMAGES = Math.min(images.length, CONFIG.MAX_IMAGES);
+            const allExtractedColors = [];
+            let processedCount = 0;
+            
+            // Process images with better error handling
+            const colorPromises = Array.from({ length: MAX_IMAGES }, (_, i) => {
+                const img = images[i];
+                if (!img || !img.src) return Promise.resolve([]);
+                
+                return new Promise((resolve) => {
+                    const colorImage = new Image();
+                    colorImage.crossOrigin = 'anonymous';
+                    
+                    const timeout = setTimeout(() => {
+                        console.warn('Color extraction timeout for image:', img.src);
+                        resolve([]);
+                    }, 5000);
+                    
+                    colorImage.onload = () => {
+                        clearTimeout(timeout);
+                        
+                        Vibrant.from(colorImage).getPalette()
+                            .then(palette => {
+                                const imageColors = [];
+                                const colorTypes = ['Vibrant', 'DarkVibrant', 'LightVibrant', 'Muted', 'DarkMuted', 'LightMuted'];
+                                
+                                colorTypes.forEach(type => {
+                                    const paletteColor = palette[type];
+                                    if (paletteColor && paletteColor.hex) {
+                                        const hex = paletteColor.hex.toUpperCase();
+                                        const brightness = getBrightness(hex);
+                                        
+                                        // Filter out colors that are too similar to white/black
+                                        if (brightness > 15 && brightness < 240) {
+                                            imageColors.push({
+                                                hex: hex,
+                                                brightness: brightness,
+                                                imageIndex: i,
+                                                type: type,
+                                                population: paletteColor.population || 0
+                                            });
+                                        }
+                                    }
+                                });
+                                
+                                processedCount++;
+                                updateLoadingMessage('Extracting colors', { 
+                                    current: processedCount, 
+                                    total: MAX_IMAGES 
+                                });
+                                
+                                resolve(imageColors);
+                            })
+                            .catch(error => {
+                                clearTimeout(timeout);
+                                console.warn('Vibrant extraction failed:', error);
+                                processedCount++;
+                                resolve([]);
+                            });
+                    };
+                    
+                    colorImage.onerror = () => {
+                        clearTimeout(timeout);
+                        processedCount++;
+                        resolve([]);
+                    };
+                    
+                    // Enhanced cache busting
+                    const timestamp = Date.now() + Math.random();
+                    const separator = img.src.includes('?') ? '&' : '?';
+                    colorImage.src = img.src + separator + 'cb=' + timestamp;
+                });
+            });
+            
+            try {
+                updateLoadingMessage('Processing color data...');
+                
+                const allImageColors = await Promise.all(colorPromises);
+                
+                // Flatten and process colors
+                allImageColors.forEach(imageColors => {
+                    allExtractedColors.push(...imageColors);
+                });
+                
+                if (allExtractedColors.length === 0) {
+                    updateLoadingMessage('Unable to extract colors from images');
+                    return;
+                }
+                
+                updateLoadingMessage('Creating color palette...');
+                
+                // Enhanced duplicate removal
+                const uniqueColors = [];
+                allExtractedColors
+                    .sort((a, b) => b.population - a.population) // Prefer more prominent colors
+                    .forEach(colorObj => {
+                        if (uniqueColors.length < CONFIG.TARGET_COLORS && 
+                            isColorUnique(colorObj.hex, uniqueColors)) {
+                            uniqueColors.push(colorObj);
+                        }
+                    });
+                
+                // Apply gradient sorting
+                const sortedColors = sortColorsNaturalGradient(uniqueColors);
+                
+                // Clear palette and add colors with animation
+                colorPalette.innerHTML = '';
+                
+                sortedColors.forEach((colorObj, index) => {
+                    addColorSwatch(colorObj, index);
+                });
+                
+                // Success message
+                const successCount = sortedColors.length;
+                if (successCount < CONFIG.TARGET_COLORS) {
+                    setTimeout(() => {
+                        const messageDiv = document.createElement('div');
+                        messageDiv.className = 'color-loading';
+                        messageDiv.style.cssText = 'font-size: 0.8rem; opacity: 0.6; margin-top: 8px;';
+                        messageDiv.textContent = `${successCount} unique colors found!`;
+                        colorPalette.appendChild(messageDiv);
+                        
+                        setTimeout(() => messageDiv.remove(), 3000);
+                    }, CONFIG.ANIMATION_DURATION * sortedColors.length + 500);
+                }
+                
+                console.log(`✅ Successfully extracted ${successCount} colors in gradient order`);
+                
+            } catch (error) {
+                console.error('Error processing colors:', error);
+                updateLoadingMessage('Error creating color palette');
+            }
+        };
+        
+        // Start the enhanced extraction process
+        setTimeout(() => {
+            waitForPigGallery().then(processColors);
+        }, CONFIG.EXTRACT_DELAY);
+    }
+    
+    // Initialize with better timing
+    $(document).ready(function() {
+        // Wait for everything to be ready
+        const initDelay = window.requestIdleCallback ? 0 : 800;
+        
+        const initialize = () => {
+            setTimeout(extractColors, 100);
+        };
+        
+        if (window.requestIdleCallback) {
+            requestIdleCallback(initialize, { timeout: 2000 });
+        } else {
+            setTimeout(initialize, initDelay);
+        }
+    });
+    
+})( jQuery );
 </script>
