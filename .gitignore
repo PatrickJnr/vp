@@ -10,3 +10,4 @@ node_modules/.bin/
 !.stylelintrc.json
 !.eslintrc.json
 /node_modules
+.env
