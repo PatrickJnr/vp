@@ -1,16 +1,20 @@
 [
     {
         "file_name": "NinaOnceHuman.png",
-        "imageFull-link": "https://i.imgur.com/6XyQz2A.png",
-        "thumbnail-link-600": "https://i.imgur.com/BveCzXM.jpeg",
-        "image1080-link": "https://i.imgur.com/7TGQZpc.jpeg",
+        "file_path": "D:\\Grimtech\\tools\\Once-Human\\NinaOnceHuman.png",
+        "file_hash": "c7378514f0edf2676c9591360fd979b9",
+        "imageFull-link": "https://a.l3n.co/PC6aur.png",
+        "thumbnail-link-600": "https://b.l3n.co/PCC28F.jpg",
+        "image1080-link": "https://a.l3n.co/PCC8Q3.jpg",
         "aspect-ratio": "0.9314814814814815"
     },
     {
         "file_name": "TmanOnceHuman.png",
-        "imageFull-link": "https://i.imgur.com/U7dLbcs.png",
-        "thumbnail-link-600": "https://i.imgur.com/aq0JFqA.jpeg",
-        "image1080-link": "https://i.imgur.com/CnVtD4n.jpeg",
+        "file_path": "D:\\Grimtech\\tools\\Once-Human\\TmanOnceHuman.png",
+        "file_hash": "b87063362f0b53d78b6d9802c5324d7f",
+        "imageFull-link": "https://d.l3n.co/PCCAn0.png",
+        "thumbnail-link-600": "https://b.l3n.co/PCCWyD.jpg",
+        "image1080-link": "https://d.l3n.co/PCCjTq.jpg",
         "aspect-ratio": "0.8356435643564356"
     }
 ]

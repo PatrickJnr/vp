@@ -1,30 +1,38 @@
 [
     {
         "file_name": "1.png",
-        "imageFull-link": "https://i.imgur.com/z0L6iua.png",
-        "thumbnail-link-600": "https://i.imgur.com/l08aOBY.jpeg",
-        "image1080-link": "https://i.imgur.com/XS0dqA0.jpeg",
+        "file_path": "D:\\Grimtech\\tools\\Cyberpunk-2077\\1.png",
+        "file_hash": "e1bbf0a440502299baf27ea594710ef0",
+        "imageFull-link": "https://d.l3n.co/PC1EnA.png",
+        "thumbnail-link-600": "https://a.l3n.co/PC1kyM.jpg",
+        "image1080-link": "https://c.l3n.co/PC1CTQ.jpg",
         "aspect-ratio": "2.388888888888889"
     },
     {
         "file_name": "Cyberpunk2077.png",
-        "imageFull-link": "https://i.imgur.com/99UdPHE.png",
-        "thumbnail-link-600": "https://i.imgur.com/jNTOedH.jpeg",
-        "image1080-link": "https://i.imgur.com/yZVcKJA.jpeg",
+        "file_path": "D:\\Grimtech\\tools\\Cyberpunk-2077\\Cyberpunk2077.png",
+        "file_hash": "f1e274d8ad7c078163e92c489d4923d4",
+        "imageFull-link": "https://d.l3n.co/PC1J7a.png",
+        "thumbnail-link-600": "https://b.l3n.co/PC1QUe.jpg",
+        "image1080-link": "https://d.l3n.co/PC19Zk.jpg",
         "aspect-ratio": "2.3703703703703702"
     },
     {
         "file_name": "photomode_21072024_040420.png",
-        "imageFull-link": "https://i.imgur.com/Ib2kbRS.jpeg",
-        "thumbnail-link-600": "https://i.imgur.com/PqvEHJ0.jpeg",
-        "image1080-link": "https://i.imgur.com/GueUSoX.jpeg",
+        "file_path": "D:\\Grimtech\\tools\\Cyberpunk-2077\\photomode_21072024_040420.png",
+        "file_hash": "1858d5759225847b571ab2d3f6edc9e0",
+        "imageFull-link": "https://a.l3n.co/PC1dmx.png",
+        "thumbnail-link-600": "https://c.l3n.co/PC1quH.jpg",
+        "image1080-link": "https://d.l3n.co/PC1mA1.jpg",
         "aspect-ratio": "2.388888888888889"
     },
     {
         "file_name": "photomode_21072024_041748.png",
-        "imageFull-link": "https://i.imgur.com/X83X5Ze.jpeg",
-        "thumbnail-link-600": "https://i.imgur.com/ZBHNKkx.jpeg",
-        "image1080-link": "https://i.imgur.com/J681H3g.jpeg",
+        "file_path": "D:\\Grimtech\\tools\\Cyberpunk-2077\\photomode_21072024_041748.png",
+        "file_hash": "0ab1a28f7071b34f0054d0e3fb07d422",
+        "imageFull-link": "https://c.l3n.co/PC1sQc.png",
+        "thumbnail-link-600": "https://c.l3n.co/PC145Z.jpg",
+        "image1080-link": "https://d.l3n.co/PC1pTP.jpg",
         "aspect-ratio": "2.388888888888889"
     }
 ]

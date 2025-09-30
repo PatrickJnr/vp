@@ -1,51 +1,65 @@
 [
     {
         "file_name": "Photo_2023-09-01-225501.png",
-        "imageFull-link": "https://i.imgur.com/aMGrpdd.jpeg",
-        "thumbnail-link-600": "https://i.imgur.com/DNflC8o.jpeg",
-        "image1080-link": "https://i.imgur.com/XzgsEcM.jpeg",
+        "file_path": "D:\\Grimtech\\tools\\Starfield\\Photo_2023-09-01-225501.png",
+        "file_hash": "b5b2d5c486782dc6156c3ec404a8e1b8",
+        "imageFull-link": "https://b.l3n.co/PCJ9lD.png",
+        "thumbnail-link-600": "https://a.l3n.co/PCJdbq.jpg",
+        "image1080-link": "https://c.l3n.co/PCJBtA.jpg",
         "aspect-ratio": "1.7777777777777777"
     },
     {
         "file_name": "Photo_2023-09-05-010627.png",
-        "imageFull-link": "https://i.imgur.com/JMcLpUH.png",
-        "thumbnail-link-600": "https://i.imgur.com/nehO1VN.jpeg",
-        "image1080-link": "https://i.imgur.com/2i2lS1D.jpeg",
+        "file_path": "D:\\Grimtech\\tools\\Starfield\\Photo_2023-09-05-010627.png",
+        "file_hash": "23d37b1f1b4d92ed09330d7c2e987389",
+        "imageFull-link": "https://b.l3n.co/PCJm4M.png",
+        "thumbnail-link-600": "https://a.l3n.co/PCJsPQ.jpg",
+        "image1080-link": "https://c.l3n.co/PCJ4ia.jpg",
         "aspect-ratio": "2.388888888888889"
     },
     {
         "file_name": "Photo_2023-09-05-010707.png",
-        "imageFull-link": "https://i.imgur.com/iajGBSz.jpeg",
-        "thumbnail-link-600": "https://i.imgur.com/xUDzGTp.jpeg",
-        "image1080-link": "https://i.imgur.com/L04NK0N.jpeg",
+        "file_path": "D:\\Grimtech\\tools\\Starfield\\Photo_2023-09-05-010707.png",
+        "file_hash": "fd0fa10b01e004a1b5daf5c3ab1bc7d9",
+        "imageFull-link": "https://d.l3n.co/PCJKde.png",
+        "thumbnail-link-600": "https://c.l3n.co/PCJpMk.jpg",
+        "image1080-link": "https://b.l3n.co/PCJ7ax.jpg",
         "aspect-ratio": "2.388888888888889"
     },
     {
-        "file_name": "Photo_2024-06-15-220304.png",
-        "imageFull-link": "https://i.imgur.com/y1UpvlV.jpeg",
-        "thumbnail-link-600": "https://i.imgur.com/RSXCXWk.jpeg",
-        "image1080-link": "https://i.imgur.com/7Ve0ADv.jpeg",
-        "aspect-ratio": "1.7777777777777777"
-    },
-    {
         "file_name": "Photo_2024-06-10-152554-1.png",
-        "imageFull-link": "https://i.imgur.com/8SmcZpc.png",
-        "thumbnail-link-600": "https://i.imgur.com/E1LVW9H.jpeg",
-        "image1080-link": "https://i.imgur.com/8X9fxxt.jpeg",
+        "file_path": "D:\\Grimtech\\tools\\Starfield\\Photo_2024-06-10-152554-1.png",
+        "file_hash": "88b8abc77ae8a0b18efcae6cd65e65e7",
+        "imageFull-link": "https://d.l3n.co/PCJH6H.png",
+        "thumbnail-link-600": "https://a.l3n.co/PCJlz1.jpg",
+        "image1080-link": "https://b.l3n.co/PCJzbc.jpg",
         "aspect-ratio": "0.5625"
     },
     {
-        "file_name": "Photo_2024-10-01-003504.png",
-        "imageFull-link": "https://i.imgur.com/ZG23WH8.jpeg",
-        "thumbnail-link-600": "https://i.imgur.com/KwcgkY5.jpeg",
-        "image1080-link": "https://i.imgur.com/sQZ3Tmi.jpeg",
-        "aspect-ratio": "0.5625"
+        "file_name": "Photo_2024-06-15-220304.png",
+        "file_path": "D:\\Grimtech\\tools\\Starfield\\Photo_2024-06-15-220304.png",
+        "file_hash": "7f64455d965e9c11fae836e8a7ca0d22",
+        "imageFull-link": "https://a.l3n.co/PCJetK.png",
+        "thumbnail-link-600": "https://c.l3n.co/PCJnKZ.jpg",
+        "image1080-link": "https://b.l3n.co/PCJvPP.jpg",
+        "aspect-ratio": "1.7777777777777777"
     },
     {
         "file_name": "Photo_2024-09-30-224659.png",
-        "imageFull-link": "https://i.imgur.com/x7Ahk2L.png",
-        "thumbnail-link-600": "https://i.imgur.com/64cqhVU.jpeg",
-        "image1080-link": "https://i.imgur.com/GsxRkC7.jpeg",
+        "file_path": "D:\\Grimtech\\tools\\Starfield\\Photo_2024-09-30-224659.png",
+        "file_hash": "89d9fc9319ebb49bfe51107ad93c54dd",
+        "imageFull-link": "https://c.l3n.co/PCJMjm.png",
+        "thumbnail-link-600": "https://b.l3n.co/PCJYqi.jpg",
+        "image1080-link": "https://d.l3n.co/PCJoMo.jpg",
         "aspect-ratio": "1.7777777777777777"
+    },
+    {
+        "file_name": "Photo_2024-10-01-003504.png",
+        "file_path": "D:\\Grimtech\\tools\\Starfield\\Photo_2024-10-01-003504.png",
+        "file_hash": "8426781470adc5bd16566b57e9c5c8a7",
+        "imageFull-link": "https://b.l3n.co/PCJuh9.png",
+        "thumbnail-link-600": "https://c.l3n.co/PCJNC2.jpg",
+        "image1080-link": "https://d.l3n.co/PCJPzv.jpg",
+        "aspect-ratio": "0.5625"
     }
 ]

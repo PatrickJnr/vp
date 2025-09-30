@@ -1,37 +1,47 @@
 [
     {
         "file_name": "2025_03_19_08_53_05.jpg",
-        "imageFull-link": "https://i.imgur.com/7ndXZ72.jpeg",
-        "thumbnail-link-600": "https://i.imgur.com/9Z11tjR.jpeg",
-        "image1080-link": "https://i.imgur.com/2AuTKkr.jpeg",
+        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Shadows\\2025_03_19_08_53_05.jpg",
+        "file_hash": "96f211a9d31c484adf616958c599fd88",
+        "imageFull-link": "https://c.l3n.co/PCtJ02.jpg",
+        "thumbnail-link-600": "https://a.l3n.co/PCtQqv.jpg",
+        "image1080-link": "https://c.l3n.co/PCtVYC.jpg",
         "aspect-ratio": "0.5625"
     },
     {
         "file_name": "2025_03_21_20_10_44.jpg",
-        "imageFull-link": "https://i.imgur.com/OJzIxQX.jpeg",
-        "thumbnail-link-600": "https://i.imgur.com/AByJhoH.jpeg",
-        "image1080-link": "https://i.imgur.com/mOfVHBM.jpeg",
+        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Shadows\\2025_03_21_20_10_44.jpg",
+        "file_hash": "b9ce64dd194fbe4c2a2dcdcc2e63b2f1",
+        "imageFull-link": "https://d.l3n.co/PCt9h5.jpg",
+        "thumbnail-link-600": "https://b.l3n.co/PCtqCz.jpg",
+        "image1080-link": "https://c.l3n.co/PCtBST.jpg",
         "aspect-ratio": "1.7777777777777777"
     },
     {
         "file_name": "asshaddows.png",
-        "imageFull-link": "https://i.imgur.com/CFtnj9b.png",
-        "thumbnail-link-600": "https://i.imgur.com/ZLgnE2x.jpeg",
-        "image1080-link": "https://i.imgur.com/I45s450.jpeg",
+        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Shadows\\asshaddows.png",
+        "file_hash": "5e0ba8817a879a730ec49aa0d7505e88",
+        "imageFull-link": "https://a.l3n.co/PCtmwb.png",
+        "thumbnail-link-600": "https://d.l3n.co/PCt317.jpg",
+        "image1080-link": "https://a.l3n.co/PCt4pr.jpg",
         "aspect-ratio": "0.8166666666666667"
     },
     {
         "file_name": "NaoeRedBlack.png",
-        "imageFull-link": "https://i.imgur.com/TvmXGY5.png",
-        "thumbnail-link-600": "https://i.imgur.com/p59JfOP.jpeg",
-        "image1080-link": "https://i.imgur.com/iq43ZC7.jpeg",
+        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Shadows\\NaoeRedBlack.png",
+        "file_hash": "c610a882ca4e8b7c9317606cb02604ee",
+        "imageFull-link": "https://d.l3n.co/PCtKfF.png",
+        "thumbnail-link-600": "https://a.l3n.co/PCt703.jpg",
+        "image1080-link": "https://c.l3n.co/PCtOB0.jpg",
         "aspect-ratio": "0.8"
     },
     {
         "file_name": "NaoeWhiteRed.png",
-        "imageFull-link": "https://i.imgur.com/EmSNm7a.png",
-        "thumbnail-link-600": "https://i.imgur.com/Aw3NirX.jpeg",
-        "image1080-link": "https://i.imgur.com/ef7aSkN.jpeg",
+        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Shadows\\NaoeWhiteRed.png",
+        "file_hash": "012ca32d7b01c60948291d7254d8dc5d",
+        "imageFull-link": "https://d.l3n.co/PCtHYD.png",
+        "thumbnail-link-600": "https://c.l3n.co/PCtz2q.jpg",
+        "image1080-link": "https://b.l3n.co/PCtSJA.jpg",
         "aspect-ratio": "0.8"
     }
 ]

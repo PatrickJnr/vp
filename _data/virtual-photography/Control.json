@@ -1,30 +1,38 @@
 [
     {
-        "file_name": "ControlRed.png",
-        "imageFull-link": "https://i.imgur.com/jVMjTwk.png",
-        "thumbnail-link-600": "https://i.imgur.com/SGmxhjm.jpeg",
-        "image1080-link": "https://i.imgur.com/nxhXV4F.jpeg",
-        "aspect-ratio": "2.388888888888889"
-    },
-    {
-        "file_name": "Lights.png",
-        "imageFull-link": "https://i.imgur.com/VMzuf1I.png",
-        "thumbnail-link-600": "https://i.imgur.com/t93x6Yy.jpeg",
-        "image1080-link": "https://i.imgur.com/0PNzfs8.jpeg",
-        "aspect-ratio": "2.3703703703703702"
-    },
-    {
         "file_name": "Brutalism.png",
-        "imageFull-link": "https://i.imgur.com/mTBNGJw.png",
-        "thumbnail-link-600": "https://i.imgur.com/Kd5wd6V.jpeg",
-        "image1080-link": "https://i.imgur.com/aKCYW0E.jpeg",
+        "file_path": "D:\\Grimtech\\tools\\Control\\Brutalism.png",
+        "file_hash": "66ec093ebfcb6ba3bffa9b5e19f6562d",
+        "imageFull-link": "https://b.l3n.co/PC128C.png",
+        "thumbnail-link-600": "https://a.l3n.co/PC18J5.jpg",
+        "image1080-link": "https://c.l3n.co/PC1Aez.jpg",
         "aspect-ratio": "1.7777777777777777"
     },
     {
         "file_name": "CentreRoom.png",
-        "imageFull-link": "https://i.imgur.com/6rc16VQ.png",
-        "thumbnail-link-600": "https://i.imgur.com/6oUXJ4S.jpeg",
-        "image1080-link": "https://i.imgur.com/WBVhSu8.jpeg",
+        "file_path": "D:\\Grimtech\\tools\\Control\\CentreRoom.png",
+        "file_hash": "227b32e72eb2a03d96840a5c157e757e",
+        "imageFull-link": "https://a.l3n.co/PC1WyT.png",
+        "thumbnail-link-600": "https://d.l3n.co/PC1jRb.jpg",
+        "image1080-link": "https://a.l3n.co/PC1077.jpg",
         "aspect-ratio": "2.388888888888889"
+    },
+    {
+        "file_name": "ControlRed.png",
+        "file_path": "D:\\Grimtech\\tools\\Control\\ControlRed.png",
+        "file_hash": "c7110de66fc7fc62d36185e6a53c9e3b",
+        "imageFull-link": "https://d.l3n.co/PC1IUr.png",
+        "thumbnail-link-600": "https://a.l3n.co/PC1gIF.jpg",
+        "image1080-link": "https://d.l3n.co/PC1rm3.jpg",
+        "aspect-ratio": "2.388888888888889"
+    },
+    {
+        "file_name": "Lights.png",
+        "file_path": "D:\\Grimtech\\tools\\Control\\Lights.png",
+        "file_hash": "3170cdc5a0b763090ec50f0d8ca02195",
+        "imageFull-link": "https://b.l3n.co/PC1tu0.png",
+        "thumbnail-link-600": "https://c.l3n.co/PC1R8D.jpg",
+        "image1080-link": "https://a.l3n.co/PC1TQq.jpg",
+        "aspect-ratio": "2.3703703703703702"
     }
 ]

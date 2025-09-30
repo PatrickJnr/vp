@@ -4,6 +4,12 @@ title: Changelog
 permalink: /changelog
 ---
 
+## September 30, 2025
+
+#### Technical Updates
+- **Hosting**
+  - Moved image hosting to **LensDump** as Imgur is blocked in the UK
+
 ## June 26, 2025
 
 #### Content Updates
@@ -26,7 +32,6 @@ permalink: /changelog
   - Improved color loading feedback with updated messages
   - Enhanced responsive design for all screen sizes
 
----
 
 ## June 22, 2025
 

@@ -1,30 +1,38 @@
 [
     {
         "file_name": "20240222142323.jpg",
-        "imageFull-link": "https://b.l3n.co/PC03ea.jpg",
-        "thumbnail-link-600": "https://a.l3n.co/PC04ye.jpg",
-        "image1080-link": "https://c.l3n.co/PC0pTk.jpg",
+        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Mirage\\20240222142323.jpg",
+        "file_hash": "c65619cf19ce5c825de7815f048408d0",
+        "imageFull-link": "https://d.l3n.co/PCtWKk.jpg",
+        "thumbnail-link-600": "https://a.l3n.co/PCtiPx.jpg",
+        "image1080-link": "https://b.l3n.co/PCt0jH.jpg",
         "aspect-ratio": "2.3703703703703702"
     },
     {
         "file_name": "20240226134651.jpg",
-        "imageFull-link": "https://d.l3n.co/PC077x.jpg",
-        "thumbnail-link-600": "https://c.l3n.co/PC0OUH.jpg",
-        "image1080-link": "https://a.l3n.co/PC0lZ1.jpg",
+        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Mirage\\20240226134651.jpg",
+        "file_hash": "6543748372895c1f697a098784965c0a",
+        "imageFull-link": "https://a.l3n.co/PCtIq1.jpg",
+        "thumbnail-link-600": "https://c.l3n.co/PCtZMc.jpg",
+        "image1080-link": "https://d.l3n.co/PCtghK.jpg",
         "aspect-ratio": "2.3703703703703702"
     },
     {
         "file_name": "20240226141848.jpg",
-        "imageFull-link": "https://d.l3n.co/PC0zmc.jpg",
-        "thumbnail-link-600": "https://c.l3n.co/PC0SuK.jpg",
-        "image1080-link": "https://d.l3n.co/PC0nAZ.jpg",
+        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Mirage\\20240226141848.jpg",
+        "file_hash": "2510d53c0cf87ffe2a4d3384eb139868",
+        "imageFull-link": "https://c.l3n.co/PCttCZ.jpg",
+        "thumbnail-link-600": "https://d.l3n.co/PCt1zP.jpg",
+        "image1080-link": "https://a.l3n.co/PCtRwm.jpg",
         "aspect-ratio": "2.3703703703703702"
     },
     {
         "file_name": "ACMirage_2024-05-18_04-56-18.png",
-        "imageFull-link": "https://a.l3n.co/PC0vQP.png",
-        "thumbnail-link-600": "https://b.l3n.co/PC0Lnm.jpg",
-        "image1080-link": "https://c.l3n.co/PC0M5i.jpg",
+        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Mirage\\ACMirage_2024-05-18_04-56-18.png",
+        "file_hash": "7aad9ecced1610e79fd0e2ae74cd7a86",
+        "imageFull-link": "https://b.l3n.co/PCtE1i.png",
+        "thumbnail-link-600": "https://d.l3n.co/PCtkKo.jpg",
+        "image1080-link": "https://a.l3n.co/PCt6f9.jpg",
         "aspect-ratio": "2.388888888888889"
     }
 ]
