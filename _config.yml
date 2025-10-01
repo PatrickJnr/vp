@@ -7,6 +7,7 @@ plugins:
   - jekyll-seo-tag
   - jemoji
   - jekyll-mentions
+  - jekyll-minifier
   
 # Removed the entire jekyll-cache configuration section:
 # jekyll-cache:
@@ -41,6 +42,15 @@ jekyll-seo-tag:
 jekyll-mentions:
   base_url: 'https://twitter.com'
 favicon: /assets/img/favicon.ico
+
+# Jekyll Minifier Configuration
+jekyll-minifier:
+  exclude: ['*.min.css', '*.min.js']
+  compress_css: true
+  compress_js: true
+  compress_html: true
+
+
 
 # Removed caching and cache_dir. Jekyll 4+ handles this automatically.
 # caching: true

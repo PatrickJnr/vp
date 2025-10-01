@@ -36,11 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isMenuOpen) return;
 
     switch (e.key) {
-      case 'Escape':
+      case 'Escape': {
         toggleMenu(false);
         menuIcon.focus();
         break;
-      case 'Tab':
+      }
+      case 'Tab': {
         // Get all focusable elements in the menu
         const focusableElements = dropdownMenu.querySelectorAll('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])');
         const firstElement = focusableElements[0];
@@ -57,6 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
           firstElement.focus();
         }
         break;
+      }
+      default: {
+        // Handle any other keys if needed
+        break;
+      }
     }
   });
 
@@ -104,4 +110,4 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleMenu(false);
     }
   });
-}); 
+});

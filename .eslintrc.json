@@ -1,0 +1,29 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jquery": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-console": "off",
+    "no-undef": "warn",
+    "prefer-const": "warn",
+    "no-var": "error"
+  },
+  "globals": {
+    "Swipebox": "readonly",
+    "jQuery": "readonly",
+    "$": "readonly",
+    "define": "readonly",
+    "module": "readonly"
+  }
+}

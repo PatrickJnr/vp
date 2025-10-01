@@ -1,21 +1,21 @@
 :root {
-  // Colors
+  /* Colors */
   --background-color: #ffffff;
   --text-color: #333333;
   --accent-color: #007bff;
-  
-  // Layout
+
+  /* Layout */
   --header-height: 60px;
-  
-  // Transitions
+
+  /* Transitions */
   --transition-duration: 0.3s;
   --transition-timing: ease;
-  
-  // Shadows
+
+  /* Shadows */
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  
-  // Z-indices
+
+  /* Z-indices */
   --z-header: 1000;
   --z-dropdown: 1001;
   
@@ -24,4 +24,4 @@
     --text-color: #ffffff;
     --accent-color: #3b82f6;
   }
-} 
+}

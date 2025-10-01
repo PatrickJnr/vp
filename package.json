@@ -5,11 +5,17 @@
   "scripts": {
     "lint:css": "stylelint \"**/*.{css,scss}\"",
     "lint:js": "eslint \"**/*.js\"",
-    "lint": "npm run lint:css && npm run lint:js"
+    "lint": "npm run lint:css && npm run lint:js",
+    "build:css": "sass assets/css/main.scss assets/css/main.css --style=compressed",
+    "watch:css": "sass assets/css/main.scss assets/css/main.css --watch --style=compressed",
+    "build": "npm run build:css && npm run lint",
+    "serve": "npm run watch:css"
   },
   "devDependencies": {
     "eslint": "^8.56.0",
     "stylelint": "^16.2.1",
-    "stylelint-config-standard": "^36.0.0"
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-scss": "^6.0.0",
+    "sass": "^1.70.0"
   }
-} 
+}

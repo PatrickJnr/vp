@@ -6,79 +6,94 @@ permalink: /changelog
 
 ## October 1, 2025
 
-#### Technical Updates
+### Technical Updates
+- **JavaScript Code Quality**
+  - Fixed 80+ ESLint errors and warnings across all files
+  - Updated variable declarations from `var` → `let` / `const` for better scoping
+  - Fixed prototype method access (replaced direct `hasOwnProperty` calls)
+  - Resolved lexical declaration issues in `case` blocks
+  - Improved code maintainability and modern JavaScript compliance
+
+- **Ruby Gem & Jekyll**
+  - Upgraded Jekyll → `~> 4.4.1`
+  - Updated plugins: jemoji `~> 0.13.0`, jekyll-mentions `~> 1.6.0`
+  - Added jekyll-minifier `~> 0.1.0` for performance optimization
+  - Updated core dependencies: webrick `~> 1.9.1`, rack `~> 3.0.0`
+  - Added Sinatra framework gems for extended functionality
+  - Resolved Windows compatibility with `wdm >= 0.1.0`
+  - Added `ostruct ~> 0.6.1` for improved Ruby object handling
+
 - **Color System Removal**
-  - Removed color palette and dynamic background color functionality from game posts
-  - Eliminated Vibrant.js dependency and color extraction scripts
-  - Resolved CORS issues caused by external image loading for color analysis
+  - Removed dynamic color palette from game posts
+  - Eliminated Vibrant.js dependency and related scripts
+  - Fixed CORS issues caused by external image color analysis
   - Simplified banner styling with static gradients
 
 - **Theme Implementation**
-  - Implemented Catppuccin Mocha theme across the entire site
-  - Updated color variables in `_variables.scss` with Catppuccin color palette
-  - Applied consistent theming to all UI components including headers, footers, and content areas
-  - Enhanced visual consistency with predefined gradients and shadow effects
+  - Implemented Catppuccin Mocha theme across the site
+  - Updated `_variables.scss` with Catppuccin palette
+  - Applied consistent theming to headers, footers, and content areas
+  - Enhanced visual consistency with predefined gradients & shadows
 
-- **Documentation Updates**
-  - Updated README.md to replace all Imgur references with LensDump
-  - Removed outdated Imgur API documentation and credentials setup
-  - Corrected directory structure to reflect current project organization
-  - Updated third-party service references to maintain accuracy
-
-## September 30, 2025
-
-#### Technical Updates
-- **Hosting**
-  - Moved image hosting to **LensDump** as Imgur is blocked in the UK
-
-## June 26, 2025
-
-#### Content Updates
-- **Enhanced Game Posts**
-  - Updated front matter for all game posts with comprehensive metadata
-  - Added platforms, genres, and themes information
-  - Included photo mode details and trivia sections
-  - Maintained backward compatibility with existing image references
-
-#### Technical Improvements
-- **Color Palette System**
-  - Increased color palette display from 8 to 10 colors
-  - Implemented light-to-dark color sorting for better visual appeal
-  - Added click-to-copy functionality for color codes
-  - Optimized color extraction to target 30 unique colors
-
-- **UI/UX Enhancements**
-  - Redesigned game metadata section with a clean grid layout
-  - Added Trivia section with 2 interesting facts per game
-  - Improved color loading feedback with updated messages
-  - Enhanced responsive design for all screen sizes
-
-
-## June 22, 2025
-
-#### Content Updates
-- **Red Dead Redemption**
-  - Added 1 new image to the gallery
-
-#### Technical Improvements
-- Updated social media icons and links
-- Improved site navigation with better iconography
-- **Gallery Performance:**  
-  Optimized gallery initialization and image loading for faster display
-- **Loading Spinner:**  
-  Added a loading spinner for better user feedback while images load
-- **Banner Background:**  
-  Improved dynamic background color extraction using Vibrant.js, with better fallback for dark mode
-- **Responsive Design:**  
-  Tweaked banner and gallery styles for improved appearance on all devices
-- **Minor Fixes:**  
-  Addressed small bugs and improved code structure for maintainability
+- **Documentation**
+  - Updated README.md to replace Imgur with LensDump
+  - Removed outdated Imgur API documentation
+  - Corrected directory structure references
+  - Updated third-party service references
 
 ---
 
-### April 22, 2025
+## September 30, 2025
 
-#### Major Updates
+### Technical Updates
+- **Hosting**
+  - Moved image hosting to **LensDump** (Imgur blocked in UK)
+
+---
+
+## June 26, 2025
+
+### Content Updates
+- Enhanced game posts with:
+  - Platforms, genres, themes metadata
+  - Photo mode details and trivia sections
+  - Backward compatibility with existing image references
+
+### Technical Improvements
+- **Color Palette System**
+  - Expanded palette from 8 → 10 colors
+  - Light-to-dark sorting for better readability
+  - Added click-to-copy color codes
+  - Optimized extraction targeting 30 unique colors
+
+- **UI/UX**
+  - Redesigned game metadata with grid layout
+  - Added Trivia section (2 facts per game)
+  - Improved color loading feedback
+  - Enhanced responsive design
+
+---
+
+## June 22, 2025
+
+### Content Updates
+- **Red Dead Redemption**
+  - Added 1 new gallery image
+
+### Technical Improvements
+- Updated social media icons & links
+- Improved site navigation with better iconography
+- **Gallery Performance** → Faster initialization & loading
+- **Loading Spinner** → Added for better feedback
+- **Banner Background** → Improved Vibrant.js fallback for dark mode
+- **Responsive Design** → Tweaked banner & gallery styles
+- **Minor Fixes** → Bug fixes & code cleanup
+
+---
+
+## April 22, 2025
+
+### Major Update
 - **Complete Website Overhaul**
   - Redesigned UI/UX for better navigation
   - Improved mobile responsiveness
@@ -86,182 +101,179 @@ permalink: /changelog
 
 ---
 
-### March 20, 2025
+## March 20, 2025
 
-#### New Content
+### New Content
 - **Assassin's Creed Shadows**
-  - Added gallery with 5 high-quality images
-  - Included detailed captions and metadata
+  - Added gallery with 5 HQ images + captions & metadata
 
 ---
 
-### February 25, 2025
+## February 25, 2025
 
-#### New Content
+### New Content
 - **Assassin's Creed Valhalla**
   - Added gallery with 6 new images
   - Implemented responsive image loading
 
-#### Technical Improvements
+### Technical Improvements
 - **Build System**
-  - Resolved Jekyll build issues
-  - Updated dependencies in `Gemfile`:
+  - Fixed Jekyll build issues
+  - Updated dependencies in `Gemfile`
     - Fixed Jekyll version compatibility
-    - Added required gems: `ostruct`, `wdm`
-    - Removed incompatible `jekyll-cache` plugin
-  - Updated `_config.yml` for better performance
-- **Modernized Sass:**  Updated the Sass stylesheets to use the modern `@use` and `@forward` rules, replacing the deprecated `@import` rule. This involved:
-    - Moving Sass partials (`.scss` files) to the correct `assets/css` directory.
-    - Updating `@import` statements to `@use` or `@forward` as appropriate.
-    - Defining Sass variables within the partials where they are used, ensuring correct scoping.
-    - Removing unnecessary front matter from `main.scss`.
-    - Correcting file paths and names.
+    - Added `ostruct`, `wdm`
+    - Removed `jekyll-cache` plugin
+  - Optimized `_config.yml`
 
-### Updates
-- Updated the scroll bar to seamlessly integrate with the website’s design.
+- **Modernized Sass**
+  - Replaced deprecated `@import` with `@use` / `@forward`
+  - Moved partials to `assets/css`
+  - Scoped Sass variables properly
+  - Removed unnecessary front matter from `main.scss`
+  - Corrected file paths & names
+
+### UI/UX
+- Updated scroll bar design to match site
 
 ---
 
 ## December 13, 2024
 
 ### New Content
-- **Infinity Nikki:** Added a gallery with two new screenshots.
-- **Star Wars Outlaws:** Added a new screenshot.
+- **Infinity Nikki** → Added 2 screenshots  
+- **Star Wars Outlaws** → Added 1 screenshot  
 
 ### Updates
-- Updated the changelog page.
+- Updated changelog page
 
 ---
 
 ## October 19, 2024
 
 ### Updates
-- **Control:** Added two new images to the gallery.
+- **Control** → Added 2 new gallery images
 
 ---
 
 ## October 4, 2024
 
 ### New Content
-- **Star Wars Outlaws:** Added new screenshots.
-- **Starfield:** Added two new shots to the gallery.
+- **Star Wars Outlaws** → Added new screenshots  
+- **Starfield** → Added 2 new shots  
 
 ---
 
 ## September 26, 2024
 
 ### Website Enhancements
-
-#### New Features
-- **Performance Improvements:**
-  - Introduced a loading spinner for better user feedback.
-  - Enabled lazy loading for banner images.
-  - Added subtle hover effects on gallery images.
-- **Styling Improvements:**
-  - Updated banner height for responsive design.
-  - Applied text shadow for improved text visibility.
-  - Added smooth background transitions.
-
-#### Fixes
-- Implemented fallback dark background color in case Vibrant.js color retrieval fails.
+- **Performance**
+  - Loading spinner for user feedback
+  - Lazy loading for banners
+  - Hover effects on gallery images
+- **Styling**
+  - Updated banner height
+  - Added text shadow for visibility
+  - Smooth background transitions
+- **Fixes**
+  - Dark background fallback if Vibrant.js fails
 
 ---
 
 ## July 21, 2024
 
 ### Updates
-- **Cyberpunk 2077:** Added two new images to the gallery.
-- **Once Human:** Added two new images.
+- **Cyberpunk 2077** → Added 2 new images  
+- **Once Human** → Added 2 new images  
 
 ---
 
 ## June 18, 2024
 
 ### Updates
-- Removed unused descriptions from gallery pages.
-- **Starfield Fans:** Added five new images.
+- Removed unused gallery descriptions  
+- **Starfield Fans** → Added 5 new images  
 
 ---
 
 ## June 1, 2024
 
 ### New Features
-- **Banner Customization:**
-  - Improved banner image appearance controls.
-  - Introduced `darkeningFactor` for managing dark mode backgrounds.
-  - New images now appear at the top of galleries.
+- **Banner Customization**
+  - Improved appearance controls
+  - Added `darkeningFactor` for dark mode
+  - New images now appear at the top
 
 ### Optimizations
-- Reorganized and optimized gallery initialization scripts.
-- Cleaned up code and removed duplicate inclusions.
+- Reorganized gallery scripts
+- Cleaned duplicate code
 
 ---
 
 ## May 31, 2024
 
 ### Updates
-- Updated Swipebox and jQuery resources.
-- Enhanced Changelog page.
-- Added `/changelog` link to the navigation bar.
+- Updated Swipebox & jQuery
+- Enhanced changelog page
+- Added `/changelog` to navigation
 
 ### Bug Fixes
-- Fixed mobile image display issues.
-- **Fallout 4:** Added two new screenshots.
+- Fixed mobile image display
+- **Fallout 4** → Added 2 screenshots
 
 ---
 
 ## May 29, 2024
 
 ### Content Refresh
-- **Gallery Improvements:**
-  - Added Vibrant.js for future enhancements.
-  - Re-uploaded Fallout 4 & The Division 2 content.
-  - Added new images from *Ghost of Tsushima* and *Little Kitty, Big City*.
-  - Alphabetized gallery items.
+- **Gallery Improvements**
+  - Added Vibrant.js integration
+  - Re-uploaded Fallout 4 & Division 2 content
+  - Added *Ghost of Tsushima* + *Little Kitty, Big City* images
+  - Alphabetized gallery items
 
 ---
 
 ## March 29, 2024
 
 ### Updates
-- Updated `header.html`.
-- Removed the four-row Hamburger Menu.
+- Updated `header.html`
+- Removed 4-row Hamburger Menu
 
 ---
 
 ## March 25, 2024
 
 ### Updates
-- Resolved favicon issue.
-- Updated `favicon.ico` and `footer.html`.
-- Enhanced website design with rounded corners and hover effects.
+- Fixed favicon issues
+- Updated `favicon.ico` & `footer.html`
+- Rounded corners & hover effects added
 
 ---
 
 ## March 7, 2024
 
 ### Updates
-- Implemented homepage grid layout.
-- Added custom 404 page.
-- Updated RDR2 and Control images.
-- Updated Google Analytics and site settings.
+- Implemented homepage grid layout
+- Added custom 404 page
+- Updated RDR2 & Control images
+- Updated Google Analytics settings
 
 ---
 
-## March 3-4, 2024
+## March 3–4, 2024
 
 ### Updates
-- Styling updates for `_header.scss`, `pig.js`, and `main.scss`.
-- Updated layout and fonts for *The Division 2*.
+- Styling updates for `_header.scss`, `pig.js`, `main.scss`
+- Updated layout & fonts for *The Division 2*
 
 ---
 
 ## March 2, 2024
 
 ### Updates
-- Fixed banner offset and thumbnail display.
-- Updated `README.md` and various configuration files.
+- Fixed banner offset & thumbnails
+- Updated `README.md` & configs
 
 ---
 
-*For more detailed information, please visit the [repository commit history](https://github.com/PatrickJnr/vp/commits/main).*
+*For more details, see the [repository commit history](https://github.com/PatrickJnr/vp/commits/main).*

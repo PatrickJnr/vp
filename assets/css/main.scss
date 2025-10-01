@@ -1,18 +1,12 @@
----
----
-
-// Abstracts
-@use "sass:color";
-@use "sass:math";
 @use "abstracts/variables" as *;
 @use "abstracts/mixins" as *;
 
-// Base
+
 @use "base" as *;
 @use "code" as *;
 @use "default" as *;
 
-// Layout
+
 @use "header" as *;
 @use "footer" as *;
 @use "home" as *;
@@ -20,7 +14,7 @@
 @use "page" as *;
 @use "social-icons" as *;
 
-// Custom list styles
+
 ul li, ol li {
   display: list-item;
   text-align: -webkit-match-parent;

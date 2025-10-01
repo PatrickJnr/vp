@@ -1,29 +1,40 @@
-<div class="related">
-  <h2>{{ site.data.settings.related_posts }}</h2>
+<!-- Related Posts with Enhanced Accessibility and Performance -->
+<section class="related-posts" aria-labelledby="related-posts-heading">
+  <h2 id="related-posts-heading">{{ site.data.settings.related_posts }}</h2>
   {% assign listed_posts_urls = page.url | split: ' ' %}
-  <ul class="related-posts">
+  <ul class="related-posts-list">
     {% for tag in page.tags %}
-      {% for mypost in site.tags[tag] limit:2 %}
+      {% for mypost in site.tags[tag] limit:3 %}
         {% if listed_posts_urls contains mypost.url %}
         {% else %}
-          <li>
-            <h3>
-              <a href="{{ site.github.url }}{{ mypost.url }}">
-                <div class="related-thumbnail">
+          <li class="related-post-item">
+            <article class="related-post-card">
+              <a href="{{ mypost.url | relative_url }}" class="related-post-link">
+                <div class="related-post-thumbnail">
                   {% if mypost.image %}
-                    <img src="{{ site.url }}{{ site.baseurl }}/assets/img/{{ mypost.image }}">
+                    <img
+                      src="{{ '/assets/img/' | append: mypost.image | relative_url }}"
+                      alt="{% if mypost.image-alt %}{{ mypost.image-alt }}{% else %}Thumbnail for {{ mypost.title }}{% endif %}"
+                      loading="lazy"
+                      width="300"
+                      height="200">
                   {% endif %}
                 </div>
-                <div class="related-title">
-                  {{ mypost.title }}
+                <div class="related-post-content">
+                  <h3 class="related-post-title">{{ mypost.title }}</h3>
+                  {% if mypost.excerpt %}
+                    <p class="related-post-excerpt">{{ mypost.excerpt | strip_html | truncatewords: 15 }}</p>
+                  {% endif %}
+                  <time class="related-post-date" datetime="{{ mypost.date | date_to_xmlschema }}">
+                    {{ mypost.date | date: "%B %-d, %Y" }}
+                  </time>
                 </div>
-                <!--<small>{{ mypost.date | date: "%B %-d, %Y" }}</small>-->
               </a>
-            </h3>
+            </article>
           </li>
           {% assign listed_posts_urls = listed_posts_urls | push: mypost.url %}
         {% endif %}
       {% endfor %}
     {% endfor %}
   </ul>
-</div>
+</section>

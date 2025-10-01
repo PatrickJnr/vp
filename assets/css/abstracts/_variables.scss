@@ -1,6 +1,4 @@
-@use "sass:color";
 
-// Typography
 $base-font-family: 'Exo 2', sans-serif;
 $body-font-family: $base-font-family;
 $code-font-family: $base-font-family;
@@ -8,7 +6,7 @@ $base-font-size: 16px;
 $small-font-size: 0.875rem;
 $base-line-height: 1.7;
 
-// Colors
+
 $primary-color: #bf9ae8;
 $primary-color-light: rgba(191, 154, 232, 0.15);
 $primary-color-dark: rgba(191, 154, 232, 0.8);
@@ -18,44 +16,43 @@ $text-color: #f8f9fc;
 $text-color-muted: rgba(248, 249, 252, 0.7);
 $border-color: rgba(255, 255, 255, 0.1);
 $accent-color: #bf9ae8;
-$accent-color-dark: color.adjust($accent-color, $lightness: -10%);
-$accent-color-light: color.adjust($accent-color, $lightness: 10%);
+$accent-color-dark: #a68bd4;
+$accent-color-light: #d4b8f0;
 $code-color: #8bc34a;
 $link-color: $primary-color;
 $error-color: #ef4444;
 $success-color: #10b981;
 
-// Layout
+
 $container-width: 1100px;
 $header-height: 56px;
 $content-spacing: 2rem;
 
-// Breakpoints
+
 $mobile: 480px;
 $tablet: 768px;
 $desktop: 1100px;
 
-// Shadows
+
 $shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
 $shadow-md: 0 4px 20px rgba(0, 0, 0, 0.2);
 $shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
 
-// Blur effects
 $blur-sm: blur(8px);
 $blur-md: blur(12px);
 $blur-lg: blur(16px);
 
-// Border radius
+
 $border-radius-sm: 8px;
 $border-radius-md: 12px;
 $border-radius-lg: 16px;
 
-// Transitions
+
 $transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 $transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 $transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
-// Social Colors
+
 $social-colors: (
   'flickr': #0063dc,
   'steam': #90ba3c,
@@ -75,18 +72,16 @@ $social-colors: (
   'clock-rotate-left': #fff
 );
 
-// Z-index
 $z-layers: (
   'header': 100,
   'dropdown': 90,
   'overlay': 80
 );
 
-// Misc
+
 $blur-strength: 12px;
 $glass-bg: rgba($background-color, 0.7);
 
-// Gradients
 $gradient-primary: linear-gradient(135deg, $accent-color 0%, $accent-color-dark 100%);
 $gradient-overlay: linear-gradient(
   to top, 
@@ -100,4 +95,4 @@ $gradient-glow: radial-gradient(
   rgba($accent-color, 0.15),
   rgba($accent-color, 0.05) 30%,
   transparent 70%
-); 
+);

@@ -1,0 +1,54 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "plugins": ["stylelint-scss"],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "tailwind",
+          "apply",
+          "variants",
+          "responsive",
+          "screen",
+          "use",
+          "include",
+          "mixin",
+          "if",
+          "else",
+          "for",
+          "each",
+          "function",
+          "return"
+        ]
+      }
+    ],
+    "scss/dollar-variable-empty-line-before": null,
+    "scss/double-slash-comment-empty-line-before": null,
+    "scss/load-no-partial-leading-underscore": null,
+    "function-no-unknown": null,
+    "no-invalid-double-slash-comments": null,
+    "color-function-notation": null,
+    "alpha-value-notation": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "value-keyword-case": null,
+    "length-zero-no-unit": null,
+    "property-no-vendor-prefix": null,
+    "selector-no-vendor-prefix": null,
+    "media-feature-range-notation": null,
+    "keyframes-name-pattern": null,
+    "rule-empty-line-before": null,
+    "at-rule-empty-line-before": null,
+    "color-hex-length": null,
+    "declaration-block-single-line-max-declarations": null,
+    "block-no-empty": null,
+    "media-query-no-invalid": null,
+    "no-descending-specificity": null
+  },
+  "ignoreFiles": [
+    "node_modules/**/*",
+    "_site/**/*",
+    "assets/css/main.css"
+  ]
+}

@@ -15,9 +15,9 @@
      * optimizedResize is adapted from Mozilla code:
      * https://developer.mozilla.org/en-US/docs/Web/Events/resize
      */
-    var optimizedResize = (function () {
-        var callbacks = [];
-        var running = false;
+    const optimizedResize = (function () {
+        const callbacks = [];
+        let running = false;
 
         // fired on resize event
         function resize() {
@@ -79,7 +79,7 @@
      */
     function _injectStyle(containerId, classPrefix, transitionSpeed) {
 
-        var css = (
+        const css = (
             '#' + containerId + ' {' +
             '  position: relative;' +
             '  overflow: hidden;' +
@@ -132,8 +132,8 @@
         );
 
 
-        var head = document.head || document.getElementsByTagName("head")[0];
-        var style = document.createElement("style");
+        const head = document.head || document.getElementsByTagName("head")[0];
+        const style = document.createElement("style");
 
         style.type = "text/css";
         if (style.styleSheet) {
@@ -153,8 +153,8 @@
      * @param {object} obj2 - The overrides to apply onto obj1.
      */
     function _extend(obj1, obj2) {
-        for (var i in obj2) {
-            if (obj2.hasOwnProperty(i)) {
+        for (const i in obj2) {
+            if (Object.prototype.hasOwnProperty.call(obj2, i)) {
                 obj1[i] = obj2[i];
             }
         }
@@ -168,7 +168,7 @@
      * @param {object} elem - The element to compute the offset of.
      **/
     function _getOffsetTop(elem) {
-        var offsetTop = 0;
+        let offsetTop = 0;
         do {
             if (!isNaN(elem.offsetTop)) {
                 offsetTop += elem.offsetTop;
@@ -402,7 +402,7 @@
      *   have been completed.
      */
     Pig.prototype._getTransitionTimeout = function () {
-        var transitionTimeoutScaleFactor = 1.5;
+        const transitionTimeoutScaleFactor = 1.5;
         return this.settings.transitionSpeed * transitionTimeoutScaleFactor;
     };
 
@@ -427,7 +427,7 @@
      * or not the value of this.minAspectRatio has changed.
      */
     Pig.prototype._recomputeMinAspectRatio = function () {
-        var oldMinAspectRatio = this.minAspectRatio;
+        const oldMinAspectRatio = this.minAspectRatio;
         this.minAspectRatio = this.settings.getMinAspectRatio(this.lastWindowWidth);
 
         if (oldMinAspectRatio !== null && oldMinAspectRatio !== this.minAspectRatio)
@@ -451,10 +451,10 @@
      *                                      instances that we created.
      */
     Pig.prototype._parseImageData = function (imageData) {
-        var progressiveImages = [];
+        const progressiveImages = [];
 
         imageData.forEach(function (image, index) {
-            var progressiveImage = new ProgressiveImage(image, index, this);
+            const progressiveImage = new ProgressiveImage(image, index, this);
             progressiveImages.push(progressiveImage);
         }.bind(this));
 
@@ -478,13 +478,13 @@
      */
     Pig.prototype._computeLayout = function () {
         // Constants
-        var wrapperWidth = parseInt(this.container.clientWidth);
+        const wrapperWidth = parseInt(this.container.clientWidth);
 
         // State
-        var row = []; // The list of images in the current row.
-        var translateX = 0; // The current translateX value that we are at
-        var translateY = 0; // The current translateY value that we are at
-        var rowAspectRatio = 0; // The aspect ratio of the row we are building
+        let row = []; // The list of images in the current row.
+        let translateX = 0; // The current translateX value that we are at
+        let translateY = 0; // The current translateY value that we are at
+        let rowAspectRatio = 0; // The aspect ratio of the row we are building
 
         // Compute the minimum aspect ratio that should be applied to the rows.
         this._recomputeMinAspectRatio();
@@ -505,7 +505,7 @@
         }
 
         // Get the valid-CSS transition string.
-        var transition = this._getTransitionString();
+        const transition = this._getTransitionString();
 
         // Loop through all our images, building them up into rows and computing
         // the working rowAspectRatio.
@@ -520,8 +520,8 @@
             if (rowAspectRatio >= this.minAspectRatio || index + 1 === this.images.length) {
 
                 // Compute this row's height.
-                var totalDesiredWidthOfImages = wrapperWidth - this.settings.spaceBetweenImages * (row.length - 1);
-                var rowHeight = totalDesiredWidthOfImages / rowAspectRatio;
+                const totalDesiredWidthOfImages = wrapperWidth - this.settings.spaceBetweenImages * (row.length - 1);
+                const rowHeight = totalDesiredWidthOfImages / rowAspectRatio;
 
                 // For each image in the row, compute the width, height, translateX,
                 // and translateY values, and set them (and the transition value we
@@ -532,7 +532,7 @@
                 //       will be updated in _doLayout.
                 row.forEach(function (img) {
 
-                    var imageWidth = rowHeight * img.aspectRatio;
+                    const imageWidth = rowHeight * img.aspectRatio;
 
                     // This is NOT DOM manipulation.
                     img.style = {
@@ -630,26 +630,26 @@
         this.container.style.height = this.totalHeight + 'px';
 
         // Get the top and bottom buffers heights.
-        var bufferTop =
+        const bufferTop =
             (this.scrollDirection === 'up') ?
             this.settings.primaryImageBufferHeight :
             this.settings.secondaryImageBufferHeight;
-        var bufferBottom =
+        const bufferBottom =
             (this.scrollDirection === 'down') ?
             this.settings.secondaryImageBufferHeight :
             this.settings.primaryImageBufferHeight;
 
         // Now we compute the location of the top and bottom buffers:
-        var containerOffset = _getOffsetTop(this.container);
-        var windowHeight = window.innerHeight;
+        const containerOffset = _getOffsetTop(this.container);
+        const windowHeight = window.innerHeight;
 
         // This is the top of the top buffer. If the bottom of an image is above
         // this line, it will be removed.
-        var minTranslateYPlusHeight = this.latestYOffset - containerOffset - bufferTop;
+        const minTranslateYPlusHeight = this.latestYOffset - containerOffset - bufferTop;
 
         // This is the bottom of the bottom buffer.  If the top of an image is
         // below this line, it will be removed.
-        var maxTranslateY = this.latestYOffset + windowHeight + bufferBottom;
+        const maxTranslateY = this.latestYOffset + windowHeight + bufferBottom;
 
         // Here, we loop over every image, determine if it is inside our buffers or
         // no, and either insert it or remove it appropriately.
@@ -672,7 +672,7 @@
      * @returns {function} Our optimized onScroll handler.
      */
     Pig.prototype._getOnScroll = function () {
-        var _this = this;
+        const _this = this;
 
         /**
          * This function is called on scroll. It computes variables about the page
@@ -685,10 +685,10 @@
          *
          * @returns {function} The onScroll handler that we should attach.
          */
-        var onScroll = function () {
+        const onScroll = function () {
             // Compute the scroll direction using the latestYOffset and the
             // previousYOffset
-            var newYOffset = window.pageYOffset;
+            const newYOffset = window.pageYOffset;
             _this.previousYOffset = _this.latestYOffset || newYOffset;
             _this.latestYOffset = newYOffset;
             _this.scrollDirection = (_this.latestYOffset > _this.previousYOffset) ? 'down' : 'up';
@@ -817,7 +817,7 @@
         // and we can exit.
         setTimeout(function () {
 
-            var imageUrls = {
+            const imageUrls = {
                 thumbnail: this.thumbnail,
                 image1080: this.image1080,
                 imageFull: this.imageFull,
@@ -862,9 +862,7 @@
 
                 // Add anchor around image
                 if (this.pig.settings.addAnchorTag) {
-                    var temp = this.fullImage.src.split('/');
-                    var filename = temp[temp.length - 1];
-                    var anchor = document.createElement('a');
+                    const anchor = document.createElement('a');
                     anchor.setAttribute('href', this.imageFull);
                     anchor.setAttribute('class', this.pig.settings.anchorClass);
                     anchor.appendChild(this.fullImage);

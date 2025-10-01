@@ -1,5 +1,5 @@
-/*! Swipebox v1.5.2 | Constantin Saguin csag.co | MIT License | github.com/brutaldesign/swipebox */ ;
-(function(window, document, $, undefined) {
+/*! Swipebox v1.5.2 | Constantin Saguin csag.co | MIT License | github.com/brutaldesign/swipebox */
+(function(window, document, $) {
 
     'use strict'; // Enforce stricter parsing and error handling
 
@@ -30,17 +30,17 @@
             toggleClassOnLoad: '' // Class to toggle on inline content load
         };
 
-        let plugin = this,
-            elements = [], // Array of slide objects: { href: '...', title: '...' }
-            selector = '.swipebox', // Default selector
-            isMobile = /((iPad)|(iPhone)|(iPod)|(Android)|(PlayBook)|(BB10)|(BlackBerry)|(Opera Mini)|(IEMobile)|(webOS)|(MeeGo))/i.test(navigator.userAgent),
-            isTouch = isMobile || 'ontouchstart' in window || ('onmsgesturechange' in window) || navigator.msMaxTouchPoints > 0, // More reliable touch detection
-            supportSVG = document.createElementNS && document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect, // SVG support check
-            winWidth = window.innerWidth || $(window).width(), // Use logical OR for fallback
-            winHeight = window.innerHeight || $(window).height(),
-            currentX = 0, // Current X position of the slider
-            // Pre-build HTML structure for better performance and readability
-            html = `
+        const plugin = this;
+        let elements = []; // Array of slide objects: { href: '...', title: '...' }
+        const selector = '.swipebox'; // Default selector
+        const isMobile = /((iPad)|(iPhone)|(iPod)|(Android)|(PlayBook)|(BB10)|(BlackBerry)|(Opera Mini)|(IEMobile)|(webOS)|(MeeGo))/i.test(navigator.userAgent);
+        const isTouch = isMobile || 'ontouchstart' in window || ('onmsgesturechange' in window) || navigator.msMaxTouchPoints > 0; // More reliable touch detection
+        const supportSVG = document.createElementNS && document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect; // SVG support check
+        const winWidth = window.innerWidth || $(window).width(); // Use logical OR for fallback
+        const winHeight = window.innerHeight || $(window).height();
+        let currentX = 0; // Current X position of the slider
+        // Pre-build HTML structure for better performance and readability
+        const html = `
 				<div id="swipebox-overlay">
 					<div id="swipebox-container">
 						<div id="swipebox-slider"></div>
@@ -100,10 +100,7 @@
                     }
 
                     elements = [];
-                    let index, relType, relVal;
-
-                    // Get rel attribute, prefer data-rel for HTML5 compliance
-                    relVal = $(this).attr('data-rel') || $(this).attr('rel');
+                    const relVal = $(this).attr('data-rel') || $(this).attr('rel');
 
                     // Filter elements based on rel attribute if present
                     let $filteredElem;
@@ -122,7 +119,7 @@
                         });
                     });
 
-                    index = $filteredElem.index($(this)); // Get index WITHIN filtered set
+                    const index = $filteredElem.index($(this)); // Get index WITHIN filtered set
 
                     ui.target = $(event.target);
                     ui.init(index);
@@ -275,13 +272,13 @@
                     vDistanceLast,
                     hDistancePercent,
                     vSwipe = false,
-                    hSwipe = false,
-                    hSwipMinDistance = 10,
-                    vSwipMinDistance = 50,
-                    startCoords = {},
-                    endCoords = {},
-                    bars = $('#swipebox-top-bar, #swipebox-bottom-bar'),
-                    slider = $('#swipebox-slider');
+                    hSwipe = false;
+                const hSwipMinDistance = 10;
+                const vSwipMinDistance = 50;
+                let startCoords = {};
+                let endCoords = {};
+                const bars = $('#swipebox-top-bar, #swipebox-bottom-bar');
+                const slider = $('#swipebox-slider');
 
                 bars.addClass('visible-bars');
                 this.setTimeout();
@@ -696,7 +693,7 @@
              * Set link title attribute as caption
              */
             setTitle: function(index) {
-                let title = elements[index] !== undefined ? elements[index].title : null; // Get title safely
+                const title = elements[index] !== undefined ? elements[index].title : null; // Get title safely
 
                 const titleContainer = $('#swipebox-title');
                 titleContainer.empty(); // Clear previous title
@@ -747,8 +744,8 @@
 
                 // Return querystring as a string
                 let qsString = '';
-                for (let key in qs) { // Use a for...in loop for clarity
-                    if (qs.hasOwnProperty(key) && qs[key] !== null && qs[key] !== undefined && qs[key] !== '') {
+                for (const key in qs) { // Use a for...in loop for clarity
+                    if (Object.prototype.hasOwnProperty.call(qs, key) && qs[key] !== null && qs[key] !== undefined && qs[key] !== '') {
                         qsString += (qsString ? '&' : '') + encodeURIComponent(key) + '=' + encodeURIComponent(qs[key]);
                     }
                 }
@@ -760,11 +757,11 @@
              * Get video iframe code from URL
              */
             getVideo: function(url) {
-                let iframe = '',
-                    youtubeUrl = url.match(/((?:www\.)?youtube\.com|(?:www\.)?youtube-nocookie\.com)\/watch\?v=([a-zA-Z0-9\-_]+)/),
-                    youtubeShortUrl = url.match(/(?:www\.)?youtu\.be\/([a-zA-Z0-9\-_]+)/),
-                    vimeoUrl = url.match(/(?:www\.)?vimeo\.com\/([0-9]*)/),
-                    qs = '';
+                let iframe = '';
+                const youtubeUrl = url.match(/((?:www\.)?youtube\.com|(?:www\.)?youtube-nocookie\.com)\/watch\?v=([a-zA-Z0-9\-_]+)/);
+                const youtubeShortUrl = url.match(/(?:www\.)?youtu\.be\/([a-zA-Z0-9\-_]+)/);
+                const vimeoUrl = url.match(/(?:www\.)?vimeo\.com\/([0-9]*)/);
+                let qs = '';
 
                 if (youtubeUrl || youtubeShortUrl) {
                     const videoId = youtubeUrl ? youtubeUrl[2] : youtubeShortUrl[1]; // Get correct video ID
@@ -879,11 +876,11 @@
             },
 
             /* jshint unused:false */ //The following two functions can be overridden.  Keeping for backwards compat
-            nextSlide: function(index) {
+            nextSlide: function() {
                 // Callback for next slide
             },
 
-            prevSlide: function(index) {
+            prevSlide: function() {
                 // Callback for prev slide
             },
 
