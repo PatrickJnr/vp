@@ -85,6 +85,7 @@
   letter-spacing: -0.5px;
   position: relative;
   text-decoration: none;
+  z-index: 1;
 }
 
 .menu-icon {
@@ -97,10 +98,17 @@
   cursor: pointer;
   transition: $base-transition;
   border-radius: 8px;
-  
+  z-index: 1001;
+  position: relative;
+
   &:hover {
     color: $accent-color;
     background-color: rgba($accent-color, 0.1);
+  }
+
+  &:focus {
+    outline: 2px solid $accent-color;
+    outline-offset: 2px;
   }
 }
 
@@ -145,17 +153,37 @@
   left: 0;
   right: 0;
   top: calc(100% + 10px);
-  background-color: $glass-bg;
-  backdrop-filter: blur($blur-strength);
-  -webkit-backdrop-filter: blur($blur-strength);
-  border: 1px solid rgba($overlay-0, 0.3);
-  border-radius: 12px;
-  box-shadow: $box-shadow;
-  padding: 1rem;
+  background-color: rgba(49, 50, 68, 0.95);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(203, 166, 247, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  padding: 1.25rem;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+
+  /* Enhanced frosted glass effect */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(203, 166, 247, 0.1) 0%, rgba(137, 180, 250, 0.05) 100%);
+    border-radius: 16px;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(203, 166, 247, 0.15) 0%, transparent 50%);
+    border-radius: 16px;
+    pointer-events: none;
+  }
 
   &.active {
     opacity: 1;
@@ -166,12 +194,59 @@
   .nav-links {
     flex-direction: column;
     align-items: stretch;
+    position: relative;
+    z-index: 1;
 
     a {
-      padding: 12px;
+      padding: 14px 16px;
+      color: $text-color;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      letter-spacing: 0.2px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 4px;
+      position: relative;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
 
-      &:hover, &.active {
-        transform: translateX(4px);
+      i {
+        font-size: 14px;
+        opacity: 0.8;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      &:hover {
+        color: $accent-color;
+        background: rgba(203, 166, 247, 0.15);
+        border-color: rgba(203, 166, 247, 0.3);
+        transform: translateX(6px) translateY(-1px);
+        box-shadow: 0 4px 12px rgba(203, 166, 247, 0.2);
+
+        i {
+          opacity: 1;
+          color: $accent-color;
+        }
+      }
+
+      &.active {
+        color: $accent-color;
+        background: rgba(203, 166, 247, 0.12);
+        border-color: rgba(203, 166, 247, 0.25);
+
+        i {
+          opacity: 1;
+          color: $accent-color;
+        }
+      }
+
+      &:focus-visible {
+        outline: 2px solid $accent-color;
+        outline-offset: -2px;
       }
     }
   }

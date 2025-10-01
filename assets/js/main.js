@@ -2,25 +2,51 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuIcon = document.querySelector('.menu-icon');
   const dropdownMenu = document.querySelector('.dropdown-menu');
   const header = document.querySelector('.site-header');
-  const menuLinks = dropdownMenu.querySelectorAll('a');
   let lastScrollY = window.scrollY;
   let isMenuOpen = false;
 
+  // Check if elements exist
+  if (!menuIcon || !dropdownMenu || !header) {
+    console.error('Hamburger menu elements not found!');
+    console.log('menuIcon:', menuIcon);
+    console.log('dropdownMenu:', dropdownMenu);
+    console.log('header:', header);
+    return;
+  }
+
+  console.log('Hamburger menu elements found, initializing...');
+  console.log('Menu icon classes:', menuIcon.className);
+  console.log('Dropdown menu classes:', dropdownMenu.className);
+
+  // Get menu links after DOM is loaded
+  const getMenuLinks = () => dropdownMenu.querySelectorAll('a');
+
   // Function to toggle menu state
   const toggleMenu = (open) => {
+    console.log('toggleMenu called with:', open);
+    console.log('isMenuOpen was:', isMenuOpen);
+
     isMenuOpen = open;
     dropdownMenu.classList.toggle('active', open);
     menuIcon.setAttribute('aria-expanded', open);
     document.body.style.overflow = open ? 'hidden' : '';
-    
+
+    console.log('Menu is now:', isMenuOpen ? 'open' : 'closed');
+    console.log('dropdown-menu has active class:', dropdownMenu.classList.contains('active'));
+
     if (open) {
       // Focus first menu item when opening
+      const menuLinks = getMenuLinks();
+      console.log('Found menu links:', menuLinks.length);
       menuLinks[0]?.focus();
     }
   };
 
   // Toggle mobile menu
-  menuIcon.addEventListener('click', () => {
+  menuIcon.addEventListener('click', (e) => {
+    console.log('Menu icon clicked!');
+    e.preventDefault();
+    e.stopPropagation();
     toggleMenu(!isMenuOpen);
   });
 

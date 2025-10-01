@@ -73,7 +73,17 @@ $clock-rotate-left-color: $text;
 
 .fa-envelope {
   padding: 5px;
-  @include social-media-icon($envelope-color, $icon-transition-time);
+  -webkit-transition: $icon-transition-time;
+  -o-transition: $icon-transition-time;
+  -ms-transition: $icon-transition-time;
+  -moz-transition: $icon-transition-time;
+  transition: $icon-transition-time;
+  position: relative;
+
+  &:hover {
+    color: $envelope-color;
+    transform: translateY(-3px);
+  }
 }
 
 .fa-twitter {

@@ -27,37 +27,60 @@ permalink: /changelog
   - **Assassin's Creed Shadows** → Added delay information (Nov 2024 → Mar 2025)
 
 ### Technical Updates
+- **Hamburger Menu Overhaul**
+  - Fixed critical JavaScript bug: Resolved undefined `menuLinks` variable
+  - Added missing `main.js` script tag
+  - Enhanced frosted glass design with gradients and blur
+  - Improved mobile UX with smooth animations and accessibility features
+  - Fixed z-index issues for proper layering
+  - Created `run.bat` script for development workflow
+
 - **JavaScript Code Quality**
-  - Fixed 80+ ESLint errors and warnings across all files
-  - Updated variable declarations from `var` → `let` / `const` for better scoping
-  - Fixed prototype method access (replaced direct `hasOwnProperty` calls)
+  - Fixed 80+ ESLint errors
+  - Updated `var` → `let` / `const`
+  - Fixed prototype method access
   - Resolved lexical declaration issues in `case` blocks
-  - Improved code maintainability and modern JavaScript compliance
+  - Improved code maintainability
 
 - **Ruby Gem & Jekyll**
   - Upgraded Jekyll → `~> 4.4.1`
   - Updated plugins: jemoji `~> 0.13.0`, jekyll-mentions `~> 1.6.0`
-  - Removed jekyll-minifier `~> 0.1.0` to reduce maintenance overhead
+  - Removed jekyll-minifier to reduce maintenance overhead
   - Updated core dependencies: webrick `~> 1.9.1`, rack `~> 3.0.0`
-  - Added Sinatra framework gems for extended functionality
+  - Added Sinatra framework gems
   - Resolved Windows compatibility with `wdm >= 0.1.0`
-  - Added `ostruct ~> 0.6.1` for improved Ruby object handling
+  - Added `ostruct ~> 0.6.1`
 
 - **Color System Removal**
-  - Removed dynamic color palette from game posts
-  - Eliminated Vibrant.js dependency and related scripts
-  - Fixed CORS issues caused by external image color analysis
+  - Removed dynamic color palette and Vibrant.js
+  - Fixed CORS issues from external image analysis
   - Simplified banner styling with static gradients
 
 - **Theme Implementation**
-  - Implemented Catppuccin Mocha theme across the site
+  - Applied Catppuccin Mocha theme
   - Updated `_variables.scss` with Catppuccin palette
-  - Applied consistent theming to headers, footers, and content areas
-  - Enhanced visual consistency with predefined gradients & shadows
+  - Consistent theming across headers, footers, content
+  - Enhanced gradients & shadows
+
+- **FontAwesome Upgrade**
+  - Replaced CDN CSS link with FontAwesome kit script for better performance
+  - Updated to use: `https://kit.fontawesome.com/ba5cec19da.js`
+  - Improved loading times and customization options
+
+- **JavaScript File Organization**
+  - Moved all JavaScript files to `assets/js/` directory
+  - Updated file references in `_includes/head.html` and `_layouts/post.html`
+  - Files moved: `jquery.swipebox.js`, `main.js`, `pig.js`
+  - Improved project structure and maintainability
+
+- **Social Media Icon Styling**
+  - Removed #f39c12 background effect from fa-envelope icon
+  - Maintained hover animations and color transitions
+  - Cleaner visual appearance for social media icons
 
 - **Documentation**
   - Updated README.md to replace Imgur with LensDump
-  - Removed outdated Imgur API documentation
+  - Removed outdated Imgur API docs
   - Corrected directory structure references
   - Updated third-party service references
 
@@ -74,21 +97,20 @@ permalink: /changelog
 ## June 26, 2025
 
 ### Content Updates
-- Enhanced game posts with:
-  - Platforms, genres, themes metadata
-  - Photo mode details and trivia sections
-  - Backward compatibility with existing image references
+- Enhanced game posts with platforms, genres, themes metadata
+- Added photo mode details and trivia sections
+- Maintained backward compatibility with existing image references
 
 ### Technical Improvements
 - **Color Palette System**
-  - Expanded palette from 8 → 10 colors
-  - Light-to-dark sorting for better readability
-  - Added click-to-copy color codes
-  - Optimized extraction targeting 30 unique colors
+  - Expanded from 8 → 10 colors
+  - Light-to-dark sorting
+  - Click-to-copy color codes
+  - Optimized extraction for 30 unique colors
 
 - **UI/UX**
-  - Redesigned game metadata with grid layout
-  - Added Trivia section (2 facts per game)
+  - Redesigned game metadata grid layout
+  - Added Trivia section
   - Improved color loading feedback
   - Enhanced responsive design
 
@@ -102,22 +124,19 @@ permalink: /changelog
 
 ### Technical Improvements
 - Updated social media icons & links
-- Improved site navigation with better iconography
+- Improved navigation and iconography
 - **Gallery Performance** → Faster initialization & loading
-- **Loading Spinner** → Added for better feedback
-- **Banner Background** → Improved Vibrant.js fallback for dark mode
-- **Responsive Design** → Tweaked banner & gallery styles
-- **Minor Fixes** → Bug fixes & code cleanup
+- **Loading Spinner** → Added for feedback
+- **Banner Background** → Improved Vibrant.js fallback
+- **Responsive Design** → Tweaked banner & gallery
+- Minor bug fixes & code cleanup
 
 ---
 
 ## April 22, 2025
 
 ### Major Update
-- **Complete Website Overhaul**
-  - Redesigned UI/UX for better navigation
-  - Improved mobile responsiveness
-  - Updated color scheme and typography
+- Complete website overhaul: redesigned UI/UX, improved mobile responsiveness, updated color scheme & typography
 
 ---
 
@@ -133,35 +152,31 @@ permalink: /changelog
 
 ### New Content
 - **Assassin's Creed Valhalla**
-  - Added gallery with 6 new images
-  - Implemented responsive image loading
+  - Added gallery with 6 images, responsive loading
 
 ### Technical Improvements
 - **Build System**
   - Fixed Jekyll build issues
-  - Updated dependencies in `Gemfile`
-    - Fixed Jekyll version compatibility
-    - Added `ostruct`, `wdm`
-    - Removed `jekyll-cache` plugin
+  - Updated `Gemfile` dependencies
+  - Removed `jekyll-cache`
   - Optimized `_config.yml`
 
 - **Modernized Sass**
-  - Replaced deprecated `@import` with `@use` / `@forward`
+  - Replaced `@import` with `@use` / `@forward`
   - Moved partials to `assets/css`
-  - Scoped Sass variables properly
-  - Removed unnecessary front matter from `main.scss`
+  - Scoped variables properly
   - Corrected file paths & names
 
-### UI/UX
-- Updated scroll bar design to match site
+- **UI/UX**
+  - Updated scroll bar design
 
 ---
 
 ## December 13, 2024
 
 ### New Content
-- **Infinity Nikki** → Added 2 screenshots  
-- **Star Wars Outlaws** → Added 1 screenshot  
+- **Infinity Nikki** → Added 2 screenshots
+- **Star Wars Outlaws** → Added 1 screenshot
 
 ### Updates
 - Updated changelog page
@@ -178,8 +193,8 @@ permalink: /changelog
 ## October 4, 2024
 
 ### New Content
-- **Star Wars Outlaws** → Added new screenshots  
-- **Starfield** → Added 2 new shots  
+- **Star Wars Outlaws** → Added new screenshots
+- **Starfield** → Added 2 new shots
 
 ---
 
@@ -192,7 +207,7 @@ permalink: /changelog
   - Hover effects on gallery images
 - **Styling**
   - Updated banner height
-  - Added text shadow for visibility
+  - Added text shadow
   - Smooth background transitions
 - **Fixes**
   - Dark background fallback if Vibrant.js fails
@@ -202,16 +217,16 @@ permalink: /changelog
 ## July 21, 2024
 
 ### Updates
-- **Cyberpunk 2077** → Added 2 new images  
-- **Once Human** → Added 2 new images  
+- **Cyberpunk 2077** → Added 2 images
+- **Once Human** → Added 2 images
 
 ---
 
 ## June 18, 2024
 
 ### Updates
-- Removed unused gallery descriptions  
-- **Starfield Fans** → Added 5 new images  
+- Removed unused gallery descriptions
+- **Starfield Fans** → Added 5 images
 
 ---
 
@@ -221,7 +236,7 @@ permalink: /changelog
 - **Banner Customization**
   - Improved appearance controls
   - Added `darkeningFactor` for dark mode
-  - New images now appear at the top
+  - New images appear at the top
 
 ### Optimizations
 - Reorganized gallery scripts
@@ -248,7 +263,7 @@ permalink: /changelog
 - **Gallery Improvements**
   - Added Vibrant.js integration
   - Re-uploaded Fallout 4 & Division 2 content
-  - Added *Ghost of Tsushima* + *Little Kitty, Big City* images
+  - Added *Ghost of Tsushima* + *Little Kitty, Big City*
   - Alphabetized gallery items
 
 ---
@@ -266,7 +281,7 @@ permalink: /changelog
 ### Updates
 - Fixed favicon issues
 - Updated `favicon.ico` & `footer.html`
-- Rounded corners & hover effects added
+- Rounded corners & hover effects
 
 ---
 
@@ -276,7 +291,7 @@ permalink: /changelog
 - Implemented homepage grid layout
 - Added custom 404 page
 - Updated RDR2 & Control images
-- Updated Google Analytics settings
+- Updated Google Analytics
 
 ---
 
