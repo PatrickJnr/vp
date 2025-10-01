@@ -15,12 +15,8 @@ engine: "Unreal Engine 5"
 photo_mode: true
 photo_mode_features: ["Free Camera", "Filters", "Character Posing"]
 
-# Keep the old image references for backward compatibility
-card_image: 1
-banner_image: 0
-banner_offset: 75
-
 trivia:
   - "Once Human is a multiplayer open-world survival game where players must navigate a post-apocalyptic world overrun by mysterious creatures known as 'The Corruption'."
   - "The game features a unique sanity system where players must manage their character's mental state while exploring the dangerous world."
+  - "Once Human launched as a free-to-play game and quickly gained popularity for its unique blend of survival mechanics and supernatural horror elements."
 ---

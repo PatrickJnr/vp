@@ -6,6 +6,26 @@ permalink: /changelog
 
 ## October 1, 2025
 
+### Content Updates
+- **Game Post Updates**
+  - Updated 16 game posts with latest information and corrections
+  - **Grand Theft Auto V** → Updated sales figures to 195+ million copies, added GTA Online info
+  - **Fallout 4** → Added PS5/Xbox Series X|S platforms, mentioned 2024 next-gen update
+  - **Red Dead Redemption 2** → Updated sales figures to 55+ million copies
+  - **The Division 2** → Fixed release date, removed discontinued Google Stadia platform
+  - **Control** → Added awards and ray tracing achievement info
+  - **Ghost of Tsushima** → Added Director's Cut and Iki Island expansion details
+  - **Assassin's Creed Valhalla** → Added post-launch expansion information
+  - **Cyberpunk 2077** → Fixed date format, added Phantom Liberty expansion info
+  - **Starfield** → Added Xbox Game Pass launch and Shattered Space expansion details
+  - **Assassin's Creed Mirage** → Added Valhalla prequel context
+  - **Horizon Forbidden West** → Corrected PS5 release date (2022), added PC release info (2024)
+  - **Little Kitty, Big City** → Added indie success information
+  - **Once Human** → Added free-to-play launch details
+  - **Star Wars Outlaws** → Added reception and atmosphere details
+  - **Infinity Nikki** → Added free-to-play model information
+  - **Assassin's Creed Shadows** → Added delay information (Nov 2024 → Mar 2025)
+
 ### Technical Updates
 - **JavaScript Code Quality**
   - Fixed 80+ ESLint errors and warnings across all files

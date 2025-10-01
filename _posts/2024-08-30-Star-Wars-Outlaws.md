@@ -15,12 +15,8 @@ engine: "Snowdrop"
 photo_mode: true
 photo_mode_features: ["Free Camera", "Filters", "Character Posing"]
 
-# Keep the old image references for backward compatibility
-card_image: 0
-banner_image: 2
-banner_offset: 75
-
 trivia:
   - "Star Wars Outlaws is the first open-world Star Wars game, set between The Empire Strikes Back and Return of the Jedi, featuring a new protagonist, Kay Vess, a scoundrel seeking freedom and the means to start a new life."
   - "The game features a wanted system similar to Grand Theft Auto, where players' actions can attract the attention of various factions, including the Empire and criminal syndicates."
+  - "The game received mixed reviews at launch but has been praised for its authentic Star Wars atmosphere and detailed recreation of iconic locations from the films."
 ---

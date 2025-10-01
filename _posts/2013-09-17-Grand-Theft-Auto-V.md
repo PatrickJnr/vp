@@ -15,12 +15,8 @@ engine: "RAGE"
 photo_mode: true
 photo_mode_features: ["Selfie Mode", "Director Mode", "Rockstar Editor"]
 
-# Keep the old image references for backward compatibility
-card_image: 21
-banner_image: 27
-banner_offset: 60
-
 trivia:
-  - "GTA V is one of the best-selling video games of all time, with over 185 million copies sold."
-  - "The game's development budget was approximately $265 million, making it one of the most expensive games ever made."
+  - "GTA V is one of the best-selling video games of all time, with over 195 million copies sold as of 2024."
+  - "The game's development budget was approximately $265 million, making it one of the most expensive games ever made at the time."
+  - "GTA Online continues to receive regular updates and remains one of the most popular online gaming experiences over a decade after release."
 ---

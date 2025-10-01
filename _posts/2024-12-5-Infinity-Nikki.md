@@ -15,12 +15,8 @@ engine: "Unreal Engine 5"
 photo_mode: true
 photo_mode_features: ["Pose Editor", "Filters", "Backgrounds"]
 
-# Keep the old image references for backward compatibility
-card_image: 0
-banner_image: 0
-banner_offset: 75
-
 trivia:
   - "Infinity Nikki is an open-world dress-up adventure game that combines fashion with exploration, allowing players to collect and customize outfits while solving puzzles and completing quests."
   - "The game features a unique 'Fashion Battle' system where players can compete in style challenges and fashion shows to unlock exclusive clothing items and accessories."
+  - "Infinity Nikki launched as a free-to-play game and represents a unique entry in the open-world genre by focusing on fashion and creativity rather than combat."
 ---

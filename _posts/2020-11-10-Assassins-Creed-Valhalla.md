@@ -15,12 +15,8 @@ engine: "AnvilNext 2.0"
 photo_mode: true
 photo_mode_features: ["Free Camera", "Filters", "Weather Control", "Time of Day"]
 
-# Keep the old image references for backward compatibility
-card_image: 0
-banner_image: 2
-banner_offset: 75
-
 trivia:
   - "Assassin's Creed Valhalla features the largest map in the series, spanning four kingdoms of Anglo-Saxon England and parts of Norway."
   - "The game includes a settlement building mechanic where players can construct and upgrade various buildings that provide gameplay benefits and story content."
+  - "Valhalla has received extensive post-launch content including major expansions like Wrath of the Druids and The Siege of Paris."
 ---

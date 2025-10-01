@@ -15,12 +15,8 @@ engine: "Anvil Engine"
 photo_mode: true
 photo_mode_features: ["Free Camera", "Filters", "Time of Day Control"]
 
-# Keep the old image references for backward compatibility
-card_image: 1
-banner_image: 1
-banner_offset: 75
-
 trivia:
   - "Assassin's Creed Mirage is a return to the series' stealth-action roots, with a stronger focus on parkour and social stealth mechanics compared to recent RPG-focused entries."
   - "The game is set in 9th-century Baghdad during the Islamic Golden Age, making it the first mainline Assassin's Creed game set in the Middle East since the original."
+  - "Mirage serves as a prequel to Assassin's Creed Valhalla, telling the origin story of Basim Ibn Ishaq before the events of the Viking-era game."
 ---
