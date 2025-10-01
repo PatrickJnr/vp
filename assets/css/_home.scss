@@ -24,29 +24,30 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   isolation: isolate;
+  cursor: pointer;
   
   &::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, 
-      rgba(10, 10, 15, 0.95) 0%,
-      rgba(10, 10, 15, 0.8) 30%,
-      rgba(10, 10, 15, 0.4) 60%,
-      rgba(10, 10, 15, 0.2) 100%
+    background: linear-gradient(to top,
+      rgba($mantle, 0.95) 0%,
+      rgba($mantle, 0.8) 30%,
+      rgba($mantle, 0.4) 60%,
+      rgba($mantle, 0.2) 100%
     );
     opacity: 0.9;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1;
   }
-  
+
   &::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at top right, 
-      rgba(191, 154, 232, 0.3),
-      rgba(191, 154, 232, 0.1) 30%,
+    background: radial-gradient(circle at top right,
+      rgba($mauve, 0.3),
+      rgba($mauve, 0.1) 30%,
       transparent 70%
     );
     opacity: 0;
@@ -59,23 +60,23 @@
     box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
     
     &::before {
-      background: linear-gradient(to top, 
-        rgba(10, 10, 15, 0.98) 0%,
-        rgba(10, 10, 15, 0.9) 30%,
-        rgba(10, 10, 15, 0.5) 60%,
-        rgba(10, 10, 15, 0.3) 100%
+      background: linear-gradient(to top,
+        rgba($mantle, 0.98) 0%,
+        rgba($mantle, 0.9) 30%,
+        rgba($mantle, 0.5) 60%,
+        rgba($mantle, 0.3) 100%
       );
     }
-    
+
     &::after {
       opacity: 1;
     }
-    
+
     h2 span {
-      background: rgba(10, 10, 15, 0.98);
+      background: rgba($mantle, 0.98);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba($overlay-0, 0.3);
       transform: translateY(-5px);
     }
   }
@@ -93,36 +94,36 @@
 
 .featured-post h2 span {
   display: inline-block;
-  color: #f8f9fc;
+  color: $text;
   font: 600 22px/1.4 'Exo 2', sans-serif;
   letter-spacing: -0.02em;
   padding: 16px 24px;
   border-radius: 12px;
-  background: rgba(10, 10, 15, 0.95);
+  background: rgba($mantle, 0.95);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba($overlay-0, 0.2);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .featured-post span a {
-  color: #f8f9fc;
+  color: $text;
   text-decoration: none;
   position: relative;
-  
+
   &::before {
     content: '';
     position: absolute;
     inset: -4px -8px;
-    background: rgba(191, 154, 232, 0.1);
+    background: rgba($mauve, 0.1);
     border-radius: 6px;
     opacity: 0;
     transform: scale(0.95);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   &::after {
     content: '';
     position: absolute;
@@ -130,20 +131,20 @@
     height: 2px;
     bottom: -2px;
     left: 0;
-    background: #bf9ae8;
+    background: $mauve;
     transform: scaleX(0);
     transform-origin: right;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   &:hover {
-    color: #bf9ae8;
-    
+    color: $mauve;
+
     &::before {
       opacity: 1;
       transform: scale(1);
     }
-    
+
     &::after {
       transform: scaleX(1);
       transform-origin: left;
@@ -170,8 +171,8 @@
 }
 
 .pagination-button {
-  color: #9ca3af;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: $subtext-1;
+  border: 1px solid rgba($overlay-0, 0.3);
   padding: 15px 45px;
   margin: 10px 5px;
   display: inline-block;
@@ -179,27 +180,27 @@
   font-weight: 500;
   border-radius: 8px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(19, 19, 26, 0.7);
+  background: rgba($surface-0, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  
+
   &:hover {
-    background: rgba(191, 154, 232, 0.1);
-    color: #bf9ae8;
-    border-color: rgba(191, 154, 232, 0.2);
+    background: rgba($mauve, 0.1);
+    color: $mauve;
+    border-color: rgba($mauve, 0.2);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 }
 
 .pagination-active {
-  background: linear-gradient(135deg, #bf9ae8 0%, rgba(191, 154, 232, 0.8) 100%);
-  color: #f8f9fc;
+  background: linear-gradient(135deg, $mauve 0%, rgba($mauve, 0.8) 100%);
+  color: $base;
   border: none;
-  
+
   &:hover {
-    background: linear-gradient(135deg, #bf9ae8 0%, rgba(191, 154, 232, 0.8) 100%);
-    color: #f8f9fc;
+    background: linear-gradient(135deg, $mauve 0%, rgba($mauve, 0.8) 100%);
+    color: $base;
     cursor: default;
     transform: none;
     box-shadow: none;

@@ -1,7 +1,7 @@
 # PatrickJr's Virtual Photography Portfolio
 
 [![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fvp.grimtech.co.uk&style=for-the-badge)](https://vp.grimtech.co.uk/) [![GitHub Pages Status](https://img.shields.io/github/deployments/PatrickJnr/vp/github-pages?label=GitHub%20Pages&style=for-the-badge)](https://patrickjnr.github.io/vp) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT) [![GitHub last commit](https://img.shields.io/github/last-commit/PatrickJnr/vp?style=for-the-badge)](https://github.com/PatrickJnr/vp/commits/main) [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/PatrickJnr/vp?style=for-the-badge)](https://github.com/PatrickJnr/vp/commits/main)<br>
-[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/PatrickJnr/vp?style=for-the-badge)](https://github.com/PatrickJnr/vp) [![GitHub top language](https://img.shields.io/github/languages/top/PatrickJnr/vp?style=for-the-badge)](https://github.com/PatrickJnr/vp) [![GitHub language count](https://img.shields.io/github/languages/count/PatrickJnr/vp?style=for-the-badge)](https://github.com/PatrickJnr/vp) <img alt="Made with Jekyll" src="https://img.shields.io/badge/Made%20with-Jekyll-blue?logo=jekyll&style=for-the-badge"> <img alt="Images Hosted with Imgur" src="https://img.shields.io/badge/Images_Hosted_with-Imgur-green?logo=imgur&style=for-the-badge">
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/PatrickJnr/vp?style=for-the-badge)](https://github.com/PatrickJnr/vp) [![GitHub top language](https://img.shields.io/github/languages/top/PatrickJnr/vp?style=for-the-badge)](https://github.com/PatrickJnr/vp) [![GitHub language count](https://img.shields.io/github/languages/count/PatrickJnr/vp?style=for-the-badge)](https://github.com/PatrickJnr/vp) <img alt="Made with Jekyll" src="https://img.shields.io/badge/Made%20with-Jekyll-blue?logo=jekyll&style=for-the-badge"> <img alt="Images Hosted with LensDump" src="https://img.shields.io/badge/Images_Hosted_with-LensDump-blue?style=for-the-badge">
 
 A modern, responsive portfolio website showcasing virtual photography captured in various video games by PatrickJr. The site is built with Jekyll and enhanced with modern web technologies.
 
@@ -11,7 +11,7 @@ A modern, responsive portfolio website showcasing virtual photography captured i
 
 ## About
 
-The site is built using [Jekyll](https://jekyllrb.com/), a static site generator, and hosted on [GitHub Pages](https://pages.github.com/). Images are hosted on [Imgur](https://imgur.com/). New content and updates are tracked on the [changelog](https://vp.grimtech.co.uk/changelog) page.
+The site is built using [Jekyll](https://jekyllrb.com/), a static site generator, and hosted on [GitHub Pages](https://pages.github.com/). Images are hosted on [LensDump](https://lensdump.com/). New content and updates are tracked on the [changelog](https://vp.grimtech.co.uk/changelog) page.
 
 ## ✨ Features
 
@@ -83,17 +83,9 @@ The repository includes a Python script for processing and uploading images:
 
 ### `generate_albumv3.py`
 
-This script handles image processing and Imgur uploads:
+This script handles image processing and gallery generation:
 
-1. Create a `.env` file with your Imgur API credentials:
-   ```env
-   CLIENT_ID=your_client_id
-   CLIENT_SECRET=your_client_secret
-   ACCESS_TOKEN=your_access_token
-   REFRESH_TOKEN=your_refresh_token
-   ```
-
-2. Run the script with a directory containing images:
+1. Run the script with a directory containing images:
    ```bash
    python generate_albumv3.py path/to/image/directory
    ```
@@ -101,9 +93,9 @@ This script handles image processing and Imgur uploads:
 ### Features:
 - Automatic thumbnail generation
 - Batch image processing
-- Imgur upload integration
 - Metadata handling
 - JSON data generation for galleries
+- Local image organization and optimization
 
 ## ⚙️ Configuration
 
@@ -124,7 +116,7 @@ This script handles image processing and Imgur uploads:
 vp/
 ├── .github/          # GitHub workflows and templates
 ├── _data/            # Site data files
-│   ├── galleries/    # Gallery data
+│   ├── virtual-photography/    # Gallery data (JSON files)
 │   ├── settings/     # Configuration files
 │   └── *.yml         # YAML data files
 ├── _includes/        # Reusable components
@@ -133,7 +125,7 @@ vp/
 ├── _posts/           # Blog posts
 ├── _site/            # Generated site (not in version control)
 ├── assets/           # Static assets
-│   ├── css/         # Compiled CSS
+│   ├── css/         # Compiled CSS (includes abstracts/ and base/ subdirectories)
 │   ├── img/         # Images and icons
 │   └── js/          # Source JavaScript
 ├── js/              # Frontend JavaScript
@@ -168,7 +160,7 @@ All virtual photography and screenshots are © PatrickJr and are licensed under 
 
 - [Jekyll](https://jekyllrb.com/)
 - [Node.js](https://nodejs.org/)
-- [Imgur API](https://apidocs.imgur.com/)
+- [LensDump](https://lensdump.com/)
 
 ## 📬 Contact
 

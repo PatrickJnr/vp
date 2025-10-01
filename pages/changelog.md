@@ -13,6 +13,18 @@ permalink: /changelog
   - Resolved CORS issues caused by external image loading for color analysis
   - Simplified banner styling with static gradients
 
+- **Theme Implementation**
+  - Implemented Catppuccin Mocha theme across the entire site
+  - Updated color variables in `_variables.scss` with Catppuccin color palette
+  - Applied consistent theming to all UI components including headers, footers, and content areas
+  - Enhanced visual consistency with predefined gradients and shadow effects
+
+- **Documentation Updates**
+  - Updated README.md to replace all Imgur references with LensDump
+  - Removed outdated Imgur API documentation and credentials setup
+  - Corrected directory structure to reflect current project organization
+  - Updated third-party service references to maintain accuracy
+
 ## September 30, 2025
 
 #### Technical Updates

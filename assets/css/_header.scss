@@ -11,7 +11,7 @@
   z-index: $z-header;
   backdrop-filter: blur($blur-strength);
   -webkit-backdrop-filter: blur($blur-strength);
-  border: 1px solid $border-color;
+  border: 1px solid rgba($overlay-0, 0.3);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: $box-shadow;
   border-radius: 16px;
@@ -20,7 +20,7 @@
   align-items: center;
   justify-content: space-between;
   will-change: transform, opacity;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -31,8 +31,28 @@
     border-radius: 16px;
   }
 
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba($mauve, 0.05) 0%, rgba($blue, 0.05) 100%);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 16px;
+    pointer-events: none;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
   &.scrolled {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-color: rgba($mauve, 0.2);
+
+    &::after {
+      opacity: 0.3;
+    }
   }
 
   &.header-hidden {
@@ -128,7 +148,7 @@
   background-color: $glass-bg;
   backdrop-filter: blur($blur-strength);
   -webkit-backdrop-filter: blur($blur-strength);
-  border: 1px solid $border-color;
+  border: 1px solid rgba($overlay-0, 0.3);
   border-radius: 12px;
   box-shadow: $box-shadow;
   padding: 1rem;
@@ -136,20 +156,20 @@
   visibility: hidden;
   transform: translateY(-10px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   &.active {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
   }
-  
+
   .nav-links {
     flex-direction: column;
     align-items: stretch;
-    
+
     a {
       padding: 12px;
-      
+
       &:hover, &.active {
         transform: translateX(4px);
       }

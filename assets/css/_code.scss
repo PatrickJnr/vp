@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 $code-font-family: "Exo 2", sans-serif;
 
 code,
@@ -8,11 +10,11 @@ pre {
 code {
   padding: .25em .5em;
   font-size: .9rem;
-  background: linear-gradient(135deg, #8bc34a 0%, #7cb342 100%);
+  background: linear-gradient(135deg, $green 0%, $teal 100%);
   border-radius: 4px;
   font-weight: 600;
-  color: white;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  color: $crust;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.2);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -26,16 +28,16 @@ pre {
   white-space: pre-wrap;
   word-break: break-all;
   word-wrap: break-word;
-  background-color: #1a1a21;
+  background-color: $surface-0;
   border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba($overlay-0, 0.3);
   box-shadow: 0 4px 16px rgba(0,0,0,0.2);
 }
 
 pre code {
   padding: 0;
   font-size: inherit;
-  color: #f8f9fc;
+  color: $text;
   background: none;
   border-radius: 0;
   box-shadow: none;
@@ -47,7 +49,7 @@ pre code {
   margin-bottom: 1.5rem;
   border-radius: 8px;
   overflow: hidden;
-  background: #1a1a21;
+  background: $surface-0;
   box-shadow: 0 4px 16px rgba(0,0,0,0.2);
 }
 
@@ -61,13 +63,13 @@ pre code {
 .gist .gist-file {
   font-family: $code-font-family !important;
   border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba($overlay-0, 0.3) !important;
 }
 
 .gist .markdown-body {
   padding: 1.25rem;
-  background: #1a1a21;
-  color: #f8f9fc;
+  background: $surface-0;
+  color: $text;
 }
 
 .gist pre {
@@ -78,7 +80,7 @@ pre code {
 .gist .gist-file .gist-data {
   font-size: .9rem !important;
   line-height: 1.5;
-  background: #1a1a21;
+  background: $surface-0;
 }
 
 .gist code {

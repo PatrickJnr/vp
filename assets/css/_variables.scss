@@ -8,18 +8,50 @@ $base-font-size: 16px;
 $small-font-size: 0.875rem;
 $base-line-height: 1.7;
 
-// Colors
-$brand-color: #fff;
-$background-color: #0a0a0f;
-$background-alt: #13131a;
-$text-color: #f8f9fc;
-$text-muted: #9ca3af;
-$border-color: rgba(255, 255, 255, 0.1);
-$accent-color: #bf9ae8;
-$code-color: #8bc34a;
-$link-color: #fff;
-$error-color: #ef4444;
-$success-color: #10b981;
+// Catppuccin Mocha Colors
+$rosewater: #f5e0dc;
+$flamingo: #f2cdcd;
+$pink: #f5c2e7;
+$mauve: #cba6f7;
+$red: #f38ba8;
+$maroon: #eba0ac;
+$peach: #fab387;
+$yellow: #f9e2af;
+$green: #a6e3a1;
+$teal: #94e2d5;
+$sky: #89dceb;
+$sapphire: #74c7ec;
+$blue: #89b4fa;
+$lavender: #b4befe;
+
+// Background Colors
+$crust: #11111b;
+$mantle: #181825;
+$base: #1e1e2e;
+$surface-0: #313244;
+$surface-1: #45475a;
+$surface-2: #585b70;
+
+// Text Colors
+$text: #cdd6f4;
+$subtext-0: #a6adc8;
+$subtext-1: #bac2de;
+$overlay-0: #6c7086;
+$overlay-1: #7f849c;
+$overlay-2: #9399b2;
+
+// Site Colors (mapped to Catppuccin)
+$brand-color: $text;
+$background-color: $base;
+$background-alt: $mantle;
+$text-color: $text;
+$text-muted: $subtext-1;
+$border-color: rgba($overlay-0, 0.3);
+$accent-color: $mauve;
+$code-color: $green;
+$link-color: $blue;
+$error-color: $red;
+$success-color: $green;
 
 // Derived Colors
 $accent-color-dark: color.adjust($accent-color, $lightness: -10%);
@@ -64,18 +96,45 @@ $z-overlay: 80;
 
 // Misc
 $blur-strength: 12px;
-$glass-bg: rgba($background-alt, 0.7);
+$glass-bg: rgba($surface-0, 0.8);
 
-// Gradients
-$gradient-primary: linear-gradient(135deg, $accent-color 0%, $accent-color-dark 100%);
-$gradient-overlay: linear-gradient(to top, 
-  rgba($background-color, 0.95) 0%,
-  rgba($background-color, 0.8) 40%,
-  rgba($background-color, 0.1) 100%
+// Enhanced Catppuccin Gradients
+$gradient-primary: linear-gradient(135deg, $mauve 0%, $pink 50%, $lavender 100%);
+$gradient-overlay: linear-gradient(to top,
+  rgba($mantle, 0.95) 0%,
+  rgba($mantle, 0.8) 40%,
+  rgba($mantle, 0.1) 100%
 );
-$gradient-text: linear-gradient(135deg, $accent-color 0%, $accent-color-light 100%);
-$gradient-glow: radial-gradient(circle at top right, 
-  rgba($accent-color, 0.15),
-  rgba($accent-color, 0.05) 30%,
+$gradient-text: linear-gradient(135deg, $mauve 0%, $lavender 100%);
+$gradient-glow: radial-gradient(circle at top right,
+  rgba($mauve, 0.15),
+  rgba($lavender, 0.05) 30%,
   transparent 70%
-); 
+);
+$gradient-surface: linear-gradient(135deg, $surface-0 0%, $surface-1 100%);
+$gradient-accent: linear-gradient(135deg, $mauve 0%, $blue 50%, $sapphire 100%);
+$gradient-warm: linear-gradient(135deg, $peach 0%, $yellow 50%, $green 100%);
+$gradient-cool: linear-gradient(135deg, $sapphire 0%, $teal 50%, $sky 100%);
+
+// Catppuccin Utility Classes
+$shadow-catmorphism: 0 8px 32px rgba(0, 0, 0, 0.2);
+$shadow-catmorphism-hover: 0 12px 48px rgba(0, 0, 0, 0.3);
+$shadow-glow: 0 0 20px rgba($mauve, 0.3);
+$shadow-glow-hover: 0 0 30px rgba($mauve, 0.5);
+
+// Enhanced border radius
+$radius-sm: 6px;
+$radius-md: 8px;
+$radius-lg: 12px;
+$radius-xl: 16px;
+$radius-full: 50%;
+
+// Animation durations
+$duration-fast: 0.15s;
+$duration-normal: 0.3s;
+$duration-slow: 0.5s;
+
+// Easing functions
+$ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+$ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+$ease-sharp: cubic-bezier(0.4, 0, 0.6, 1);

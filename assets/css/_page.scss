@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 .page-content {
   max-width: 600px;
   display: block;
@@ -12,7 +14,7 @@
   
   h1 {
     margin-bottom: 10px;
-    background: linear-gradient(135deg, #bf9ae8 0%, rgba(191, 154, 232, 0.8) 100%);
+    background: linear-gradient(135deg, $mauve 0%, rgba($mauve, 0.8) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -20,9 +22,9 @@
     letter-spacing: -0.02em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   }
-  
+
   .page-description {
-    color: #9ca3af;
+    color: $subtext-1;
     font-size: 1.1rem;
     max-width: 500px;
     margin: 0 auto;
@@ -34,27 +36,27 @@
 .page-section {
   margin-bottom: 40px;
   padding: 20px;
-  background: rgba(19, 19, 26, 0.5);
+  background: rgba($surface-0, 0.5);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba($overlay-0, 0.3);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-    border-color: rgba(191, 154, 232, 0.2);
+    border-color: rgba($mauve, 0.2);
   }
-  
+
   h2 {
     margin-bottom: 20px;
     position: relative;
-    color: #f8f9fc;
+    color: $text;
     font-size: 1.8rem;
     letter-spacing: -0.01em;
-    
+
     &::after {
       content: '';
       position: absolute;
@@ -62,15 +64,15 @@
       left: 0;
       width: 40px;
       height: 3px;
-      background: linear-gradient(90deg, #bf9ae8, transparent);
+      background: linear-gradient(90deg, $mauve, transparent);
       border-radius: 3px;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
   }
-  
+
   &:hover h2::after {
     width: 60px;
-    background: linear-gradient(90deg, #bf9ae8, rgba(191, 154, 232, 0.4));
+    background: linear-gradient(90deg, $mauve, rgba($mauve, 0.4));
   }
 }
 

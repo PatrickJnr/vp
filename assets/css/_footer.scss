@@ -2,8 +2,8 @@
 @use "variables" as *;
 
 .footer {
-  background: rgba(19, 19, 26, 0.7);
-  color: #ffffff;
+  background: rgba($mantle, 0.7);
+  color: $text;
   text-align: center;
   min-height: 36px;
   line-height: 1.6;
@@ -11,29 +11,44 @@
   margin-left: auto;
   margin-right: auto;
   padding: 18px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba($overlay-0, 0.3);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   position: relative;
   overflow: hidden;
-  
+
   &::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at top right, rgba(191, 154, 232, 0.15), rgba(191, 154, 232, 0.05) 30%, transparent 70%);
+    background: radial-gradient(circle at top right, rgba($mauve, 0.15), rgba($mauve, 0.05) 30%, transparent 70%);
     opacity: 0.3;
     pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, $mauve, transparent);
+    opacity: 0.5;
+  }
+
+  &:hover::before {
+    opacity: 0.5;
   }
 }
 
 .footer a {
-  color: #ffffff;
+  color: $text;
   padding: 0px 10px;
   text-decoration: none;
   position: relative;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   &::after {
     content: '';
     position: absolute;
@@ -41,15 +56,15 @@
     height: 2px;
     bottom: -2px;
     left: 0;
-    background: #bf9ae8;
+    background: $mauve;
     transform: scaleX(0);
     transform-origin: right;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   &:hover {
-    color: #bf9ae8;
-    
+    color: $mauve;
+
     &::after {
       transform: scaleX(1);
       transform-origin: left;
@@ -59,8 +74,8 @@
 
 @media (max-width: 1100px) {
   .footer {
-    background: rgba(19, 19, 26, 0.7);
-    color: #ffffff;
+    background: rgba($mantle, 0.7);
+    color: $text;
     text-align: center;
     min-height: 36px;
     line-height: 1.6;
@@ -75,18 +90,18 @@
 .footer-description {
   display: block;
   margin-bottom: 1rem;
-  color: #9ca3af;
+  color: $subtext-1;
   font-size: 0.9rem;
   line-height: 1.8;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
   padding: 0 25px;
-  
+
   a {
-    color: #bf9ae8;
+    color: $mauve;
     font-weight: 500;
-    
+
     &:hover {
       filter: brightness(1.1);
     }
@@ -100,24 +115,24 @@
   margin-top: 25px;
   position: relative;
   z-index: 1;
-  
+
   a {
-    color: #ffffff;
+    color: $text;
     font-size: 20px;
     padding: 12px;
     border-radius: 50%;
-    background: rgba(19, 19, 26, 0.5);
+    background: rgba($surface-0, 0.5);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    
+
     &:hover {
       transform: translateY(-5px);
-      background: linear-gradient(135deg, #bf9ae8 0%, rgba(191, 154, 232, 0.8) 100%);
-      color: #f8f9fc;
+      background: linear-gradient(135deg, $mauve 0%, rgba($mauve, 0.8) 100%);
+      color: $base;
     }
-    
+
     &::after {
       display: none;
     }

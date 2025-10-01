@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 $container-width: 1100px;
 $tablet-width: 600px;
 $base-font-family: 'Exo 2', sans-serif;
@@ -13,11 +15,11 @@ $base-font-family: 'Exo 2', sans-serif;
 .post-date {
   display: block;
   margin-bottom: 1rem;
-  color: #9ca3af;
+  color: $subtext-1;
   font-size: 0.9rem;
   font-style: italic;
   letter-spacing: 0.02em;
-  
+
   &::before {
     content: '📅 ';
     margin-right: 5px;
@@ -31,30 +33,30 @@ $base-font-family: 'Exo 2', sans-serif;
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   position: relative;
-  background: rgba(10, 10, 15, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba($mantle, 0.5);
+  border: 1px solid rgba($overlay-0, 0.2);
   
   &::before {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom,
-      rgba(10, 10, 15, 0.2) 0%,
-      rgba(10, 10, 15, 0.3) 50%,
-      rgba(10, 10, 15, 0.8) 100%
+      rgba($mantle, 0.2) 0%,
+      rgba($mantle, 0.3) 50%,
+      rgba($mantle, 0.8) 100%
     );
     z-index: 1;
     opacity: 0;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   &::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at top right, 
-      rgba(191, 154, 232, 0.3),
-      rgba(191, 154, 232, 0.1) 30%,
+    background: radial-gradient(circle at top right,
+      rgba($mauve, 0.3),
+      rgba($mauve, 0.1) 30%,
       transparent 70%
     );
     opacity: 0;
@@ -115,18 +117,18 @@ $base-font-family: 'Exo 2', sans-serif;
 
 .post-share {
   padding: 2rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba($overlay-0, 0.3);
+  border-bottom: 1px solid rgba($overlay-0, 0.3);
   margin: 2rem 0;
-  background: rgba(19, 19, 26, 0.3);
+  background: rgba($surface-0, 0.3);
   border-radius: 12px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  
+
   h3 {
     margin: 0 0 1rem;
     font-size: 1.2rem;
-    color: #9ca3af;
+    color: $subtext-1;
     text-align: center;
     letter-spacing: 0.02em;
   }
@@ -136,19 +138,19 @@ $base-font-family: 'Exo 2', sans-serif;
   display: flex;
   gap: 15px;
   justify-content: center;
-  
+
   a {
     padding: 12px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba($overlay-0, 0.3);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    color: #f8f9fc;
+    color: $text;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    
+
     &:hover {
       transform: translateY(-3px) scale(1.1);
-      background: linear-gradient(135deg, #bf9ae8 0%, rgba(191, 154, 232, 0.8) 100%);
-      box-shadow: 0 8px 24px rgba(191, 154, 232, 0.3);
+      background: linear-gradient(135deg, $mauve 0%, rgba($mauve, 0.8) 100%);
+      box-shadow: 0 8px 24px rgba($mauve, 0.3);
     }
   }
 }
@@ -159,15 +161,15 @@ $base-font-family: 'Exo 2', sans-serif;
 
 .related {
   padding: 2rem 0;
-  
+
   h2 {
     margin-bottom: 1.5rem;
     position: relative;
     display: inline-block;
-    color: #f8f9fc;
+    color: $text;
     font-size: 1.8rem;
     letter-spacing: -0.01em;
-    
+
     &::after {
       content: '';
       position: absolute;
@@ -175,7 +177,7 @@ $base-font-family: 'Exo 2', sans-serif;
       left: 0;
       width: 100%;
       height: 3px;
-      background: linear-gradient(90deg, #bf9ae8, transparent);
+      background: linear-gradient(90deg, $mauve, transparent);
       border-radius: 3px;
     }
   }
@@ -197,29 +199,29 @@ $base-font-family: 'Exo 2', sans-serif;
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   &::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, 
-      rgba(10, 10, 15, 0.95) 0%,
-      rgba(10, 10, 15, 0.7) 40%,
+    background: linear-gradient(to top,
+      rgba($mantle, 0.95) 0%,
+      rgba($mantle, 0.7) 40%,
       transparent 100%
     );
     opacity: 0.8;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1;
   }
-  
+
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
-    
+
     &::before {
       opacity: 0.9;
     }
-    
+
     img {
       transform: translate(-50%, -50%) scale(1.05);
     }
@@ -242,19 +244,19 @@ $base-font-family: 'Exo 2', sans-serif;
   left: 0;
   right: 0;
   padding: 1.25rem;
-  color: #f8f9fc;
+  color: $text;
   z-index: 2;
   font-family: $base-font-family;
   font-size: 1.1rem;
   line-height: 1.4;
-  
+
   a {
-    color: #f8f9fc;
+    color: $text;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    
+
     &:hover {
-      color: #bf9ae8;
+      color: $mauve;
     }
   }
 }
@@ -273,11 +275,11 @@ $base-font-family: 'Exo 2', sans-serif;
 .post-title {
   font-size: 2.5rem;
   margin: 1rem 0;
-  color: #f8f9fc;
+  color: $text;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   position: relative;
   display: inline-block;
-  
+
   &::after {
     content: '';
     position: absolute;
@@ -285,7 +287,7 @@ $base-font-family: 'Exo 2', sans-serif;
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, #bf9ae8, transparent);
+    background: linear-gradient(90deg, $mauve, transparent);
     border-radius: 3px;
   }
 }
