@@ -4,6 +4,15 @@ title: Changelog
 permalink: /changelog
 ---
 
+## October 1, 2025
+
+#### Technical Updates
+- **Color System Removal**
+  - Removed color palette and dynamic background color functionality from game posts
+  - Eliminated Vibrant.js dependency and color extraction scripts
+  - Resolved CORS issues caused by external image loading for color analysis
+  - Simplified banner styling with static gradients
+
 ## September 30, 2025
 
 #### Technical Updates
