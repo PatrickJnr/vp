@@ -9,10 +9,6 @@ plugins:
   - jekyll-mentions
   - jekyll-minifier
   
-# Removed the entire jekyll-cache configuration section:
-# jekyll-cache:
-#   enabled: true
-
 # SASS/SCSS Configuration
 sass:
   style: compressed
@@ -23,6 +19,7 @@ sass:
 
 include:
   - node_modules  # You probably need this for your Parcel/Webpack setup
+
 title: PatrickJr's Virtual Photography
 author:
   name: PatrickJr.
@@ -31,16 +28,20 @@ author:
 description: "📷 Virtual photography"
 repository: PatrickJnr/vp
 github: 'https://github.com/PatrickJnr/vp'
+
 feed:
   path: rss-feed.xml
 sitemap:
   url: 'https://vp.grimtech.co.uk' #this is redundant
+
 jekyll-seo-tag:
   title: PatrickJr's Virtual Photography
   description: Explore PatrickJr's virtual photography world and creative captures.
   image: /assets/images/LilFella.png
+
 jekyll-mentions:
   base_url: 'https://twitter.com'
+
 favicon: /assets/img/favicon.ico
 
 # Jekyll Minifier Configuration
@@ -49,14 +50,11 @@ jekyll-minifier:
   compress_css: true
   compress_js: true
   compress_html: true
-
-
-
-# Removed caching and cache_dir. Jekyll 4+ handles this automatically.
-# caching: true
-# cache_dir: _cache
+  uglifier:
+    harmony: true   # Enable ES6+ support (fixes arrow function/const errors)
 
 google_analytics: G-XXPKD9SFHL
+
 header:
   title: PatrickJr's Virtual Photography
   tagline: Capturing the digital world through lenses.
