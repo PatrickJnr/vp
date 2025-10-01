@@ -10,7 +10,7 @@ permalink: /changelog
 - **Game Post Updates**
   - Updated 16 game posts with latest information and corrections
   - **Grand Theft Auto V** → Updated sales figures to 195+ million copies, added GTA Online info
-  - **Fallout 4** → Added PS5/Xbox Series X|S platforms, mentioned 2024 next-gen update
+  - **Fallout 4** → Added PS5/Xbox Series XS platforms, mentioned 2024 next-gen update
   - **Red Dead Redemption 2** → Updated sales figures to 55+ million copies
   - **The Division 2** → Fixed release date, removed discontinued Google Stadia platform
   - **Control** → Added awards and ray tracing achievement info
