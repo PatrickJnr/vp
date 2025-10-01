@@ -17,7 +17,7 @@ permalink: /changelog
 - **Ruby Gem & Jekyll**
   - Upgraded Jekyll → `~> 4.4.1`
   - Updated plugins: jemoji `~> 0.13.0`, jekyll-mentions `~> 1.6.0`
-  - Added jekyll-minifier `~> 0.1.0` for performance optimization
+  - Removed jekyll-minifier `~> 0.1.0` to reduce maintenance overhead
   - Updated core dependencies: webrick `~> 1.9.1`, rack `~> 3.0.0`
   - Added Sinatra framework gems for extended functionality
   - Resolved Windows compatibility with `wdm >= 0.1.0`

@@ -7,7 +7,6 @@ plugins:
   - jekyll-seo-tag
   - jemoji
   - jekyll-mentions
-  - jekyll-minifier
   
 # SASS/SCSS Configuration
 sass:
@@ -44,14 +43,6 @@ jekyll-mentions:
 
 favicon: /assets/img/favicon.ico
 
-# Jekyll Minifier Configuration
-jekyll-minifier:
-  exclude: ['*.min.css', '*.min.js']
-  compress_css: true
-  compress_js: true
-  compress_html: true
-  uglifier:
-    harmony: true   # Enable ES6+ support (fixes arrow function/const errors)
 
 google_analytics: G-XXPKD9SFHL
 

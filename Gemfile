@@ -14,8 +14,7 @@ gem 'jekyll-seo-tag', '~> 2.8.0'
 gem 'jekyll-redirect-from', '~> 0.16.0'
 gem 'jekyll-sass-converter', '~> 3.1.0'
 
-# Performance & Optimization Plugins
-gem 'jekyll-minifier', '~> 0.1.0'
+
 
 # Utilities
 gem 'webrick', '~> 1.9.1'
