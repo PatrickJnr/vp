@@ -5,7 +5,7 @@ Source for <https://vp.grimtech.co.uk/>, a Jekyll site hosted on GitHub Pages. P
 ## Requirements
 
 - Ruby 3.3 or newer (CI uses 3.4) and Bundler 2.5 or newer
-- Python 3.10 or newer with Pillow, for the gallery generator only
+- Python 3.11 or newer with Pillow 13, for the gallery generator only
 
 On Windows, `winget install RubyInstallerTeam.Ruby.3.4` installs Ruby. Open a new terminal afterwards so `ruby` is on the PATH.
 
