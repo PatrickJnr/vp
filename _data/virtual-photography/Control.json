@@ -1,38 +1,153 @@
 [
-    {
-        "file_name": "Brutalism.png",
-        "file_path": "D:\\Grimtech\\tools\\Control\\Brutalism.png",
-        "file_hash": "66ec093ebfcb6ba3bffa9b5e19f6562d",
-        "imageFull-link": "https://b.l3n.co/PC128C.png",
-        "thumbnail-link-600": "https://a.l3n.co/PC18J5.jpg",
-        "image1080-link": "https://c.l3n.co/PC1Aez.jpg",
-        "aspect-ratio": "1.7777777777777777"
-    },
-    {
-        "file_name": "CentreRoom.png",
-        "file_path": "D:\\Grimtech\\tools\\Control\\CentreRoom.png",
-        "file_hash": "227b32e72eb2a03d96840a5c157e757e",
-        "imageFull-link": "https://a.l3n.co/PC1WyT.png",
-        "thumbnail-link-600": "https://d.l3n.co/PC1jRb.jpg",
-        "image1080-link": "https://a.l3n.co/PC1077.jpg",
-        "aspect-ratio": "2.388888888888889"
-    },
-    {
-        "file_name": "ControlRed.png",
-        "file_path": "D:\\Grimtech\\tools\\Control\\ControlRed.png",
-        "file_hash": "c7110de66fc7fc62d36185e6a53c9e3b",
-        "imageFull-link": "https://d.l3n.co/PC1IUr.png",
-        "thumbnail-link-600": "https://a.l3n.co/PC1gIF.jpg",
-        "image1080-link": "https://d.l3n.co/PC1rm3.jpg",
-        "aspect-ratio": "2.388888888888889"
-    },
-    {
-        "file_name": "Lights.png",
-        "file_path": "D:\\Grimtech\\tools\\Control\\Lights.png",
-        "file_hash": "3170cdc5a0b763090ec50f0d8ca02195",
-        "imageFull-link": "https://b.l3n.co/PC1tu0.png",
-        "thumbnail-link-600": "https://c.l3n.co/PC1R8D.jpg",
-        "image1080-link": "https://a.l3n.co/PC1TQq.jpg",
-        "aspect-ratio": "2.3703703703703702"
+  {
+    "id": "brutalism",
+    "file_name": "Brutalism.png",
+    "title": "",
+    "caption": "",
+    "alt": "Brutalism, Control",
+    "sha256": "da3e63a0b339a3e20e6090e91f49676a8cf4311b6d9b53091c2afc75631845ce",
+    "width": 2560,
+    "height": 1440,
+    "aspect-ratio": 1.77778,
+    "color": "#4d4d4d",
+    "variants": [
+      {
+        "width": 480,
+        "height": 270,
+        "path": "assets/gallery/Control/brutalism-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 540,
+        "path": "assets/gallery/Control/brutalism-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "path": "assets/gallery/Control/brutalism-1600.webp"
+      }
+    ],
+    "full": {
+      "width": 2560,
+      "height": 1440,
+      "path": "assets/gallery/Control/brutalism-full.webp"
     }
+  },
+  {
+    "id": "centreroom",
+    "file_name": "CentreRoom.png",
+    "title": "",
+    "caption": "",
+    "alt": "Looking up at a circular skylight above orange organ pipe columns in a purple hall",
+    "sha256": "d281fbcfa6916e32e611207e85e28d1852c1a11a393902cdd801fae1988d8765",
+    "width": 3440,
+    "height": 1440,
+    "aspect-ratio": 2.38889,
+    "color": "#432a42",
+    "variants": [
+      {
+        "width": 480,
+        "height": 201,
+        "path": "assets/gallery/Control/centreroom-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 402,
+        "path": "assets/gallery/Control/centreroom-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 670,
+        "path": "assets/gallery/Control/centreroom-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 1072,
+        "path": "assets/gallery/Control/centreroom-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 3440,
+      "height": 1440,
+      "path": "assets/gallery/Control/centreroom-full.webp"
+    }
+  },
+  {
+    "id": "controlred",
+    "file_name": "ControlRed.png",
+    "title": "",
+    "caption": "",
+    "alt": "Figure silhouetted in a red-lit concrete hall",
+    "sha256": "4326968d2333ad61c672fbf6e21371cffbf5e189d18b2f2f491e2c81377f87b5",
+    "width": 3440,
+    "height": 1440,
+    "aspect-ratio": 2.38889,
+    "color": "#5b0c1e",
+    "variants": [
+      {
+        "width": 480,
+        "height": 201,
+        "path": "assets/gallery/Control/controlred-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 402,
+        "path": "assets/gallery/Control/controlred-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 670,
+        "path": "assets/gallery/Control/controlred-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 1072,
+        "path": "assets/gallery/Control/controlred-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 3440,
+      "height": 1440,
+      "path": "assets/gallery/Control/controlred-full.webp"
+    }
+  },
+  {
+    "id": "lights",
+    "file_name": "Lights.png",
+    "title": "",
+    "caption": "",
+    "alt": "Lights, Control",
+    "sha256": "b91a674a40fe1058806fca17d0a41c834ff9f3aab163228619efc3c998566432",
+    "width": 5120,
+    "height": 2160,
+    "aspect-ratio": 2.37037,
+    "color": "#aba9a5",
+    "variants": [
+      {
+        "width": 480,
+        "height": 202,
+        "path": "assets/gallery/Control/lights-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 405,
+        "path": "assets/gallery/Control/lights-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 675,
+        "path": "assets/gallery/Control/lights-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 1080,
+        "path": "assets/gallery/Control/lights-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 5120,
+      "height": 2160,
+      "path": "assets/gallery/Control/lights-full.webp"
+    }
+  }
 ]

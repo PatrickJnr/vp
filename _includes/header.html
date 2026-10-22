@@ -1,29 +1,17 @@
 <header class="site-header">
-  <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-  
-  <button class="menu-icon" aria-label="Toggle menu" aria-expanded="false">
-    <i class="fas fa-bars"></i>
-  </button>
-
-  <nav class="site-nav">
-    <div class="nav-links">
-      {% for item in site.data.settings.menu %}
-        <a href="{{ site.baseurl }}/{{ item.url }}" {% if page.url == item.url %}class="active"{% endif %}>
-          {% if item.icon %}<i class="fas fa-{{ item.icon }}"></i>{% endif %}
-          {{ item.name }}
-        </a>
-      {% endfor %}
-    </div>
-  </nav>
-
-  <div class="dropdown-menu" aria-hidden="true">
-    <div class="nav-links">
-      {% for item in site.data.settings.menu %}
-        <a href="{{ site.baseurl }}/{{ item.url }}" {% if page.url == item.url %}class="active"{% endif %}>
-          {% if item.icon %}<i class="fas fa-{{ item.icon }}"></i>{% endif %}
-          {{ item.name }}
-        </a>
-      {% endfor %}
-    </div>
+  <div class="wrap">
+    <a class="brand" href="{{ '/' | relative_url }}">PatrickJr.<span class="brand-sub">Virtual Photography</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="icon" aria-hidden="true">menu</span><span class="sr">Menu</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      {%- for item in site.data.settings.menu %}
+      {%- assign current = false %}
+      {%- assign slashed = item.url | append: '/' %}
+      {%- if page.url == item.url or page.url == slashed %}{% assign current = true %}{% endif %}
+      {%- if item.url == '/albums/' and page.layout == 'album' %}{% assign current = true %}{% endif %}
+      <a href="{{ item.url | relative_url }}"{% if current %} aria-current="page"{% endif %}>{{ item.name }}</a>
+      {%- endfor %}
+    </nav>
   </div>
 </header>

@@ -1,35 +1,14 @@
 <head>
-  <title>
-    {% if page.title == "Home" %}
-      {{ site.title }} | {{ site.description }}
-    {% else %}
-      {{ page.title }} | {{ site.title }}
-    {% endif %}
-  </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
-  <link rel="stylesheet" href="{{ site.github.url }}/assets/css/main.css">
-  <link rel="stylesheet" href="{{ site.github.url }}/assets/css/syntax.css">
-  <!-- Use Atom -->
-  {% feed_meta %}
-  <!-- RSS-v2.0
-  <link href="{{ site.github.url }}/rss-feed.xml" type="application/rss+xml" rel="alternate" title="{{ site.title }} | {{ site.description }}"/>
-  //-->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo 2">
-  <script src="https://kit.fontawesome.com/ba5cec19da.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-  </script>
-  <!-- Google Analytics -->
-  {% include google-analytics.html %}
-  <!-- Use Jekyll SEO plugin -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0c0b10">
   {% seo %}
-
-  <!-- Include Swipebox CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swipebox@1.4.6/src/css/swipebox.min.css">
-
-  <!-- Include jQuery and Swipebox JS -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-  <script src="{{ site.github.url }}/assets/js/jquery.swipebox.js"></script>
-  <script src="{{ site.github.url }}/assets/js/main.js"></script>
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
+  {% feed_meta %}
+  <link rel="preload" href="{{ '/assets/fonts/inter-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/assets/fonts/newsreader-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/assets/fonts/material-symbols.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
+  <script>document.documentElement.className += ' js';</script>
 </head>

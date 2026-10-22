@@ -1,56 +1,201 @@
 [
-    {
-        "file_name": "2024051150347.png",
-        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Valhalla\\2024051150347.png",
-        "file_hash": "5bfe7ecb4c4070c99b326ddf0c51d76a",
-        "imageFull-link": "https://a.l3n.co/PCteSM.png",
-        "thumbnail-link-600": "https://d.l3n.co/PCtnxQ.jpg",
-        "image1080-link": "https://a.l3n.co/PCtL1a.jpg",
-        "aspect-ratio": "2.3677884615384617"
-    },
-    {
-        "file_name": "burning.png",
-        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Valhalla\\burning.png",
-        "file_hash": "56ffc44eb1dba7360f1c6ab53d43279c",
-        "imageFull-link": "https://c.l3n.co/PCtMpe.jpeg",
-        "thumbnail-link-600": "https://a.l3n.co/PCtYFk.jpg",
-        "image1080-link": "https://b.l3n.co/PCtu0x.jpg",
-        "aspect-ratio": "2.3703703703703702"
-    },
-    {
-        "file_name": "Cottage.png",
-        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Valhalla\\Cottage.png",
-        "file_hash": "651017f8115e48908bd74f23b01e178c",
-        "imageFull-link": "https://c.l3n.co/PCtDBH.jpeg",
-        "thumbnail-link-600": "https://a.l3n.co/PCtNo1.jpg",
-        "image1080-link": "https://d.l3n.co/PCtf2c.jpg",
-        "aspect-ratio": "2.3703703703703702"
-    },
-    {
-        "file_name": "door.png",
-        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Valhalla\\door.png",
-        "file_hash": "d605ef41b64336d83c6ec2a0dfdd47b5",
-        "imageFull-link": "https://b.l3n.co/PCtFJK.jpeg",
-        "thumbnail-link-600": "https://d.l3n.co/PCtUeZ.jpg",
-        "image1080-link": "https://b.l3n.co/PCtcxP.jpg",
-        "aspect-ratio": "2.3703703703703702"
-    },
-    {
-        "file_name": "goldcat.jpeg",
-        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Valhalla\\goldcat.jpeg",
-        "file_hash": "258c52d3fae409c3cf0ae89e5d723f9b",
-        "imageFull-link": "https://c.l3n.co/PCtbRm.jpeg",
-        "thumbnail-link-600": "https://b.l3n.co/PCtw7i.jpg",
-        "image1080-link": "https://d.l3n.co/PCtxFo.jpg",
-        "aspect-ratio": "2.3703703703703702"
-    },
-    {
-        "file_name": "portrait.jpeg",
-        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Valhalla\\portrait.jpeg",
-        "file_hash": "34898514d87d1c87889ed6129fab54bd",
-        "imageFull-link": "https://c.l3n.co/PCt5I9.jpeg",
-        "thumbnail-link-600": "https://d.l3n.co/PCtGm2.jpg",
-        "image1080-link": "https://c.l3n.co/PCtaov.jpg",
-        "aspect-ratio": "0.421875"
+  {
+    "id": "2024051150347",
+    "file_name": "2024051150347.png",
+    "title": "",
+    "caption": "",
+    "alt": "Stone gateway set into a rock face in low sunlight, with trees overhanging",
+    "sha256": "f948502a1137cd594047d5c563f87f281a553f5898a540d4237072139b000b61",
+    "width": 1970,
+    "height": 832,
+    "aspect-ratio": 2.36779,
+    "color": "#524d43",
+    "variants": [
+      {
+        "width": 480,
+        "height": 203,
+        "path": "assets/gallery/Assassins-Creed-Valhalla/2024051150347-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 405,
+        "path": "assets/gallery/Assassins-Creed-Valhalla/2024051150347-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 676,
+        "path": "assets/gallery/Assassins-Creed-Valhalla/2024051150347-1600.webp"
+      }
+    ],
+    "full": {
+      "width": 1970,
+      "height": 832,
+      "path": "assets/gallery/Assassins-Creed-Valhalla/2024051150347-full.webp"
     }
+  },
+  {
+    "id": "burning",
+    "file_name": "burning.png",
+    "title": "",
+    "caption": "",
+    "alt": "Farmhouse and a tree against a glowing orange sky, with smoke drifting across the scene",
+    "sha256": "e874bfb3b7605920ab46a71bbcaf336b28cff1e907dac034b56afae82778e660",
+    "width": 2560,
+    "height": 1080,
+    "aspect-ratio": 2.37037,
+    "color": "#814e26",
+    "variants": [
+      {
+        "width": 480,
+        "height": 202,
+        "path": "assets/gallery/Assassins-Creed-Valhalla/burning-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 405,
+        "path": "assets/gallery/Assassins-Creed-Valhalla/burning-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 675,
+        "path": "assets/gallery/Assassins-Creed-Valhalla/burning-1600.webp"
+      }
+    ],
+    "full": {
+      "width": 2560,
+      "height": 1080,
+      "path": "assets/gallery/Assassins-Creed-Valhalla/burning-full.webp"
+    }
+  },
+  {
+    "id": "cottage",
+    "file_name": "Cottage.png",
+    "title": "",
+    "caption": "",
+    "alt": "Cottage, Assassin's Creed Valhalla",
+    "sha256": "4c25ee97d52fabed34bc044ab52643714ee0cb41e0441ea1999621d621619fe5",
+    "width": 2560,
+    "height": 1080,
+    "aspect-ratio": 2.37037,
+    "color": "#262c28",
+    "variants": [
+      {
+        "width": 480,
+        "height": 202,
+        "path": "assets/gallery/Assassins-Creed-Valhalla/cottage-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 405,
+        "path": "assets/gallery/Assassins-Creed-Valhalla/cottage-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 675,
+        "path": "assets/gallery/Assassins-Creed-Valhalla/cottage-1600.webp"
+      }
+    ],
+    "full": {
+      "width": 2560,
+      "height": 1080,
+      "path": "assets/gallery/Assassins-Creed-Valhalla/cottage-full.webp"
+    }
+  },
+  {
+    "id": "door",
+    "file_name": "door.png",
+    "title": "",
+    "caption": "",
+    "alt": "Door, Assassin's Creed Valhalla",
+    "sha256": "cc5f541b0f2920be44f883598496fdc77425eadc8d21bed19ee9bd7feee6b629",
+    "width": 2560,
+    "height": 1080,
+    "aspect-ratio": 2.37037,
+    "color": "#29393f",
+    "variants": [
+      {
+        "width": 480,
+        "height": 202,
+        "path": "assets/gallery/Assassins-Creed-Valhalla/door-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 405,
+        "path": "assets/gallery/Assassins-Creed-Valhalla/door-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 675,
+        "path": "assets/gallery/Assassins-Creed-Valhalla/door-1600.webp"
+      }
+    ],
+    "full": {
+      "width": 2560,
+      "height": 1080,
+      "path": "assets/gallery/Assassins-Creed-Valhalla/door-full.webp"
+    }
+  },
+  {
+    "id": "goldcat",
+    "file_name": "goldcat.jpeg",
+    "title": "",
+    "caption": "",
+    "alt": "Goldcat, Assassin's Creed Valhalla",
+    "sha256": "a69989daab5096b365e5dcfeeb78fab440fc82e6b0dab678c163c337f843e9f9",
+    "width": 2560,
+    "height": 1080,
+    "aspect-ratio": 2.37037,
+    "color": "#839dad",
+    "variants": [
+      {
+        "width": 480,
+        "height": 202,
+        "path": "assets/gallery/Assassins-Creed-Valhalla/goldcat-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 405,
+        "path": "assets/gallery/Assassins-Creed-Valhalla/goldcat-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 675,
+        "path": "assets/gallery/Assassins-Creed-Valhalla/goldcat-1600.webp"
+      }
+    ],
+    "full": {
+      "width": 2560,
+      "height": 1080,
+      "path": "assets/gallery/Assassins-Creed-Valhalla/goldcat-full.webp"
+    }
+  },
+  {
+    "id": "portrait",
+    "file_name": "portrait.jpeg",
+    "title": "",
+    "caption": "",
+    "alt": "Portrait, Assassin's Creed Valhalla",
+    "sha256": "85384d7699332b8c5288930a6b686d44a5eeaff1147e9a414b18e61410a15f0c",
+    "width": 1080,
+    "height": 2560,
+    "aspect-ratio": 0.42188,
+    "color": "#3e3b38",
+    "variants": [
+      {
+        "width": 480,
+        "height": 1138,
+        "path": "assets/gallery/Assassins-Creed-Valhalla/portrait-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 2276,
+        "path": "assets/gallery/Assassins-Creed-Valhalla/portrait-960.webp"
+      }
+    ],
+    "full": {
+      "width": 1080,
+      "height": 2560,
+      "path": "assets/gallery/Assassins-Creed-Valhalla/portrait-full.webp"
+    }
+  }
 ]

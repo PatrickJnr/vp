@@ -1,57 +1,63 @@
-markdown: kramdown
-highlighter: rouge
-permalink: '/:title/'
-plugins:
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jemoji
-  - jekyll-mentions
-  
-# SASS/SCSS Configuration
-sass:
-  style: compressed
-  sourcemap: never
-  load_paths:
-    - _sass
-    - assets/css
-
-include:
-  - node_modules  # You probably need this for your Parcel/Webpack setup
-
 title: PatrickJr's Virtual Photography
+description: Virtual photography from the games I play, by PatrickJr.
+url: https://vp.grimtech.co.uk
+baseurl: ""
+lang: en-GB
+timezone: Europe/London
+
 author:
   name: PatrickJr.
   email: admin@grimtech.co.uk
-  url: 'https://vp.grimtech.co.uk'
-description: "📷 Virtual photography"
-repository: PatrickJnr/vp
-github: 'https://github.com/PatrickJnr/vp'
+  url: https://vp.grimtech.co.uk
+  twitter: _PatrickJnr
+
+markdown: kramdown
+permalink: /:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 feed:
   path: rss-feed.xml
-sitemap:
-  url: 'https://vp.grimtech.co.uk' #this is redundant
+  posts_limit: 20
 
-jekyll-seo-tag:
-  title: PatrickJr's Virtual Photography
-  description: Explore PatrickJr's virtual photography world and creative captures.
-  image: /assets/images/LilFella.png
-
-jekyll-mentions:
-  base_url: 'https://twitter.com'
-
-favicon: /assets/img/favicon.ico
-
+twitter:
+  username: _PatrickJnr
+  card: summary_large_image
+social:
+  name: PatrickJr.
+  links:
+    - https://x.com/_patrickjnr
+    - https://www.flickr.com/photos/patrickjrcaulton/
+    - https://steamcommunity.com/id/patrickjr
+    - https://github.com/PatrickJnr
 
 google_analytics: G-XXPKD9SFHL
 
-header:
-  title: PatrickJr's Virtual Photography
-  tagline: Capturing the digital world through lenses.
-  image: /assets/images/header.jpg
+defaults:
+  - scope: {path: ""}
+    values:
+      image:
+        path: /assets/gallery/og.jpg
+        width: 1200
+        height: 630
+  - scope: {path: "", type: posts}
+    values: {layout: album}
+  - scope: {path: "", type: pages}
+    values: {layout: page}
 
-# Social Media Usernames
-github_username: PatrickJnr
-twitter_username: _PatrickJnr
-instagram_username: patrick.jr
+exclude:
+  - tools
+  - docs
+  - tests
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - run.bat
+  - generate_*.py
+  - node_modules
+  - vendor
+  - .github

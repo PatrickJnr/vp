@@ -1,0 +1,15 @@
+---
+layout: default
+title: Albums
+permalink: /albums/
+description: One album for each game.
+---
+<div class="wrap album">
+  <header class="album-head">
+    <h1>Albums</h1>
+  </header>
+  <ul class="tiles">
+    {%- assign albums = site.posts | sort: 'title' -%}
+    {%- for a in albums %}{% include tile.html album=a eager=forloop.first %}{% endfor %}
+  </ul>
+</div>

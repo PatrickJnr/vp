@@ -1,22 +1,15 @@
 ---
-layout: post
+layout: album
 date: 2022-02-18
 title: Horizon Forbidden West
 developer: Guerrilla Games
 publisher: Sony Interactive Entertainment
 release_date: 2022-02-18
 card-image: 0
-banner-image: 1
-banner-offset: 50
-platforms: ["PlayStation 5", "PC"]
-genres: ["Action RPG", "Open World", "Adventure"]
-themes: ["Post-apocalyptic", "Robots", "Tribal"]
-engine: "Decima"
-photo_mode: true
-photo_mode_features: ["Free Camera", "Filters", "Time of Day", "Character Posing"]
-
-trivia:
-  - "Horizon Forbidden West is the sequel to Horizon Zero Dawn and continues Aloy's journey as she explores a post-apocalyptic Western United States, now overrun by massive machines."
-  - "The game features an expanded skill tree, new traversal mechanics including a grappling hook and Shieldwing glider, and the ability to override and ride more machine types than in the first game."
-  - "The PC version was released on March 21, 2024, featuring enhanced graphics options and support for DLSS and FSR technologies."
+description: Horizon Forbidden West, developed by Guerrilla Games.
+image:
+  path: /assets/gallery/Horizon-Forbidden-West/og.jpg
+  width: 1200
+  height: 630
+  alt: Screenshot from Horizon Forbidden West
 ---

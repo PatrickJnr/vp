@@ -2,313 +2,182 @@
 layout: page
 title: Changelog
 permalink: /changelog
+description: A log of changes to PatrickJr.'s virtual photography site.
+class: changelog
 ---
+
+## October 22, 2026
+
+### Redesign
+- Redesigns the homepage, album index, album pages and text pages around the photographs.
+- Opens the homepage on Selected Work, with the site name in the header as "PatrickJr. Virtual Photography".
+- Shows the licence, social links and this changelog in a compact single-row footer that stays at the bottom of short pages.
+- Lists Latest Albums by publication date and shows clearer album counts.
+- Adds larger navigation and outline hover and focus feedback on screenshots.
+- Adds an image viewer with keyboard and touch navigation, zoom, pan and fullscreen.
+- Rewrites the About page and tidies the Contact and Privacy pages.
+- Removes the Platforms, Genres, Themes, Photo Mode Features and Did You Know panels from every album.
+- Removes emoji support, jQuery, Swipebox, Font Awesome and MathJax.
+
+### Images
+- Hosts all 179 screenshots on this site as optimised WebP files at several sizes, plus a full resolution version.
+- Replaces the Lensdump uploader with an offline gallery generator. The README describes the workflow.
+
+### Analytics and privacy
+- Asks before loading Google Analytics. Nothing loads from Google until a visitor accepts, and rejecting or ignoring the banner sends nothing.
+- Adds a Privacy page, a footer link and a way to change the choice at any time.
+- Records which screenshots and albums are viewed, the first zoom, fullscreen and download, and clicks to other sites.
+- Fixes keyboard shortcuts in the viewer stopping after the zoom buttons reach their limit.
+
+### Dependencies
+- Reduces the Gemfile to Jekyll, jekyll-feed, jekyll-seo-tag and jekyll-sitemap, plus WEBrick and wdm for local development.
+- Removes jemoji, jekyll-mentions, jekyll-admin, Sinatra, Rack and the unused Sass and Node tooling.
 
 ## October 1, 2025
 
-### Content Updates
-- **Game Post Updates**
-  - Updated 16 game posts with latest information and corrections
-  - **Grand Theft Auto V** → Updated sales figures to 195+ million copies, added GTA Online info
-  - **Fallout 4** → Added PS5/Xbox Series XS platforms, mentioned 2024 next-gen update
-  - **Red Dead Redemption 2** → Updated sales figures to 55+ million copies
-  - **The Division 2** → Fixed release date, removed discontinued Google Stadia platform
-  - **Control** → Added awards and ray tracing achievement info
-  - **Ghost of Tsushima** → Added Director's Cut and Iki Island expansion details
-  - **Assassin's Creed Valhalla** → Added post-launch expansion information
-  - **Cyberpunk 2077** → Fixed date format, added Phantom Liberty expansion info
-  - **Starfield** → Added Xbox Game Pass launch and Shattered Space expansion details
-  - **Assassin's Creed Mirage** → Added Valhalla prequel context
-  - **Horizon Forbidden West** → Corrected PS5 release date (2022), added PC release info (2024)
-  - **Little Kitty, Big City** → Added indie success information
-  - **Once Human** → Added free-to-play launch details
-  - **Star Wars Outlaws** → Added reception and atmosphere details
-  - **Infinity Nikki** → Added free-to-play model information
-  - **Assassin's Creed Shadows** → Added delay information (Nov 2024 → Mar 2025)
+### Content
+- Updates 16 game posts with current information and corrections:
+  - Grand Theft Auto V: sales figures of 195+ million copies, GTA Online information.
+  - Fallout 4: PS5 and Xbox Series X|S platforms, the 2024 next-gen update.
+  - Red Dead Redemption 2: sales figures of 55+ million copies.
+  - The Division 2: corrected release date, removes the discontinued Google Stadia platform.
+  - Control: awards and ray tracing achievement.
+  - Ghost of Tsushima: Director's Cut and Iki Island expansion.
+  - Assassin's Creed Valhalla: post-launch expansions.
+  - Cyberpunk 2077: corrected date format, Phantom Liberty expansion.
+  - Starfield: Xbox Game Pass launch, Shattered Space expansion.
+  - Assassin's Creed Mirage: Valhalla prequel context.
+  - Horizon Forbidden West: corrected PS5 release date (2022), PC release (2024).
+  - Little Kitty, Big City: indie success.
+  - Once Human: free-to-play launch.
+  - Star Wars Outlaws: reception and atmosphere.
+  - Infinity Nikki: free-to-play model.
+  - Assassin's Creed Shadows: delay from November 2024 to March 2025.
 
-### Technical Updates
-- **Hamburger Menu Overhaul**
-  - Fixed critical JavaScript bug: Resolved undefined `menuLinks` variable
-  - Added missing `main.js` script tag
-  - Enhanced frosted glass design with gradients and blur
-  - Improved mobile UX with smooth animations and accessibility features
-  - Fixed z-index issues for proper layering
-  - Created `run.bat` script for development workflow
-
-- **JavaScript Code Quality**
-  - Fixed 80+ ESLint errors
-  - Updated `var` → `let` / `const`
-  - Fixed prototype method access
-  - Resolved lexical declaration issues in `case` blocks
-  - Improved code maintainability
-
-- **Ruby Gem & Jekyll**
-  - Upgraded Jekyll → `~> 4.4.1`
-  - Updated plugins: jemoji `~> 0.13.0`, jekyll-mentions `~> 1.6.0`
-  - Removed jekyll-minifier to reduce maintenance overhead
-  - Updated core dependencies: webrick `~> 1.9.1`, rack `~> 3.0.0`
-  - Added Sinatra framework gems
-  - Resolved Windows compatibility with `wdm >= 0.1.0`
-  - Added `ostruct ~> 0.6.1`
-
-- **Color System Removal**
-  - Removed dynamic color palette and Vibrant.js
-  - Fixed CORS issues from external image analysis
-  - Simplified banner styling with static gradients
-
-- **Theme Implementation**
-  - Applied Catppuccin Mocha theme
-  - Updated `_variables.scss` with Catppuccin palette
-  - Consistent theming across headers, footers, content
-  - Enhanced gradients & shadows
-
-- **FontAwesome Upgrade**
-  - Replaced CDN CSS link with FontAwesome kit script for better performance
-  - Updated to use: `https://kit.fontawesome.com/ba5cec19da.js`
-  - Improved loading times and customization options
-
-- **JavaScript File Organization**
-  - Moved all JavaScript files to `assets/js/` directory
-  - Updated file references in `_includes/head.html` and `_layouts/post.html`
-  - Files moved: `jquery.swipebox.js`, `main.js`, `pig.js`
-  - Improved project structure and maintainability
-
-- **Social Media Icon Styling**
-  - Removed #f39c12 background effect from fa-envelope icon
-  - Maintained hover animations and color transitions
-  - Cleaner visual appearance for social media icons
-
-- **Documentation**
-  - Updated README.md to replace Imgur with LensDump
-  - Removed outdated Imgur API docs
-  - Corrected directory structure references
-  - Updated third-party service references
-
----
+### Technical
+- Fixes the hamburger menu: resolves an undefined `menuLinks` variable, adds the missing `main.js` script tag, and fixes layering.
+- Fixes ESLint errors, replaces `var` with `let` and `const`, and fixes lexical declarations in `case` blocks.
+- Upgrades Jekyll to `~> 4.4.1` and updates jemoji, jekyll-mentions, WEBrick, Rack and `wdm`. Adds Sinatra and `ostruct`. Removes jekyll-minifier.
+- Removes the dynamic colour palette and Vibrant.js, which also fixes CORS errors from external image analysis.
+- Applies the Catppuccin Mocha theme across headers, footers and content.
+- Replaces the Font Awesome CDN stylesheet with the Font Awesome kit script.
+- Moves all JavaScript files to `assets/js/`: `jquery.swipebox.js`, `main.js` and `pig.js`.
+- Removes the background effect from the envelope icon in the social links.
+- Updates the README to replace Imgur with Lensdump and removes the outdated Imgur API notes.
 
 ## September 30, 2025
 
-### Technical Updates
-- **Hosting**
-  - Moved image hosting to **LensDump** (Imgur blocked in UK)
-
----
+- Moves image hosting to Lensdump, because Imgur is blocked in the UK.
 
 ## June 26, 2025
 
-### Content Updates
-- Enhanced game posts with platforms, genres, themes metadata
-- Added photo mode details and trivia sections
-- Maintained backward compatibility with existing image references
+### Content
+- Adds platforms, genres and themes to game posts.
+- Adds photo mode details and trivia sections.
+- Keeps existing image references working.
 
-### Technical Improvements
-- **Color Palette System**
-  - Expanded from 8 → 10 colors
-  - Light-to-dark sorting
-  - Click-to-copy color codes
-  - Optimized extraction for 30 unique colors
-
-- **UI/UX**
-  - Redesigned game metadata grid layout
-  - Added Trivia section
-  - Improved color loading feedback
-  - Enhanced responsive design
-
----
+### Technical
+- Expands the colour palette from 8 to 10 colours, sorted light to dark, with click-to-copy colour codes and extraction tuned for 30 unique colours.
+- Redesigns the game metadata grid, adds the Trivia section, improves colour loading feedback and the responsive layout.
 
 ## June 22, 2025
 
-### Content Updates
-- **Red Dead Redemption**
-  - Added 1 new gallery image
-
-### Technical Improvements
-- Updated social media icons & links
-- Improved navigation and iconography
-- **Gallery Performance** → Faster initialization & loading
-- **Loading Spinner** → Added for feedback
-- **Banner Background** → Improved Vibrant.js fallback
-- **Responsive Design** → Tweaked banner & gallery
-- Minor bug fixes & code cleanup
-
----
+- Adds 1 screenshot to Red Dead Redemption 2.
+- Updates social media icons and links, and improves navigation and iconography.
+- Speeds up gallery initialisation and loading, and adds a loading spinner.
+- Improves the banner background fallback when Vibrant.js fails.
+- Tweaks the responsive banner and gallery, with minor fixes and cleanup.
 
 ## April 22, 2025
 
-### Major Update
-- Complete website overhaul: redesigned UI/UX, improved mobile responsiveness, updated color scheme & typography
+- Redesigns the whole site: new interface, better mobile layout, updated colours and typography.
 
----
+## March 31, 2025
 
-## March 20, 2025
-
-### New Content
-- **Assassin's Creed Shadows**
-  - Added gallery with 5 HQ images + captions & metadata
-
----
+- Adds an Assassin's Creed Shadows album with 5 screenshots.
 
 ## February 25, 2025
 
-### New Content
-- **Assassin's Creed Valhalla**
-  - Added gallery with 6 images, responsive loading
+### Content
+- Adds an Assassin's Creed Valhalla album with 6 screenshots and responsive loading.
 
-### Technical Improvements
-- **Build System**
-  - Fixed Jekyll build issues
-  - Updated `Gemfile` dependencies
-  - Removed `jekyll-cache`
-  - Optimized `_config.yml`
-
-- **Modernized Sass**
-  - Replaced `@import` with `@use` / `@forward`
-  - Moved partials to `assets/css`
-  - Scoped variables properly
-  - Corrected file paths & names
-
-- **UI/UX**
-  - Updated scroll bar design
-
----
+### Technical
+- Fixes Jekyll build issues, updates the `Gemfile`, removes `jekyll-cache` and tidies `_config.yml`.
+- Replaces Sass `@import` with `@use` and `@forward`, moves the partials to `assets/css` and scopes variables.
+- Updates the scroll bar design.
 
 ## December 13, 2024
 
-### New Content
-- **Infinity Nikki** → Added 2 screenshots
-- **Star Wars Outlaws** → Added 1 screenshot
-
-### Updates
-- Updated changelog page
-
----
+- Adds 2 Infinity Nikki screenshots and 1 Star Wars Outlaws screenshot.
+- Updates this page.
 
 ## October 19, 2024
 
-### Updates
-- **Control** → Added 2 new gallery images
-
----
+- Adds 2 Control screenshots.
 
 ## October 4, 2024
 
-### New Content
-- **Star Wars Outlaws** → Added new screenshots
-- **Starfield** → Added 2 new shots
-
----
+- Adds 3 Star Wars Outlaws screenshots and 2 Starfield screenshots.
 
 ## September 26, 2024
 
-### Website Enhancements
-- **Performance**
-  - Loading spinner for user feedback
-  - Lazy loading for banners
-  - Hover effects on gallery images
-- **Styling**
-  - Updated banner height
-  - Added text shadow
-  - Smooth background transitions
-- **Fixes**
-  - Dark background fallback if Vibrant.js fails
-
----
+- Adds a loading spinner, lazy loading for banners and hover effects on gallery images.
+- Updates the banner height, adds a text shadow and smooths background transitions.
+- Adds a dark background fallback when Vibrant.js fails.
 
 ## July 21, 2024
 
-### Updates
-- **Cyberpunk 2077** → Added 2 images
-- **Once Human** → Added 2 images
-
----
+- Adds 2 Cyberpunk 2077 screenshots and 2 Once Human screenshots.
 
 ## June 18, 2024
 
-### Updates
-- Removed unused gallery descriptions
-- **Starfield Fans** → Added 5 images
-
----
+- Removes unused gallery descriptions.
+- Adds 5 Starfield screenshots.
 
 ## June 1, 2024
 
-### New Features
-- **Banner Customization**
-  - Improved appearance controls
-  - Added `darkeningFactor` for dark mode
-  - New images appear at the top
-
-### Optimizations
-- Reorganized gallery scripts
-- Cleaned duplicate code
-
----
+- Improves the banner controls and adds a `darkeningFactor` for dark mode.
+- Shows new images at the top of each gallery.
+- Reorganises the gallery scripts and removes duplicate code.
 
 ## May 31, 2024
 
-### Updates
-- Updated Swipebox & jQuery
-- Enhanced changelog page
-- Added `/changelog` to navigation
-
-### Bug Fixes
-- Fixed mobile image display
-- **Fallout 4** → Added 2 screenshots
-
----
+- Updates Swipebox and jQuery.
+- Adds this page and a `/changelog` link in the navigation.
+- Fixes mobile image display.
+- Adds 2 Fallout 4 screenshots.
 
 ## May 29, 2024
 
-### Content Refresh
-- **Gallery Improvements**
-  - Added Vibrant.js integration
-  - Re-uploaded Fallout 4 & Division 2 content
-  - Added *Ghost of Tsushima* + *Little Kitty, Big City*
-  - Alphabetized gallery items
-
----
+- Adds Vibrant.js.
+- Re-uploads the Fallout 4 and The Division 2 screenshots.
+- Adds Ghost of Tsushima and Little Kitty, Big City.
+- Sorts the albums alphabetically.
 
 ## March 29, 2024
 
-### Updates
-- Updated `header.html`
-- Removed 4-row Hamburger Menu
-
----
+- Updates `header.html`.
+- Removes the 4-row hamburger menu.
 
 ## March 25, 2024
 
-### Updates
-- Fixed favicon issues
-- Updated `favicon.ico` & `footer.html`
-- Rounded corners & hover effects
-
----
+- Fixes the favicon and updates `favicon.ico` and `footer.html`.
+- Adds rounded corners and hover effects.
 
 ## March 7, 2024
 
-### Updates
-- Implemented homepage grid layout
-- Added custom 404 page
-- Updated RDR2 & Control images
-- Updated Google Analytics
+- Adds the homepage grid layout and a custom 404 page.
+- Updates the Red Dead Redemption 2 and Control screenshots.
+- Updates Google Analytics.
 
----
+## March 3 to 4, 2024
 
-## March 3–4, 2024
-
-### Updates
-- Styling updates for `_header.scss`, `pig.js`, `main.scss`
-- Updated layout & fonts for *The Division 2*
-
----
+- Updates the styling in `_header.scss`, `pig.js` and `main.scss`.
+- Updates the layout and fonts for The Division 2.
 
 ## March 2, 2024
 
-### Updates
-- Fixed banner offset & thumbnails
-- Updated `README.md` & configs
+- Fixes the banner offset and thumbnails.
+- Updates `README.md` and the configuration.
 
----
-
-*For more details, see the [repository commit history](https://github.com/PatrickJnr/vp/commits/main).*
+For more detail, see the [repository commit history](https://github.com/PatrickJnr/vp/commits/main).

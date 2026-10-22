@@ -1,38 +1,143 @@
 [
-    {
-        "file_name": "20240222142323.jpg",
-        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Mirage\\20240222142323.jpg",
-        "file_hash": "c65619cf19ce5c825de7815f048408d0",
-        "imageFull-link": "https://d.l3n.co/PCtWKk.jpg",
-        "thumbnail-link-600": "https://a.l3n.co/PCtiPx.jpg",
-        "image1080-link": "https://b.l3n.co/PCt0jH.jpg",
-        "aspect-ratio": "2.3703703703703702"
-    },
-    {
-        "file_name": "20240226134651.jpg",
-        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Mirage\\20240226134651.jpg",
-        "file_hash": "6543748372895c1f697a098784965c0a",
-        "imageFull-link": "https://a.l3n.co/PCtIq1.jpg",
-        "thumbnail-link-600": "https://c.l3n.co/PCtZMc.jpg",
-        "image1080-link": "https://d.l3n.co/PCtghK.jpg",
-        "aspect-ratio": "2.3703703703703702"
-    },
-    {
-        "file_name": "20240226141848.jpg",
-        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Mirage\\20240226141848.jpg",
-        "file_hash": "2510d53c0cf87ffe2a4d3384eb139868",
-        "imageFull-link": "https://c.l3n.co/PCttCZ.jpg",
-        "thumbnail-link-600": "https://d.l3n.co/PCt1zP.jpg",
-        "image1080-link": "https://a.l3n.co/PCtRwm.jpg",
-        "aspect-ratio": "2.3703703703703702"
-    },
-    {
-        "file_name": "ACMirage_2024-05-18_04-56-18.png",
-        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Mirage\\ACMirage_2024-05-18_04-56-18.png",
-        "file_hash": "7aad9ecced1610e79fd0e2ae74cd7a86",
-        "imageFull-link": "https://b.l3n.co/PCtE1i.png",
-        "thumbnail-link-600": "https://d.l3n.co/PCtkKo.jpg",
-        "image1080-link": "https://a.l3n.co/PCt6f9.jpg",
-        "aspect-ratio": "2.388888888888889"
+  {
+    "id": "20240222142323",
+    "file_name": "20240222142323.jpg",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Assassin's Creed Mirage",
+    "sha256": "30ab4858b1c684b0a4c88161b57567be481c165dae6ccdba8bc692505ba0dfa6",
+    "width": 2560,
+    "height": 1080,
+    "aspect-ratio": 2.37037,
+    "color": "#423f3d",
+    "variants": [
+      {
+        "width": 480,
+        "height": 202,
+        "path": "assets/gallery/Assassins-Creed-Mirage/20240222142323-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 405,
+        "path": "assets/gallery/Assassins-Creed-Mirage/20240222142323-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 675,
+        "path": "assets/gallery/Assassins-Creed-Mirage/20240222142323-1600.webp"
+      }
+    ],
+    "full": {
+      "width": 2560,
+      "height": 1080,
+      "path": "assets/gallery/Assassins-Creed-Mirage/20240222142323-full.webp"
     }
+  },
+  {
+    "id": "20240226134651",
+    "file_name": "20240226134651.jpg",
+    "title": "",
+    "caption": "",
+    "alt": "Close-up of a figure with a red face wrap",
+    "sha256": "d2c4e9214d274225ae616a686c6e6e97ad4b6cc659616ed5e06e9930263c02c1",
+    "width": 2560,
+    "height": 1080,
+    "aspect-ratio": 2.37037,
+    "color": "#5b2c1a",
+    "variants": [
+      {
+        "width": 480,
+        "height": 202,
+        "path": "assets/gallery/Assassins-Creed-Mirage/20240226134651-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 405,
+        "path": "assets/gallery/Assassins-Creed-Mirage/20240226134651-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 675,
+        "path": "assets/gallery/Assassins-Creed-Mirage/20240226134651-1600.webp"
+      }
+    ],
+    "full": {
+      "width": 2560,
+      "height": 1080,
+      "path": "assets/gallery/Assassins-Creed-Mirage/20240226134651-full.webp"
+    }
+  },
+  {
+    "id": "20240226141848",
+    "file_name": "20240226141848.jpg",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Assassin's Creed Mirage",
+    "sha256": "9b5925eb5b8ad0632ee71050f7cefb3e4be2cf1e6484d370853b2631a4c0d655",
+    "width": 2560,
+    "height": 1080,
+    "aspect-ratio": 2.37037,
+    "color": "#2b3534",
+    "variants": [
+      {
+        "width": 480,
+        "height": 202,
+        "path": "assets/gallery/Assassins-Creed-Mirage/20240226141848-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 405,
+        "path": "assets/gallery/Assassins-Creed-Mirage/20240226141848-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 675,
+        "path": "assets/gallery/Assassins-Creed-Mirage/20240226141848-1600.webp"
+      }
+    ],
+    "full": {
+      "width": 2560,
+      "height": 1080,
+      "path": "assets/gallery/Assassins-Creed-Mirage/20240226141848-full.webp"
+    }
+  },
+  {
+    "id": "acmirage-2024-05-18-04-56-18",
+    "file_name": "ACMirage_2024-05-18_04-56-18.png",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Assassin's Creed Mirage",
+    "sha256": "33131bfb59520f21c822c7e0a9234441db03bc729b314dcec3374e2e52f498be",
+    "width": 3440,
+    "height": 1440,
+    "aspect-ratio": 2.38889,
+    "color": "#8b8b8b",
+    "variants": [
+      {
+        "width": 480,
+        "height": 201,
+        "path": "assets/gallery/Assassins-Creed-Mirage/acmirage-2024-05-18-04-56-18-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 402,
+        "path": "assets/gallery/Assassins-Creed-Mirage/acmirage-2024-05-18-04-56-18-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 670,
+        "path": "assets/gallery/Assassins-Creed-Mirage/acmirage-2024-05-18-04-56-18-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 1072,
+        "path": "assets/gallery/Assassins-Creed-Mirage/acmirage-2024-05-18-04-56-18-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 3440,
+      "height": 1440,
+      "path": "assets/gallery/Assassins-Creed-Mirage/acmirage-2024-05-18-04-56-18-full.webp"
+    }
+  }
 ]

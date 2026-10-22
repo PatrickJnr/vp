@@ -1,41 +1,10 @@
-# Change 'comments' to true for Disqus comments
-disqus:
-  comments: false
-  disqus_shortname: 'millennial-3'
-
-# If you are not using Google Analytics, please change 'google-ID' to an empty string
-google-ID: 'G-XXPKD9SFHL'
-
 menu:
-- {name: 'Home', url: '', icon: 'home'}
-- {name: 'About', url: 'about', icon: 'info-circle'}
-- {name: 'Contact', url: 'contact', icon: 'envelope'}
-- {name: 'Changelog', url: 'changelog', icon: 'history'}
+  - {name: Albums, url: /albums/}
+  - {name: About, url: /about}
+  - {name: Contact, url: /contact}
 
-# Social Media Links
-# Icons are from Font Awesome (https://fontawesome.com/icons)
-# Format: {icon: 'icon-name', name: 'Accessible Name', link: 'https://...'}
 social:
-  # Primary social networks
-  - {icon: 'x-twitter',  name: 'Twitter',  link: 'https://x.com/_patrickjnr'}
-  - {icon: 'github',    name: 'GitHub',   link: 'https://github.com/PatrickJnr/vp/'}
-  - {icon: 'flickr',    name: 'Flickr',   link: 'https://www.flickr.com/photos/patrickjrcaulton/'}
-  - {icon: 'steam',     name: 'Steam',    link: 'https://steamcommunity.com/id/patrickjr'}
-  
-  # Inactive/archived accounts (commented out but kept for reference)
-  # - {icon: 'tumblr',   name: 'Tumblr',   link: 'https://svnzakivp.tumblr.com/'}
-  
-  # RSS/Feed options (uncomment and configure as needed)
-  # - {icon: 'rss',      name: 'RSS Feed', link: '/feed.xml'}
-  # - {icon: 'rss',      name: 'JSON Feed',link: '/feed.json'}
-
-# Customize site text
-pagination:
-  next_page: 'Newer'
-  previous_page: 'Older'
-
-sharing_button_prompt: 'Feel free to share!'
-
-related_posts: 'You may also enjoy...'
-
-post_date_prefix: 'Written on'
+  - {name: X, link: 'https://x.com/_patrickjnr'}
+  - {name: Flickr, link: 'https://www.flickr.com/photos/patrickjrcaulton/'}
+  - {name: Steam, link: 'https://steamcommunity.com/id/patrickjr'}
+  - {name: GitHub, link: 'https://github.com/PatrickJnr/vp/'}

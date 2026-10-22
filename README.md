@@ -1,175 +1,100 @@
-# PatrickJr's Virtual Photography Portfolio
+# PatrickJr's Virtual Photography
 
-[![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fvp.grimtech.co.uk&style=for-the-badge)](https://vp.grimtech.co.uk/) [![GitHub Pages Status](https://img.shields.io/github/deployments/PatrickJnr/vp/github-pages?label=GitHub%20Pages&style=for-the-badge)](https://patrickjnr.github.io/vp) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT) [![GitHub last commit](https://img.shields.io/github/last-commit/PatrickJnr/vp?style=for-the-badge)](https://github.com/PatrickJnr/vp/commits/main) [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/PatrickJnr/vp?style=for-the-badge)](https://github.com/PatrickJnr/vp/commits/main)<br>
-[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/PatrickJnr/vp?style=for-the-badge)](https://github.com/PatrickJnr/vp) [![GitHub top language](https://img.shields.io/github/languages/top/PatrickJnr/vp?style=for-the-badge)](https://github.com/PatrickJnr/vp) [![GitHub language count](https://img.shields.io/github/languages/count/PatrickJnr/vp?style=for-the-badge)](https://github.com/PatrickJnr/vp) <img alt="Made with Jekyll" src="https://img.shields.io/badge/Made%20with-Jekyll-blue?logo=jekyll&style=for-the-badge"> <img alt="Images Hosted with LensDump" src="https://img.shields.io/badge/Images_Hosted_with-LensDump-blue?style=for-the-badge">
+Source for <https://vp.grimtech.co.uk/>, a Jekyll site hosted on GitHub Pages. Photographs are generated locally as WebP files and served from this repository. There is no external image host.
 
-A modern, responsive portfolio website showcasing virtual photography captured in various video games by PatrickJr. The site is built with Jekyll and enhanced with modern web technologies.
+## Requirements
 
-**🌐 Live Website:** [https://vp.grimtech.co.uk/](https://vp.grimtech.co.uk/)
+- Ruby 3.3 or newer (CI uses 3.4) and Bundler 2.5 or newer
+- Python 3.10 or newer with Pillow, for the gallery generator only
 
-**🔄 GitHub Pages Mirror:** [https://patrickjnr.github.io/vp](https://patrickjnr.github.io/vp)
+On Windows, `winget install RubyInstallerTeam.Ruby.3.4` installs Ruby. Open a new terminal afterwards so `ruby` is on the PATH.
 
-## About
+## Local preview
 
-The site is built using [Jekyll](https://jekyllrb.com/), a static site generator, and hosted on [GitHub Pages](https://pages.github.com/). Images are hosted on [LensDump](https://lensdump.com/). New content and updates are tracked on the [changelog](https://vp.grimtech.co.uk/changelog) page.
-
-## ✨ Features
-
-- 🎨 Responsive design optimized for all devices
-- 📸 Automatic image gallery generation with thumbnails
-- 🔍 SEO optimization with Jekyll SEO Tag
-- 📡 RSS feed support
-- 📊 Google Analytics 4 integration
-- 💬 Social media mentions support
-- 😊 Emoji support via Jemoji
-- 🚀 Modern build process with Node.js
-- 🖼️ Automated image processing
-- 🗺️ Automatic sitemap generation
-- 🔗 Social media integration
-- 📱 Mobile-first design
-
-## 🚀 Prerequisites
-
-- Ruby >= 3.0.0
-- Bundler >= 2.3.0
-- Node.js >= 16.0.0 (for frontend assets)
-- Python 3.x (for image processing scripts)
-- Jekyll >= 4.3.0
-
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/PatrickJnr/vp.git
-   cd vp
-   ```
-
-2. Install Ruby dependencies:
-   ```bash
-   bundle install
-   ```
-
-3. Install Node.js dependencies:
-   ```bash
-   npm install
-   ```
-
-4. Install Python dependencies (for image processing scripts):
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-## 🛠️ Local Development
-
-1. Start the development server:
-   ```bash
-   # Using the provided script (recommended)
-   ./run.bat
-   
-   # Or manually
-   bundle exec jekyll serve --livereload
-   ```
-
-2. The site will be available at `http://localhost:4000`
-
-3. For production build:
-   ```bash
-   JEKYLL_ENV=production bundle exec jekyll build
-   ```
-
-## 🖼️ Image Processing
-
-The repository includes a Python script for processing and uploading images:
-
-### `generate_albumv3.py`
-
-This script handles image processing and gallery generation:
-
-1. Run the script with a directory containing images:
-   ```bash
-   python generate_albumv3.py path/to/image/directory
-   ```
-
-### Features:
-- Automatic thumbnail generation
-- Batch image processing
-- Metadata handling
-- JSON data generation for galleries
-- Local image organization and optimization
-
-## ⚙️ Configuration
-
-### Key Files
-- `_config.yml` - Main Jekyll configuration
-- `package.json` - Node.js dependencies and scripts
-- `Gemfile` - Ruby dependencies
-
-### Data Files
-- `_data/settings.yml` - Site settings
-- `_data/navigation.yml` - Navigation structure
-- `_data/ui-text.yml` - UI text strings
-- `_data/*.json` - Various data files for galleries and content
-
-## 📁 Directory Structure
-
-```
-vp/
-├── .github/          # GitHub workflows and templates
-├── _data/            # Site data files
-│   ├── virtual-photography/    # Gallery data (JSON files)
-│   ├── settings/     # Configuration files
-│   └── *.yml         # YAML data files
-├── _includes/        # Reusable components
-├── _layouts/         # Page templates
-├── _plugins/         # Jekyll plugins
-├── _posts/           # Blog posts
-├── _site/            # Generated site (not in version control)
-├── assets/           # Static assets
-│   ├── css/         # Compiled CSS (includes abstracts/ and base/ subdirectories)
-│   ├── img/         # Images and icons
-│   └── js/          # Source JavaScript
-├── js/              # Frontend JavaScript
-├── node_modules/     # Node.js dependencies
-├── pages/            # Static pages
-├── .gitignore        # Git ignore rules
-├── .env.example      # Example environment variables
-├── Gemfile           # Ruby dependencies
-├── package.json      # Node.js dependencies
-└── generate_albumv3.py # Image processing script
+```powershell
+bundle install
+bundle exec jekyll serve --livereload
 ```
 
-## Contributing
+The site is served at <http://localhost:4000>. Production build, as CI runs it:
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+```powershell
+$env:JEKYLL_ENV = "production"; bundle exec jekyll build --trace
+```
 
-## 📄 License
+`Gemfile.lock` is committed and lists the Windows and Linux platforms, so installs are reproducible on both.
 
-### Code
+## Analytics
 
-This project is open source and available under the [MIT License](LICENSE).
+Google Analytics 4 is opt in and loads only in production builds. Events, GA4 setup, reports and the privacy decisions still open are in [docs/analytics.md](docs/analytics.md). Browser tests (Google is mocked, nothing is sent): build with `JEKYLL_ENV=production`, then `node tests/analytics.mjs` (needs `playwright`).
 
-### Content
+## Adding photographs
 
-All virtual photography and screenshots are © PatrickJr and are licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/).
+Originals live outside this repository, in a folder with one sub folder per album (currently `D:\Grimtech\tools`).
 
-### Third-Party
+```powershell
+pip install -r tools/requirements.txt
+python tools/gallery.py build
+```
 
-- [Jekyll](https://jekyllrb.com/)
-- [Node.js](https://nodejs.org/)
-- [LensDump](https://lensdump.com/)
+1. Drop new images into `<source>\<Album-Name>\`. A new folder creates a new album and a stub post in `_posts/`; open that post and set the real title and developer.
+2. Run `python tools/gallery.py build`. Only new or changed images are processed.
+3. Preview, then commit `assets/gallery/`, `_data/virtual-photography/` and `tools/gallery-manifest.json`.
 
-## 📬 Contact
+Use `--source <path>` or the `GALLERY_SOURCE` environment variable for a different source folder.
 
-For inquiries, collaborations, or feedback:
+What the generator does:
 
-- ✉️ Email: [admin@grimtech.co.uk](mailto:admin@grimtech.co.uk)
-- 🌐 Website: [https://vp.grimtech.co.uk](https://vp.grimtech.co.uk)
-- 💻 GitHub: [PatrickJnr/vp](https://github.com/PatrickJnr/vp)
+- Writes `assets/gallery/<Album>/<name>-<width>.webp` at 480, 960, 1600 and 2560 px wide, plus `<name>-full.webp` at the original resolution. It never upscales.
+- Applies EXIF orientation, keeps the colour profile, and does no sharpening or denoising.
+- Detects duplicates by SHA-256, and detects renamed files so captions and order survive.
+- Keeps existing order, `title`, `caption` and `alt` values in `_data/virtual-photography/<Album>.json`. New photographs are appended. The album page shows the newest first.
+- Writes social preview images (`og.jpg`) for each album and the homepage.
 
----
+Useful options:
 
-Made with ❤️ by PatrickJr | [MIT License](LICENSE) | [View Changelog](https://vp.grimtech.co.uk/changelog)
+| Command | Purpose |
+|---|---|
+| `build --dry-run` | Show what would change, write nothing |
+| `build --album Control` | Only one album |
+| `build --force` | Regenerate everything, for example after changing quality |
+| `build --prune` | Remove entries and files whose source image was deleted |
+| `validate` | Check JSON, files, decodability, alt text and legacy host references. CI runs this. |
+
+Edit `alt` and `caption` directly in the album JSON. They are kept on later runs.
+
+### Image quality
+
+Settings are in `tools/gallery.config.json`: `widths`, `quality` (resized files, default 90), `full_quality` (full size, default 92) and `method` (WebP effort, default 6). Changing them regenerates everything on the next `build`. On representative dark, cinematic frames q92 measured roughly 39 to 48 dB PSNR against the originals at 5 to 20 times smaller than the PNGs.
+
+### Album covers and homepage
+
+- The cover for an album is `card-image` (an index into the album JSON) in its post front matter.
+- The homepage selected photographs are listed in `_data/featured.yml`, in display order. The first one also becomes the default social preview.
+- Optional `card-pos` in a post (for example `card-pos: 50% 30%`) moves the cover crop on album tiles.
+
+## Dependencies
+
+Direct gems: `jekyll`, `jekyll-feed`, `jekyll-seo-tag`, `jekyll-sitemap`, plus `webrick` and `wdm` for local serving and `tzinfo` and `tzinfo-data` on Windows (Jekyll fails without them there). Sass is used only through Jekyll itself; the stylesheet is plain CSS in `assets/css/site.css`.
+
+## Deployment
+
+Pushing to `main` runs `.github/workflows/jekyll.yml`: validate the gallery, build with Bundler and Jekyll 4.4, deploy to GitHub Pages. This needs Pages configured with the "GitHub Actions" source. The `CNAME` file keeps the custom domain.
+
+GitHub Pages limits: published site under 1 GB, repository ideally under 1 GB (soft), 100 MB per file, 10 minute deploys, soft bandwidth limit of 100 GB per month. The gallery is about 128 MB.
+
+## Troubleshooting
+
+- `cannot load such file -- tzinfo` on Windows: run `bundle install`.
+- `ruby` is not recognised after installing: open a new terminal.
+- `jekyll serve` fails with webrick errors: `bundle install` and use `bundle exec`.
+- `validate` reports a missing file: run `python tools/gallery.py build` with the original images available.
+- Gallery images do not update in the browser: GitHub Pages caches for 10 minutes, hard refresh.
+
+## Migration record
+
+`tools/migration/` holds the pre-migration JSON backup and `lensdump-migration.json`, which maps every old Lensdump URL to its new local file. The Lensdump originals were left untouched.
+
+## Licence
+
+Code: [MIT](LICENSE). Photographs: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/), by PatrickJr.

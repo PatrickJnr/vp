@@ -1,20 +1,75 @@
 [
-    {
-        "file_name": "2024_12_12_05_37_50_3813354.png",
-        "file_path": "D:\\Grimtech\\tools\\Infinity-Nikki\\2024_12_12_05_37_50_3813354.png",
-        "file_hash": "b64db6c138f955e9199620e92ff3b73c",
-        "imageFull-link": "https://a.l3n.co/PC6mxq.png",
-        "thumbnail-link-600": "https://c.l3n.co/PC63RA.jpg",
-        "image1080-link": "https://b.l3n.co/PC64pM.jpg",
-        "aspect-ratio": "1.7777777777777777"
-    },
-    {
-        "file_name": "2024_12_12_09_08_35_549166.png",
-        "file_path": "D:\\Grimtech\\tools\\Infinity-Nikki\\2024_12_12_09_08_35_549166.png",
-        "file_hash": "6fc9ce8e8b672221590037ed3caf7d96",
-        "imageFull-link": "https://a.l3n.co/PC6KFQ.png",
-        "thumbnail-link-600": "https://c.l3n.co/PC670a.jpg",
-        "image1080-link": "https://a.l3n.co/PC6OBe.jpg",
-        "aspect-ratio": "0.4186046511627907"
+  {
+    "id": "2024-12-12-05-37-50-3813354",
+    "file_name": "2024_12_12_05_37_50_3813354.png",
+    "title": "",
+    "caption": "",
+    "alt": "Octagonal clock tower building beside a lamp-lit path at night, with mountains behind",
+    "sha256": "eb169aa83b587449a314000f675889520f726b2466a83983d4d1a16d1094b91e",
+    "width": 3840,
+    "height": 2160,
+    "aspect-ratio": 1.77778,
+    "color": "#3e3f4b",
+    "variants": [
+      {
+        "width": 480,
+        "height": 270,
+        "path": "assets/gallery/Infinity-Nikki/2024-12-12-05-37-50-3813354-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 540,
+        "path": "assets/gallery/Infinity-Nikki/2024-12-12-05-37-50-3813354-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "path": "assets/gallery/Infinity-Nikki/2024-12-12-05-37-50-3813354-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 1440,
+        "path": "assets/gallery/Infinity-Nikki/2024-12-12-05-37-50-3813354-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 3840,
+      "height": 2160,
+      "path": "assets/gallery/Infinity-Nikki/2024-12-12-05-37-50-3813354-full.webp"
     }
+  },
+  {
+    "id": "2024-12-12-09-08-35-549166",
+    "file_name": "2024_12_12_09_08_35_549166.png",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Infinity Nikki",
+    "sha256": "8acbc3390f807e77e0bd0f5a944af44d5e7f3143fefdfeea72f661f53edb68f7",
+    "width": 2160,
+    "height": 5160,
+    "aspect-ratio": 0.4186,
+    "color": "#a58486",
+    "variants": [
+      {
+        "width": 480,
+        "height": 1147,
+        "path": "assets/gallery/Infinity-Nikki/2024-12-12-09-08-35-549166-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 2293,
+        "path": "assets/gallery/Infinity-Nikki/2024-12-12-09-08-35-549166-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 3822,
+        "path": "assets/gallery/Infinity-Nikki/2024-12-12-09-08-35-549166-1600.webp"
+      }
+    ],
+    "full": {
+      "width": 2160,
+      "height": 5160,
+      "path": "assets/gallery/Infinity-Nikki/2024-12-12-09-08-35-549166-full.webp"
+    }
+  }
 ]

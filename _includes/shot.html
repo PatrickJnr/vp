@@ -1,0 +1,8 @@
+{%- assign p = include.photo -%}
+{%- capture srcset %}{% include srcset.html photo=p %}{% endcapture -%}
+{%- assign mid = p.variants[1].path | default: p.variants[0].path | default: p.full.path -%}
+<li class="shot{% if p['aspect-ratio'] < 0.8 %} portrait{% endif %}" style="--ar:{{ p['aspect-ratio'] }};--bg-c:{{ p.color }}">
+  <a href="{{ include.href | default: p.full.path | relative_url }}" id="{{ p.id }}" data-id="{{ p.id }}" data-name="{{ p.file_name | escape }}" data-w="{{ p.width }}" data-h="{{ p.height }}" data-full="{{ p.full.path | relative_url }}"{% if p.caption != '' %} data-caption="{{ p.caption | escape }}"{% endif %}>
+    <img src="{{ mid | relative_url }}" srcset="{{ srcset | strip }}" sizes="{{ include.sizes | default: '(max-width: 640px) 100vw, (max-width: 1500px) 50vw, 33vw' }}" width="{{ p.width }}" height="{{ p.height }}" alt="{{ p.alt | escape }}" decoding="async"{% if include.priority %} fetchpriority="high"{% endif %}{% unless include.eager %} loading="lazy"{% endunless %}>
+  </a>
+</li>

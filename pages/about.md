@@ -1,23 +1,25 @@
 ---
 layout: page
-title: About Me
+title: About
 permalink: /about
+description: "Virtual photography by PatrickJr., composed and framed inside the games I play."
 ---
 
-## Welcome to My Virtual Photography Journey! 📸
+{% assign sp = site.data.virtual-photography['Red-Dead-Redemption-2'][17] %}
+{%- assign sa = site.posts | where: 'slug', 'Red-Dead-Redemption-2' | first %}
+{%- capture sp_srcset %}{% include srcset.html photo=sp %}{% endcapture -%}
 
-Hello and welcome! I’m a dedicated gaming enthusiast 🎮 with a passion for virtual photography 🖼️. I love capturing in-game screenshots 📷 and exploring the creative possibilities that photomodes offer.
+<p class="lead">I take virtual photographs: screenshots composed and framed inside the games I play.</p>
 
-### The Allure of Virtual Photography 🌟
+Most of my time in a game goes on looking around. I like finding a place that is worth stopping at, waiting for the light to sit right, and working out where the camera should go. The photo mode is the tool that lets me do that, and a good one makes a game feel like somewhere you can actually take pictures.
 
-Virtual photography captivates me by revealing the intricate beauty of digital worlds 🎨. Through my images, I aim to highlight the unique moments and stunning visuals that emerge during gameplay.
+I use whatever camera tools a game gives me: free cameras, depth of field, field of view, time of day and weather where they are offered. I keep the screenshots I like and leave the rest. Nothing here is a commission or a job. It is a collection of pictures I enjoyed making.
 
-### Embark on a Visual Adventure 👀
+<figure class="figure">
+  <a href="{{ sa.url | relative_url }}#{{ sp.id }}">
+    <img src="{{ sp.variants[2].path | relative_url }}" srcset="{{ sp_srcset | strip }}" sizes="(max-width: 800px) 100vw, 800px" width="{{ sp.width }}" height="{{ sp.height }}" alt="A man in a red waistcoat holds up a glowing lantern against a dark blue night sky" decoding="async">
+  </a>
+  <figcaption>Red Dead Redemption 2</figcaption>
+</figure>
 
-On this platform, I share my virtual photography experiences and insights 🚀. Whether you’re an avid photographer or simply curious about this art form, I invite you to join me on this visual exploration.
-
-### Let’s Connect! 🤝
-
-If you share my enthusiasm for virtual photography or have any questions, I’d love to hear from you 📩. Let’s connect and explore the creative intersection of gaming and photography together.
-
-Welcome to my journey of capturing digital moments—where gaming meets art, and every screenshot tells a story. 🎮✨
+Each game has its own album. If you want to see what is here, start with the [albums]({{ '/albums/' | relative_url }}).

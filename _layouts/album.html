@@ -1,0 +1,33 @@
+---
+layout: default
+---
+{%- assign photos = site.data.virtual-photography[page.slug] -%}
+{%- assign albums = site.posts | sort: 'title' -%}
+{%- for a in albums %}{% if a.url == page.url %}{% assign i = forloop.index0 %}{% endif %}{% endfor -%}
+{%- assign prev_i = i | minus: 1 -%}{% if prev_i < 0 %}{% assign prev_i = albums.size | minus: 1 %}{% endif -%}
+{%- assign next_i = i | plus: 1 -%}{% if next_i >= albums.size %}{% assign next_i = 0 %}{% endif -%}
+{%- assign prev = albums[prev_i] -%}{%- assign next = albums[next_i] -%}
+<article class="wrap album">
+  <p class="crumbs"><a href="{{ '/albums/' | relative_url }}">Albums</a></p>
+  <header class="album-head">
+    <h1>{{ page.title }}</h1>
+    <p class="meta">
+      {%- if page.developer %}<span>{{ page.developer }}</span>{% endif %}
+      <span>{{ photos.size }} screenshot{% if photos.size != 1 %}s{% endif %}</span>
+    </p>
+  </header>
+  {%- assign shots = photos | reverse %}
+  <ul class="gallery" id="gallery" data-album="{{ page.slug }}" data-game="{{ page.title | escape }}" data-count="{{ photos.size }}" aria-label="{{ page.title }} screenshots">
+    {%- for p in shots %}
+    {%- assign top = false %}{% if forloop.index <= 2 %}{% assign top = true %}{% endif %}
+    {%- include shot.html photo=p eager=top priority=forloop.first %}
+    {%- endfor %}
+  </ul>
+  <nav class="album-nav" aria-label="More albums">
+    <a href="{{ prev.url | relative_url }}" rel="prev"><small><span class="icon" aria-hidden="true">chevron_left</span>Previous album</small><strong>{{ prev.title }}</strong></a>
+    <a href="{{ next.url | relative_url }}" rel="next"><small>Next album<span class="icon" aria-hidden="true">chevron_right</span></small><strong>{{ next.title }}</strong></a>
+  </nav>
+</article>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ImageGallery","name":{{ page.title | jsonify }},"url":{{ page.url | absolute_url | jsonify }},"license":"https://creativecommons.org/licenses/by-nc/4.0/","author":{"@type":"Person","name":"PatrickJr."},"image":[{% for p in shots %}{"@type":"ImageObject","contentUrl":{{ p.full.path | absolute_url | jsonify }},"width":{{ p.width }},"height":{{ p.height }},"name":{{ p.alt | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}]}
+</script>

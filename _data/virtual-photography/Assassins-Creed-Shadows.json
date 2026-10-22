@@ -1,47 +1,152 @@
 [
-    {
-        "file_name": "2025_03_19_08_53_05.jpg",
-        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Shadows\\2025_03_19_08_53_05.jpg",
-        "file_hash": "96f211a9d31c484adf616958c599fd88",
-        "imageFull-link": "https://c.l3n.co/PCtJ02.jpg",
-        "thumbnail-link-600": "https://a.l3n.co/PCtQqv.jpg",
-        "image1080-link": "https://c.l3n.co/PCtVYC.jpg",
-        "aspect-ratio": "0.5625"
-    },
-    {
-        "file_name": "2025_03_21_20_10_44.jpg",
-        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Shadows\\2025_03_21_20_10_44.jpg",
-        "file_hash": "b9ce64dd194fbe4c2a2dcdcc2e63b2f1",
-        "imageFull-link": "https://d.l3n.co/PCt9h5.jpg",
-        "thumbnail-link-600": "https://b.l3n.co/PCtqCz.jpg",
-        "image1080-link": "https://c.l3n.co/PCtBST.jpg",
-        "aspect-ratio": "1.7777777777777777"
-    },
-    {
-        "file_name": "asshaddows.png",
-        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Shadows\\asshaddows.png",
-        "file_hash": "5e0ba8817a879a730ec49aa0d7505e88",
-        "imageFull-link": "https://a.l3n.co/PCtmwb.png",
-        "thumbnail-link-600": "https://d.l3n.co/PCt317.jpg",
-        "image1080-link": "https://a.l3n.co/PCt4pr.jpg",
-        "aspect-ratio": "0.8166666666666667"
-    },
-    {
-        "file_name": "NaoeRedBlack.png",
-        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Shadows\\NaoeRedBlack.png",
-        "file_hash": "c610a882ca4e8b7c9317606cb02604ee",
-        "imageFull-link": "https://d.l3n.co/PCtKfF.png",
-        "thumbnail-link-600": "https://a.l3n.co/PCt703.jpg",
-        "image1080-link": "https://c.l3n.co/PCtOB0.jpg",
-        "aspect-ratio": "0.8"
-    },
-    {
-        "file_name": "NaoeWhiteRed.png",
-        "file_path": "D:\\Grimtech\\tools\\Assassins-Creed-Shadows\\NaoeWhiteRed.png",
-        "file_hash": "012ca32d7b01c60948291d7254d8dc5d",
-        "imageFull-link": "https://d.l3n.co/PCtHYD.png",
-        "thumbnail-link-600": "https://c.l3n.co/PCtz2q.jpg",
-        "image1080-link": "https://b.l3n.co/PCtSJA.jpg",
-        "aspect-ratio": "0.8"
+  {
+    "id": "2025-03-19-08-53-05",
+    "file_name": "2025_03_19_08_53_05.jpg",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Assassin's Creed Shadows",
+    "sha256": "4d586a1d3b3c7d9f8f522e7f245e4f39ae4cb7599ddae2f6b791bef8b591f68e",
+    "width": 1440,
+    "height": 2560,
+    "aspect-ratio": 0.5625,
+    "color": "#382a1f",
+    "variants": [
+      {
+        "width": 480,
+        "height": 853,
+        "path": "assets/gallery/Assassins-Creed-Shadows/2025-03-19-08-53-05-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 1707,
+        "path": "assets/gallery/Assassins-Creed-Shadows/2025-03-19-08-53-05-960.webp"
+      }
+    ],
+    "full": {
+      "width": 1440,
+      "height": 2560,
+      "path": "assets/gallery/Assassins-Creed-Shadows/2025-03-19-08-53-05-full.webp"
     }
+  },
+  {
+    "id": "2025-03-21-20-10-44",
+    "file_name": "2025_03_21_20_10_44.jpg",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Assassin's Creed Shadows",
+    "sha256": "52ff11c63291ec723e296d43640923e0ca140f72a6f667e95fe8f39e99e13266",
+    "width": 1920,
+    "height": 1080,
+    "aspect-ratio": 1.77778,
+    "color": "#65474c",
+    "variants": [
+      {
+        "width": 480,
+        "height": 270,
+        "path": "assets/gallery/Assassins-Creed-Shadows/2025-03-21-20-10-44-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 540,
+        "path": "assets/gallery/Assassins-Creed-Shadows/2025-03-21-20-10-44-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "path": "assets/gallery/Assassins-Creed-Shadows/2025-03-21-20-10-44-1600.webp"
+      }
+    ],
+    "full": {
+      "width": 1920,
+      "height": 1080,
+      "path": "assets/gallery/Assassins-Creed-Shadows/2025-03-21-20-10-44-full.webp"
+    }
+  },
+  {
+    "id": "asshaddows",
+    "file_name": "asshaddows.png",
+    "title": "",
+    "caption": "",
+    "alt": "Asshaddows, Assassin's Creed Shadows",
+    "sha256": "e3b3773488dbbe4c15d54741985c905159b0fe71ec321ce4e272171e1c4526d4",
+    "width": 1176,
+    "height": 1440,
+    "aspect-ratio": 0.81667,
+    "color": "#222222",
+    "variants": [
+      {
+        "width": 480,
+        "height": 588,
+        "path": "assets/gallery/Assassins-Creed-Shadows/asshaddows-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 1176,
+        "path": "assets/gallery/Assassins-Creed-Shadows/asshaddows-960.webp"
+      }
+    ],
+    "full": {
+      "width": 1176,
+      "height": 1440,
+      "path": "assets/gallery/Assassins-Creed-Shadows/asshaddows-full.webp"
+    }
+  },
+  {
+    "id": "naoeredblack",
+    "file_name": "NaoeRedBlack.png",
+    "title": "",
+    "caption": "",
+    "alt": "Naoe red black, Assassin's Creed Shadows",
+    "sha256": "11d3a50e7f4c3f5880c05cf4c3c9b452a68a7160b992754ed0a869dd7b7b388b",
+    "width": 1080,
+    "height": 1350,
+    "aspect-ratio": 0.8,
+    "color": "#584b31",
+    "variants": [
+      {
+        "width": 480,
+        "height": 600,
+        "path": "assets/gallery/Assassins-Creed-Shadows/naoeredblack-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 1200,
+        "path": "assets/gallery/Assassins-Creed-Shadows/naoeredblack-960.webp"
+      }
+    ],
+    "full": {
+      "width": 1080,
+      "height": 1350,
+      "path": "assets/gallery/Assassins-Creed-Shadows/naoeredblack-full.webp"
+    }
+  },
+  {
+    "id": "naoewhitered",
+    "file_name": "NaoeWhiteRed.png",
+    "title": "",
+    "caption": "",
+    "alt": "Close-up portrait of a character in a white hood",
+    "sha256": "bb7c7193b4a877b58d4d9b4ede8eec1e228f1f7a92dfafd17f862c39ed98ce82",
+    "width": 1080,
+    "height": 1350,
+    "aspect-ratio": 0.8,
+    "color": "#69674e",
+    "variants": [
+      {
+        "width": 480,
+        "height": 600,
+        "path": "assets/gallery/Assassins-Creed-Shadows/naoewhitered-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 1200,
+        "path": "assets/gallery/Assassins-Creed-Shadows/naoewhitered-960.webp"
+      }
+    ],
+    "full": {
+      "width": 1080,
+      "height": 1350,
+      "path": "assets/gallery/Assassins-Creed-Shadows/naoewhitered-full.webp"
+    }
+  }
 ]

@@ -1,0 +1,2 @@
+{%- assign p = include.photo -%}
+{%- for v in p.variants -%}{{ v.path | relative_url }} {{ v.width }}w, {% endfor -%}{{ p.full.path | relative_url }} {{ p.full.width }}w

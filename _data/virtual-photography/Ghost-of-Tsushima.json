@@ -1,56 +1,236 @@
 [
-    {
-        "file_name": "2215430_20240521005921_1.png",
-        "file_path": "D:\\Grimtech\\tools\\Ghost-of-Tsushima\\2215430_20240521005921_1.png",
-        "file_hash": "3be9e9f2a51e8e30f5ac0519a6e5b487",
-        "imageFull-link": "https://c.l3n.co/PCEAec.png",
-        "thumbnail-link-600": "https://a.l3n.co/PCEWyK.jpg",
-        "image1080-link": "https://b.l3n.co/PCEjTZ.jpg",
-        "aspect-ratio": "2.388888888888889"
-    },
-    {
-        "file_name": "Ghost of Tsushima  Directors Cut Super-Resolution 2024.05.16 - 23.02.36.14.png",
-        "file_path": "D:\\Grimtech\\tools\\Ghost-of-Tsushima\\Ghost of Tsushima  Directors Cut Super-Resolution 2024.05.16 - 23.02.36.14.png",
-        "file_hash": "5ad1ccec2b2acd931a26d1d5d4de91a4",
-        "imageFull-link": "https://a.l3n.co/PCE07P.png",
-        "thumbnail-link-600": "https://d.l3n.co/PCEIUm.jpg",
-        "image1080-link": "https://a.l3n.co/PCEgZi.jpg",
-        "aspect-ratio": "2.388888888888889"
-    },
-    {
-        "file_name": "Ghost of Tsushima  Directors Cut Super-Resolution 2024.05.17 - 10.40.42.53.png",
-        "file_path": "D:\\Grimtech\\tools\\Ghost-of-Tsushima\\Ghost of Tsushima  Directors Cut Super-Resolution 2024.05.17 - 10.40.42.53.png",
-        "file_hash": "bb220bcd99a42213d47a4ed74c656d84",
-        "imageFull-link": "https://c.l3n.co/PCErmo.png",
-        "thumbnail-link-600": "https://b.l3n.co/PCEtu9.jpg",
-        "image1080-link": "https://d.l3n.co/PCERA2.jpg",
-        "aspect-ratio": "2.388888888888889"
-    },
-    {
-        "file_name": "Ghost of Tsushima  Directors Cut Super-Resolution 2024.05.17 - 10.42.03.68.png",
-        "file_path": "D:\\Grimtech\\tools\\Ghost-of-Tsushima\\Ghost of Tsushima  Directors Cut Super-Resolution 2024.05.17 - 10.42.03.68.png",
-        "file_hash": "fec51ed2b847d809f200998bc12f03ec",
-        "imageFull-link": "https://a.l3n.co/PCETQv.png",
-        "thumbnail-link-600": "https://d.l3n.co/PCEEnC.jpg",
-        "image1080-link": "https://b.l3n.co/PCEky5.jpg",
-        "aspect-ratio": "2.388888888888889"
-    },
-    {
-        "file_name": "GhostOfTsushima.exe Screenshot 2024.05.17 - 08.05.40.46.png",
-        "file_path": "D:\\Grimtech\\tools\\Ghost-of-Tsushima\\GhostOfTsushima.exe Screenshot 2024.05.17 - 08.05.40.46.png",
-        "file_hash": "322ac63133dd4ae2749c8393d7955c1b",
-        "imageFull-link": "https://a.l3n.co/PCECTz.png",
-        "thumbnail-link-600": "https://b.l3n.co/PCEJOT.jpg",
-        "image1080-link": "https://d.l3n.co/PCEQUb.jpg",
-        "aspect-ratio": "2.388888888888889"
-    },
-    {
-        "file_name": "GhostOfTsushima.exe Super-Resolution 2024.05.17 - 01.36.09.67.png",
-        "file_path": "D:\\Grimtech\\tools\\Ghost-of-Tsushima\\GhostOfTsushima.exe Super-Resolution 2024.05.17 - 01.36.09.67.png",
-        "file_hash": "1b5595339bbdca670af6c8785f634c06",
-        "imageFull-link": "https://b.l3n.co/PCE9Z7.png",
-        "thumbnail-link-600": "https://a.l3n.co/PCEdsr.jpg",
-        "image1080-link": "https://c.l3n.co/PCEquF.jpg",
-        "aspect-ratio": "0.5210783426813823"
+  {
+    "id": "2215430-20240521005921-1",
+    "file_name": "2215430_20240521005921_1.png",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Ghost of Tsushima",
+    "sha256": "10dc2dba3c6f1f4be201ba369e42667c52f9aaefda7db0eca807d4a8d05936e5",
+    "width": 3440,
+    "height": 1440,
+    "aspect-ratio": 2.38889,
+    "color": "#0c0c0c",
+    "variants": [
+      {
+        "width": 480,
+        "height": 201,
+        "path": "assets/gallery/Ghost-of-Tsushima/2215430-20240521005921-1-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 402,
+        "path": "assets/gallery/Ghost-of-Tsushima/2215430-20240521005921-1-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 670,
+        "path": "assets/gallery/Ghost-of-Tsushima/2215430-20240521005921-1-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 1072,
+        "path": "assets/gallery/Ghost-of-Tsushima/2215430-20240521005921-1-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 3440,
+      "height": 1440,
+      "path": "assets/gallery/Ghost-of-Tsushima/2215430-20240521005921-1-full.webp"
     }
+  },
+  {
+    "id": "ghost-of-tsushima-directors-cut-super-resolution-2024-05-16-23-02-36-14",
+    "file_name": "Ghost of Tsushima  Directors Cut Super-Resolution 2024.05.16 - 23.02.36.14.png",
+    "title": "",
+    "caption": "",
+    "alt": "Two samurai face each other among red autumn leaves in mist",
+    "sha256": "5f9d7896cb4fa84eb6d37c63483ff59bfefe9a158facc0fe38fe6037f1cd2f86",
+    "width": 6880,
+    "height": 2880,
+    "aspect-ratio": 2.38889,
+    "color": "#a7aca6",
+    "variants": [
+      {
+        "width": 480,
+        "height": 201,
+        "path": "assets/gallery/Ghost-of-Tsushima/ghost-of-tsushima-directors-cut-super-resolution-2024-05-16-23-02-36-14-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 402,
+        "path": "assets/gallery/Ghost-of-Tsushima/ghost-of-tsushima-directors-cut-super-resolution-2024-05-16-23-02-36-14-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 670,
+        "path": "assets/gallery/Ghost-of-Tsushima/ghost-of-tsushima-directors-cut-super-resolution-2024-05-16-23-02-36-14-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 1072,
+        "path": "assets/gallery/Ghost-of-Tsushima/ghost-of-tsushima-directors-cut-super-resolution-2024-05-16-23-02-36-14-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 6880,
+      "height": 2880,
+      "path": "assets/gallery/Ghost-of-Tsushima/ghost-of-tsushima-directors-cut-super-resolution-2024-05-16-23-02-36-14-full.webp"
+    }
+  },
+  {
+    "id": "ghost-of-tsushima-directors-cut-super-resolution-2024-05-17-10-40-42-53",
+    "file_name": "Ghost of Tsushima  Directors Cut Super-Resolution 2024.05.17 - 10.40.42.53.png",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Ghost of Tsushima",
+    "sha256": "f4175fe49d8b7177fe22084cebbb88dcab150129018f2279332c27796ec6a99b",
+    "width": 6880,
+    "height": 2880,
+    "aspect-ratio": 2.38889,
+    "color": "#353535",
+    "variants": [
+      {
+        "width": 480,
+        "height": 201,
+        "path": "assets/gallery/Ghost-of-Tsushima/ghost-of-tsushima-directors-cut-super-resolution-2024-05-17-10-40-42-53-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 402,
+        "path": "assets/gallery/Ghost-of-Tsushima/ghost-of-tsushima-directors-cut-super-resolution-2024-05-17-10-40-42-53-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 670,
+        "path": "assets/gallery/Ghost-of-Tsushima/ghost-of-tsushima-directors-cut-super-resolution-2024-05-17-10-40-42-53-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 1072,
+        "path": "assets/gallery/Ghost-of-Tsushima/ghost-of-tsushima-directors-cut-super-resolution-2024-05-17-10-40-42-53-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 6880,
+      "height": 2880,
+      "path": "assets/gallery/Ghost-of-Tsushima/ghost-of-tsushima-directors-cut-super-resolution-2024-05-17-10-40-42-53-full.webp"
+    }
+  },
+  {
+    "id": "ghost-of-tsushima-directors-cut-super-resolution-2024-05-17-10-42-03-68",
+    "file_name": "Ghost of Tsushima  Directors Cut Super-Resolution 2024.05.17 - 10.42.03.68.png",
+    "title": "",
+    "caption": "",
+    "alt": "Large red sun over the silhouettes of a village and watchtowers against a black and red sky",
+    "sha256": "b7f961005282db8e1a3a81d7ae7a21db26a7923088e6676f0f2b2a8f41744db9",
+    "width": 6880,
+    "height": 2880,
+    "aspect-ratio": 2.38889,
+    "color": "#360000",
+    "variants": [
+      {
+        "width": 480,
+        "height": 201,
+        "path": "assets/gallery/Ghost-of-Tsushima/ghost-of-tsushima-directors-cut-super-resolution-2024-05-17-10-42-03-68-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 402,
+        "path": "assets/gallery/Ghost-of-Tsushima/ghost-of-tsushima-directors-cut-super-resolution-2024-05-17-10-42-03-68-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 670,
+        "path": "assets/gallery/Ghost-of-Tsushima/ghost-of-tsushima-directors-cut-super-resolution-2024-05-17-10-42-03-68-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 1072,
+        "path": "assets/gallery/Ghost-of-Tsushima/ghost-of-tsushima-directors-cut-super-resolution-2024-05-17-10-42-03-68-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 6880,
+      "height": 2880,
+      "path": "assets/gallery/Ghost-of-Tsushima/ghost-of-tsushima-directors-cut-super-resolution-2024-05-17-10-42-03-68-full.webp"
+    }
+  },
+  {
+    "id": "ghostoftsushima-exe-screenshot-2024-05-17-08-05-40-46",
+    "file_name": "GhostOfTsushima.exe Screenshot 2024.05.17 - 08.05.40.46.png",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Ghost of Tsushima",
+    "sha256": "9cf18f6b2507286d144c32a9a826c94dd873cbd61fefbceb86e52257842e24ef",
+    "width": 3440,
+    "height": 1440,
+    "aspect-ratio": 2.38889,
+    "color": "#4a4237",
+    "variants": [
+      {
+        "width": 480,
+        "height": 201,
+        "path": "assets/gallery/Ghost-of-Tsushima/ghostoftsushima-exe-screenshot-2024-05-17-08-05-40-46-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 402,
+        "path": "assets/gallery/Ghost-of-Tsushima/ghostoftsushima-exe-screenshot-2024-05-17-08-05-40-46-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 670,
+        "path": "assets/gallery/Ghost-of-Tsushima/ghostoftsushima-exe-screenshot-2024-05-17-08-05-40-46-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 1072,
+        "path": "assets/gallery/Ghost-of-Tsushima/ghostoftsushima-exe-screenshot-2024-05-17-08-05-40-46-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 3440,
+      "height": 1440,
+      "path": "assets/gallery/Ghost-of-Tsushima/ghostoftsushima-exe-screenshot-2024-05-17-08-05-40-46-full.webp"
+    }
+  },
+  {
+    "id": "ghostoftsushima-exe-super-resolution-2024-05-17-01-36-09-67",
+    "file_name": "GhostOfTsushima.exe Super-Resolution 2024.05.17 - 01.36.09.67.png",
+    "title": "",
+    "caption": "",
+    "alt": "Samurai holding a sword raised beside his head, surrounded by falling autumn leaves",
+    "sha256": "7eae4003f231fad2b28672c9c2e2622b3ad312cf48940deac41ac3edc830ca4c",
+    "width": 2880,
+    "height": 5527,
+    "aspect-ratio": 0.52108,
+    "color": "#473422",
+    "variants": [
+      {
+        "width": 480,
+        "height": 921,
+        "path": "assets/gallery/Ghost-of-Tsushima/ghostoftsushima-exe-super-resolution-2024-05-17-01-36-09-67-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 1842,
+        "path": "assets/gallery/Ghost-of-Tsushima/ghostoftsushima-exe-super-resolution-2024-05-17-01-36-09-67-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 3071,
+        "path": "assets/gallery/Ghost-of-Tsushima/ghostoftsushima-exe-super-resolution-2024-05-17-01-36-09-67-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 4913,
+        "path": "assets/gallery/Ghost-of-Tsushima/ghostoftsushima-exe-super-resolution-2024-05-17-01-36-09-67-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 2880,
+      "height": 5527,
+      "path": "assets/gallery/Ghost-of-Tsushima/ghostoftsushima-exe-super-resolution-2024-05-17-01-36-09-67-full.webp"
+    }
+  }
 ]

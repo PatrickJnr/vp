@@ -1,65 +1,240 @@
 [
-    {
-        "file_name": "Photo_2023-09-01-225501.png",
-        "file_path": "D:\\Grimtech\\tools\\Starfield\\Photo_2023-09-01-225501.png",
-        "file_hash": "b5b2d5c486782dc6156c3ec404a8e1b8",
-        "imageFull-link": "https://b.l3n.co/PCJ9lD.png",
-        "thumbnail-link-600": "https://a.l3n.co/PCJdbq.jpg",
-        "image1080-link": "https://c.l3n.co/PCJBtA.jpg",
-        "aspect-ratio": "1.7777777777777777"
-    },
-    {
-        "file_name": "Photo_2023-09-05-010627.png",
-        "file_path": "D:\\Grimtech\\tools\\Starfield\\Photo_2023-09-05-010627.png",
-        "file_hash": "23d37b1f1b4d92ed09330d7c2e987389",
-        "imageFull-link": "https://b.l3n.co/PCJm4M.png",
-        "thumbnail-link-600": "https://a.l3n.co/PCJsPQ.jpg",
-        "image1080-link": "https://c.l3n.co/PCJ4ia.jpg",
-        "aspect-ratio": "2.388888888888889"
-    },
-    {
-        "file_name": "Photo_2023-09-05-010707.png",
-        "file_path": "D:\\Grimtech\\tools\\Starfield\\Photo_2023-09-05-010707.png",
-        "file_hash": "fd0fa10b01e004a1b5daf5c3ab1bc7d9",
-        "imageFull-link": "https://d.l3n.co/PCJKde.png",
-        "thumbnail-link-600": "https://c.l3n.co/PCJpMk.jpg",
-        "image1080-link": "https://b.l3n.co/PCJ7ax.jpg",
-        "aspect-ratio": "2.388888888888889"
-    },
-    {
-        "file_name": "Photo_2024-06-10-152554-1.png",
-        "file_path": "D:\\Grimtech\\tools\\Starfield\\Photo_2024-06-10-152554-1.png",
-        "file_hash": "88b8abc77ae8a0b18efcae6cd65e65e7",
-        "imageFull-link": "https://d.l3n.co/PCJH6H.png",
-        "thumbnail-link-600": "https://a.l3n.co/PCJlz1.jpg",
-        "image1080-link": "https://b.l3n.co/PCJzbc.jpg",
-        "aspect-ratio": "0.5625"
-    },
-    {
-        "file_name": "Photo_2024-06-15-220304.png",
-        "file_path": "D:\\Grimtech\\tools\\Starfield\\Photo_2024-06-15-220304.png",
-        "file_hash": "7f64455d965e9c11fae836e8a7ca0d22",
-        "imageFull-link": "https://a.l3n.co/PCJetK.png",
-        "thumbnail-link-600": "https://c.l3n.co/PCJnKZ.jpg",
-        "image1080-link": "https://b.l3n.co/PCJvPP.jpg",
-        "aspect-ratio": "1.7777777777777777"
-    },
-    {
-        "file_name": "Photo_2024-09-30-224659.png",
-        "file_path": "D:\\Grimtech\\tools\\Starfield\\Photo_2024-09-30-224659.png",
-        "file_hash": "89d9fc9319ebb49bfe51107ad93c54dd",
-        "imageFull-link": "https://c.l3n.co/PCJMjm.png",
-        "thumbnail-link-600": "https://b.l3n.co/PCJYqi.jpg",
-        "image1080-link": "https://d.l3n.co/PCJoMo.jpg",
-        "aspect-ratio": "1.7777777777777777"
-    },
-    {
-        "file_name": "Photo_2024-10-01-003504.png",
-        "file_path": "D:\\Grimtech\\tools\\Starfield\\Photo_2024-10-01-003504.png",
-        "file_hash": "8426781470adc5bd16566b57e9c5c8a7",
-        "imageFull-link": "https://b.l3n.co/PCJuh9.png",
-        "thumbnail-link-600": "https://c.l3n.co/PCJNC2.jpg",
-        "image1080-link": "https://d.l3n.co/PCJPzv.jpg",
-        "aspect-ratio": "0.5625"
+  {
+    "id": "photo-2023-09-01-225501",
+    "file_name": "Photo_2023-09-01-225501.png",
+    "title": "",
+    "caption": "",
+    "alt": "Close-up of a red leather jacket shoulder with a circular star patch",
+    "sha256": "5ea6de987001b19ded3de9d0de710a8aa4f952d1f876a6c26a0cf82f60b6e29d",
+    "width": 2560,
+    "height": 1440,
+    "aspect-ratio": 1.77778,
+    "color": "#332c2f",
+    "variants": [
+      {
+        "width": 480,
+        "height": 270,
+        "path": "assets/gallery/Starfield/photo-2023-09-01-225501-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 540,
+        "path": "assets/gallery/Starfield/photo-2023-09-01-225501-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "path": "assets/gallery/Starfield/photo-2023-09-01-225501-1600.webp"
+      }
+    ],
+    "full": {
+      "width": 2560,
+      "height": 1440,
+      "path": "assets/gallery/Starfield/photo-2023-09-01-225501-full.webp"
     }
+  },
+  {
+    "id": "photo-2023-09-05-010627",
+    "file_name": "Photo_2023-09-05-010627.png",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Starfield",
+    "sha256": "a8e52da14d19443660b63878b8088dee01c14dc4ae8175065e2e4a1a85ecfbe9",
+    "width": 3440,
+    "height": 1440,
+    "aspect-ratio": 2.38889,
+    "color": "#665154",
+    "variants": [
+      {
+        "width": 480,
+        "height": 201,
+        "path": "assets/gallery/Starfield/photo-2023-09-05-010627-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 402,
+        "path": "assets/gallery/Starfield/photo-2023-09-05-010627-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 670,
+        "path": "assets/gallery/Starfield/photo-2023-09-05-010627-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 1072,
+        "path": "assets/gallery/Starfield/photo-2023-09-05-010627-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 3440,
+      "height": 1440,
+      "path": "assets/gallery/Starfield/photo-2023-09-05-010627-full.webp"
+    }
+  },
+  {
+    "id": "photo-2023-09-05-010707",
+    "file_name": "Photo_2023-09-05-010707.png",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Starfield",
+    "sha256": "7680d7aab73c4664eba79c150fa807ff5e77d0fb9c01752ff4d1df1841ca6c6d",
+    "width": 3440,
+    "height": 1440,
+    "aspect-ratio": 2.38889,
+    "color": "#4f4649",
+    "variants": [
+      {
+        "width": 480,
+        "height": 201,
+        "path": "assets/gallery/Starfield/photo-2023-09-05-010707-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 402,
+        "path": "assets/gallery/Starfield/photo-2023-09-05-010707-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 670,
+        "path": "assets/gallery/Starfield/photo-2023-09-05-010707-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 1072,
+        "path": "assets/gallery/Starfield/photo-2023-09-05-010707-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 3440,
+      "height": 1440,
+      "path": "assets/gallery/Starfield/photo-2023-09-05-010707-full.webp"
+    }
+  },
+  {
+    "id": "photo-2024-06-10-152554-1",
+    "file_name": "Photo_2024-06-10-152554-1.png",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Starfield",
+    "sha256": "fa6bf6e7f1bbb3d73f51994e639370a2dcbc1f05c7d9b3416ff534e659b8f6bb",
+    "width": 1440,
+    "height": 2560,
+    "aspect-ratio": 0.5625,
+    "color": "#32323d",
+    "variants": [
+      {
+        "width": 480,
+        "height": 853,
+        "path": "assets/gallery/Starfield/photo-2024-06-10-152554-1-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 1707,
+        "path": "assets/gallery/Starfield/photo-2024-06-10-152554-1-960.webp"
+      }
+    ],
+    "full": {
+      "width": 1440,
+      "height": 2560,
+      "path": "assets/gallery/Starfield/photo-2024-06-10-152554-1-full.webp"
+    }
+  },
+  {
+    "id": "photo-2024-06-15-220304",
+    "file_name": "Photo_2024-06-15-220304.png",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Starfield",
+    "sha256": "0736b8825867c1d8388e6f8f29a634c947bceded7dc8132be81599f6295e238f",
+    "width": 2560,
+    "height": 1440,
+    "aspect-ratio": 1.77778,
+    "color": "#353d48",
+    "variants": [
+      {
+        "width": 480,
+        "height": 270,
+        "path": "assets/gallery/Starfield/photo-2024-06-15-220304-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 540,
+        "path": "assets/gallery/Starfield/photo-2024-06-15-220304-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "path": "assets/gallery/Starfield/photo-2024-06-15-220304-1600.webp"
+      }
+    ],
+    "full": {
+      "width": 2560,
+      "height": 1440,
+      "path": "assets/gallery/Starfield/photo-2024-06-15-220304-full.webp"
+    }
+  },
+  {
+    "id": "photo-2024-09-30-224659",
+    "file_name": "Photo_2024-09-30-224659.png",
+    "title": "",
+    "caption": "",
+    "alt": "A circular lounge with a central fire pit, lit by lamps in blue and orange",
+    "sha256": "3c07e97fb3a24b311ac7514aeb84eef1270d5eafccca6fe189b3b3f48037a599",
+    "width": 2560,
+    "height": 1440,
+    "aspect-ratio": 1.77778,
+    "color": "#372529",
+    "variants": [
+      {
+        "width": 480,
+        "height": 270,
+        "path": "assets/gallery/Starfield/photo-2024-09-30-224659-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 540,
+        "path": "assets/gallery/Starfield/photo-2024-09-30-224659-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "path": "assets/gallery/Starfield/photo-2024-09-30-224659-1600.webp"
+      }
+    ],
+    "full": {
+      "width": 2560,
+      "height": 1440,
+      "path": "assets/gallery/Starfield/photo-2024-09-30-224659-full.webp"
+    }
+  },
+  {
+    "id": "photo-2024-10-01-003504",
+    "file_name": "Photo_2024-10-01-003504.png",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Starfield",
+    "sha256": "3b1d2efb7f45deff9fb07b9efa2ec7471da4602e69106ada0a050e401b375fe5",
+    "width": 1440,
+    "height": 2560,
+    "aspect-ratio": 0.5625,
+    "color": "#3e455e",
+    "variants": [
+      {
+        "width": 480,
+        "height": 853,
+        "path": "assets/gallery/Starfield/photo-2024-10-01-003504-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 1707,
+        "path": "assets/gallery/Starfield/photo-2024-10-01-003504-960.webp"
+      }
+    ],
+    "full": {
+      "width": 1440,
+      "height": 2560,
+      "path": "assets/gallery/Starfield/photo-2024-10-01-003504-full.webp"
+    }
+  }
 ]

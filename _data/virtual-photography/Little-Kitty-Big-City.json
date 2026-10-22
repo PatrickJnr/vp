@@ -1,56 +1,236 @@
 [
-    {
-        "file_name": "Screenshot 2024-05-09 21-56-34_230.png",
-        "file_path": "D:\\Grimtech\\tools\\Little-Kitty-Big-City\\Screenshot 2024-05-09 21-56-34_230.png",
-        "file_hash": "ab8be9adf010388f4bbd2668eef8b203",
-        "imageFull-link": "https://c.l3n.co/PC6Hok.png",
-        "thumbnail-link-600": "https://a.l3n.co/PC6z2x.jpg",
-        "image1080-link": "https://d.l3n.co/PC6SJH.jpg",
-        "aspect-ratio": "2.388888888888889"
-    },
-    {
-        "file_name": "Screenshot 2024-05-09 21-57-17_130.png",
-        "file_path": "D:\\Grimtech\\tools\\Little-Kitty-Big-City\\Screenshot 2024-05-09 21-57-17_130.png",
-        "file_hash": "7a3e5e28bb8a6d988b422193d32d0f22",
-        "imageFull-link": "https://a.l3n.co/PC6ee1.png",
-        "thumbnail-link-600": "https://d.l3n.co/PC6nxc.jpg",
-        "image1080-link": "https://a.l3n.co/PC6LRK.jpg",
-        "aspect-ratio": "2.388888888888889"
-    },
-    {
-        "file_name": "Screenshot 2024-05-09 21-58-20_870.png",
-        "file_path": "D:\\Grimtech\\tools\\Little-Kitty-Big-City\\Screenshot 2024-05-09 21-58-20_870.png",
-        "file_hash": "528ab1aaa5c3c2fa021aec2522833944",
-        "imageFull-link": "https://a.l3n.co/PC6uIm.png",
-        "thumbnail-link-600": "https://b.l3n.co/PC6Dmi.jpg",
-        "image1080-link": "https://c.l3n.co/PC6Noo.jpg",
-        "aspect-ratio": "2.388888888888889"
-    },
-    {
-        "file_name": "Screenshot 2024-05-09 22-02-35_390.png",
-        "file_path": "D:\\Grimtech\\tools\\Little-Kitty-Big-City\\Screenshot 2024-05-09 22-02-35_390.png",
-        "file_hash": "4332ce1e461caa6c1ac584d462545921",
-        "imageFull-link": "https://a.l3n.co/PC6f89.png",
-        "thumbnail-link-600": "https://c.l3n.co/PC6FQ2.jpg",
-        "image1080-link": "https://d.l3n.co/PC6Uev.jpg",
-        "aspect-ratio": "2.388888888888889"
-    },
-    {
-        "file_name": "Screenshot 2024-05-09 22-10-52_298.png",
-        "file_path": "D:\\Grimtech\\tools\\Little-Kitty-Big-City\\Screenshot 2024-05-09 22-10-52_298.png",
-        "file_hash": "31e56ce742b2ed73dca3189acbd0c0fb",
-        "imageFull-link": "https://a.l3n.co/PC6cyC.png",
-        "thumbnail-link-600": "https://c.l3n.co/PC6bR5.jpg",
-        "image1080-link": "https://a.l3n.co/PC6w7z.jpg",
-        "aspect-ratio": "2.388888888888889"
-    },
-    {
-        "file_name": "Screenshot 2024-05-09 22-40-32_343.png",
-        "file_path": "D:\\Grimtech\\tools\\Little-Kitty-Big-City\\Screenshot 2024-05-09 22-40-32_343.png",
-        "file_hash": "0c7760ae59f166a4a14ded539306ff3e",
-        "imageFull-link": "https://c.l3n.co/PC6xUT.png",
-        "thumbnail-link-600": "https://a.l3n.co/PC65Ib.jpg",
-        "image1080-link": "https://c.l3n.co/PC6Gm7.jpg",
-        "aspect-ratio": "2.388888888888889"
+  {
+    "id": "screenshot-2024-05-09-21-56-34-230",
+    "file_name": "Screenshot 2024-05-09 21-56-34_230.png",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Little Kitty, Big City",
+    "sha256": "9b3edfccef735dbb642cfb9f873352543563b1e80119be568608fca95d4922d5",
+    "width": 3440,
+    "height": 1440,
+    "aspect-ratio": 2.38889,
+    "color": "#6d6c80",
+    "variants": [
+      {
+        "width": 480,
+        "height": 201,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-21-56-34-230-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 402,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-21-56-34-230-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 670,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-21-56-34-230-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 1072,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-21-56-34-230-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 3440,
+      "height": 1440,
+      "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-21-56-34-230-full.webp"
     }
+  },
+  {
+    "id": "screenshot-2024-05-09-21-57-17-130",
+    "file_name": "Screenshot 2024-05-09 21-57-17_130.png",
+    "title": "",
+    "caption": "",
+    "alt": "Black cat leaping across the wall of a building",
+    "sha256": "7de70d4b43c91cdf954c27b222a81672672c22073d4ca58aa4cea328dc8f4065",
+    "width": 3440,
+    "height": 1440,
+    "aspect-ratio": 2.38889,
+    "color": "#6f788d",
+    "variants": [
+      {
+        "width": 480,
+        "height": 201,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-21-57-17-130-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 402,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-21-57-17-130-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 670,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-21-57-17-130-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 1072,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-21-57-17-130-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 3440,
+      "height": 1440,
+      "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-21-57-17-130-full.webp"
+    }
+  },
+  {
+    "id": "screenshot-2024-05-09-21-58-20-870",
+    "file_name": "Screenshot 2024-05-09 21-58-20_870.png",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Little Kitty, Big City",
+    "sha256": "c0588068524ec00ab12e4727794bfe013adf9661c13660cb1edeb21edd150e25",
+    "width": 3440,
+    "height": 1440,
+    "aspect-ratio": 2.38889,
+    "color": "#7b788b",
+    "variants": [
+      {
+        "width": 480,
+        "height": 201,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-21-58-20-870-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 402,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-21-58-20-870-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 670,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-21-58-20-870-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 1072,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-21-58-20-870-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 3440,
+      "height": 1440,
+      "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-21-58-20-870-full.webp"
+    }
+  },
+  {
+    "id": "screenshot-2024-05-09-22-02-35-390",
+    "file_name": "Screenshot 2024-05-09 22-02-35_390.png",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Little Kitty, Big City",
+    "sha256": "7e1533fd87f95e0814e9a59f40ee0909180ec874f93758622e529b02861d36a0",
+    "width": 3440,
+    "height": 1440,
+    "aspect-ratio": 2.38889,
+    "color": "#7f8591",
+    "variants": [
+      {
+        "width": 480,
+        "height": 201,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-22-02-35-390-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 402,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-22-02-35-390-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 670,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-22-02-35-390-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 1072,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-22-02-35-390-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 3440,
+      "height": 1440,
+      "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-22-02-35-390-full.webp"
+    }
+  },
+  {
+    "id": "screenshot-2024-05-09-22-10-52-298",
+    "file_name": "Screenshot 2024-05-09 22-10-52_298.png",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Little Kitty, Big City",
+    "sha256": "3bd916b768a57d6f7884a48c4b5ed318510451ec8ea80c2e567b03bde63cf36a",
+    "width": 3440,
+    "height": 1440,
+    "aspect-ratio": 2.38889,
+    "color": "#a29fa0",
+    "variants": [
+      {
+        "width": 480,
+        "height": 201,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-22-10-52-298-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 402,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-22-10-52-298-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 670,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-22-10-52-298-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 1072,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-22-10-52-298-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 3440,
+      "height": 1440,
+      "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-22-10-52-298-full.webp"
+    }
+  },
+  {
+    "id": "screenshot-2024-05-09-22-40-32-343",
+    "file_name": "Screenshot 2024-05-09 22-40-32_343.png",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Little Kitty, Big City",
+    "sha256": "6aca5b4b14112c087a3be8a2009251a02e4dc40241db2875e8863a871df0c38f",
+    "width": 3440,
+    "height": 1440,
+    "aspect-ratio": 2.38889,
+    "color": "#757786",
+    "variants": [
+      {
+        "width": 480,
+        "height": 201,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-22-40-32-343-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 402,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-22-40-32-343-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 670,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-22-40-32-343-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 1072,
+        "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-22-40-32-343-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 3440,
+      "height": 1440,
+      "path": "assets/gallery/Little-Kitty-Big-City/screenshot-2024-05-09-22-40-32-343-full.webp"
+    }
+  }
 ]

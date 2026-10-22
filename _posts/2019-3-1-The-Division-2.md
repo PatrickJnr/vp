@@ -1,22 +1,15 @@
 ---
-layout: post
+layout: album
 date: 2019-03-15
 title: Tom Clancy's The Division 2
 developer: Massive Entertainment
 publisher: Ubisoft
 release_date: 2019-03-15
 card-image: 3
-banner-image: 10
-banner-offset: 50
-platforms: ["PC", "PlayStation 4", "Xbox One"]
-genres: ["Action RPG", "Looter Shooter", "Tactical Shooter"]
-themes: ["Post-apocalyptic", "Tactical Combat", "Cooperative"]
-engine: "Snowdrop"
-photo_mode: true
-photo_mode_features: ["Free Camera", "Filters", "Depth of Field"]
-
-trivia:
-  - "The Division 2 is set in Washington D.C. seven months after a deadly pandemic was released in New York City."
-  - "The game features a 1:1 scale recreation of many Washington D.C. landmarks, including the White House and the Washington Monument."
-  - "Google Stadia service was discontinued in 2023, removing that platform from availability."
+description: Tom Clancy's The Division 2, developed by Massive Entertainment.
+image:
+  path: /assets/gallery/The-Division-2/og.jpg
+  width: 1200
+  height: 630
+  alt: Screenshot from Tom Clancy's The Division 2
 ---

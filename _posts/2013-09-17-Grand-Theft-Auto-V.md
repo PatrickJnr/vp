@@ -1,22 +1,15 @@
 ---
-layout: post
+layout: album
 date: 2013-09-17
 title: Grand Theft Auto V
 developer: Rockstar Games
 publisher: Rockstar Games
 release_date: 2013-09-17
-card-image: 21
-banner-image: 27
-banner-offset: 60
-platforms: ["PlayStation 3", "Xbox 360", "PlayStation 4", "Xbox One", "PC", "PlayStation 5", "Xbox Series X/S"]
-genres: ["Action", "Adventure", "Open World"]
-themes: ["Crime", "Open World", "Sandbox"]
-engine: "RAGE"
-photo_mode: true
-photo_mode_features: ["Selfie Mode", "Director Mode", "Rockstar Editor"]
-
-trivia:
-  - "GTA V is one of the best-selling video games of all time, with over 195 million copies sold as of 2024."
-  - "The game's development budget was approximately $265 million, making it one of the most expensive games ever made at the time."
-  - "GTA Online continues to receive regular updates and remains one of the most popular online gaming experiences over a decade after release."
+card-image: 0
+description: Grand Theft Auto V, developed by Rockstar Games.
+image:
+  path: /assets/gallery/Grand-Theft-Auto-V/og.jpg
+  width: 1200
+  height: 630
+  alt: Screenshot from Grand Theft Auto V
 ---

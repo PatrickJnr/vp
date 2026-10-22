@@ -1,22 +1,15 @@
 ---
-layout: post
+layout: album
 date: 2023-10-05
 title: Assassin's Creed Mirage
 developer: Ubisoft Bordeaux
 publisher: Ubisoft
 release_date: 2023-10-05
 card-image: 1
-banner-image: 1
-banner-offset: 75
-platforms: ["PlayStation 5", "Xbox Series X/S", "PlayStation 4", "Xbox One", "PC", "Amazon Luna"]
-genres: ["Action-Adventure", "Stealth", "Open World"]
-themes: ["Middle East", "Assassins", "Historical Fiction"]
-engine: "Anvil Engine"
-photo_mode: true
-photo_mode_features: ["Free Camera", "Filters", "Time of Day Control"]
-
-trivia:
-  - "Assassin's Creed Mirage is a return to the series' stealth-action roots, with a stronger focus on parkour and social stealth mechanics compared to recent RPG-focused entries."
-  - "The game is set in 9th-century Baghdad during the Islamic Golden Age, making it the first mainline Assassin's Creed game set in the Middle East since the original."
-  - "Mirage serves as a prequel to Assassin's Creed Valhalla, telling the origin story of Basim Ibn Ishaq before the events of the Viking-era game."
+description: Assassin's Creed Mirage, developed by Ubisoft Bordeaux.
+image:
+  path: /assets/gallery/Assassins-Creed-Mirage/og.jpg
+  width: 1200
+  height: 630
+  alt: Screenshot from Assassin's Creed Mirage
 ---

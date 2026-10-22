@@ -1,38 +1,143 @@
 [
-    {
-        "file_name": "Outlaws-20240928_04h30m23s-1920x1080.png",
-        "file_path": "D:\\Grimtech\\tools\\Star-Wars-Outlaws\\Outlaws-20240928_04h30m23s-1920x1080.png",
-        "file_hash": "0892fc7f8e770f083478949e0790d23e",
-        "imageFull-link": "https://c.l3n.co/PCJfwC.png",
-        "thumbnail-link-600": "https://d.l3n.co/PCJUt5.jpg",
-        "image1080-link": "https://a.l3n.co/PCJcKz.jpg",
-        "aspect-ratio": "1.7777777777777777"
-    },
-    {
-        "file_name": "Outlaws-20240928_04h32m19s-1920x1080.png",
-        "file_path": "D:\\Grimtech\\tools\\Star-Wars-Outlaws\\Outlaws-20240928_04h32m19s-1920x1080.png",
-        "file_hash": "39cee48fab396db8e86d9ce9d343e661",
-        "imageFull-link": "https://c.l3n.co/PCJXfT.png",
-        "thumbnail-link-600": "https://b.l3n.co/PCJwjb.jpg",
-        "image1080-link": "https://c.l3n.co/PCJxq7.jpg",
-        "aspect-ratio": "1.7777777777777777"
-    },
-    {
-        "file_name": "Outlaws-20240928_04h38m09s-1920x1080.png",
-        "file_path": "D:\\Grimtech\\tools\\Star-Wars-Outlaws\\Outlaws-20240928_04h38m09s-1920x1080.png",
-        "file_hash": "25eac0f4521b8ab0b40479dd473e6132",
-        "imageFull-link": "https://d.l3n.co/PCJyYr.png",
-        "thumbnail-link-600": "https://b.l3n.co/PCJ5hF.jpg",
-        "image1080-link": "https://a.l3n.co/PCJaC3.jpg",
-        "aspect-ratio": "1.7777777777777777"
-    },
-    {
-        "file_name": "Outlaws-20241202_16h46m50s-3440x1440 EDITED.png",
-        "file_path": "D:\\Grimtech\\tools\\Star-Wars-Outlaws\\Outlaws-20241202_16h46m50s-3440x1440 EDITED.png",
-        "file_hash": "c144b9069104e61c3f4df7314708ec82",
-        "imageFull-link": "https://c.l3n.co/PCJhS0.png",
-        "thumbnail-link-600": "https://d.l3n.co/PCQ2wD.jpg",
-        "image1080-link": "https://b.l3n.co/PCQA1q.jpg",
-        "aspect-ratio": "2.388888888888889"
+  {
+    "id": "outlaws-20240928-04h30m23s-1920x1080",
+    "file_name": "Outlaws-20240928_04h30m23s-1920x1080.png",
+    "title": "",
+    "caption": "",
+    "alt": "Close-up of a stormtrooper helmet with a second stormtrooper blurred behind",
+    "sha256": "ba14b4b7831aa0706c9f9e1d3a8ab1e928e7dca7da1d2244957463caa69214ae",
+    "width": 1920,
+    "height": 1080,
+    "aspect-ratio": 1.77778,
+    "color": "#3d5f7d",
+    "variants": [
+      {
+        "width": 480,
+        "height": 270,
+        "path": "assets/gallery/Star-Wars-Outlaws/outlaws-20240928-04h30m23s-1920x1080-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 540,
+        "path": "assets/gallery/Star-Wars-Outlaws/outlaws-20240928-04h30m23s-1920x1080-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "path": "assets/gallery/Star-Wars-Outlaws/outlaws-20240928-04h30m23s-1920x1080-1600.webp"
+      }
+    ],
+    "full": {
+      "width": 1920,
+      "height": 1080,
+      "path": "assets/gallery/Star-Wars-Outlaws/outlaws-20240928-04h30m23s-1920x1080-full.webp"
     }
+  },
+  {
+    "id": "outlaws-20240928-04h32m19s-1920x1080",
+    "file_name": "Outlaws-20240928_04h32m19s-1920x1080.png",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Star Wars Outlaws",
+    "sha256": "33d1c0aa4bc34835fb3fa355ee32ffb9eef3a3ad3c8561ab8830e1c3f9566d66",
+    "width": 1920,
+    "height": 1080,
+    "aspect-ratio": 1.77778,
+    "color": "#1b3c5c",
+    "variants": [
+      {
+        "width": 480,
+        "height": 270,
+        "path": "assets/gallery/Star-Wars-Outlaws/outlaws-20240928-04h32m19s-1920x1080-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 540,
+        "path": "assets/gallery/Star-Wars-Outlaws/outlaws-20240928-04h32m19s-1920x1080-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "path": "assets/gallery/Star-Wars-Outlaws/outlaws-20240928-04h32m19s-1920x1080-1600.webp"
+      }
+    ],
+    "full": {
+      "width": 1920,
+      "height": 1080,
+      "path": "assets/gallery/Star-Wars-Outlaws/outlaws-20240928-04h32m19s-1920x1080-full.webp"
+    }
+  },
+  {
+    "id": "outlaws-20240928-04h38m09s-1920x1080",
+    "file_name": "Outlaws-20240928_04h38m09s-1920x1080.png",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Star Wars Outlaws",
+    "sha256": "e80e0a10311cb05d75a94926e3f1044c40f607c6dba2555438943c7b49630246",
+    "width": 1920,
+    "height": 1080,
+    "aspect-ratio": 1.77778,
+    "color": "#232323",
+    "variants": [
+      {
+        "width": 480,
+        "height": 270,
+        "path": "assets/gallery/Star-Wars-Outlaws/outlaws-20240928-04h38m09s-1920x1080-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 540,
+        "path": "assets/gallery/Star-Wars-Outlaws/outlaws-20240928-04h38m09s-1920x1080-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "path": "assets/gallery/Star-Wars-Outlaws/outlaws-20240928-04h38m09s-1920x1080-1600.webp"
+      }
+    ],
+    "full": {
+      "width": 1920,
+      "height": 1080,
+      "path": "assets/gallery/Star-Wars-Outlaws/outlaws-20240928-04h38m09s-1920x1080-full.webp"
+    }
+  },
+  {
+    "id": "outlaws-20241202-16h46m50s-3440x1440-edited",
+    "file_name": "Outlaws-20241202_16h46m50s-3440x1440 EDITED.png",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Star Wars Outlaws",
+    "sha256": "984f7cd922ae68467a9a6d5ae03cd1819a99a28fe4252199600b9929d424615f",
+    "width": 3440,
+    "height": 1440,
+    "aspect-ratio": 2.38889,
+    "color": "#475028",
+    "variants": [
+      {
+        "width": 480,
+        "height": 201,
+        "path": "assets/gallery/Star-Wars-Outlaws/outlaws-20241202-16h46m50s-3440x1440-edited-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 402,
+        "path": "assets/gallery/Star-Wars-Outlaws/outlaws-20241202-16h46m50s-3440x1440-edited-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 670,
+        "path": "assets/gallery/Star-Wars-Outlaws/outlaws-20241202-16h46m50s-3440x1440-edited-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 1072,
+        "path": "assets/gallery/Star-Wars-Outlaws/outlaws-20241202-16h46m50s-3440x1440-edited-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 3440,
+      "height": 1440,
+      "path": "assets/gallery/Star-Wars-Outlaws/outlaws-20241202-16h46m50s-3440x1440-edited-full.webp"
+    }
+  }
 ]

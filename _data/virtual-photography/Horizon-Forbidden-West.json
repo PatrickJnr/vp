@@ -1,20 +1,80 @@
 [
-    {
-        "file_name": "Horizon Forbidden West Complete Edition Super-Resolution 2024.03.24 - 03.02.34.84.jpg",
-        "file_path": "D:\\Grimtech\\tools\\Horizon-Forbidden-West\\Horizon Forbidden West Complete Edition Super-Resolution 2024.03.24 - 03.02.34.84.jpg",
-        "file_hash": "9f8777f4342313397f7a3e2fbfa316d8",
-        "imageFull-link": "https://c.l3n.co/PC6J07.jpg",
-        "thumbnail-link-600": "https://b.l3n.co/PC6QBr.jpg",
-        "image1080-link": "https://d.l3n.co/PC6VYF.jpg",
-        "aspect-ratio": "2.3702914001421465"
-    },
-    {
-        "file_name": "Horizon Forbidden West Complete Edition Super-Resolution 2024.03.24 - 03.14.24.29.jpg",
-        "file_path": "D:\\Grimtech\\tools\\Horizon-Forbidden-West\\Horizon Forbidden West Complete Edition Super-Resolution 2024.03.24 - 03.14.24.29.jpg",
-        "file_hash": "d78db4f55791657b48a22e9c5c482cbe",
-        "imageFull-link": "https://b.l3n.co/PC6d23.jpg",
-        "thumbnail-link-600": "https://a.l3n.co/PC6qJ0.jpg",
-        "image1080-link": "https://b.l3n.co/PC6BSD.jpg",
-        "aspect-ratio": "2.369900771775083"
+  {
+    "id": "horizon-forbidden-west-complete-edition-super-resolution-2024-03-24-03-02-34-84",
+    "file_name": "Horizon Forbidden West Complete Edition Super-Resolution 2024.03.24 - 03.02.34.84.jpg",
+    "title": "",
+    "caption": "",
+    "alt": "Ivy and wildflowers beside a brick path, with ruined stonework behind",
+    "sha256": "a1b2dfe679ea071da1db9d47091aa01b4658eb24cc3cddc87ad32cff250b4d85",
+    "width": 10005,
+    "height": 4221,
+    "aspect-ratio": 2.37029,
+    "color": "#7d593f",
+    "variants": [
+      {
+        "width": 480,
+        "height": 203,
+        "path": "assets/gallery/Horizon-Forbidden-West/horizon-forbidden-west-complete-edition-super-resolution-2024-03-24-03-02-34-84-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 405,
+        "path": "assets/gallery/Horizon-Forbidden-West/horizon-forbidden-west-complete-edition-super-resolution-2024-03-24-03-02-34-84-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 675,
+        "path": "assets/gallery/Horizon-Forbidden-West/horizon-forbidden-west-complete-edition-super-resolution-2024-03-24-03-02-34-84-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 1080,
+        "path": "assets/gallery/Horizon-Forbidden-West/horizon-forbidden-west-complete-edition-super-resolution-2024-03-24-03-02-34-84-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 10005,
+      "height": 4221,
+      "path": "assets/gallery/Horizon-Forbidden-West/horizon-forbidden-west-complete-edition-super-resolution-2024-03-24-03-02-34-84-full.webp"
     }
+  },
+  {
+    "id": "horizon-forbidden-west-complete-edition-super-resolution-2024-03-24-03-14-24-29",
+    "file_name": "Horizon Forbidden West Complete Edition Super-Resolution 2024.03.24 - 03.14.24.29.jpg",
+    "title": "",
+    "caption": "",
+    "alt": "Screenshot from Horizon Forbidden West",
+    "sha256": "d66a58f0be96cbada852daa9080643d3c83ab2ba2fe460774697bdcc110952fd",
+    "width": 4299,
+    "height": 1814,
+    "aspect-ratio": 2.3699,
+    "color": "#704b37",
+    "variants": [
+      {
+        "width": 480,
+        "height": 203,
+        "path": "assets/gallery/Horizon-Forbidden-West/horizon-forbidden-west-complete-edition-super-resolution-2024-03-24-03-14-24-29-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 405,
+        "path": "assets/gallery/Horizon-Forbidden-West/horizon-forbidden-west-complete-edition-super-resolution-2024-03-24-03-14-24-29-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 675,
+        "path": "assets/gallery/Horizon-Forbidden-West/horizon-forbidden-west-complete-edition-super-resolution-2024-03-24-03-14-24-29-1600.webp"
+      },
+      {
+        "width": 2560,
+        "height": 1080,
+        "path": "assets/gallery/Horizon-Forbidden-West/horizon-forbidden-west-complete-edition-super-resolution-2024-03-24-03-14-24-29-2560.webp"
+      }
+    ],
+    "full": {
+      "width": 4299,
+      "height": 1814,
+      "path": "assets/gallery/Horizon-Forbidden-West/horizon-forbidden-west-complete-edition-super-resolution-2024-03-24-03-14-24-29-full.webp"
+    }
+  }
 ]
