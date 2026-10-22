@@ -1,6 +1,31 @@
+<div align="center">
+
+<a href="https://vp.grimtech.co.uk/"><img src="assets/gallery/Red-Dead-Redemption-2/rdr2-2020-07-05-12-17-23-50078655351-o-1600.webp" alt="A man in a red waistcoat holds up a glowing lantern against a dark blue night sky" width="100%"></a>
+
 # PatrickJr's Virtual Photography
 
-Source for <https://vp.grimtech.co.uk/>, a Jekyll site hosted on GitHub Pages. Photographs are generated locally as WebP files and served from this repository. There is no external image host.
+Game screenshots composed and framed as photographs. A fast, dark, self-hosted Jekyll portfolio with a fullscreen viewer.
+
+[![Visit the site](https://img.shields.io/badge/Visit_the_site-a58ae0?style=for-the-badge)](https://vp.grimtech.co.uk/)
+[![Albums](https://img.shields.io/badge/Browse_albums-2a2833?style=for-the-badge)](https://vp.grimtech.co.uk/albums/)
+[![Changelog](https://img.shields.io/badge/Changelog-2a2833?style=for-the-badge)](https://vp.grimtech.co.uk/changelog)
+
+[![Deploy](https://img.shields.io/github/actions/workflow/status/PatrickJnr/vp/jekyll.yml?branch=main&label=deploy&style=flat-square&labelColor=15141b)](https://github.com/PatrickJnr/vp/actions/workflows/jekyll.yml)
+[![Last commit](https://img.shields.io/github/last-commit/PatrickJnr/vp?style=flat-square&labelColor=15141b&color=a58ae0)](https://github.com/PatrickJnr/vp/commits/main)
+[![Jekyll](https://img.shields.io/badge/Jekyll-4.4-a58ae0?style=flat-square&labelColor=15141b)](https://jekyllrb.com/)
+[![Code licence](https://img.shields.io/badge/code-MIT-a58ae0?style=flat-square&labelColor=15141b)](LICENSE)
+[![Photo licence](https://img.shields.io/badge/photos-CC_BY--NC_4.0-a58ae0?style=flat-square&labelColor=15141b)](https://creativecommons.org/licenses/by-nc/4.0/)
+
+[Preview](#local-preview) | [Adding photographs](#adding-photographs) | [Tests](#tests) | [Analytics](#analytics) | [Deployment](#deployment) | [Licence](#licence)
+
+</div>
+
+## Overview
+
+- 16 albums and 179 screenshots, hosted in this repository as WebP at four sizes plus the full resolution file. No external image host.
+- Justified gallery layout, hover focus effects and a fullscreen viewer with keyboard, touch, zoom, pan and deep links.
+- Opt-in Google Analytics 4 behind a consent banner. Nothing loads from Google until a visitor accepts.
+- Self-hosted Poppins, plain CSS, no JavaScript framework, deployed by GitHub Actions to GitHub Pages.
 
 ## Requirements
 
