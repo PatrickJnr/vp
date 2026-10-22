@@ -19,6 +19,13 @@ class: changelog
 - Removes the Platforms, Genres, Themes, Photo Mode Features and Did You Know panels from every album.
 - Removes emoji support, jQuery, Swipebox, Font Awesome and MathJax.
 
+### Typography and interface
+- Uses Poppins for all text and headings, self-hosted at 400, 500 and 600. The Inter and Newsreader fonts are removed, which cuts the text font download from about 71 KB to 24 KB.
+- Shows the album index as four columns on wide screens, so the 16 albums fill four even rows.
+- Adds a thin dark scrollbar with a muted purple thumb that brightens on hover and while dragging. Browsers that use native overlay scrollbars and high contrast modes keep their own.
+- Keeps the viewer controls visible while they have keyboard focus and respects reduced motion for every transition.
+- Fits the header, footer and text pages to large text sizes and to browsers without JavaScript.
+
 ### Images
 - Hosts all 179 screenshots on this site as optimised WebP files at several sizes, plus a full resolution version.
 - Replaces the Lensdump uploader with an offline gallery generator. The README describes the workflow.

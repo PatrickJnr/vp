@@ -24,6 +24,22 @@ $env:JEKYLL_ENV = "production"; bundle exec jekyll build --trace
 
 `Gemfile.lock` is committed and lists the Windows and Linux platforms, so installs are reproducible on both.
 
+## Typography
+
+All text uses self-hosted Poppins (400, 500 and 600, latin subset, SIL Open Font License in `assets/fonts/Poppins-OFL.txt`). Icons use a subset of Material Symbols. Nothing is loaded from a font service.
+
+## Tests
+
+Browser tests use Playwright against a production build in `_site`. Install `playwright` once, build with `JEKYLL_ENV=production`, then run:
+
+```powershell
+node tests/pages.mjs       # layout, sticky footer and privacy controls at 8 viewports
+node tests/viewer.mjs      # fullscreen viewer
+node tests/analytics.mjs   # consent and events, Google is mocked
+```
+
+Set `PLAYWRIGHT_MODULE` to the path of `playwright/index.mjs` if it is not installed in this folder.
+
 ## Analytics
 
 Google Analytics 4 is opt in and loads only in production builds. Events, GA4 setup, reports and the privacy decisions still open are in [docs/analytics.md](docs/analytics.md). Browser tests (Google is mocked, nothing is sent): build with `JEKYLL_ENV=production`, then `node tests/analytics.mjs` (needs `playwright`).
