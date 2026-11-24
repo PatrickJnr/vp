@@ -159,6 +159,16 @@ console.log('-- consent');
   await c.close();
 }
 {
+  const { c, page } = await ctx({ init: grantInit });
+  await page.goto(B + '/Fallout-4/');
+  await page.waitForTimeout(500);
+  await page.evaluate(() => localStorage.setItem('vp-consent', JSON.stringify({ v: 'denied', t: Date.now() })));
+  ok(await page.evaluate(() => window['ga-disable-G-XXPKD9SFHL'] !== true), 'without a storage event the tab has not noticed yet');
+  await page.evaluate(() => window.dispatchEvent(new Event('focus')));
+  ok(await page.evaluate(() => window['ga-disable-G-XXPKD9SFHL'] === true), 'refocusing a tab re-reads the saved choice and turns analytics off');
+  await c.close();
+}
+{
   const { c, page } = await ctx();
   await page.goto(B + '/Fallout-4/');
   await page.waitForSelector('.consent');

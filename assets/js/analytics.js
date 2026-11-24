@@ -231,13 +231,17 @@
     else { stop(); if (v === null) showBanner(); }
     status();
   }
-  w.addEventListener('storage', function (e) {
-    if (e.key !== null && e.key !== KEY && e.key !== OFF) return;
+
+  function sync() {
     var granted = !read(OFF) && stored() === 'granted';
     if (granted && !on) start();
     else if (!granted && on) stop();
     if (read(OFF) || stored() !== null) hideBanner();
-  });
+  }
+  w.addEventListener('storage', sync);
+  w.addEventListener('pageshow', sync);
+  w.addEventListener('focus', sync);
+  d.addEventListener('visibilitychange', function () { if (!d.hidden) sync(); });
 
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', init); else init();
 })();
