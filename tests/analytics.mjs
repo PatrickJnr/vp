@@ -149,6 +149,16 @@ console.log('-- consent');
   await c.close();
 }
 {
+  const { c, page } = await ctx({ init: grantInit });
+  await page.goto(B + '/Fallout-4/');
+  await page.waitForTimeout(500);
+  await page.evaluate(() => localStorage.setItem('vp-consent', JSON.stringify({ v: 'denied', t: Date.now() })));
+  await open(page);
+  ok((await named(page, 'screenshot_view')).length === 0, 'events are dropped once the saved choice is no longer granted, even without a storage event');
+  ok(await page.evaluate(() => window['ga-disable-G-XXPKD9SFHL'] === true), 'sending after withdrawal turns analytics off');
+  await c.close();
+}
+{
   const { c, page } = await ctx();
   await page.goto(B + '/Fallout-4/');
   await page.waitForSelector('.consent');

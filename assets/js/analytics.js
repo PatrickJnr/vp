@@ -46,6 +46,7 @@
 
   function send(name, params) {
     if (!on || !EVENTS[name]) return;
+    if (read(OFF) || stored() !== 'granted') { stop(); return; }
     var out = {};
     EVENTS[name].forEach(function (k) {
       var v = params[k];
