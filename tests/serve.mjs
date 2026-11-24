@@ -8,13 +8,11 @@ const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/cs
 
 export function startServer(port, inject = '') {
   const server = http.createServer((req, res) => {
-    let p;
-    try { p = path.join(root, decodeURIComponent(req.url.split('?')[0])); } catch { p = ''; }
-    if (p !== root && !p.startsWith(root + path.sep)) {
-      res.writeHead(404);
-      return res.end();
-    }
+    let rel;
+    try { rel = decodeURIComponent(req.url.split('?')[0]); } catch { rel = ''; }
+    const p = path.join(root, rel);
     for (const c of [p, p + '.html', path.join(p, 'index.html')]) {
+      if (!c.startsWith(root + path.sep)) continue;
       if (fs.existsSync(c) && fs.statSync(c).isFile()) {
         const type = types[path.extname(c)] || 'application/octet-stream';
         res.writeHead(200, { 'content-type': type });
