@@ -11,7 +11,6 @@ author:
   url: https://vp.grimtech.co.uk
   twitter: _PatrickJnr
 
-markdown: kramdown
 permalink: /:title/
 
 plugins:
@@ -55,9 +54,9 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - SECURITY.md
   - LICENSE
   - run.bat
-  - generate_*.py
   - node_modules
   - vendor
   - .github

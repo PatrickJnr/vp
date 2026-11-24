@@ -6,6 +6,42 @@ description: A log of changes to PatrickJr.'s virtual photography site.
 class: changelog
 ---
 
+## November 24, 2026
+
+### Content
+- Adds a Grand Theft Auto VI album with 5 screenshots, bringing the site to 17 albums and 184 screenshots.
+
+### Albums
+- Shows the developer, publisher (when it differs from the developer), release date and screenshot count in the header of every album page.
+- Shows the release year before the screenshot count on album tiles, for example "2023 · 4 screenshots".
+
+### Design
+- Adds an introduction to the homepage, with the number of games and photographs, and an "All albums" link beside Latest Albums.
+- Lays out album pages as a bento grid on wider screens, with a large lead photograph and smaller ones beside it. Tiles follow the album's own aspect ratio, so wide cinematic shots are barely cropped. Albums that mix portrait and landscape photos, and phones, keep the justified rows.
+- Makes gallery rows taller so photographs show larger, with slightly wider gaps.
+- Shows the game name over a homepage photograph on hover and focus, and always on touch screens.
+- Stacks the labels above the values in the album details line and adds a back arrow to the Albums link.
+- Softens the gallery hover effect, hides alt text while images load, and labels the X link as "X (Twitter)".
+
+### Mobile
+- Shows the album index and Latest Albums as two columns on phones, which roughly halves the scrolling, and shows four Selected Work photographs instead of six.
+
+### Accessibility
+- Lets phones download smaller images for the two-column album tiles, and makes the scrollbar thumb easier to see against the dark background.
+- Sizes text from the browser's own text size setting instead of a fixed pixel size, so a larger default text size now applies across the site.
+- Marks up the developer, publisher, release date and screenshot count on album pages as a labelled list.
+- Describes all 160 screenshots that only had a game name or a placeholder as alt text, and names the characters, vehicles and places in 20 more descriptions, so screen reader users and search engines get a real description of every photograph.
+- Marks the galleries, album tiles and social link list as lists, so screen readers that drop list semantics from unstyled lists announce them.
+- Adds the creator, credit, copyright notice, licence and licence page to each photograph's structured data, so search engines can show attribution and licence details.
+
+### Technical
+- Removes the one-off Lensdump migration command and records, and stops publishing `SECURITY.md` to the site.
+- Updates the locked gem versions. Jekyll 4.4.1 and its plugins were already the latest releases.
+- Fails gallery validation, and so the build, while a photograph still has placeholder alt text or alt text that only repeats the file name or game name. New photographs now get a plain placeholder and a build warning, instead of a guess from the file name.
+- Adds `tools/check_site.py`, which checks the built site for broken links, missing anchors, duplicate ids, images without alt text or size, and `og:image` files that do not exist. The build runs it, including when the site is built under a `baseurl`, and also checks front matter strictly.
+- Pins Pillow to the 13.0 series.
+- Makes the 404 page links follow the site's `baseurl`, so they work if the site is ever served from a sub-path.
+
 ## October 22, 2026
 
 ### Redesign
@@ -21,7 +57,7 @@ class: changelog
 
 ### Typography and interface
 - Uses Poppins for all text and headings, self-hosted at 400, 500 and 600. The Inter and Newsreader fonts are removed, which cuts the text font download from about 71 KB to 24 KB.
-- Shows the album index as four columns on wide screens, so the 16 albums fill four even rows.
+- Shows the album index as four columns on wide screens.
 - Adds a thin dark scrollbar with a muted purple thumb that brightens on hover and while dragging. Browsers that use native overlay scrollbars and high contrast modes keep their own.
 - Keeps the viewer controls visible while they have keyboard focus and respects reduced motion for every transition.
 - Fits the header, footer and text pages to large text sizes and to browsers without JavaScript.

@@ -2048,7 +2048,71 @@
           }
         }
       }
+    },
+    "Grand-Theft-Auto-VI": {
+      "images": {
+        "Grand Theft Auto VI-2026_11_20-17_57_34.png": {
+          "sha256": "f5b05d00c93bde7e68baa5d8bdb670de3aeac306266bd977198c8a43bad2881e",
+          "size": 10678162,
+          "mtime_ns": 1795478268070915600,
+          "outputs": {
+            "grand-theft-auto-vi-2026-11-20-17-57-34-480.webp": 14172,
+            "grand-theft-auto-vi-2026-11-20-17-57-34-960.webp": 42760,
+            "grand-theft-auto-vi-2026-11-20-17-57-34-1600.webp": 129314,
+            "grand-theft-auto-vi-2026-11-20-17-57-34-2560.webp": 360610,
+            "grand-theft-auto-vi-2026-11-20-17-57-34-full.webp": 1027398
+          }
+        },
+        "Grand Theft Auto VI-2026_11_21-11_48_35.png": {
+          "sha256": "f5c47d31a267ae74b63691dc3711a661dd3edcc09219c3559c4aae1d171d0f0f",
+          "size": 7430222,
+          "mtime_ns": 1795478268188027100,
+          "outputs": {
+            "grand-theft-auto-vi-2026-11-21-11-48-35-480.webp": 17240,
+            "grand-theft-auto-vi-2026-11-21-11-48-35-960.webp": 41658,
+            "grand-theft-auto-vi-2026-11-21-11-48-35-1600.webp": 76276,
+            "grand-theft-auto-vi-2026-11-21-11-48-35-2560.webp": 132976,
+            "grand-theft-auto-vi-2026-11-21-11-48-35-full.webp": 266400
+          }
+        },
+        "Grand Theft Auto VI-2026_11_22-18-06-17.png": {
+          "sha256": "847efdb49b862b09a2739ff67426db71bbd34db7e44c96d05492dc6ae7880ff6",
+          "size": 7012105,
+          "mtime_ns": 1795478268833762900,
+          "outputs": {
+            "grand-theft-auto-vi-2026-11-22-18-06-17-480.webp": 9068,
+            "grand-theft-auto-vi-2026-11-22-18-06-17-960.webp": 25760,
+            "grand-theft-auto-vi-2026-11-22-18-06-17-1600.webp": 58024,
+            "grand-theft-auto-vi-2026-11-22-18-06-17-2560.webp": 132028,
+            "grand-theft-auto-vi-2026-11-22-18-06-17-full.webp": 316508
+          }
+        },
+        "Grand Theft Auto VI-2026_11_23-23-28-26.png": {
+          "sha256": "54820ecacc62552a595a42315789e66b323e55959b062b189870b6aee806f05b",
+          "size": 13067245,
+          "mtime_ns": 1795478269392390200,
+          "outputs": {
+            "grand-theft-auto-vi-2026-11-23-23-28-26-480.webp": 26390,
+            "grand-theft-auto-vi-2026-11-23-23-28-26-960.webp": 69058,
+            "grand-theft-auto-vi-2026-11-23-23-28-26-1600.webp": 199800,
+            "grand-theft-auto-vi-2026-11-23-23-28-26-2560.webp": 759284,
+            "grand-theft-auto-vi-2026-11-23-23-28-26-full.webp": 2155938
+          }
+        },
+        "Grand Theft Auto VI-2026_11_23-23-46-25.png": {
+          "sha256": "e1989d5318dd0e79a696e724862105ae45bd22df82ce15529886f79e4fb7c001",
+          "size": 7725334,
+          "mtime_ns": 1795478269413732100,
+          "outputs": {
+            "grand-theft-auto-vi-2026-11-23-23-46-25-480.webp": 15594,
+            "grand-theft-auto-vi-2026-11-23-23-46-25-960.webp": 35914,
+            "grand-theft-auto-vi-2026-11-23-23-46-25-1600.webp": 67014,
+            "grand-theft-auto-vi-2026-11-23-23-46-25-2560.webp": 123612,
+            "grand-theft-auto-vi-2026-11-23-23-46-25-full.webp": 259766
+          }
+        }
+      }
     }
   },
-  "updated": "2026-10-22"
+  "updated": "2026-11-23"
 }

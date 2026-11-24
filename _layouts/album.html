@@ -8,19 +8,44 @@ layout: default
 {%- assign next_i = i | plus: 1 -%}{% if next_i >= albums.size %}{% assign next_i = 0 %}{% endif -%}
 {%- assign prev = albums[prev_i] -%}{%- assign next = albums[next_i] -%}
 <article class="wrap album">
-  <p class="crumbs"><a href="{{ '/albums/' | relative_url }}">Albums</a></p>
+  <p class="crumbs"><a href="{{ '/albums/' | relative_url }}"><span class="icon" aria-hidden="true">chevron_left</span>Albums</a></p>
   <header class="album-head">
     <h1>{{ page.title }}</h1>
-    <p class="meta">
-      {%- if page.developer %}<span>{{ page.developer }}</span>{% endif %}
-      <span>{{ photos.size }} screenshot{% if photos.size != 1 %}s{% endif %}</span>
-    </p>
+    <dl class="meta">
+      {%- if page.developer %}
+      <div><dt>Developer</dt><dd>{{ page.developer }}</dd></div>{% endif %}
+      {%- if page.publisher and page.publisher != page.developer %}
+      <div><dt>Publisher</dt><dd>{{ page.publisher }}</dd></div>{% endif %}
+      {%- if page.release_date %}
+      <div><dt>Released</dt><dd><time datetime="{{ page.release_date | date: '%Y-%m-%d' }}">{{ page.release_date | date: '%-d %B %Y' }}</time></dd></div>{% endif %}
+      <div><dt>Screenshots</dt><dd>{{ photos.size }}</dd></div>
+    </dl>
   </header>
   {%- assign shots = photos | reverse %}
-  <ul class="gallery" id="gallery" data-album="{{ page.slug }}" data-game="{{ page.title | escape }}" data-count="{{ photos.size }}" aria-label="{{ page.title }} screenshots">
+  {%- comment %} Bento: 6 columns, each tile spans squares so it keeps the album's average aspect ratio. Landscapes repeat in groups of six (4x4, then five 2x2); a short last group uses a fuller layout. Portraits take 2x6. Used only when the album has no portraits or is large enough to fill the gaps. {% endcomment %}
+  {%- assign land = 0 %}{% assign sum = 0.0 %}
+  {%- for p in shots %}{% if p['aspect-ratio'] >= 0.8 %}{% assign land = land | plus: 1 %}{% assign sum = sum | plus: p['aspect-ratio'] %}{% endif %}{% endfor %}
+  {%- assign bento = '' %}{% if land == photos.size or photos.size >= 12 %}{% assign bento = ' gallery--bento' %}{% endif %}
+  {%- assign cell = 1.6 %}{% if land > 0 %}{% assign cell = sum | divided_by: land | round: 3 %}{% endif %}
+  {%- assign li = 0 %}
+  <ul role="list" class="gallery{{ bento }}" id="gallery" style="--cell:{{ cell }}" data-album="{{ page.slug }}" data-game="{{ page.title | escape }}" data-count="{{ photos.size }}" aria-label="{{ page.title }} screenshots">
     {%- for p in shots %}
     {%- assign top = false %}{% if forloop.index <= 2 %}{% assign top = true %}{% endif %}
-    {%- include shot.html photo=p eager=top priority=forloop.first %}
+    {%- if p['aspect-ratio'] < 0.8 %}
+      {%- assign cls = ' b26' %}{% assign sz = '33vw' %}
+    {%- else %}
+      {%- assign k = li | divided_by: 6 %}{% assign pos = li | modulo: 6 %}{% assign odd = k | modulo: 2 %}
+      {%- assign done = k | times: 6 %}{% assign cs = land | minus: done %}{% if cs > 6 %}{% assign cs = 6 %}{% endif %}
+      {%- assign cls = ' b22' %}{% assign sz = '33vw' %}
+      {%- if cs == 1 %}{% assign cls = ' b66' %}{% assign sz = '100vw' %}
+      {%- elsif cs == 2 or cs == 4 %}{% assign cls = ' b33' %}{% assign sz = '50vw' %}
+      {%- elsif pos == 0 and cs != 5 %}{% assign cls = ' b44' %}{% assign sz = '66vw' %}{% if odd == 1 %}{% assign cls = ' b44 r' %}{% endif %}
+      {%- elsif pos < 2 and cs == 5 %}{% assign cls = ' b33' %}{% assign sz = '50vw' %}
+      {%- endif %}
+      {%- assign li = li | plus: 1 %}
+    {%- endif %}
+    {%- assign sizes = false %}{% if bento != '' %}{% assign sizes = '(max-width: 640px) 100vw, ' | append: sz %}{% endif %}
+    {%- include shot.html photo=p cls=cls sizes=sizes eager=top priority=forloop.first %}
     {%- endfor %}
   </ul>
   <nav class="album-nav" aria-label="More albums">
@@ -29,5 +54,5 @@ layout: default
   </nav>
 </article>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ImageGallery","name":{{ page.title | jsonify }},"url":{{ page.url | absolute_url | jsonify }},"license":"https://creativecommons.org/licenses/by-nc/4.0/","author":{"@type":"Person","name":"PatrickJr."},"image":[{% for p in shots %}{"@type":"ImageObject","contentUrl":{{ p.full.path | absolute_url | jsonify }},"width":{{ p.width }},"height":{{ p.height }},"name":{{ p.alt | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}]}
+{"@context":"https://schema.org","@type":"ImageGallery","name":{{ page.title | jsonify }},"url":{{ page.url | absolute_url | jsonify }},"license":"https://creativecommons.org/licenses/by-nc/4.0/","author":{"@type":"Person","name":"PatrickJr."},"image":[{% for p in shots %}{"@type":"ImageObject","contentUrl":{{ p.full.path | absolute_url | jsonify }},"width":{{ p.width }},"height":{{ p.height }},"name":{{ p.alt | jsonify }},"creator":{"@type":"Person","name":"PatrickJr."},"creditText":"PatrickJr.","copyrightNotice":"© PatrickJr.","license":"https://creativecommons.org/licenses/by-nc/4.0/","acquireLicensePage":{{ '/contact' | absolute_url | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}]}
 </script>

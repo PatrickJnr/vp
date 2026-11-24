@@ -248,7 +248,7 @@ console.log('-- events (consent granted)');
   await page.evaluate(() => {
     document.addEventListener('click', e => e.preventDefault());
   });
-  for (const name of ['X', 'Flickr', 'Steam', 'GitHub']) await page.locator('footer a', { hasText: new RegExp('^' + name + '$') }).click();
+  for (const name of ['X', 'Flickr', 'Steam', 'GitHub']) await page.locator('footer a', { hasText: new RegExp('^' + name + '( \\(Twitter\\))?$') }).click();
   const ob = await named(page, 'outbound_click');
   ok(ob.length === 4 && ob.map(e => e.platform).join() === 'x,flickr,steam,github' && ob.every(e => e.link_location === 'footer'), 'footer outbound clicks: one event each with platform');
   ok(ob.every(e => Object.keys(e).every(k => ['name', 'platform', 'destination_category', 'link_location'].includes(k))), 'outbound events carry no URL or query');
@@ -287,7 +287,7 @@ console.log('-- events (consent granted)');
   const { c, page } = await ctx({ init: grantInit });
   await page.goto(B + '/albums/');
   const urls = await page.evaluate(() => [...document.querySelectorAll('.tile a')].map(a => new URL(a.href).pathname));
-  ok(urls.length === 16, '16 albums listed');
+  ok(urls.length === 17, '17 albums listed');
   const ids = [];
   for (const u of urls) {
     const p = await c.newPage();
@@ -296,7 +296,7 @@ console.log('-- events (consent granted)');
     r.ids.forEach(i => ids.push({ album: r.g, id: i, url: u }));
     await p.close();
   }
-  ok(ids.length === 179 && new Set(ids.map(x => x.album + '/' + x.id)).size === 179, '179 screenshots, 179 unique gallery ids');
+  ok(ids.length === 184 && new Set(ids.map(x => x.album + '/' + x.id)).size === 184, '184 screenshots, 184 unique gallery ids');
   const long = ids.filter(x => (x.album + '/' + x.id).length > 100);
   ok(long.length === 2, 'two over-length ids found (' + long.length + ')');
   const seen = [];

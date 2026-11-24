@@ -6,7 +6,6 @@ import hashlib
 import json
 import os
 import re
-import shutil
 import sys
 import time
 from concurrent.futures import ProcessPoolExecutor
@@ -21,7 +20,6 @@ MANIFEST_PATH = ROOT / "tools" / "gallery-manifest.json"
 DATA_DIR = ROOT / "_data" / "virtual-photography"
 OUT_DIR = ROOT / "assets" / "gallery"
 POSTS_DIR = ROOT / "_posts"
-MIGRATION_DIR = ROOT / "tools" / "migration"
 IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".webp", ".bmp", ".tif", ".tiff"}
 SKIP_DIRS = {"node_modules", "test", "tests", "uploads", "thumbnails", "output", "dist", "build"}
 OG_SIZE = (1200, 630)
@@ -154,6 +152,7 @@ def ensure_post(slug: str, dry: bool, log) -> None:
 
 
 LEGACY_ALT_RE = re.compile(r"^Virtual photograph \d+ from ")
+PLACEHOLDER_ALT_RE = re.compile(r"^(Screenshot from |Virtual photograph \d+ from )")
 
 
 def album_title(slug: str) -> str:
@@ -162,12 +161,22 @@ def album_title(slug: str) -> str:
     return m.group(1).strip().strip("\"'") if m else titleize(slug)
 
 
-def default_alt(file_name: str, game: str) -> str:
-    stem = Path(file_name).stem
-    words = re.sub(r"([a-z])([A-Z])", r"\1 \2", re.sub(r"[-_.]+", " ", stem)).split()
-    if words and len(words) <= 3 and not re.search(r"\d", stem) and all(len(w) > 2 for w in words):
-        return f"{' '.join(words).capitalize()}, {game}"
+def default_alt(game: str) -> str:
+    """What `build` writes for a new photo. It is a placeholder: `validate` fails until it is replaced."""
     return f"Screenshot from {game}"
+
+
+def _norm(text: str) -> str:
+    return re.sub(r"[\W_]+", " ", re.sub(r"([a-z])([A-Z])", r"\1 \2", text)).lower().strip()
+
+
+def is_placeholder_alt(alt: str, file_name: str, game: str) -> bool:
+    """True for "Screenshot from <game>" and for alt text that only restates the file name or the game name
+    ("Brutalism", "Brutalism, Control", "Control 3"). Short alt text that describes the picture is fine."""
+    if PLACEHOLDER_ALT_RE.match(alt):
+        return True
+    a, stem, g = _norm(alt), _norm(Path(file_name).stem), _norm(game)
+    return a in {stem, f"{stem} {g}", f"{g} {stem}", g} or bool(re.fullmatch(re.escape(g) + r"( \d+)+( and \d+)*", a))
 
 
 def legacy_order(entries: list[dict]) -> list[str]:
@@ -310,7 +319,9 @@ def build(args, cfg) -> int:
         game = album_title(slug)
         for e in new_entries:
             if not e.get("alt") or LEGACY_ALT_RE.match(e["alt"]):
-                e["alt"] = default_alt(e["file_name"], game)
+                e["alt"] = default_alt(game)
+            if is_placeholder_alt(e["alt"], e["file_name"], game):
+                warnings.append(f"{slug}/{e['file_name']}: needs real alt text in _data/virtual-photography/{slug}.json (validate fails until it is written)")
         for (s, n), (job, res) in results.items():
             if s == slug:
                 m_imgs = manifest["albums"][slug]["images"]
@@ -461,11 +472,11 @@ def validate(args, cfg) -> int:
                 if "imgur" in p.read_text(encoding="utf8", errors="ignore").lower() and p.suffix == ".md" and p.parent.name == "pages":
                     continue
                 errors.append(f"legacy image host reference in {p.relative_to(ROOT).as_posix()}")
-    generic = sum(
-        1 for f in files for e in json.loads(f.read_text(encoding="utf8")) if e.get("alt", "").startswith("Screenshot from ")
-    )
-    if generic:
-        warns.append(f"{generic} screenshots still have the generic alt text; describe them in _data/virtual-photography/*.json")
+    for f in files:
+        game = album_title(f.stem)
+        for e in json.loads(f.read_text(encoding="utf8")):
+            if is_placeholder_alt(e.get("alt", ""), e.get("file_name", ""), game):
+                errors.append(f"{f.stem}/{e.get('file_name')}: placeholder alt text {e['alt']!r}; describe the photograph in {f.relative_to(ROOT).as_posix()}")
     print(f"validated {n_albums} albums, {n_images} images, {bytes_total / 1e6:.1f} MB of gallery assets")
     for w in warns:
         print("warning:", w)
@@ -475,72 +486,20 @@ def validate(args, cfg) -> int:
     return 1 if errors else 0
 
 
-def migrate(args, cfg) -> int:
-    source = Path(args.source).resolve()
-    stamp = date.today().isoformat()
-    backup = MIGRATION_DIR / f"backup-{stamp}"
-    legacy = {}
-    for f in sorted(DATA_DIR.glob("*.json")):
-        data = json.loads(f.read_text(encoding="utf8"))
-        if data and "imageFull-link" in data[0]:
-            legacy[f.stem] = data
-    if not legacy:
-        print("nothing to migrate: no legacy-format JSON found")
-        return 0
-    backup.mkdir(parents=True, exist_ok=True)
-    for slug in legacy:
-        shutil.copy2(DATA_DIR / f"{slug}.json", backup / f"{slug}.json")
-    print(f"backed up {len(legacy)} legacy JSON files to {backup.relative_to(ROOT)}")
-    for slug, data in legacy.items():
-        write_json(DATA_DIR / f"{slug}.json", [{"file_name": e["file_name"]} for e in data])
-    args.prune = False
-    args.force = True
-    args.dry_run = False
-    args.album = None
-    rc = build(args, cfg)
-    report = []
-    for slug, data in legacy.items():
-        new = {e["file_name"]: e for e in json.loads((DATA_DIR / f"{slug}.json").read_text(encoding="utf8"))}
-        for i, old in enumerate(data):
-            n = new.get(old["file_name"])
-            src = source / slug / old["file_name"]
-            md5 = hashlib.md5(src.read_bytes()).hexdigest() if src.exists() else None
-            report.append({
-                "album": slug,
-                "index": i,
-                "file_name": old["file_name"],
-                "old_md5_matches_local_original": md5 == old.get("file_hash"),
-                "old_urls": {k: old.get(k) for k in ("imageFull-link", "thumbnail-link-600", "image1080-link")},
-                "new_sha256": n and n["sha256"],
-                "new_paths": n and [v["path"] for v in n["variants"]] + [n["full"]["path"]],
-            })
-    write_json(MIGRATION_DIR / "lensdump-migration.json", {
-        "created": stamp,
-        "albums": len(legacy),
-        "images": len(report),
-        "unmatched_originals": [r["file_name"] for r in report if not r["old_md5_matches_local_original"]],
-        "entries": report,
-    })
-    print(f"wrote {(MIGRATION_DIR / 'lensdump-migration.json').relative_to(ROOT)} ({len(report)} images)")
-    return rc
-
-
 def main(argv=None) -> int:
     cfg = load_config()
     default_source = os.environ.get("GALLERY_SOURCE", str(ROOT.parent / "tools"))
     ap = argparse.ArgumentParser(description="Offline gallery generator for the vp Jekyll site")
     sub = ap.add_subparsers(dest="cmd", required=True)
-    for name in ("build", "migrate"):
-        sp = sub.add_parser(name)
-        sp.add_argument("--source", default=default_source, help=f"folder holding one sub folder per album (default: {default_source})")
-        if name == "build":
-            sp.add_argument("--dry-run", action="store_true", help="report what would change, write nothing")
-            sp.add_argument("--force", action="store_true", help="regenerate every image")
-            sp.add_argument("--prune", action="store_true", help="remove gallery entries whose source file is gone")
-            sp.add_argument("--album", nargs="+", help="only these albums")
+    sp = sub.add_parser("build")
+    sp.add_argument("--source", default=default_source, help=f"folder holding one sub folder per album (default: {default_source})")
+    sp.add_argument("--dry-run", action="store_true", help="report what would change, write nothing")
+    sp.add_argument("--force", action="store_true", help="regenerate every image")
+    sp.add_argument("--prune", action="store_true", help="remove gallery entries whose source file is gone")
+    sp.add_argument("--album", nargs="+", help="only these albums")
     sub.add_parser("validate")
     args = ap.parse_args(argv)
-    return {"build": build, "validate": validate, "migrate": migrate}[args.cmd](args, cfg)
+    return {"build": build, "validate": validate}[args.cmd](args, cfg)
 
 
 if __name__ == "__main__":

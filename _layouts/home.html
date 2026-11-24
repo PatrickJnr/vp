@@ -1,19 +1,23 @@
 ---
 layout: default
 ---
-<h1 class="sr">{{ site.title }}</h1>
+{%- assign total = 0 -%}{%- for d in site.data.virtual-photography %}{% assign total = total | plus: d[1].size %}{% endfor -%}
+<header class="wrap intro">
+  <h1>Game screenshots, framed as photographs.</h1>
+  <p>{{ site.posts.size }} games and {{ total }} photographs by {{ site.author.name }}</p>
+</header>
 
 <section class="wrap section section--first" aria-labelledby="selected">
   <div class="section-head">
     <h2 id="selected">Selected Work</h2>
   </div>
-  <ul class="gallery gallery--home">
+  <ul role="list" class="gallery gallery--home">
     {%- for f in site.data.featured.photos %}
     {%- assign fp = site.data.virtual-photography[f.album][f.index] %}
     {%- assign fa = site.posts | where: 'slug', f.album | first %}
     {%- assign href = fa.url | append: '#' | append: fp.id %}
     {%- assign top = false %}{% if forloop.index <= 3 %}{% assign top = true %}{% endif %}
-    {%- include shot.html photo=fp href=href eager=top priority=forloop.first %}
+    {%- include shot.html photo=fp href=href label=fa.title eager=top priority=forloop.first %}
     {%- endfor %}
   </ul>
 </section>
@@ -21,8 +25,9 @@ layout: default
 <section class="wrap section" aria-labelledby="latest">
   <div class="section-head">
     <h2 id="latest">Latest Albums</h2>
+    <a href="{{ '/albums/' | relative_url }}">All albums</a>
   </div>
-  <ul class="tiles tiles--feature">
+  <ul role="list" class="tiles tiles--feature">
     {%- assign latest = site.posts | sort: 'date' | reverse %}
     {%- for a in latest limit: 4 %}{% include tile.html album=a %}{% endfor %}
   </ul>

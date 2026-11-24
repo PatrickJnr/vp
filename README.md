@@ -22,7 +22,7 @@ Game screenshots composed and framed as photographs. A fast, dark, self-hosted J
 
 ## Overview
 
-- 16 albums and 179 screenshots, hosted in this repository as WebP at four sizes plus the full resolution file. No external image host.
+- 17 albums and 184 screenshots, hosted in this repository as WebP at four sizes plus the full resolution file. No external image host.
 - Justified gallery layout, hover focus effects and a fullscreen viewer with keyboard, touch, zoom, pan and deep links.
 - Opt-in Google Analytics 4 behind a consent banner. Nothing loads from Google until a visitor accepts.
 - Self-hosted Poppins, plain CSS, no JavaScript framework, deployed by GitHub Actions to GitHub Pages.
@@ -65,6 +65,15 @@ node tests/analytics.mjs   # consent and events, Google is mocked
 
 Set `PLAYWRIGHT_MODULE` to the path of `playwright/index.mjs` if it is not installed in this folder.
 
+The built site is also checked without a browser, using only the Python standard library. CI runs this after the build:
+
+```powershell
+python tools/check_site.py _site   # broken links and anchors, duplicate ids, images without alt, width or height, og:image files
+python tests/check_site_test.py    # the checker's own tests, on tiny fake sites
+```
+
+If you build with a `baseurl`, pass it to the checker too: `python tools/check_site.py _site --baseurl /vp`. CI passes the Pages base path automatically. The `og:image` and `twitter:image` URLs must be absolute. Those on the site's own origin (the canonical link) are looked up in the build folder; nothing is fetched, so images on other origins are not checked.
+
 ## Analytics
 
 Google Analytics 4 is opt in and loads only in production builds. Events, GA4 setup, reports and the privacy decisions still open are in [docs/analytics.md](docs/analytics.md). Browser tests (Google is mocked, nothing is sent): build with `JEKYLL_ENV=production`, then `node tests/analytics.mjs` (needs `playwright`).
@@ -100,9 +109,11 @@ Useful options:
 | `build --album Control` | Only one album |
 | `build --force` | Regenerate everything, for example after changing quality |
 | `build --prune` | Remove entries and files whose source image was deleted |
-| `validate` | Check JSON, files, decodability, alt text and legacy host references. CI runs this. |
+| `validate` | Check JSON, files, decodability, alt text and legacy host references. Placeholder alt text fails it. CI runs this. |
 
 Edit `alt` and `caption` directly in the album JSON. They are kept on later runs.
+
+`build` writes the placeholder `alt` "Screenshot from <game>" for each new photograph and warns about it. Replace it with a real description of what the photograph shows before committing: `validate` and CI fail while a placeholder remains. Alt text that only repeats the file name or the game name ("Brutalism, Control", "Control 3") counts as a placeholder too. Short descriptions are fine.
 
 ### Image quality
 
@@ -120,9 +131,9 @@ Direct gems: `jekyll`, `jekyll-feed`, `jekyll-seo-tag`, `jekyll-sitemap`, plus `
 
 ## Deployment
 
-Pushing to `main` runs `.github/workflows/jekyll.yml`: validate the gallery, build with Bundler and Jekyll 4.4, deploy to GitHub Pages. This needs Pages configured with the "GitHub Actions" source. The `CNAME` file keeps the custom domain.
+Pushing to `main` runs `.github/workflows/jekyll.yml`: validate the gallery, build with Bundler and Jekyll 4.4 (`--strict_front_matter`), check the built site for broken links, anchors, images without alt text or size, and og:image files (`python tools/check_site.py _site`), deploy to GitHub Pages. This needs Pages configured with the "GitHub Actions" source. The `CNAME` file keeps the custom domain.
 
-GitHub Pages limits: published site under 1 GB, repository ideally under 1 GB (soft), 100 MB per file, 10 minute deploys, soft bandwidth limit of 100 GB per month. The gallery is about 128 MB.
+GitHub Pages limits: published site under 1 GB, repository ideally under 1 GB (soft), 100 MB per file, 10 minute deploys, soft bandwidth limit of 100 GB per month. The gallery is about 134 MB.
 
 ## Troubleshooting
 
@@ -131,10 +142,6 @@ GitHub Pages limits: published site under 1 GB, repository ideally under 1 GB (s
 - `jekyll serve` fails with webrick errors: `bundle install` and use `bundle exec`.
 - `validate` reports a missing file: run `python tools/gallery.py build` with the original images available.
 - Gallery images do not update in the browser: GitHub Pages caches for 10 minutes, hard refresh.
-
-## Migration record
-
-`tools/migration/` holds the pre-migration JSON backup and `lensdump-migration.json`, which maps every old Lensdump URL to its new local file. The Lensdump originals were left untouched.
 
 ## Licence
 

@@ -8,7 +8,7 @@ description: One album for each game.
   <header class="album-head">
     <h1>Albums</h1>
   </header>
-  <ul class="tiles">
+  <ul role="list" class="tiles">
     {%- assign albums = site.posts | sort: 'title' -%}
     {%- for a in albums %}{% include tile.html album=a eager=forloop.first %}{% endfor %}
   </ul>

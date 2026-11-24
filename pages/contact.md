@@ -11,7 +11,7 @@ For questions about the screenshots, or anything else, send an email or message 
 
 ## Elsewhere
 
-<ul class="link-list">
+<ul role="list" class="link-list">
 {%- for s in site.data.settings.social %}
   <li><a href="{{ s.link }}" rel="me noopener" target="_blank">{{ s.name }}<span class="sr"> (opens in a new tab)</span><span class="icon" aria-hidden="true">arrow_outward</span></a></li>
 {%- endfor %}
