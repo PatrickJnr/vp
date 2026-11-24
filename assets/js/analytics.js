@@ -12,7 +12,10 @@
   function write(k, v) { try { if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) {} }
 
   var q = /[?&]analytics=(on|off)\b/.exec(location.search);
-  if (q) write(OFF, q[1] === 'off' ? '1' : null);
+  if (q) {
+    write(OFF, q[1] === 'off' ? '1' : null);
+    if (q[1] === 'on') write(KEY, null);
+  }
   if (read(OFF)) return;
 
   w.dataLayer = w.dataLayer || [];
@@ -81,11 +84,22 @@
     });
   }
 
+  var loaded = false, timer = 0;
+
   function loadScript() {
+    timer = 0;
+    if (!on || loaded) return;
+    loaded = true;
     var s = d.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(ID);
     d.head.appendChild(s);
+  }
+
+  function defer() {
+    if (loaded || timer) return;
+    if (d.readyState === 'complete') timer = setTimeout(loadScript, 1500);
+    else w.addEventListener('load', defer, { once: true });
   }
 
   function start() {
@@ -96,9 +110,8 @@
       started = true;
       gtag('js', new Date());
       gtag('config', ID, { cookie_domain: location.hostname, allow_google_signals: false, allow_ad_personalization_signals: false });
-      var defer = function () { setTimeout(loadScript, 1500); };
-      if (d.readyState === 'complete') defer(); else w.addEventListener('load', defer);
     }
+    defer();
     sendAlbum();
     status();
   }
@@ -107,6 +120,8 @@
     var was = on;
     on = false;
     w['ga-disable-' + ID] = true;
+    clearTimeout(timer);
+    timer = 0;
     if (was || started) gtag('consent', 'update', { analytics_storage: 'denied' });
     cookies();
     status();
@@ -115,12 +130,15 @@
   function choose(v) {
     write(KEY, JSON.stringify({ v: v, t: Date.now() }));
     if (v === 'granted') start(); else stop();
-    if (banner) {
-      var inside = banner.contains(d.activeElement);
-      banner.remove();
-      banner = null;
-      if (inside) { var m = d.getElementById('main'); if (m) { m.tabIndex = -1; m.focus(); } }
-    }
+    hideBanner();
+  }
+
+  function hideBanner() {
+    if (!banner) return;
+    var inside = banner.contains(d.activeElement);
+    banner.remove();
+    banner = null;
+    if (inside) { var m = d.getElementById('main'); if (m) { m.tabIndex = -1; m.focus(); } }
   }
 
   function showBanner() {
@@ -212,5 +230,13 @@
     else { stop(); if (v === null) showBanner(); }
     status();
   }
+  w.addEventListener('storage', function (e) {
+    if (e.key !== null && e.key !== KEY && e.key !== OFF) return;
+    var granted = !read(OFF) && stored() === 'granted';
+    if (granted && !on) start();
+    else if (!granted && on) stop();
+    if (read(OFF) || stored() !== null) hideBanner();
+  });
+
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', init); else init();
 })();

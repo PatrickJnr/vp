@@ -111,6 +111,44 @@ console.log('-- consent');
   await c.close();
 }
 {
+  const { c, page, google } = await ctx({ init: grantInit });
+  await page.goto(B + '/?analytics=off');
+  await page.evaluate(grantInit);
+  await page.goto(B + '/?analytics=on');
+  await page.waitForSelector('.consent');
+  await page.waitForTimeout(2200);
+  ok(google.length === 0 && (await events(page)).length === 0, '?analytics=on never resumes tracking silently, even after earlier consent');
+  await c.close();
+}
+{
+  const { c, page, google } = await ctx();
+  await page.goto(B + '/privacy');
+  await page.locator('.consent button', { hasText: 'Accept' }).click();
+  await page.click('[data-privacy]');
+  await page.locator('.consent button', { hasText: 'Reject' }).click();
+  await page.waitForTimeout(2500);
+  ok(!google.some(u => u.includes('gtag/js')), 'reject before the delayed gtag.js load cancels it');
+  await page.click('[data-privacy]');
+  await page.locator('.consent button', { hasText: 'Accept' }).click();
+  await page.waitForTimeout(2500);
+  ok(google.some(u => u.includes('gtag/js?id=G-XXPKD9SFHL')), 'accepting again after a cancelled load still loads gtag.js');
+  await c.close();
+}
+{
+  const { c, page } = await ctx({ init: grantInit });
+  await page.goto(B + '/Fallout-4/');
+  await page.waitForTimeout(500);
+  const other = await c.newPage();
+  await other.goto(B + '/privacy');
+  await other.click('[data-privacy]');
+  await other.locator('.consent button', { hasText: 'Reject' }).click();
+  await page.waitForTimeout(400);
+  ok(await page.evaluate(() => window['ga-disable-G-XXPKD9SFHL'] === true), 'rejecting in one tab turns analytics off in other open tabs');
+  await open(page);
+  ok((await named(page, 'screenshot_view')).length === 0, 'other tab sends no events after rejection elsewhere');
+  await c.close();
+}
+{
   const { c, page } = await ctx();
   await page.goto(B + '/Fallout-4/');
   await page.waitForSelector('.consent');

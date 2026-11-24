@@ -25,7 +25,7 @@ Local builds (`jekyll serve`) contain no analytics code at all. Production build
 5. The choice is stored in `localStorage` under `vp-consent` and expires after 12 months.
 6. Visitors reopen the choice from Privacy (footer) and "Change analytics preference".
 
-Turn analytics off in your own browser, so your visits do not pollute the stats: open any page with `?analytics=off`. Use `?analytics=on` to undo it. This sets `vp-analytics-off` in that browser only.
+Turn analytics off in your own browser, so your visits do not pollute the stats: open any page with `?analytics=off`. Use `?analytics=on` to undo it; that also forgets any earlier choice, so the banner asks again. This sets `vp-analytics-off` in that browser only.
 
 ## Events
 
