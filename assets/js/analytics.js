@@ -224,24 +224,24 @@
     if (e.target.closest && e.target.closest('[data-privacy]')) showBanner();
   });
 
-  function init() {
-    var v = stored();
-    if (v === null && (navigator.globalPrivacyControl === true || navigator.doNotTrack === '1')) v = 'denied';
-    if (v === 'granted') start();
-    else { stop(); if (v === null) showBanner(); }
-    status();
-  }
-
   function sync() {
     var granted = !read(OFF) && stored() === 'granted';
     if (granted && !on) start();
     else if (!granted && on) stop();
     if (read(OFF) || stored() !== null) hideBanner();
   }
-  w.addEventListener('storage', sync);
-  w.addEventListener('pageshow', sync);
-  w.addEventListener('focus', sync);
-  d.addEventListener('visibilitychange', function () { if (!d.hidden) sync(); });
+
+  function init() {
+    var v = stored();
+    if (v === null && (navigator.globalPrivacyControl === true || navigator.doNotTrack === '1')) v = 'denied';
+    if (v === 'granted') start();
+    else { stop(); if (v === null) showBanner(); }
+    status();
+    w.addEventListener('storage', sync);
+    w.addEventListener('pageshow', sync);
+    w.addEventListener('focus', sync);
+    d.addEventListener('visibilitychange', function () { if (!d.hidden) sync(); });
+  }
 
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', init); else init();
 })();
