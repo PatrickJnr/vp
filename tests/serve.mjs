@@ -8,7 +8,12 @@ const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/cs
 
 export function startServer(port, inject = '') {
   const server = http.createServer((req, res) => {
-    const p = path.join(root, decodeURIComponent(req.url.split('?')[0]));
+    let p;
+    try { p = path.join(root, decodeURIComponent(req.url.split('?')[0])); } catch { p = ''; }
+    if (p !== root && !p.startsWith(root + path.sep)) {
+      res.writeHead(404);
+      return res.end();
+    }
     for (const c of [p, p + '.html', path.join(p, 'index.html')]) {
       if (fs.existsSync(c) && fs.statSync(c).isFile()) {
         const type = types[path.extname(c)] || 'application/octet-stream';
@@ -20,5 +25,5 @@ export function startServer(port, inject = '') {
     res.writeHead(404);
     res.end();
   });
-  return new Promise(r => server.listen(port, () => r(server)));
+  return new Promise(r => server.listen(port, '127.0.0.1', () => r(server)));
 }
